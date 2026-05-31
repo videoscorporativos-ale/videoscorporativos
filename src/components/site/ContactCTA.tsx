@@ -69,15 +69,16 @@ export function ContactCTA() {
             <Field label="WhatsApp" name="whatsapp" required />
           </div>
           <div className="mt-4">
-            <label className="text-xs uppercase tracking-widest text-muted-foreground">
+            <label htmlFor="mensagem" className="text-xs uppercase tracking-widest text-muted-foreground">
               Mensagem
             </label>
             <textarea
+              id="mensagem"
               name="mensagem"
               required
               rows={4}
               maxLength={1000}
-              className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none focus:border-brand transition resize-none"
+              className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-brand transition resize-none placeholder:text-muted-foreground"
               placeholder="Conte sobre o projeto..."
             />
           </div>
@@ -107,15 +108,16 @@ function Field({
 }) {
   return (
     <div>
-      <label className="text-xs uppercase tracking-widest text-muted-foreground">
+      <label htmlFor={name} className="text-xs uppercase tracking-widest text-muted-foreground">
         {label}
       </label>
       <input
+        id={name}
         name={name}
         type={type}
         required={required}
         maxLength={255}
-        className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none focus:border-brand transition"
+        className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground outline-none focus:border-brand transition placeholder:text-muted-foreground"
       />
     </div>
   );

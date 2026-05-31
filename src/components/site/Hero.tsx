@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Play, ArrowRight, X } from "lucide-react";
 
-const SHOWREEL_ID = "PDFwTUHOwiY";
-const SHOWREEL_TITLE = "IBIS Botucatu — Vídeo Manifesto";
+const SHOWREEL_ID = "aOiYST9L8ec";
+const SHOWREEL_TITLE = "ATIVA Logística — Vídeo Institucional";
 
 export function Hero() {
   const [open, setOpen] = useState(false);

@@ -1,27 +1,26 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 
 const testimonials = [
   {
     quote:
-      "O resultado superou o que tínhamos imaginado. O filme institucional virou peça central da nossa comunicação interna e externa.",
-    name: "Carolina Reis",
-    role: "Diretora de Marketing",
-    company: "Vortex",
+      "Satisfação e agradecimento. Profissional dedicado, que busca entender o seu momento para estruturar o trabalho e atender às suas expectativas. Recomendo sem dúvida, e com a certeza de que me acompanhará daqui para frente.",
+    name: "Jean Duarte",
   },
   {
     quote:
-      "Cobertura impecável da nossa convenção anual. Entrega rápida, edição cinematográfica e equipe extremamente profissional.",
-    name: "Rafael Andrade",
-    role: "Gerente de Eventos",
-    company: "Helix",
+      "Alê é um fotógrafo sensacional! Muito profissional e super detalhista. Te deixa à vontade e confiante para tirar as melhores fotos.",
+    name: "Patricia Martinelli",
   },
   {
     quote:
-      "O aftermovie da feira gerou mais engajamento do que qualquer post que já fizemos. Recomendo sem pestanejar.",
-    name: "Mariana Lopes",
-    role: "Head de Comunicação",
-    company: "Atria",
+      "Alexandre tem a rara combinação de experiência, competência e simpatia. Sem abdicar do rigor técnico, consegue fazer as fotos de forma leve, e assim extrai o melhor resultado. Recomendo fortemente.",
+    name: "Silvio Valente",
+  },
+  {
+    quote:
+      "Alê é ótimo, cara super experiente, deixa o cliente bem à vontade, auxilia nas roupas e na direção. Muito boa a experiência, recomendo!",
+    name: "Humberto Júnior",
   },
 ];
 
@@ -38,9 +37,6 @@ export function Testimonials() {
         </blockquote>
         <div className="mt-8">
           <p className="font-medium">{t.name}</p>
-          <p className="text-sm text-muted-foreground">
-            {t.role} · {t.company}
-          </p>
         </div>
         <div className="mt-10 flex items-center justify-center gap-3">
           <button
@@ -67,6 +63,16 @@ export function Testimonials() {
           >
             <ChevronRight className="size-4" />
           </button>
+        </div>
+        <div className="mt-12 inline-flex items-center gap-3 rounded-full border border-border bg-surface/60 px-5 py-3">
+          <div className="flex gap-0.5 text-brand">
+            {Array.from({ length: 5 }).map((_, idx) => (
+              <Star key={idx} className="size-4 fill-current" />
+            ))}
+          </div>
+          <p className="text-sm text-muted-foreground">
+            <span className="font-medium text-foreground">Nota Excelente no Google</span> — mais de 137 avaliações de clientes
+          </p>
         </div>
       </div>
     </section>

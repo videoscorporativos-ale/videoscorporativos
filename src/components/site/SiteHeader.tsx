@@ -31,14 +31,14 @@ export function SiteHeader() {
           : "bg-transparent",
       )}
     >
-      <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
         <a href="#top" aria-label="Ale Fotógrafo" className="flex items-center">
           <img
             src={logoUrl}
             alt="Ale Fotógrafo"
             width={160}
             height={48}
-            className="h-10 w-auto mix-blend-screen"
+            className="h-[60px] w-auto mix-blend-screen"
           />
         </a>
         <nav className="hidden md:flex items-center gap-8">

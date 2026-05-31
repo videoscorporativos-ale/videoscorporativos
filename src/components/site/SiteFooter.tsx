@@ -39,7 +39,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Ale Fotógrafo. Todos os direitos reservados.</p>
+          <p>Alexandre Machado Fotografia · CNPJ 03.230.626/0001-82 · Desde 1999 atendendo clientes especiais.</p>
           <p>comercial@alefotografo.com.br · (11) 91355-0533</p>
         </div>
       </div>

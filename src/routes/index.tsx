@@ -49,9 +49,16 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Ale Fotógrafo · Fotografia e Vídeo Corporativo em São Paulo" },
       { name: "twitter:description", content: "Fotografia corporativa, retrato profissional, eventos e vídeo institucional. +30 anos em São Paulo." },
+      { property: "og:image", content: "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg" },
+      { property: "og:image:width", content: "1280" },
+      { property: "og:image:height", content: "720" },
+      { name: "twitter:image", content: "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg" },
     ],
     links: [
       { rel: "canonical", href: "https://videoscorporativos.lovable.app" },
+      { rel: "preconnect", href: "https://i.ytimg.com", crossOrigin: "" },
+      { rel: "preconnect", href: "https://www.youtube.com", crossOrigin: "" },
+      { rel: "preload", as: "image", href: "https://i.ytimg.com/vi/aOiYST9L8ec/hqdefault.jpg", fetchpriority: "high" },
     ],
     scripts: [
       {

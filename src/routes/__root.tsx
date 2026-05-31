@@ -88,8 +88,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Ale Fotógrafo — Fotografia e Vídeo Corporativo em São Paulo" },
       { name: "twitter:description", content: "Fotógrafo e produtor de vídeo corporativo em São Paulo, com +30 anos. Retrato profissional, eventos e vídeo institucional em todo o Brasil." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/868e1457-c754-4cc2-b712-c30bd7871feb/id-preview-71238e92--ce91384b-4394-4b53-9e43-bef737f42072.lovable.app-1780186056653.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/868e1457-c754-4cc2-b712-c30bd7871feb/id-preview-71238e92--ce91384b-4394-4b53-9e43-bef737f42072.lovable.app-1780186056653.png" },
+      { property: "og:site_name", content: "Ale Fotógrafo" },
+      { property: "og:locale", content: "pt_BR" },
     ],
     links: [
       {

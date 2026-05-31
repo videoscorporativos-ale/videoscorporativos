@@ -40,8 +40,8 @@ const localBusinessSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vídeo Institucional São Paulo · Filmagem de Eventos Corporativos · Alê Produções" },
-      { name: "description", content: "Produtora de vídeo institucional em São Paulo com +30 anos. Filmagem de eventos corporativos e vídeo para feira de negócios em todo o Brasil. Orçamento sob medida." },
+      { title: "Vídeo Institucional em São Paulo · Alê Produções" },
+      { name: "description", content: "Produtora de vídeo institucional em São Paulo com +30 anos. Eventos corporativos e feiras de negócios no Brasil. Orçamento sob medida." },
       { property: "og:title", content: "Vídeo Institucional São Paulo · Filmagem de Eventos Corporativos" },
       { property: "og:description", content: "Produtora com +30 anos em vídeo institucional, eventos corporativos e feiras de negócios. São Paulo e todo o Brasil." },
       { property: "og:url", content: "https://videoscorporativos.lovable.app" },

@@ -38,7 +38,7 @@ export function SiteHeader() {
             alt="Ale Fotógrafo"
             width={160}
             height={48}
-            className="h-15 w-auto mix-blend-screen"
+            className="h-[60px] w-auto mix-blend-screen"
           />
         </a>
         <nav className="hidden md:flex items-center gap-8">

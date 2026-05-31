@@ -12,7 +12,7 @@ export function SiteFooter() {
             width={180}
             height={54}
             loading="lazy"
-            className="h-12 w-auto mix-blend-screen"
+            className="h-[72px] w-auto mix-blend-screen"
           />
           <p className="mt-3 text-sm text-muted-foreground">
             Fotografia e vídeo corporativo em São Paulo, para todo o Brasil.

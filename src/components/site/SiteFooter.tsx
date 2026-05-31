@@ -34,7 +34,7 @@ export function SiteFooter() {
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Alê Produções. Todos os direitos reservados.</p>
-          <p>contato@aleproducoes.com.br · (11) 99999-9999</p>
+          <p>comercial@alefotografo.com.br · (11) 91355-0533</p>
         </div>
       </div>
     </footer>

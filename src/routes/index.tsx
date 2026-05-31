@@ -16,9 +16,9 @@ import { FAQ, faqSchema } from "@/components/site/FAQ";
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Alê Produções",
+  name: "Ale Fotógrafo",
   description:
-    "Produtora de vídeo corporativo em São Paulo. Vídeo institucional, filmagem de eventos corporativos e vídeo para feira de negócios em todo o Brasil.",
+    "Fotógrafo e produtor de vídeo corporativo em São Paulo, com mais de 30 anos. Retrato profissional, fotografia institucional, eventos corporativos e vídeo institucional em todo o Brasil.",
   url: "https://videoscorporativos.lovable.app",
   telephone: "+55-11-91355-0533",
   email: "comercial@alefotografo.com.br",
@@ -40,15 +40,15 @@ const localBusinessSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vídeo Institucional em São Paulo · Alê Produções" },
-      { name: "description", content: "Produtora de vídeo institucional em São Paulo com +30 anos. Eventos corporativos e feiras de negócios no Brasil. Orçamento sob medida." },
-      { property: "og:title", content: "Vídeo Institucional São Paulo · Filmagem de Eventos Corporativos" },
-      { property: "og:description", content: "Produtora com +30 anos em vídeo institucional, eventos corporativos e feiras de negócios. São Paulo e todo o Brasil." },
+      { title: "Ale Fotógrafo · Fotografia e Vídeo Corporativo em São Paulo" },
+      { name: "description", content: "Fotógrafo profissional em São Paulo com +30 anos. Retrato corporativo, fotografia institucional, eventos e vídeo institucional. Orçamento em até 24 horas." },
+      { property: "og:title", content: "Ale Fotógrafo · Fotografia e Vídeo Corporativo em São Paulo" },
+      { property: "og:description", content: "+30 anos em fotografia corporativa, retrato profissional, eventos e vídeo institucional. São Paulo e todo o Brasil." },
       { property: "og:url", content: "https://videoscorporativos.lovable.app" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Vídeo Institucional São Paulo · Alê Produções" },
-      { name: "twitter:description", content: "Vídeo institucional, eventos corporativos e feiras de negócios. +30 anos em São Paulo, atendendo todo o Brasil." },
+      { name: "twitter:title", content: "Ale Fotógrafo · Fotografia e Vídeo Corporativo em São Paulo" },
+      { name: "twitter:description", content: "Fotografia corporativa, retrato profissional, eventos e vídeo institucional. +30 anos em São Paulo." },
     ],
     links: [
       { rel: "canonical", href: "https://videoscorporativos.lovable.app" },

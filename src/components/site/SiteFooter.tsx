@@ -1,0 +1,42 @@
+import { Instagram, Linkedin, Youtube } from "lucide-react";
+
+export function SiteFooter() {
+  return (
+    <footer className="border-t border-border bg-surface/40">
+      <div className="mx-auto max-w-7xl px-6 py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+        <div>
+          <p className="font-display text-lg font-semibold">
+            Alê<span className="text-brand">.</span>Produções
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Vídeo corporativo em São Paulo, para todo o Brasil.
+          </p>
+        </div>
+        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          <a href="#servicos" className="hover:text-foreground">Serviços</a>
+          <a href="#portfolio" className="hover:text-foreground">Portfólio</a>
+          <a href="#processo" className="hover:text-foreground">Processo</a>
+          <a href="#sobre" className="hover:text-foreground">Sobre</a>
+          <a href="#contato" className="hover:text-foreground">Contato</a>
+        </nav>
+        <div className="flex items-center gap-3">
+          <a href="#" aria-label="Instagram" className="size-9 rounded-full border border-border flex items-center justify-center hover:bg-brand hover:text-brand-foreground hover:border-brand transition">
+            <Instagram className="size-4" />
+          </a>
+          <a href="#" aria-label="LinkedIn" className="size-9 rounded-full border border-border flex items-center justify-center hover:bg-brand hover:text-brand-foreground hover:border-brand transition">
+            <Linkedin className="size-4" />
+          </a>
+          <a href="#" aria-label="YouTube" className="size-9 rounded-full border border-border flex items-center justify-center hover:bg-brand hover:text-brand-foreground hover:border-brand transition">
+            <Youtube className="size-4" />
+          </a>
+        </div>
+      </div>
+      <div className="border-t border-border">
+        <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-xs text-muted-foreground">
+          <p>© {new Date().getFullYear()} Alê Produções. Todos os direitos reservados.</p>
+          <p>contato@aleproducoes.com.br · (11) 99999-9999</p>
+        </div>
+      </div>
+    </footer>
+  );
+}

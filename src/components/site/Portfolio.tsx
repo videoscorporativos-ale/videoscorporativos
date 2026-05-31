@@ -4,14 +4,20 @@ import { cn } from "@/lib/utils";
 
 type Category = "Todos" | "Institucional" | "Eventos" | "Feiras";
 
-const items: { title: string; category: Exclude<Category, "Todos">; thumb: string; videoId: string }[] = [
-  { title: "Vortex — Filme institucional", category: "Institucional", thumb: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80", videoId: "dQw4w9WgXcQ" },
-  { title: "Convenção Helix 2024", category: "Eventos", thumb: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&q=80", videoId: "dQw4w9WgXcQ" },
-  { title: "Aftermovie Feira Expo+", category: "Feiras", thumb: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80", videoId: "dQw4w9WgXcQ" },
-  { title: "Northwave — Manifesto", category: "Institucional", thumb: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80", videoId: "dQw4w9WgXcQ" },
-  { title: "Lançamento Atria Pro", category: "Eventos", thumb: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80", videoId: "dQw4w9WgXcQ" },
-  { title: "Feira Lumen — Stand", category: "Feiras", thumb: "https://images.unsplash.com/photo-1561489413-985b06da5bee?w=800&q=80", videoId: "dQw4w9WgXcQ" },
+const items: { title: string; category: Exclude<Category, "Todos">; videoId: string }[] = [
+  { title: "UNITEC — Vídeo Institucional", category: "Institucional", videoId: "_bdJOuE4I3Q" },
+  { title: "Rocha & Queiroz Advogados — Institucional", category: "Institucional", videoId: "ITBhZlBQd6E" },
+  { title: "IBIS Botucatu — Vídeo Manifesto", category: "Institucional", videoId: "PDFwTUHOwiY" },
+  { title: "ATIVA Logística — Programa de Sustentabilidade", category: "Institucional", videoId: "aOiYST9L8ec" },
+  { title: "Galena 35 Anos", category: "Eventos", videoId: "JG6KloCm3jA" },
+  { title: "Convenção de Vendas Tecnisa 2023", category: "Eventos", videoId: "cm3c0eMpL9M" },
+  { title: "15ª Convenção ABRADILAN — Punta Cana", category: "Eventos", videoId: "TAv6Obk3TVE" },
+  { title: "SQ Química na ABRAFATI Show 2022", category: "Feiras", videoId: "ufqmkFC6lrw" },
+  { title: "Faz Negócios 3", category: "Feiras", videoId: "C6XQuyikcrM" },
+  { title: "Sustainable Foods Summit — São Paulo", category: "Feiras", videoId: "utaOjr3Dqxw" },
 ];
+
+const thumbFor = (videoId: string) => `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 
 const categories: Category[] = ["Todos", "Institucional", "Eventos", "Feiras"];
 
@@ -58,7 +64,7 @@ export function Portfolio() {
             >
               <img
                 loading="lazy"
-                src={item.thumb}
+                src={thumbFor(item.videoId)}
                 alt={item.title}
                 className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

@@ -1,6 +1,10 @@
-import { Play, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { Play, ArrowRight, X } from "lucide-react";
+
+const SHOWREEL_ID = "PDFwTUHOwiY";
 
 export function Hero() {
+  const [open, setOpen] = useState(false);
   return (
     <section
       id="top"
@@ -41,14 +45,17 @@ export function Hero() {
         </div>
 
         <div className="lg:col-span-5 reveal" style={{ animationDelay: "120ms" }}>
-          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-surface group cursor-pointer">
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-              style={{
-                backgroundImage:
-                  "linear-gradient(180deg, oklch(0 0 0 / 0.1), oklch(0 0 0 / 0.6)), url('https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=900&q=80')",
-              }}
+          <button
+            onClick={() => setOpen(true)}
+            className="relative block w-full aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-surface group cursor-pointer text-left"
+            aria-label="Assistir showreel"
+          >
+            <img
+              src={`https://i.ytimg.com/vi/${SHOWREEL_ID}/hqdefault.jpg`}
+              alt="Showreel — Alê Produções"
+              className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/40 to-background/80 pointer-events-none" />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="size-20 rounded-full bg-brand text-brand-foreground flex items-center justify-center shadow-2xl shadow-brand/30 group-hover:scale-110 transition">
                 <Play className="size-7 fill-current ml-1" />
@@ -56,11 +63,38 @@ export function Hero() {
             </div>
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <p className="text-xs uppercase tracking-widest text-brand">Showreel</p>
-              <p className="mt-1 font-display text-lg font-medium">Trabalhos selecionados 2024</p>
+              <p className="mt-1 font-display text-lg font-medium">IBIS Botucatu — Vídeo Manifesto</p>
             </div>
-          </div>
+          </button>
         </div>
       </div>
+
+      {open && (
+        <div
+          className="fixed inset-0 z-[60] bg-background/90 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setOpen(false)}
+        >
+          <button
+            className="absolute top-6 right-6 size-10 rounded-full bg-surface border border-border flex items-center justify-center hover:bg-brand hover:text-brand-foreground transition"
+            onClick={() => setOpen(false)}
+            aria-label="Fechar"
+          >
+            <X className="size-5" />
+          </button>
+          <div
+            className="w-full max-w-5xl aspect-video rounded-xl overflow-hidden border border-border"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <iframe
+              src={`https://www.youtube.com/embed/${SHOWREEL_ID}?autoplay=1`}
+              title="Showreel"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowFullScreen
+              className="size-full"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

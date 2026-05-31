@@ -16,6 +16,9 @@ export const submitContact = createServerFn({ method: "POST" })
     const { error } = await supabaseAdmin
       .from("contact_submissions")
       .insert(data);
-    if (error) throw new Error(error.message);
+    if (error) {
+      console.error("[submitContact] DB error:", error.message);
+      throw new Error("Não foi possível enviar a mensagem. Tente novamente.");
+    }
     return { ok: true };
   });

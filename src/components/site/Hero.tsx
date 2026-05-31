@@ -52,7 +52,11 @@ export function Hero() {
           >
             <img
               src={`https://i.ytimg.com/vi/${SHOWREEL_ID}/hqdefault.jpg`}
-              alt="Showreel — Ale Fotógrafo"
+              alt="Showreel ATIVA Logística — vídeo institucional por Ale Fotógrafo"
+              width={480}
+              height={600}
+              fetchPriority="high"
+              decoding="async"
               className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/40 to-background/80 pointer-events-none" />

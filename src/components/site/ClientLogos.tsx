@@ -11,7 +11,7 @@ export function ClientLogos() {
           {logos.map((l) => (
             <span
               key={l}
-              className="font-display text-xl md:text-2xl font-medium text-muted-foreground/70 hover:text-foreground transition-colors"
+              className="font-display text-xl md:text-2xl font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {l}
             </span>

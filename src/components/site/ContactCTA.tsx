@@ -1,18 +1,35 @@
 import { useState } from "react";
 import { Mail, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
+import { useServerFn } from "@tanstack/react-start";
+import { submitContact } from "@/lib/contact.functions";
 
 export function ContactCTA() {
   const [sending, setSending] = useState(false);
+  const send = useServerFn(submitContact);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const payload = {
+      nome: String(fd.get("nome") ?? ""),
+      empresa: String(fd.get("empresa") ?? ""),
+      email: String(fd.get("email") ?? ""),
+      whatsapp: String(fd.get("whatsapp") ?? ""),
+      mensagem: String(fd.get("mensagem") ?? ""),
+    };
     setSending(true);
-    setTimeout(() => {
+    try {
+      await send({ data: payload });
+      toast.success("Mensagem recebida! Retornaremos em até 1 dia útil.");
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      toast.error("Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.");
+    } finally {
       setSending(false);
-      toast.success("Mensagem recebida! Retornaremos em breve.");
-      (e.target as HTMLFormElement).reset();
-    }, 700);
+    }
   }
 
   return (

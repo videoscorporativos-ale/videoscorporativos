@@ -6,10 +6,10 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
         <div>
           <p className="font-display text-lg font-semibold">
-            Alê<span className="text-brand">.</span>Produções
+            Ale<span className="text-brand">.</span>Fotógrafo
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
-            Vídeo corporativo em São Paulo, para todo o Brasil.
+            Fotografia e vídeo corporativo em São Paulo, para todo o Brasil.
           </p>
         </div>
         <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
@@ -33,7 +33,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Alê Produções. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Ale Fotógrafo. Todos os direitos reservados.</p>
           <p>comercial@alefotografo.com.br · (11) 91355-0533</p>
         </div>
       </div>

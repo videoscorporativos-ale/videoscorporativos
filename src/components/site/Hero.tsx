@@ -52,7 +52,7 @@ export function Hero() {
           >
             <img
               src={`https://i.ytimg.com/vi/${SHOWREEL_ID}/hqdefault.jpg`}
-              alt="Showreel — Alê Produções"
+              alt="Showreel — Ale Fotógrafo"
               className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/40 to-background/80 pointer-events-none" />

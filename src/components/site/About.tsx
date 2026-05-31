@@ -13,14 +13,21 @@ export function About() {
         <div>
           <p className="text-sm uppercase tracking-[0.2em] text-brand">Sobre</p>
           <h2 className="mt-3 font-display text-4xl md:text-5xl font-semibold tracking-tight text-balance">
-            Vídeo corporativo, com respeito à reputação da marca.
+            Imagem corporativa com intenção estratégica, não apenas estética.
           </h2>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            Sou Alexandre Machado, produtor audiovisual com mais de 30 anos
-            dedicados à imagem corporativa. Já registrei desde grandes eventos
-            a filmes institucionais para empresas de todo o país, sempre com o
-            mesmo princípio: vídeo que comunica com clareza e respeita a
-            reputação da marca.
+            Sou Alexandre Machado, conhecido como Ale Fotógrafo. Há mais de 30
+            anos atendo empresas em São Paulo com fotografia corporativa,
+            retratos profissionais, cobertura de eventos e produção de vídeo
+            institucional.
+          </p>
+          <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+            Meu método é claro: entender o posicionamento do cliente, o público
+            que será impactado e o objetivo da comunicação antes de iniciar
+            qualquer produção. Atendimento direto, sem intermediários, com
+            estúdio próprio e estrutura móvel para gravações na sua empresa —
+            em toda a Grande SP, ABC, Alphaville, Faria Lima, Paulista e
+            Berrini.
           </p>
           <a
             href="#contato"

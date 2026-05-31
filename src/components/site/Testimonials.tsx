@@ -4,23 +4,23 @@ import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Satisfação e agradecimento. Profissional dedicado, que busca entender o seu momento para estruturar o trabalho e atender às suas expectativas. Recomendo sem dúvida, e com a certeza de que me acompanhará daqui para frente.",
-    name: "Jean Duarte",
+      "Profissional ágil, competente e focado na qualidade. O processo foi leve e o resultado final ficou excelente.",
+    name: "Leandro Capolupo — Gerente de Planejamento Financeiro",
   },
   {
     quote:
-      "Alê é um fotógrafo sensacional! Muito profissional e super detalhista. Te deixa à vontade e confiante para tirar as melhores fotos.",
-    name: "Patricia Martinelli",
+      "O resultado do trabalho foi incrível. Recebi as fotos tratadas no final da sessão, com muita atenção, cuidado e profissionalismo.",
+    name: "Maria Clara Cardoso — Psicóloga e Palestrante",
   },
   {
     quote:
-      "Alexandre tem a rara combinação de experiência, competência e simpatia. Sem abdicar do rigor técnico, consegue fazer as fotos de forma leve, e assim extrai o melhor resultado. Recomendo fortemente.",
-    name: "Silvio Valente",
+      "Pontual, equipado e entrega exatamente o que promete. Trabalho sério e altamente profissional.",
+    name: "Anelise Duarte — Executiva de Marketing e Vendas",
   },
   {
     quote:
-      "Alê é ótimo, cara super experiente, deixa o cliente bem à vontade, auxilia nas roupas e na direção. Muito boa a experiência, recomendo!",
-    name: "Humberto Júnior",
+      "Direção segura e resultado natural. As fotos transmitem confiança e profissionalismo.",
+    name: "Cliente corporativo",
   },
 ];
 

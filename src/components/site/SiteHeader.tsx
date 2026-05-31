@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logoUrl from "@/assets/logo.png";
 
 const navLinks = [
   { href: "#servicos", label: "Serviços" },
@@ -31,8 +32,14 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <a href="#top" className="font-display text-lg font-semibold tracking-tight">
-          Ale<span className="text-brand">.</span>Fotógrafo
+        <a href="#top" aria-label="Ale Fotógrafo" className="flex items-center">
+          <img
+            src={logoUrl}
+            alt="Ale Fotógrafo"
+            width={160}
+            height={48}
+            className="h-10 w-auto"
+          />
         </a>
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (

@@ -1,14 +1,20 @@
 import { Instagram, Linkedin, Youtube } from "lucide-react";
+import logoUrl from "@/assets/logo.png";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-surface/40">
       <div className="mx-auto max-w-7xl px-6 py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
         <div>
-          <p className="font-display text-lg font-semibold">
-            Ale<span className="text-brand">.</span>Fotógrafo
-          </p>
-          <p className="mt-2 text-sm text-muted-foreground">
+          <img
+            src={logoUrl}
+            alt="Ale Fotógrafo"
+            width={180}
+            height={54}
+            loading="lazy"
+            className="h-12 w-auto"
+          />
+          <p className="mt-3 text-sm text-muted-foreground">
             Fotografia e vídeo corporativo em São Paulo, para todo o Brasil.
           </p>
         </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Play, ArrowRight, X } from "lucide-react";
 
-const SHOWREEL_ID = "PDFwTUHOwiY";
+const SHOWREEL_ID = "aOiYST9L8ec";
 
 export function Hero() {
   const [open, setOpen] = useState(false);
@@ -63,7 +63,7 @@ export function Hero() {
             </div>
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <p className="text-xs uppercase tracking-widest text-brand">Showreel</p>
-              <p className="mt-1 font-display text-lg font-medium">IBIS Botucatu — Vídeo Manifesto</p>
+              <p className="mt-1 font-display text-lg font-medium">ATIVA Logística — Programa de Sustentabilidade</p>
             </div>
           </button>
         </div>

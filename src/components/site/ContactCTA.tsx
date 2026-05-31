@@ -30,7 +30,7 @@ export function ContactCTA() {
           </p>
           <div className="mt-10 space-y-4">
             <a
-              href="https://wa.me/5511999999999"
+              href="https://wa.me/5511913550533"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-4 rounded-xl border border-border bg-surface/60 p-5 hover:border-brand/50 transition"
@@ -40,11 +40,11 @@ export function ContactCTA() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">WhatsApp</p>
-                <p className="font-medium">(11) 99999-9999</p>
+                <p className="font-medium">(11) 91355-0533</p>
               </div>
             </a>
             <a
-              href="mailto:contato@aleproducoes.com.br"
+              href="mailto:comercial@alefotografo.com.br"
               className="flex items-center gap-4 rounded-xl border border-border bg-surface/60 p-5 hover:border-brand/50 transition"
             >
               <div className="size-12 rounded-xl bg-brand/10 text-brand flex items-center justify-center">
@@ -52,7 +52,7 @@ export function ContactCTA() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">E-mail</p>
-                <p className="font-medium">contato@aleproducoes.com.br</p>
+                <p className="font-medium">comercial@alefotografo.com.br</p>
               </div>
             </a>
           </div>

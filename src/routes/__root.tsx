@@ -90,6 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: "Fotógrafo e produtor de vídeo corporativo em São Paulo, com +30 anos. Retrato profissional, eventos e vídeo institucional em todo o Brasil." },
       { property: "og:site_name", content: "Ale Fotógrafo" },
       { property: "og:locale", content: "pt_BR" },
+      { name: "google-site-verification", content: "QxOKt1WWlGlC7_WS0lNVLjAKX4goXgoGTWUkvqX6Q50" },
     ],
     links: [
       {

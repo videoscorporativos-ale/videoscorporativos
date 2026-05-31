@@ -14,7 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          empresa: string
+          id: string
+          mensagem: string
+          nome: string
+          whatsapp: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          empresa: string
+          id?: string
+          mensagem: string
+          nome: string
+          whatsapp: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          empresa?: string
+          id?: string
+          mensagem?: string
+          nome?: string
+          whatsapp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

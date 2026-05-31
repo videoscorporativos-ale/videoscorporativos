@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Play, ArrowRight, X } from "lucide-react";
 
-const SHOWREEL_ID = "aOiYST9L8ec";
+const SHOWREEL_ID = "PDFwTUHOwiY";
+const SHOWREEL_TITLE = "IBIS Botucatu — Vídeo Manifesto";
 
 export function Hero() {
   const [open, setOpen] = useState(false);
@@ -52,7 +53,7 @@ export function Hero() {
           >
             <img
               src={`https://i.ytimg.com/vi/${SHOWREEL_ID}/hqdefault.jpg`}
-              alt="Showreel ATIVA Logística — vídeo institucional por Ale Fotógrafo"
+              alt={`Showreel ${SHOWREEL_TITLE} — vídeo institucional por Ale Fotógrafo`}
               width={480}
               height={600}
               fetchPriority="high"
@@ -67,7 +68,7 @@ export function Hero() {
             </div>
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <p className="text-xs uppercase tracking-widest text-brand">Showreel</p>
-              <p className="mt-1 font-display text-lg font-medium">ATIVA Logística — Programa de Sustentabilidade</p>
+              <p className="mt-1 font-display text-lg font-medium">{SHOWREEL_TITLE}</p>
             </div>
           </button>
         </div>

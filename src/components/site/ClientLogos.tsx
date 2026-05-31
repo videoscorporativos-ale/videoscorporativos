@@ -1,5 +1,3 @@
-const logos = ["Vortex", "Helix", "Northwave", "Atria", "Lumen Co.", "Praxis", "Orbital"];
-
 export function ClientLogos() {
   return (
     <section className="border-y border-border bg-surface/40 py-12">
@@ -7,16 +5,15 @@ export function ClientLogos() {
         <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground">
           Empresas que já confiaram no nosso trabalho
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-          {logos.map((l) => (
-            <span
-              key={l}
-              className="font-display text-xl md:text-2xl font-medium text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {l}
-            </span>
-          ))}
-        </div>
+        <p className="mx-auto mt-6 max-w-4xl text-center font-display text-lg md:text-xl leading-relaxed text-foreground/90">
+          Mais de 30 anos atendendo empresas como{" "}
+          <span className="font-medium text-foreground">Tecnisa</span>,{" "}
+          <span className="font-medium text-foreground">Convatec</span>,{" "}
+          <span className="font-medium text-foreground">Accor</span>,{" "}
+          <span className="font-medium text-foreground">ABRADILAN</span>,{" "}
+          <span className="font-medium text-foreground">Galena</span> e{" "}
+          <span className="font-medium text-foreground">Germed</span> — em projetos por todo o Brasil.
+        </p>
       </div>
     </section>
   );

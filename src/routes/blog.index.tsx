@@ -6,7 +6,7 @@ import { getAllPosts, coverImageUrl } from "@/content/posts";
 
 const TITLE = "Blog · Vídeo corporativo, eventos e feiras | Ale Fotógrafo";
 const DESCRIPTION =
-  "Guias práticos sobre vídeo institucional, eventos corporativos e feiras de negócios: preço, tipos, processo e resultado. Por Alexandre Machado, +30 anos de experiência.";
+  "Guias sobre vídeo institucional, eventos e feiras: preço, tipos e processo. Por Alexandre Machado, especialista com +30 anos de experiência.";
 const URL = "https://videoscorporativos.com.br/blog";
 
 export const Route = createFileRoute("/blog/")({

@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
-const TITLE = "Quanto custa um vídeo institucional? Guia 2026 com faixas de preço";
+const TITLE = "Quanto custa um vídeo institucional? Guia 2026 de preços";
 const DESCRIPTION =
   "Quanto custa um vídeo institucional em 2026? Faixas de preço (R$ 3.000 a R$ 30.000+), o que define o valor, prazos e como pedir orçamento em São Paulo.";
 const URL = "https://videoscorporativos.com.br/precos";

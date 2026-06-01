@@ -40,15 +40,15 @@ const localBusinessSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vídeo Institucional em São Paulo · Filmagem de Eventos e Feiras" },
+      { title: "Vídeo Institucional em São Paulo · Eventos e Feiras" },
       { name: "description", content: "Vídeo institucional em São Paulo, filmagem de eventos corporativos e vídeo para feira de negócios. +30 anos de experiência, atendimento em todo o Brasil." },
       { name: "keywords", content: "vídeo institucional São Paulo, filmagem de eventos corporativos, vídeo para feira de negócios, produtora de vídeo SP, fotografia corporativa" },
-      { property: "og:title", content: "Vídeo Institucional em São Paulo · Filmagem de Eventos e Feiras" },
+      { property: "og:title", content: "Vídeo Institucional em São Paulo · Eventos e Feiras" },
       { property: "og:description", content: "Vídeo institucional, filmagem de eventos corporativos e vídeo para feira de negócios. +30 anos atendendo empresas em São Paulo e em todo o Brasil." },
       { property: "og:url", content: "https://videoscorporativos.com.br" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Vídeo Institucional em São Paulo · Filmagem de Eventos e Feiras" },
+      { name: "twitter:title", content: "Vídeo Institucional em São Paulo · Eventos e Feiras" },
       { name: "twitter:description", content: "Vídeo institucional, eventos corporativos e feiras de negócios. +30 anos em São Paulo." },
       { property: "og:image", content: "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg" },
       { property: "og:image:width", content: "1280" },

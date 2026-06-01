@@ -59,7 +59,6 @@ const localBusinessSchema = {
       contactType: "customer service",
       areaServed: "BR",
       availableLanguage: ["Portuguese"],
-      contactOption: "TollFree",
     },
     {
       "@type": "ContactPoint",
@@ -85,9 +84,10 @@ const videoObjectsSchema = {
     name: item.title,
     description: `${item.title} — produção audiovisual por Ale Fotógrafo (categoria: ${item.category}).`,
     thumbnailUrl: [hiResThumbFor(item.videoId)],
-    uploadDate: "2024-01-01",
+    uploadDate: "2024-01-01T00:00:00-03:00",
     contentUrl: `https://www.youtube.com/watch?v=${item.videoId}`,
     embedUrl: `https://www.youtube.com/embed/${item.videoId}`,
+    inLanguage: "pt-BR",
     publisher: {
       "@type": "Organization",
       name: "Ale Fotógrafo",

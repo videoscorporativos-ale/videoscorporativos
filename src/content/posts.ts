@@ -40,8 +40,11 @@ export interface BlogPost {
  * Returns a dark-treated, 1600x900 image suitable as a hero cover.
  */
 export function coverImageUrl(query: string): string {
-  const q = encodeURIComponent(query);
-  return `https://source.unsplash.com/featured/1600x900/?${q}`;
+  // Deterministic, always-available cover image. Uses the query as a seed so
+  // each post keeps a consistent picture across reloads. (source.unsplash.com
+  // was discontinued by Unsplash and no longer serves images.)
+  const seed = encodeURIComponent(query.trim().toLowerCase().replace(/\s+/g, "-"));
+  return `https://picsum.photos/seed/${seed}/1600/900`;
 }
 
 /**

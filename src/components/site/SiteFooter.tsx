@@ -19,12 +19,13 @@ export function SiteFooter() {
           </p>
         </div>
         <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
-          <a href="#servicos" className="hover:text-foreground">Serviços</a>
-          <a href="#portfolio" className="hover:text-foreground">Portfólio</a>
-          <a href="#processo" className="hover:text-foreground">Processo</a>
-          <a href="#sobre" className="hover:text-foreground">Sobre</a>
+          <a href="/#servicos" className="hover:text-foreground">Serviços</a>
+          <a href="/#portfolio" className="hover:text-foreground">Portfólio</a>
+          <a href="/#processo" className="hover:text-foreground">Processo</a>
+          <a href="/#sobre" className="hover:text-foreground">Sobre</a>
           <a href="/precos" className="hover:text-foreground">Preços</a>
-          <a href="#contato" className="hover:text-foreground">Contato</a>
+          <a href="/blog" className="hover:text-foreground">Blog</a>
+          <a href="/#contato" className="hover:text-foreground">Contato</a>
         </nav>
         <div className="flex items-center gap-3">
           <a href="#" aria-label="Instagram" className="size-9 rounded-full border border-border flex items-center justify-center hover:bg-brand hover:text-brand-foreground hover:border-brand transition">

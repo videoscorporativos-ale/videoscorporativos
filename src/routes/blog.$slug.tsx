@@ -7,6 +7,25 @@ import { getPostBySlug, coverImageUrl, type FaqItem } from "@/content/posts";
 
 const SITE = "https://videoscorporativos.com.br";
 
+/**
+ * Replaces `[IMAGEM: termo de busca]` markers in HTML with an Unsplash <figure>.
+ * Uses the nearest preceding <h2> or <h3> text as alt text, falling back to the search term.
+ */
+function expandInlineImages(html: string): string {
+  return html.replace(
+    /(?:<p>\s*)?\[IMAGEM:\s*([^\]]+?)\s*\](?:\s*<\/p>)?/gi,
+    (_match, term: string, offset: number, full: string) => {
+      const before = full.slice(0, offset);
+      const headingMatch = before.match(/<h[23][^>]*>([\s\S]*?)<\/h[23]>(?![\s\S]*<h[23])/i);
+      const alt = headingMatch
+        ? headingMatch[1].replace(/<[^>]+>/g, "").trim()
+        : term.trim();
+      const src = coverImageUrl(term.trim());
+      return `<figure class="my-8 overflow-hidden rounded-2xl border border-border bg-surface"><img src="${src}" alt="${alt.replace(/"/g, "&quot;")}" loading="lazy" width="1600" height="900" class="aspect-[16/9] w-full object-cover opacity-90" /></figure>`;
+    },
+  );
+}
+
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
     const post = getPostBySlug(params.slug);
@@ -183,7 +202,7 @@ function BlogPostPage() {
 
           <div
             className="prose-blog mt-12"
-            dangerouslySetInnerHTML={{ __html: post.bodyHtml }}
+            dangerouslySetInnerHTML={{ __html: expandInlineImages(post.bodyHtml) }}
           />
 
           {post.faqs && post.faqs.length > 0 && (

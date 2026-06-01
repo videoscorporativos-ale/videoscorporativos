@@ -12,8 +12,12 @@ export interface FaqItem {
 export interface BlogPost {
   slug: string;
   title: string;
+  /** Optional SEO title (≤60 chars). Falls back to `title` if omitted. */
+  metaTitle?: string;
   excerpt: string; // 1-line summary used in cards
   tldr: string; // "Resposta rápida" — used as meta description
+  /** Optional SEO description (≤160 chars). Falls back to `tldr` if omitted. */
+  metaDescription?: string;
   category: BlogCategory;
   /** Unsplash search term — generates cover image URL automatically */
   coverQuery: string;

@@ -9,7 +9,7 @@ const DESCRIPTION =
   "Guias práticos sobre vídeo institucional, eventos corporativos e feiras de negócios: preço, tipos, processo e resultado. Por Alexandre Machado, +30 anos de experiência.";
 const URL = "https://videoscorporativos.com.br/blog";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       { title: TITLE },

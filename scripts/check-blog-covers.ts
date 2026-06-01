@@ -19,9 +19,12 @@ const BASE_URL =
   process.env.BASE_URL?.replace(/\/$/, "") ??
   "https://videoscorporativos.lovable.app";
 
-// Neutral UA — the preview host returns an empty body for some desktop UAs.
+// The Lovable preview host blocks desktop UAs from receiving HTML directly
+// (they're meant to load inside the editor iframe). The published domain
+// answers any UA. Use an iPhone UA — works on both, and the HTML is identical
+// across viewports (responsive sizing is pure CSS).
 const UA =
-  "Mozilla/5.0 (compatible; BlogCoverChecker/1.0; +https://videoscorporativos.com.br)";
+  "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1";
 const VIEWPORTS = ["desktop", "mobile"] as const;
 
 type Result = { name: string; ok: boolean; detail: string };

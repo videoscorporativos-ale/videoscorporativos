@@ -23,6 +23,7 @@ export function SiteFooter() {
           <a href="#portfolio" className="hover:text-foreground">Portfólio</a>
           <a href="#processo" className="hover:text-foreground">Processo</a>
           <a href="#sobre" className="hover:text-foreground">Sobre</a>
+          <a href="/precos" className="hover:text-foreground">Preços</a>
           <a href="#contato" className="hover:text-foreground">Contato</a>
         </nav>
         <div className="flex items-center gap-3">

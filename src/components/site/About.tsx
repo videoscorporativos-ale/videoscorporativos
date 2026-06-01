@@ -4,8 +4,8 @@ export function About() {
       <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-border bg-surface">
           <img
-            src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=900&q=80"
-            alt="Alexandre Machado, produtor audiovisual"
+            src="https://images.unsplash.com/photo-1579165466991-467135ad3110?w=900&q=80"
+            alt="Videomaker profissional ajustando câmera em set cinematográfico"
             className="absolute inset-0 size-full object-cover"
             loading="lazy"
           />

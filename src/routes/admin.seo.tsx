@@ -244,6 +244,79 @@ function AdminSeoPage() {
             <StatusLine status={sitemapStatus} />
           </section>
 
+          {/* Ping history card */}
+          <section className="mt-8 rounded-2xl border border-border bg-surface/60 p-6">
+            <div className="flex items-start justify-between gap-4 flex-wrap">
+              <div>
+                <h2 className="font-display text-xl font-semibold">Histórico de envios</h2>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Últimos pings do sitemap ao Google (manuais, automáticos e via cron).
+                </p>
+                {pings[0] && (
+                  <p className="mt-2 text-xs text-muted-foreground">
+                    Último envio:{" "}
+                    <span className="text-foreground/90">
+                      {new Date(pings[0].created_at).toLocaleString("pt-BR")}
+                    </span>{" "}
+                    ·{" "}
+                    <span className={pings[0].ok ? "text-emerald-400" : "text-red-400"}>
+                      {pings[0].ok ? "sucesso" : "erro"}
+                    </span>{" "}
+                    · <span className="font-mono">{labelSource(pings[0].source)}</span>
+                  </p>
+                )}
+              </div>
+              <button
+                onClick={loadPings}
+                disabled={pingsStatus.kind === "loading"}
+                className="rounded-full border border-border px-4 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-brand/60 disabled:opacity-50 transition"
+              >
+                {pingsStatus.kind === "loading" ? "Atualizando…" : "Atualizar"}
+              </button>
+            </div>
+            {pingsStatus.kind === "err" && (
+              <p className="mt-3 text-xs text-red-400">✗ {pingsStatus.msg}</p>
+            )}
+            {pings.length === 0 ? (
+              <p className="mt-4 text-sm text-muted-foreground">
+                Nenhum envio registrado ainda.
+              </p>
+            ) : (
+              <ul className="mt-4 divide-y divide-border rounded-xl border border-border bg-surface/40 overflow-hidden">
+                {pings.map((p) => (
+                  <li key={p.id} className="p-3 md:p-4 flex items-start gap-3 flex-wrap">
+                    <span
+                      className={`mt-0.5 inline-flex h-2 w-2 shrink-0 rounded-full ${p.ok ? "bg-emerald-400" : "bg-red-400"}`}
+                      aria-hidden
+                    />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs md:text-sm">
+                        <span className="text-foreground/90">
+                          {new Date(p.created_at).toLocaleString("pt-BR")}
+                        </span>{" "}
+                        ·{" "}
+                        <span className="font-mono text-muted-foreground">
+                          {labelSource(p.source)}
+                        </span>
+                        {p.status != null && (
+                          <>
+                            {" "}
+                            · <span className="font-mono text-muted-foreground">{p.status}</span>
+                          </>
+                        )}
+                      </p>
+                      {p.message && (
+                        <p className="mt-1 text-xs text-muted-foreground break-words">
+                          {p.message}
+                        </p>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+
           {/* URLs list */}
           <section className="mt-8">
             <h2 className="font-display text-xl font-semibold">URLs do site</h2>

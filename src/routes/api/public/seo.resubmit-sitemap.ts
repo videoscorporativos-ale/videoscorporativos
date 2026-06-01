@@ -29,6 +29,12 @@ export const Route = createFileRoute("/api/public/seo/resubmit-sitemap")({
 
         const siteParam = encodeURIComponent(SITE_URL);
         const feedParam = encodeURIComponent(SITEMAP_URL);
+        // Warm the sitemap URL with cache-bust so the edge serves the
+        // freshly-generated XML before Google fetches it.
+        await fetch(`${SITEMAP_URL}?ts=${Date.now()}`, {
+          method: "GET",
+          headers: { "Cache-Control": "no-cache" },
+        }).catch(() => {});
         const res = await fetch(
           `${GATEWAY}/webmasters/v3/sites/${siteParam}/sitemaps/${feedParam}`,
           {

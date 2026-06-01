@@ -8,6 +8,7 @@ import {
   resubmitSitemap,
   requestIndexing,
   inspectUrl,
+  listSitemapPings,
 } from "@/lib/seo-admin.functions";
 
 const SITE = "https://videoscorporativos.com.br";
@@ -48,9 +49,42 @@ function AdminSeoPage() {
   const submitSitemapFn = useServerFn(resubmitSitemap);
   const requestIndexFn = useServerFn(requestIndexing);
   const inspectFn = useServerFn(inspectUrl);
+  const listPingsFn = useServerFn(listSitemapPings);
 
   const [sitemapStatus, setSitemapStatus] = useState<Status>({ kind: "idle" });
   const [rowStatus, setRowStatus] = useState<Record<string, Status>>({});
+
+  type PingRow = {
+    id: string;
+    source: string;
+    ok: boolean;
+    status: number | null;
+    message: string | null;
+    created_at: string;
+  };
+  const [pings, setPings] = useState<PingRow[]>([]);
+  const [pingsStatus, setPingsStatus] = useState<Status>({ kind: "idle" });
+
+  async function loadPings() {
+    if (!password) return;
+    setPingsStatus({ kind: "loading" });
+    try {
+      const r = await listPingsFn({ data: { password, limit: 20 } });
+      if (r.ok) {
+        setPings(r.rows as PingRow[]);
+        setPingsStatus({ kind: "idle" });
+      } else {
+        setPingsStatus({ kind: "err", msg: r.message });
+      }
+    } catch (e) {
+      setPingsStatus({ kind: "err", msg: handleAuthError(e) });
+    }
+  }
+
+  useEffect(() => {
+    if (password) void loadPings();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [password]);
 
   function setRow(url: string, s: Status) {
     setRowStatus((prev) => ({ ...prev, [url]: s }));
@@ -78,6 +112,7 @@ function AdminSeoPage() {
     try {
       const r = await submitSitemapFn({ data: { password } });
       setSitemapStatus(r.ok ? { kind: "ok", msg: r.message } : { kind: "err", msg: `${r.status}: ${r.message}` });
+      void loadPings();
     } catch (e) {
       setSitemapStatus({ kind: "err", msg: handleAuthError(e) });
     }

@@ -1,4 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
+import { logSitemapPing } from "./sitemap-ping-log.server";
 
 const GATEWAY = "https://connector-gateway.lovable.dev/google_search_console";
 const SITE_URL = "https://videoscorporativos.com.br/";
@@ -39,11 +40,29 @@ async function doResubmit() {
       console.warn(
         `[seo-on-deploy] sitemap resubmit failed: ${res.status} ${body.slice(0, 200)}`,
       );
+      await logSitemapPing({
+        source: "deploy-hook",
+        ok: false,
+        status: res.status,
+        message: body.slice(0, 500),
+      });
     } else {
       console.log("[seo-on-deploy] sitemap resubmitted to Google.");
+      await logSitemapPing({
+        source: "deploy-hook",
+        ok: true,
+        status: res.status,
+        message: "Sitemap reenviado (auto-deploy).",
+      });
     }
   } catch (err) {
     console.warn("[seo-on-deploy] sitemap resubmit threw:", err);
+    await logSitemapPing({
+      source: "deploy-hook",
+      ok: false,
+      status: null,
+      message: err instanceof Error ? err.message : String(err),
+    });
   }
 }
 

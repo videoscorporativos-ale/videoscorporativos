@@ -1,5 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
+import { supabaseAdmin } from "@/integrations/supabase/client.server";
+import { logSitemapPing } from "./sitemap-ping-log.server";
 
 const GATEWAY = "https://connector-gateway.lovable.dev/google_search_console";
 const SITE_URL = "https://videoscorporativos.com.br/";
@@ -43,10 +45,45 @@ export const resubmitSitemap = createServerFn({ method: "POST" })
   );
   if (!res.ok) {
     const text = await res.text();
+    await logSitemapPing({
+      source: "admin-button",
+      ok: false,
+      status: res.status,
+      message: text.slice(0, 500),
+    });
     return { ok: false as const, status: res.status, message: text.slice(0, 500) };
   }
+  await logSitemapPing({
+    source: "admin-button",
+    ok: true,
+    status: res.status,
+    message: "Sitemap reenviado (manual).",
+  });
   return { ok: true as const, message: "Sitemap reenviado ao Google." };
 });
+
+/** Lista os últimos pings de reenvio do sitemap (para o painel). */
+export const listSitemapPings = createServerFn({ method: "POST" })
+  .inputValidator((input: unknown) =>
+    z
+      .object({
+        password: z.string().min(1).max(200),
+        limit: z.number().int().min(1).max(100).default(20),
+      })
+      .parse(input),
+  )
+  .handler(async ({ data }) => {
+    assertAdmin(data.password);
+    const { data: rows, error } = await supabaseAdmin
+      .from("sitemap_pings")
+      .select("id, source, ok, status, message, created_at")
+      .order("created_at", { ascending: false })
+      .limit(data.limit);
+    if (error) {
+      return { ok: false as const, message: error.message, rows: [] };
+    }
+    return { ok: true as const, rows: rows ?? [] };
+  });
 
 /**
  * Solicita indexação de uma URL via Google Indexing API (urlNotifications:publish).

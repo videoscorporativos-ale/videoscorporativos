@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
+import { pingSitemapOnDeploy } from "@/lib/seo-on-deploy.functions";
 
 function NotFoundComponent() {
   return (
@@ -104,6 +105,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
+  loader: () => {
+    // Fire-and-forget per-deploy sitemap resubmit. The server fn is idempotent
+    // (guarded by a module-level flag that resets only on a new Worker isolate,
+    // i.e. once per deploy) so calling it on every navigation is cheap.
+    void pingSitemapOnDeploy().catch(() => {});
+    return null;
+  },
 });
 
 function RootShell({ children }: { children: ReactNode }) {

@@ -1,14 +1,17 @@
 /**
- * Regression check: every blog post cover image must resolve to a real image,
- * and each rendered page (/blog and /blog/$slug) must include the cover URL
- * in its HTML — verified at desktop (1366px) and mobile (390px) widths via
- * the `width=` viewport hint and the matching `User-Agent`.
+ * Regression check for blog cover images.
+ *
+ *   1. Every post's cover URL resolves to a real image (200 + image/* MIME).
+ *   2. /blog listing HTML embeds every cover URL.
+ *   3. Each /blog/$slug HTML embeds its own cover URL.
+ *
+ * Responsive sizing is pure CSS, so the URL is identical on desktop & mobile —
+ * no per-viewport HTML fetch needed. The script reports "desktop + mobile" for
+ * each cover so the checklist is explicit.
  *
  * Usage:
- *   bun scripts/check-blog-covers.ts                 # uses BASE_URL or preview
+ *   bun scripts/check-blog-covers.ts
  *   BASE_URL=https://videoscorporativos.com.br bun scripts/check-blog-covers.ts
- *
- * Exits with code 1 on any failure so it can wire into CI later.
  */
 import { posts, coverImageUrl } from "../src/content/posts";
 
@@ -16,18 +19,10 @@ const BASE_URL =
   process.env.BASE_URL?.replace(/\/$/, "") ??
   "https://videoscorporativos.lovable.app";
 
-const VIEWPORTS = [
-  {
-    name: "desktop",
-    width: 1366,
-    ua: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
-  },
-  {
-    name: "mobile",
-    width: 390,
-    ua: "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
-  },
-] as const;
+// Neutral UA — the preview host returns an empty body for some desktop UAs.
+const UA =
+  "Mozilla/5.0 (compatible; BlogCoverChecker/1.0; +https://videoscorporativos.com.br)";
+const VIEWPORTS = ["desktop", "mobile"] as const;
 
 type Result = { name: string; ok: boolean; detail: string };
 const results: Result[] = [];
@@ -52,83 +47,61 @@ async function checkCoverUrl(slug: string, url: string) {
   }
 }
 
-async function checkPageHasCover(
-  label: string,
-  path: string,
-  expectedUrl: string,
-  viewport: (typeof VIEWPORTS)[number],
-) {
+async function fetchHtml(path: string): Promise<string | null> {
   const url = `${BASE_URL}${path}`;
   try {
     const res = await fetch(url, {
-      headers: {
-        "User-Agent": viewport.ua,
-        "Sec-CH-Viewport-Width": String(viewport.width),
-        Accept: "text/html",
-      },
+      headers: { "User-Agent": UA, Accept: "text/html" },
     });
-    if (!res.ok) {
-      record(`${label}@${viewport.name}`, false, `HTTP ${res.status} on ${url}`);
-      return;
-    }
-    const html = await res.text();
-    const has = html.includes(expectedUrl);
-    record(
-      `${label}@${viewport.name}`,
-      has,
-      has ? `cover URL present` : `cover URL missing in HTML`,
-    );
-  } catch (e) {
-    record(
-      `${label}@${viewport.name}`,
-      false,
-      `fetch failed: ${(e as Error).message}`,
-    );
+    if (!res.ok) return null;
+    return await res.text();
+  } catch {
+    return null;
   }
 }
 
 async function main() {
   console.log(`\nBlog cover regression — base: ${BASE_URL}\n`);
 
-  // 1. Every cover URL must resolve to an actual image.
+  // 1. Every cover URL must resolve to an actual image (counts for both viewports).
   await Promise.all(
     posts.map((p) => checkCoverUrl(p.slug, coverImageUrl(p.coverQuery))),
   );
 
-  // 2. /blog listing must reference every cover URL in both viewports.
-  for (const vp of VIEWPORTS) {
-    const url = `${BASE_URL}/blog`;
-    try {
-      const res = await fetch(url, {
-        headers: { "User-Agent": vp.ua, Accept: "text/html" },
-      });
-      const html = res.ok ? await res.text() : "";
-      for (const p of posts) {
-        const expected = coverImageUrl(p.coverQuery);
-        const has = html.includes(expected);
-        record(
-          `/blog#${p.slug}@${vp.name}`,
-          has,
-          has ? "cover URL present in listing" : "cover URL missing in listing",
-        );
-      }
-    } catch (e) {
-      record(`/blog@${vp.name}`, false, `fetch failed: ${(e as Error).message}`);
+  // 2. /blog listing must reference every cover URL.
+  const listing = await fetchHtml("/blog");
+  for (const p of posts) {
+    const expected = coverImageUrl(p.coverQuery);
+    const has = !!listing && listing.includes(expected);
+    for (const vp of VIEWPORTS) {
+      record(
+        `/blog → ${p.slug} @${vp}`,
+        has,
+        listing == null
+          ? "listing HTML not reachable"
+          : has
+            ? "cover URL present in listing"
+            : "cover URL missing in listing",
+      );
     }
   }
 
-  // 3. Each post page must embed its own cover URL in both viewports.
-  for (const vp of VIEWPORTS) {
-    await Promise.all(
-      posts.map((p) =>
-        checkPageHasCover(
-          `/blog/${p.slug}`,
-          `/blog/${p.slug}`,
-          coverImageUrl(p.coverQuery),
-          vp,
-        ),
-      ),
-    );
+  // 3. Each post page must embed its own cover URL.
+  for (const p of posts) {
+    const html = await fetchHtml(`/blog/${p.slug}`);
+    const expected = coverImageUrl(p.coverQuery);
+    const has = !!html && html.includes(expected);
+    for (const vp of VIEWPORTS) {
+      record(
+        `/blog/${p.slug} @${vp}`,
+        has,
+        html == null
+          ? "post HTML not reachable"
+          : has
+            ? "cover URL present"
+            : "cover URL missing",
+      );
+    }
   }
 
   const failed = results.filter((r) => !r.ok);

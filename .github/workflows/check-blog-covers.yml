@@ -1,0 +1,30 @@
+name: Check blog covers
+
+# Runs the cover regression checklist on every push/PR, plus daily — so
+# external image-host outages (picsum.photos) are caught even without commits.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 7 * * *" # 07:00 UTC daily
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: "Base URL to check (defaults to production)"
+        required: false
+        default: "https://videoscorporativos.lovable.app"
+
+jobs:
+  covers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Run cover regression check
+        env:
+          BASE_URL: ${{ github.event.inputs.base_url || 'https://videoscorporativos.lovable.app' }}
+        run: bun scripts/check-blog-covers.ts

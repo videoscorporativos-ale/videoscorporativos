@@ -15,6 +15,7 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AdminSeoRouteImport } from './routes/admin.seo'
+import { Route as ApiPublicSeoResubmitSitemapRouteImport } from './routes/api/public/seo.resubmit-sitemap'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -46,6 +47,12 @@ const AdminSeoRoute = AdminSeoRouteImport.update({
   path: '/admin/seo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicSeoResubmitSitemapRoute =
+  ApiPublicSeoResubmitSitemapRouteImport.update({
+    id: '/api/public/seo/resubmit-sitemap',
+    path: '/api/public/seo/resubmit-sitemap',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/seo': typeof AdminSeoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +70,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/seo': typeof AdminSeoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +80,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/seo': typeof AdminSeoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,8 +91,16 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/seo'
     | '/blog/$slug'
+    | '/api/public/seo/resubmit-sitemap'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/blog' | '/precos' | '/sitemap.xml' | '/admin/seo' | '/blog/$slug'
+  to:
+    | '/'
+    | '/blog'
+    | '/precos'
+    | '/sitemap.xml'
+    | '/admin/seo'
+    | '/blog/$slug'
+    | '/api/public/seo/resubmit-sitemap'
   id:
     | '__root__'
     | '/'
@@ -91,6 +109,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/admin/seo'
     | '/blog/$slug'
+    | '/api/public/seo/resubmit-sitemap'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -99,6 +118,7 @@ export interface RootRouteChildren {
   PrecosRoute: typeof PrecosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   AdminSeoRoute: typeof AdminSeoRoute
+  ApiPublicSeoResubmitSitemapRoute: typeof ApiPublicSeoResubmitSitemapRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -145,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminSeoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/seo/resubmit-sitemap': {
+      id: '/api/public/seo/resubmit-sitemap'
+      path: '/api/public/seo/resubmit-sitemap'
+      fullPath: '/api/public/seo/resubmit-sitemap'
+      preLoaderRoute: typeof ApiPublicSeoResubmitSitemapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -164,7 +191,18 @@ const rootRouteChildren: RootRouteChildren = {
   PrecosRoute: PrecosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   AdminSeoRoute: AdminSeoRoute,
+  ApiPublicSeoResubmitSitemapRoute: ApiPublicSeoResubmitSitemapRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

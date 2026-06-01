@@ -101,6 +101,155 @@ export const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "como-escolher-uma-produtora-de-video",
+    title: "Como escolher uma produtora de vídeo: checklist em 7 pontos",
+    metaTitle: "Como escolher produtora de vídeo: checklist em 7 pontos",
+    metaDescription:
+      "Checklist em 7 pontos para escolher uma produtora de vídeo: portfólio, experiência, processo, orçamento, prazo, prova social e a primeira conversa.",
+    excerpt:
+      "Sete critérios objetivos para escolher uma produtora de vídeo sem se arrepender — do portfólio à química na primeira conversa.",
+    tldr:
+      "Avalie sete pontos: portfólio real, experiência comprovada, clareza do processo, transparência no orçamento, prazo definido, prova social e a química na primeira conversa. Como vídeo é um serviço intangível — você paga antes de ver o resultado — a prova de trabalho anterior é o que mais reduz o risco.",
+    category: "Preço e contratação",
+    coverQuery: "videographer professional meeting client",
+    coverAlt:
+      "Reunião de videomaker profissional com cliente discutindo projeto de vídeo institucional",
+    datePublished: "2026-06-02",
+    keywords:
+      "como escolher produtora de vídeo, checklist produtora audiovisual, contratar produtora vídeo institucional",
+    bodyHtml: `
+<p>[IMAGEM: business meeting handshake office]</p>
+
+<h2>Por que essa escolha assusta</h2>
+<p>[IMAGEM: person searching laptop decision]</p>
+<p>Você compra algo que ainda não existe e que vai carregar a imagem da empresa. Com dezenas de opções e preços que variam muito, a pergunta é: em quem confiar? O checklist torna a decisão racional.</p>
+
+<h2>O checklist de 7 pontos</h2>
+<p>[IMAGEM: checklist clipboard planning]</p>
+<ol>
+  <li><strong>Portfólio real e verificável</strong> — veja o que a produtora entregou; é o padrão que você pode esperar.</li>
+  <li><strong>Experiência de estrada</strong> — anos de mercado significam imprevistos já resolvidos.</li>
+  <li><strong>Processo claro</strong> — quem explica as fases dá previsibilidade.</li>
+  <li><strong>Transparência no orçamento</strong> — o que está incluso e o que gera extra.</li>
+  <li><strong>Prazo definido</strong> — cronograma com cada etapa.</li>
+  <li><strong>Prova social</strong> — avaliações, depoimentos e clientes reais.</li>
+  <li><strong>A primeira conversa</strong> — quem entende o objetivo antes do preço entrega melhor.</li>
+</ol>
+`,
+    faqs: [
+      {
+        q: "Devo escolher a mais barata?",
+        a: "Nem sempre. O barato sai caro quando o vídeo não diferencia sua empresa ou compromete a imagem da marca.",
+      },
+      {
+        q: "Quantas produtoras devo consultar?",
+        a: "Algumas, comparando processo e portfólio, não só preço. Duas ou três propostas costumam dar uma visão clara do mercado.",
+      },
+      {
+        q: "Experiência conta muito?",
+        a: "Sim. Décadas de trabalho corporativo significam equipes que já lidaram com quase todo tipo de imprevisto e formato.",
+      },
+    ],
+  },
+  {
+    slug: "video-institucional-vale-a-pena",
+    title: "Vídeo institucional vale a pena? O retorno que ele traz",
+    metaTitle: "Vídeo institucional vale a pena? Entenda o ROI",
+    metaDescription:
+      "Vídeo institucional é ativo de longa duração: comunica credibilidade, apoia vendas e é usado por anos. Entenda onde aparece o retorno.",
+    excerpt:
+      "Um institucional é ativo, não despesa. Veja onde o retorno aparece e como justificar o investimento internamente.",
+    tldr:
+      "Sim. Um institucional bem produzido é um ativo de longa duração: comunica credibilidade em segundos e é usado por anos no site, propostas, redes, apresentações e eventos. O custo se dilui ao longo do uso; o retorno aparece em percepção de marca e geração de oportunidades.",
+    category: "Resultado e ROI",
+    coverQuery: "business presentation video screen",
+    coverAlt:
+      "Apresentação corporativa com vídeo institucional sendo exibido em tela para audiência empresarial",
+    datePublished: "2026-06-03",
+    keywords:
+      "vídeo institucional vale a pena, ROI vídeo corporativo, retorno vídeo institucional, investimento audiovisual",
+    bodyHtml: `
+<p>[IMAGEM: corporate video screen presentation]</p>
+
+<h2>O vídeo é um ativo, não uma despesa</h2>
+<p>[IMAGEM: business growth investment chart]</p>
+<p>Um único institucional abre reuniões, fortalece propostas, ocupa a home, alimenta o LinkedIn e serve em eventos. Dividido por todos os usos ao longo de anos, o custo por uso é baixo.</p>
+
+<h2>Onde o retorno aparece</h2>
+<p>[IMAGEM: business team success meeting]</p>
+<p>Credibilidade imediata; apoio ao comercial (proposta com vídeo se diferencia); presença digital (alcance e engajamento); durabilidade (não expira como um anúncio).</p>
+
+<h2>Como justificar internamente</h2>
+<p>[IMAGEM: business report presentation boardroom]</p>
+<p>Enquadre pelo uso e durabilidade, não pelo custo isolado. Liste onde será aplicado e por quanto tempo: um ativo usado por três anos em cinco canais tem custo por uso muito baixo.</p>
+`,
+    faqs: [
+      {
+        q: "Vídeo institucional aumenta vendas diretamente?",
+        a: "Apoia a venda. Para conversões diretas, combine com vídeos de produto, cases e depoimentos que falem do problema específico do cliente.",
+      },
+      {
+        q: "Qual a vida útil de um vídeo institucional?",
+        a: "Anos, se produzido sem elementos datados como datas, prêmios pontuais ou pessoas que podem sair da empresa.",
+      },
+      {
+        q: "Vale a pena para empresa pequena?",
+        a: "Sim. Um institucional bem feito ajuda a competir visualmente no nível das grandes e profissionaliza a imagem da marca.",
+      },
+    ],
+  },
+  {
+    slug: "erros-comuns-em-videos-institucionais",
+    title: "7 erros comuns em vídeos institucionais (e como evitá-los)",
+    metaTitle: "7 erros em vídeos institucionais e como evitá-los",
+    metaDescription:
+      "Os 7 erros mais comuns em vídeo institucional: longo demais, sem roteiro, áudio e luz amadores, sem CTA e mais. Veja como evitar cada um.",
+    excerpt:
+      "Os erros que mais arruínam um institucional — e o método de planejamento que evita quase todos.",
+    tldr:
+      "Os erros mais comuns: vídeo longo demais, sem roteiro/briefing, áudio e luz amadores, falta de foco, sem CTA, economizar na produção e não definir público. Quase todos nascem de começar a gravar sem planejamento. Um bom briefing previne a maioria.",
+    category: "Tipos de vídeo",
+    coverQuery: "video editing timeline screen",
+    coverAlt:
+      "Tela de edição de vídeo profissional com timeline mostrando processo de pós-produção",
+    datePublished: "2026-06-04",
+    keywords:
+      "erros vídeo institucional, problemas produção audiovisual, como evitar erro em vídeo corporativo",
+    bodyHtml: `
+<p>[IMAGEM: video editing software screen]</p>
+
+<h2>Os 7 erros</h2>
+<p>[IMAGEM: film set mistakes production]</p>
+<ol>
+  <li><strong>Vídeo longo e cansativo</strong> — o "vídeo novela" perde o espectador nos primeiros minutos.</li>
+  <li><strong>Sem roteiro e briefing</strong> — vira vídeo disperso, com retrabalho na edição.</li>
+  <li><strong>Áudio e iluminação amadores</strong> — o que mais denuncia uma produção fraca.</li>
+  <li><strong>Falta de foco</strong> — um vídeo, uma mensagem central.</li>
+  <li><strong>Sem CTA</strong> — perde a chance de converter atenção em contato.</li>
+  <li><strong>Economizar no lugar errado</strong> — pode depor contra a própria empresa.</li>
+  <li><strong>Não definir público</strong> — tom e linguagem erram o alvo.</li>
+</ol>
+
+<h2>A raiz de tudo: planejamento</h2>
+<p>[IMAGEM: script planning storyboard desk]</p>
+<p>Quase todos os erros acontecem antes da câmera ligar. Briefing, público e roteiro reduzem retrabalho, encurtam prazo e elevam o resultado.</p>
+`,
+    faqs: [
+      {
+        q: "Qual a duração ideal de um vídeo institucional?",
+        a: "Em geral entre 60 segundos e 2 minutos, dependendo do canal e da mensagem. Acima disso, o engajamento cai rápido.",
+      },
+      {
+        q: "Posso gravar com celular?",
+        a: "Para rede social simples às vezes funciona. Para institucional raramente — limitações de luz e áudio aparecem e prejudicam a imagem da marca.",
+      },
+      {
+        q: "Como evito retrabalho na produção?",
+        a: "Briefing claro e alinhamento na pré-produção. Decidir mensagem, público e formato antes de gravar evita 90% dos retrabalhos.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

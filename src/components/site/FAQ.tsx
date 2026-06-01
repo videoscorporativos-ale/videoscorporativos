@@ -8,19 +8,19 @@ import {
 const faqs = [
   {
     q: "Quanto custa um vídeo institucional?",
-    a: "O valor depende do escopo do projeto — duração final, número de locações, diárias de captação, tamanho da equipe e complexidade da edição. Cada orçamento é feito sob medida após uma conversa rápida de 15 a 20 minutos, em que entendemos o objetivo, o público e o formato de entrega.",
+    a: "O investimento varia conforme o escopo do projeto: duração do vídeo, número de diárias de filmagem, locações, equipe envolvida e nível de pós-produção (edição, color grading, trilha). Vídeos institucionais costumam partir de um pacote sob medida, definido após uma conversa rápida para entender o objetivo. Envie uma mensagem com o briefing e devolvemos um orçamento personalizado.",
   },
   {
     q: "Qual é o prazo de entrega?",
-    a: "Varia conforme a complexidade. Um vídeo institucional padrão fica pronto entre 3 e 5 semanas após a captação. Para coberturas de eventos e aftermovies trabalhamos com prazos a partir de 7 dias e entregas expressas (24 a 48h) sob demanda.",
+    a: "Depende da complexidade. Um vídeo institucional padrão costuma ser entregue em algumas semanas, contando roteiro, captação e finalização. Para eventos e feiras, há a opção de aftermovie com entrega acelerada. O prazo exato é combinado no início do projeto, junto ao cronograma.",
   },
   {
     q: "Vocês atendem fora de São Paulo?",
-    a: "Sim. Somos sediados em São Paulo e atendemos clientes em todo o Brasil, com experiência também em produções no exterior — incluindo convenções de vendas em destinos como Punta Cana e cobertura de feiras internacionais.",
+    a: "Sim. A base é em São Paulo, com atendimento em toda a Grande SP, ABC, Alphaville, Faria Lima, Paulista e Berrini, mas realizamos projetos em todo o Brasil — e já produzimos coberturas inclusive no exterior, como convenções internacionais.",
   },
   {
     q: "O que está incluído no serviço?",
-    a: "Roteiro, direção, captação em 4K, edição, color grading, sound design e trilha sonora licenciada. Entregamos o material nos formatos certos para cada canal: vídeo institucional para site e apresentações, cortes verticais para Reels e TikTok, e versões otimizadas para YouTube e LinkedIn.",
+    a: "O serviço cobre todas as etapas: briefing e roteiro, pré-produção (planejamento, locações, equipe, cronograma), captação com equipamentos profissionais, edição, color grading, trilha e mixagem, e entrega nos formatos certos para cada canal — institucional, Reels, YouTube e mais.",
   },
 ];
 

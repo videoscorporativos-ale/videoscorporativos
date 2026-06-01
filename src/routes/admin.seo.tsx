@@ -193,13 +193,17 @@ function AdminSeoPage() {
                 <p className="mt-1 text-sm text-muted-foreground">
                   {SITE}/sitemap.xml
                 </p>
+                <p className="mt-2 text-xs text-muted-foreground max-w-xl">
+                  Use logo após publicar ou editar um post para acelerar o rastreamento.
+                  Um cron automático também reenvia de hora em hora.
+                </p>
               </div>
               <button
                 onClick={handleSitemap}
                 disabled={sitemapStatus.kind === "loading"}
-                className="rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground hover:opacity-90 disabled:opacity-50 transition"
+                className="rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground hover:opacity-90 disabled:opacity-50 transition shadow-lg shadow-brand/20"
               >
-                {sitemapStatus.kind === "loading" ? "Reenviando…" : "Reenviar sitemap"}
+                {sitemapStatus.kind === "loading" ? "Reenviando…" : "Reenviar agora"}
               </button>
             </div>
             <StatusLine status={sitemapStatus} />

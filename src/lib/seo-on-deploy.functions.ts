@@ -18,6 +18,12 @@ async function doResubmit() {
   const siteParam = encodeURIComponent(SITE_URL);
   const feedParam = encodeURIComponent(SITEMAP_URL);
   try {
+    // Warm the sitemap URL with a cache-busting query so any CDN edge
+    // serves the freshly-generated XML before Google fetches it.
+    await fetch(`${SITEMAP_URL}?ts=${Date.now()}`, {
+      method: "GET",
+      headers: { "Cache-Control": "no-cache" },
+    }).catch(() => {});
     const res = await fetch(
       `${GATEWAY}/webmasters/v3/sites/${siteParam}/sitemaps/${feedParam}`,
       {

@@ -32,6 +32,11 @@ export const resubmitSitemap = createServerFn({ method: "POST" })
   assertAdmin(data.password);
   const siteParam = encodeURIComponent(SITE_URL);
   const feedParam = encodeURIComponent(`${SITE_URL}${SITEMAP_PATH}`);
+  // Warm the sitemap edge cache with the latest XML before pinging Google.
+  await fetch(`${SITE_URL}${SITEMAP_PATH}?ts=${Date.now()}`, {
+    method: "GET",
+    headers: { "Cache-Control": "no-cache" },
+  }).catch(() => {});
   const res = await fetch(
     `${GATEWAY}/webmasters/v3/sites/${siteParam}/sitemaps/${feedParam}`,
     { method: "PUT", headers: authHeaders() },

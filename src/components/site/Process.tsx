@@ -35,26 +35,17 @@ export function Process() {
             <li key={n} className="group relative flex gap-6 pb-12 last:pb-0">
               {/* círculo */}
               <div
-                className="relative z-10 flex shrink-0 items-center justify-center rounded-full bg-background transition-all duration-300 group-hover:scale-110"
+                className="relative z-10 flex shrink-0 items-center justify-center rounded-full bg-background transition-all duration-300 group-hover:scale-110 [&>svg]:transition-colors [&>svg]:duration-300 group-hover:[background-color:var(--amber)] group-hover:[&>svg]:text-background"
                 style={{
                   width: 54,
                   height: 54,
                   borderWidth: 1.5,
                   borderStyle: "solid",
                   borderColor: AMBER,
+                  ["--amber" as never]: AMBER,
                 }}
               >
-                <Icon
-                  className="transition-colors duration-300 group-hover:text-background"
-                  style={{ color: AMBER }}
-                  size={22}
-                  strokeWidth={1.5}
-                />
-                <span
-                  aria-hidden
-                  className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 -z-0"
-                  style={{ backgroundColor: AMBER }}
-                />
+                <Icon style={{ color: AMBER }} size={22} strokeWidth={1.5} />
               </div>
 
               {/* conteúdo */}

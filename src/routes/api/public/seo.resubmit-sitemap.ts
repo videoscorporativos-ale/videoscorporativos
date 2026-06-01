@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { logSitemapPing } from "@/lib/sitemap-ping-log.server";
 
 const GATEWAY = "https://connector-gateway.lovable.dev/google_search_console";
 const SITE_URL = "https://videoscorporativos.com.br/";
@@ -48,12 +49,24 @@ export const Route = createFileRoute("/api/public/seo/resubmit-sitemap")({
 
         if (!res.ok) {
           const text = await res.text();
+          await logSitemapPing({
+            source: "cron-hourly",
+            ok: false,
+            status: res.status,
+            message: text.slice(0, 500),
+          });
           return Response.json(
             { ok: false, status: res.status, message: text.slice(0, 500) },
             { status: 502 },
           );
         }
 
+        await logSitemapPing({
+          source: "cron-hourly",
+          ok: true,
+          status: res.status,
+          message: "Sitemap reenviado (cron horário).",
+        });
         return Response.json({
           ok: true,
           message: "Sitemap reenviado ao Google.",

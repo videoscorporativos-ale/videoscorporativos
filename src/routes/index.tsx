@@ -15,25 +15,52 @@ import { FAQ, faqSchema } from "@/components/site/FAQ";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://videoscorporativos.com.br/#business",
   name: "Ale Fotógrafo",
   description:
     "Fotógrafo e produtor de vídeo corporativo em São Paulo, com mais de 30 anos. Retrato profissional, fotografia institucional, eventos corporativos e vídeo institucional em todo o Brasil.",
   url: "https://videoscorporativos.com.br",
   telephone: "+55-11-91355-0533",
   email: "comercial@alefotografo.com.br",
-  areaServed: "BR",
+  image: "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg",
+  logo: "https://videoscorporativos.com.br/favicon.ico",
+  priceRange: "$$",
+  areaServed: [
+    { "@type": "Country", name: "Brasil" },
+    { "@type": "City", name: "São Paulo" },
+  ],
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Atendimento sob agendamento",
     addressLocality: "São Paulo",
     addressRegion: "SP",
+    postalCode: "01310-100",
     addressCountry: "BR",
   },
-  sameAs: [],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: "+55-11-91355-0533",
+      contactType: "customer service",
+      areaServed: "BR",
+      availableLanguage: ["Portuguese"],
+      contactOption: "TollFree",
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: "+55-11-91355-0533",
+      contactType: "sales",
+      areaServed: "BR",
+      availableLanguage: ["Portuguese"],
+    },
+  ],
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "5",
     reviewCount: "137",
+    bestRating: "5",
+    worstRating: "1",
   },
 };
 

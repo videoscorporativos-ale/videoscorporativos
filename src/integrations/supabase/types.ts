@@ -44,6 +44,33 @@ export type Database = {
         }
         Relationships: []
       }
+      sitemap_pings: {
+        Row: {
+          created_at: string
+          id: string
+          message: string | null
+          ok: boolean
+          source: string
+          status: number | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message?: string | null
+          ok: boolean
+          source: string
+          status?: number | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string | null
+          ok?: boolean
+          source?: string
+          status?: number | null
+        }
+        Relationships: []
+      }
       whatsapp_clicks: {
         Row: {
           created_at: string

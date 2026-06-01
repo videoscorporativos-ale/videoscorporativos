@@ -3,6 +3,7 @@ import { Mail, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
 import { useServerFn } from "@tanstack/react-start";
 import { submitContact } from "@/lib/contact.functions";
+import { WhatsAppLink } from "./WhatsAppLink";
 
 export function ContactCTA() {
   const [sending, setSending] = useState(false);
@@ -46,10 +47,8 @@ export function ContactCTA() {
             primeira conversa estratégica, sem compromisso.
           </p>
           <div className="mt-10 space-y-4">
-            <a
-              href="https://wa.me/5511913550533"
-              target="_blank"
-              rel="noreferrer"
+            <WhatsAppLink
+              location="contact_section"
               className="flex items-center gap-4 rounded-xl border border-border bg-surface/60 p-5 hover:border-brand/50 transition"
             >
               <div className="size-12 rounded-xl bg-brand/10 text-brand flex items-center justify-center">
@@ -59,7 +58,7 @@ export function ContactCTA() {
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">WhatsApp</p>
                 <p className="font-medium">(11) 91355-0533</p>
               </div>
-            </a>
+            </WhatsAppLink>
             <a
               href="mailto:comercial@alefotografo.com.br"
               className="flex items-center gap-4 rounded-xl border border-border bg-surface/60 p-5 hover:border-brand/50 transition"

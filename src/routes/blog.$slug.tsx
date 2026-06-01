@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { BlogCTA } from "@/components/site/BlogCTA";
-import { getPostBySlug, coverImageUrl } from "@/content/posts";
+import { getPostBySlug, coverImageUrl, type FaqItem } from "@/content/posts";
 
 const SITE = "https://videoscorporativos.com.br";
 
@@ -192,7 +192,7 @@ function BlogPostPage() {
                 Perguntas frequentes
               </h2>
               <div className="mt-6 space-y-6">
-                {post.faqs.map((f) => (
+                {post.faqs.map((f: FaqItem) => (
                   <div key={f.q}>
                     <h3 className="font-display text-lg font-medium">{f.q}</h3>
                     <p className="mt-2 text-muted-foreground leading-relaxed">{f.a}</p>

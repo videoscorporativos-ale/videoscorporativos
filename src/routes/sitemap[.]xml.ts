@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { getAllPosts } from "@/content/posts";
 
 const BASE_URL = "https://videoscorporativos.com.br";
 
@@ -11,6 +12,13 @@ export const Route = createFileRoute("/sitemap.xml")({
         const entries = [
           { path: "/", changefreq: "weekly", priority: "1.0", lastmod: today },
           { path: "/precos", changefreq: "monthly", priority: "0.8", lastmod: today },
+          { path: "/blog", changefreq: "weekly", priority: "0.8", lastmod: today },
+          ...getAllPosts().map((p) => ({
+            path: `/blog/${p.slug}`,
+            changefreq: "monthly",
+            priority: "0.7",
+            lastmod: p.dateModified ?? p.datePublished,
+          })),
         ];
 
         const urls = entries

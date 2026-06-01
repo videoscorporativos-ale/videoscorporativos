@@ -4,11 +4,12 @@ import { cn } from "@/lib/utils";
 import logoUrl from "@/assets/logo.png";
 
 const navLinks = [
-  { href: "#servicos", label: "Serviços" },
-  { href: "#portfolio", label: "Portfólio" },
-  { href: "#processo", label: "Processo" },
-  { href: "#sobre", label: "Sobre" },
-  { href: "#contato", label: "Contato" },
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/#portfolio", label: "Portfólio" },
+  { href: "/#processo", label: "Processo" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/blog", label: "Blog" },
+  { href: "/#contato", label: "Contato" },
 ];
 
 export function SiteHeader() {
@@ -32,7 +33,7 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
-        <a href="#top" aria-label="Ale Fotógrafo" className="flex items-center">
+        <a href="/" aria-label="Ale Fotógrafo" className="flex items-center">
           <img
             src={logoUrl}
             alt="Ale Fotógrafo"
@@ -53,7 +54,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <a
-          href="#contato"
+          href="/#contato"
           className="hidden md:inline-flex items-center justify-center rounded-full bg-brand px-5 py-2 text-sm font-medium text-brand-foreground hover:opacity-90 transition"
         >
           Solicitar orçamento
@@ -80,7 +81,7 @@ export function SiteHeader() {
               </a>
             ))}
             <a
-              href="#contato"
+              href="/#contato"
               onClick={() => setOpen(false)}
               className="inline-flex items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground"
             >

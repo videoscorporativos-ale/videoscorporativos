@@ -12,14 +12,22 @@ import { ContactCTA } from "@/components/site/ContactCTA";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { FAQ, faqSchema } from "@/components/site/FAQ";
+import { portfolioItems, hiResThumbFor } from "@/components/site/Portfolio";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": "https://videoscorporativos.com.br/#business",
-  name: "Ale Fotógrafo",
+  name: "Alexandre Machado Fotografia (Ale Fotógrafo)",
+  alternateName: "Ale Fotógrafo",
+  legalName: "Alexandre Machado Fotografia",
+  foundingDate: "1999",
+  identifier: [
+    { "@type": "PropertyValue", propertyID: "CNPJ", value: "03.230.626/0001-82" },
+  ],
+  taxID: "03.230.626/0001-82",
   description:
-    "Fotógrafo e produtor de vídeo corporativo em São Paulo, com mais de 30 anos. Retrato profissional, fotografia institucional, eventos corporativos e vídeo institucional em todo o Brasil.",
+    "Produção de vídeo institucional, cobertura de eventos corporativos e vídeo para feiras de negócios. Fotografia e vídeo corporativo em São Paulo, com mais de 30 anos de experiência, atendendo todo o Brasil.",
   url: "https://videoscorporativos.com.br",
   telephone: "+55-11-91355-0533",
   email: "comercial@alefotografo.com.br",
@@ -29,6 +37,12 @@ const localBusinessSchema = {
   areaServed: [
     { "@type": "Country", name: "Brasil" },
     { "@type": "City", name: "São Paulo" },
+    { "@type": "AdministrativeArea", name: "Grande São Paulo" },
+    { "@type": "AdministrativeArea", name: "ABC Paulista" },
+    { "@type": "Place", name: "Alphaville" },
+    { "@type": "Place", name: "Faria Lima" },
+    { "@type": "Place", name: "Avenida Paulista" },
+    { "@type": "Place", name: "Berrini" },
   ],
   address: {
     "@type": "PostalAddress",
@@ -64,6 +78,24 @@ const localBusinessSchema = {
   },
 };
 
+const videoObjectsSchema = {
+  "@context": "https://schema.org",
+  "@graph": portfolioItems.map((item) => ({
+    "@type": "VideoObject",
+    name: item.title,
+    description: `${item.title} — produção audiovisual por Ale Fotógrafo (categoria: ${item.category}).`,
+    thumbnailUrl: [hiResThumbFor(item.videoId)],
+    uploadDate: "2024-01-01",
+    contentUrl: `https://www.youtube.com/watch?v=${item.videoId}`,
+    embedUrl: `https://www.youtube.com/embed/${item.videoId}`,
+    publisher: {
+      "@type": "Organization",
+      name: "Ale Fotógrafo",
+      logo: { "@type": "ImageObject", url: "https://videoscorporativos.com.br/favicon.ico" },
+    },
+  })),
+};
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -96,6 +128,10 @@ export const Route = createFileRoute("/")({
       {
         type: "application/ld+json",
         children: JSON.stringify(faqSchema),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(videoObjectsSchema),
       },
     ],
   }),

@@ -4,7 +4,9 @@ import { cn } from "@/lib/utils";
 
 type Category = "Todos" | "Institucional" | "Eventos" | "Feiras";
 
-const items: { title: string; category: Exclude<Category, "Todos">; videoId: string }[] = [
+export type PortfolioItem = { title: string; category: Exclude<Category, "Todos">; videoId: string };
+
+export const portfolioItems: PortfolioItem[] = [
   { title: "UNITEC — Vídeo Institucional", category: "Institucional", videoId: "_bdJOuE4I3Q" },
   { title: "Rocha & Queiroz Advogados — Institucional", category: "Institucional", videoId: "ITBhZlBQd6E" },
   { title: "IBIS Botucatu — Vídeo Manifesto", category: "Institucional", videoId: "PDFwTUHOwiY" },
@@ -21,7 +23,8 @@ const items: { title: string; category: Exclude<Category, "Todos">; videoId: str
   { title: "Sustainable Foods Summit — São Paulo", category: "Feiras", videoId: "utaOjr3Dqxw" },
 ];
 
-const thumbFor = (videoId: string) => `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+export const thumbFor = (videoId: string) => `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+export const hiResThumbFor = (videoId: string) => `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
 
 const categories: Category[] = ["Todos", "Institucional", "Eventos", "Feiras"];
 
@@ -29,7 +32,7 @@ export function Portfolio() {
   const [active, setActive] = useState<Category>("Todos");
   const [openVideo, setOpenVideo] = useState<string | null>(null);
 
-  const filtered = active === "Todos" ? items : items.filter((i) => i.category === active);
+  const filtered = active === "Todos" ? portfolioItems : portfolioItems.filter((i) => i.category === active);
 
   return (
     <section id="portfolio" className="py-24 md:py-32 bg-surface/40 border-y border-border">

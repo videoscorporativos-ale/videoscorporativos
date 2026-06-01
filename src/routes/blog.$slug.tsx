@@ -42,13 +42,15 @@ export const Route = createFileRoute("/blog/$slug")({
     const url = `${SITE}/blog/${post.slug}`;
     const image = coverImageUrl(post.coverQuery);
     const modified = post.dateModified ?? post.datePublished;
+    const metaTitle = post.metaTitle ?? post.title;
+    const metaDescription = post.metaDescription ?? post.tldr;
 
     const articleSchema = {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: post.title,
-      description: post.tldr,
-      image: [image],
+      description: metaDescription,
+      image: [{ "@type": "ImageObject", url: image, width: 1600, height: 900 }],
       datePublished: post.datePublished,
       dateModified: modified,
       author: {
@@ -87,24 +89,24 @@ export const Route = createFileRoute("/blog/$slug")({
 
     return {
       meta: [
-        { title: `${post.title} · Ale Fotógrafo` },
-        { name: "description", content: post.tldr },
+        { title: `${metaTitle} · Ale Fotógrafo` },
+        { name: "description", content: metaDescription },
         ...(post.keywords ? [{ name: "keywords", content: post.keywords }] : []),
         { name: "author", content: "Alexandre Machado" },
         { property: "article:published_time", content: post.datePublished },
         { property: "article:modified_time", content: modified },
         { property: "article:author", content: "Alexandre Machado" },
         { property: "article:section", content: post.category },
-        { property: "og:title", content: post.title },
-        { property: "og:description", content: post.tldr },
+        { property: "og:title", content: metaTitle },
+        { property: "og:description", content: metaDescription },
         { property: "og:url", content: url },
         { property: "og:type", content: "article" },
         { property: "og:image", content: image },
         { property: "og:image:width", content: "1600" },
         { property: "og:image:height", content: "900" },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: post.title },
-        { name: "twitter:description", content: post.tldr },
+        { name: "twitter:title", content: metaTitle },
+        { name: "twitter:description", content: metaDescription },
         { name: "twitter:image", content: image },
       ],
       links: [{ rel: "canonical", href: url }],

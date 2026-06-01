@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { getAllPosts } from "@/content/posts";
@@ -25,7 +25,18 @@ export const Route = createFileRoute("/admin/seo")({
 
 type Status = { kind: "idle" } | { kind: "loading" } | { kind: "ok"; msg: string } | { kind: "err"; msg: string };
 
+const PW_KEY = "admin_seo_pw";
+
 function AdminSeoPage() {
+  const [password, setPassword] = useState<string | null>(null);
+  const [pwInput, setPwInput] = useState("");
+  const [pwError, setPwError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const saved = typeof window !== "undefined" ? sessionStorage.getItem(PW_KEY) : null;
+    if (saved) setPassword(saved);
+  }, []);
+
   const posts = getAllPosts();
   const urls = [
     `${SITE}/`,
@@ -45,30 +56,49 @@ function AdminSeoPage() {
     setRowStatus((prev) => ({ ...prev, [url]: s }));
   }
 
+  function handleAuthError(e: unknown): string {
+    const msg = e instanceof Error ? e.message : String(e);
+    if (msg.includes("Senha incorreta")) {
+      sessionStorage.removeItem(PW_KEY);
+      setPassword(null);
+      setPwError("Senha incorreta. Faça login novamente.");
+    }
+    return msg;
+  }
+
+  function handleLogout() {
+    sessionStorage.removeItem(PW_KEY);
+    setPassword(null);
+    setPwInput("");
+  }
+
   async function handleSitemap() {
+    if (!password) return;
     setSitemapStatus({ kind: "loading" });
     try {
-      const r = await submitSitemapFn();
+      const r = await submitSitemapFn({ data: { password } });
       setSitemapStatus(r.ok ? { kind: "ok", msg: r.message } : { kind: "err", msg: `${r.status}: ${r.message}` });
     } catch (e) {
-      setSitemapStatus({ kind: "err", msg: e instanceof Error ? e.message : String(e) });
+      setSitemapStatus({ kind: "err", msg: handleAuthError(e) });
     }
   }
 
   async function handleIndex(url: string) {
+    if (!password) return;
     setRow(url, { kind: "loading" });
     try {
-      const r = await requestIndexFn({ data: { url, type: "URL_UPDATED" } });
+      const r = await requestIndexFn({ data: { password, url, type: "URL_UPDATED" } });
       setRow(url, r.ok ? { kind: "ok", msg: r.message } : { kind: "err", msg: `${r.status}: ${r.message}` });
     } catch (e) {
-      setRow(url, { kind: "err", msg: e instanceof Error ? e.message : String(e) });
+      setRow(url, { kind: "err", msg: handleAuthError(e) });
     }
   }
 
   async function handleInspect(url: string) {
+    if (!password) return;
     setRow(url, { kind: "loading" });
     try {
-      const r = await inspectFn({ data: { url } });
+      const r = await inspectFn({ data: { password, url } });
       if (!r.ok) {
         setRow(url, { kind: "err", msg: `${r.status}: ${r.message}` });
       } else {
@@ -81,8 +111,55 @@ function AdminSeoPage() {
         });
       }
     } catch (e) {
-      setRow(url, { kind: "err", msg: e instanceof Error ? e.message : String(e) });
+      setRow(url, { kind: "err", msg: handleAuthError(e) });
     }
+  }
+
+  if (!password) {
+    return (
+      <div className="min-h-screen bg-background text-foreground">
+        <SiteHeader />
+        <main className="pt-28 pb-24">
+          <div className="mx-auto max-w-md px-6">
+            <p className="text-xs uppercase tracking-[0.2em] text-brand">Admin</p>
+            <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight">
+              Acesso restrito
+            </h1>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Informe a senha de administrador para acessar o painel de SEO.
+            </p>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                if (!pwInput) return;
+                sessionStorage.setItem(PW_KEY, pwInput);
+                setPassword(pwInput);
+                setPwInput("");
+                setPwError(null);
+              }}
+              className="mt-6 space-y-3"
+            >
+              <input
+                type="password"
+                autoFocus
+                value={pwInput}
+                onChange={(e) => setPwInput(e.target.value)}
+                placeholder="Senha"
+                className="w-full rounded-lg border border-border bg-surface/60 px-4 py-3 text-sm outline-none focus:border-brand"
+              />
+              {pwError && <p className="text-xs text-red-400">{pwError}</p>}
+              <button
+                type="submit"
+                className="w-full rounded-full bg-brand px-5 py-3 text-sm font-medium text-brand-foreground hover:opacity-90 transition"
+              >
+                Entrar
+              </button>
+            </form>
+          </div>
+        </main>
+        <SiteFooter />
+      </div>
+    );
   }
 
   return (
@@ -90,10 +167,20 @@ function AdminSeoPage() {
       <SiteHeader />
       <main className="pt-28 pb-24">
         <div className="mx-auto max-w-4xl px-6">
-          <p className="text-xs uppercase tracking-[0.2em] text-brand">Admin</p>
-          <h1 className="mt-2 font-display text-3xl md:text-4xl font-semibold tracking-tight">
-            SEO & Indexação no Google
-          </h1>
+          <div className="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-brand">Admin</p>
+              <h1 className="mt-2 font-display text-3xl md:text-4xl font-semibold tracking-tight">
+                SEO & Indexação no Google
+              </h1>
+            </div>
+            <button
+              onClick={handleLogout}
+              className="rounded-full border border-border px-4 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-brand/60 transition"
+            >
+              Sair
+            </button>
+          </div>
           <p className="mt-4 text-muted-foreground">
             Reenvie o sitemap ou solicite a indexação de cada URL diretamente, sem abrir o Search Console.
           </p>

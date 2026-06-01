@@ -52,6 +52,9 @@ export const posts: BlogPost[] = [
   {
     slug: "quanto-custa-um-video-institucional",
     title: "Quanto custa um vídeo institucional? Entenda o que forma o preço",
+    metaTitle: "Quanto custa um vídeo institucional? Guia 2026",
+    metaDescription:
+      "Preço de vídeo institucional não tem tabela fixa: depende de duração, diárias, locações, equipe e pós. Veja como é formado e peça orçamento sob medida.",
     excerpt:
       "Não existe tabela fixa: cinco fatores definem o preço de um vídeo institucional. Entenda cada um e peça um orçamento sob medida.",
     tldr:

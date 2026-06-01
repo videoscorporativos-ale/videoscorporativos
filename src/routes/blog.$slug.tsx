@@ -183,7 +183,7 @@ function BlogPostPage() {
 
           <div
             className="prose-blog mt-12"
-            dangerouslySetInnerHTML={{ __html: post.bodyHtml }}
+            dangerouslySetInnerHTML={{ __html: expandInlineImages(post.bodyHtml) }}
           />
 
           {post.faqs && post.faqs.length > 0 && (

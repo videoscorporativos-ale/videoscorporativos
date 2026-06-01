@@ -91,6 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Ale Fotógrafo" },
       { property: "og:locale", content: "pt_BR" },
       { name: "google-site-verification", content: "QxOKt1WWlGlC7_WS0lNVLjAKX4goXgoGTWUkvqX6Q50" },
+      { name: "google-site-verification", content: "WU6biZ_OzI3kZYdZvZA7zGScn-wS1DWoL-KBUFcgTgQ" },
     ],
     links: [
       {

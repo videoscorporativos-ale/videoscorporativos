@@ -384,3 +384,16 @@ function StatusLine({ status }: { status: Status }) {
     status.kind === "loading" ? "Processando…" : status.kind === "ok" ? `✓ ${status.msg}` : `✗ ${status.msg}`;
   return <p className={`mt-2 text-xs ${cls} break-words`}>{label}</p>;
 }
+
+function labelSource(source: string): string {
+  switch (source) {
+    case "deploy-hook":
+      return "auto-deploy";
+    case "admin-button":
+      return "manual";
+    case "cron-hourly":
+      return "cron";
+    default:
+      return source;
+  }
+}

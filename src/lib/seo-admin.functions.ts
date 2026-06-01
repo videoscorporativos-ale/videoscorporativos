@@ -5,6 +5,12 @@ const GATEWAY = "https://connector-gateway.lovable.dev/google_search_console";
 const SITE_URL = "https://videoscorporativos.com.br/";
 const SITEMAP_PATH = "sitemap.xml";
 
+function assertAdmin(password: string) {
+  const expected = process.env.ADMIN_PASSWORD;
+  if (!expected) throw new Error("ADMIN_PASSWORD não configurado no servidor.");
+  if (password !== expected) throw new Error("Senha incorreta.");
+}
+
 function authHeaders(): Record<string, string> {
   const lov = process.env.LOVABLE_API_KEY;
   const gsc = process.env.GOOGLE_SEARCH_CONSOLE_API_KEY;
@@ -18,7 +24,12 @@ function authHeaders(): Record<string, string> {
 }
 
 /** Reenvia o sitemap.xml para o Google Search Console. */
-export const resubmitSitemap = createServerFn({ method: "POST" }).handler(async () => {
+export const resubmitSitemap = createServerFn({ method: "POST" })
+  .inputValidator((input: unknown) =>
+    z.object({ password: z.string().min(1).max(200) }).parse(input),
+  )
+  .handler(async ({ data }) => {
+  assertAdmin(data.password);
   const siteParam = encodeURIComponent(SITE_URL);
   const feedParam = encodeURIComponent(`${SITE_URL}${SITEMAP_PATH}`);
   const res = await fetch(
@@ -40,12 +51,14 @@ export const requestIndexing = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) =>
     z
       .object({
+        password: z.string().min(1).max(200),
         url: z.string().url().max(2048),
         type: z.enum(["URL_UPDATED", "URL_DELETED"]).default("URL_UPDATED"),
       })
       .parse(input),
   )
   .handler(async ({ data }) => {
+    assertAdmin(data.password);
     const res = await fetch(`${GATEWAY}/indexing/v3/urlNotifications:publish`, {
       method: "POST",
       headers: authHeaders(),
@@ -65,9 +78,15 @@ export const requestIndexing = createServerFn({ method: "POST" })
 /** Inspeciona o status de indexação de uma URL no Google. */
 export const inspectUrl = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) =>
-    z.object({ url: z.string().url().max(2048) }).parse(input),
+    z
+      .object({
+        password: z.string().min(1).max(200),
+        url: z.string().url().max(2048),
+      })
+      .parse(input),
   )
   .handler(async ({ data }) => {
+    assertAdmin(data.password);
     const res = await fetch(`${GATEWAY}/searchconsole/v1/urlInspection/index:inspect`, {
       method: "POST",
       headers: authHeaders(),

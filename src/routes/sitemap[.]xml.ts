@@ -30,10 +30,21 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
 
+        // Most recent lastmod across all entries — used for Last-Modified header
+        // so Google sees freshness immediately after a post is added/edited.
+        const mostRecent = entries
+          .map((e) => e.lastmod)
+          .sort()
+          .at(-1)!;
+        const lastModifiedHttp = new Date(`${mostRecent}T00:00:00Z`).toUTCString();
+
         return new Response(xml, {
           headers: {
             "Content-Type": "application/xml",
-            "Cache-Control": "public, max-age=3600",
+            // Short cache + must-revalidate so a fresh deploy invalidates almost
+            // immediately at every edge. The resubmit hook also warms this URL.
+            "Cache-Control": "public, max-age=60, must-revalidate",
+            "Last-Modified": lastModifiedHttp,
           },
         });
       },

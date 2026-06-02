@@ -253,6 +253,100 @@ export const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "video-para-feira-de-negocios",
+    title: "Vídeo para feira de negócios: como provar o resultado da participação",
+    metaTitle: "Vídeo para feira de negócios: prove o resultado",
+    metaDescription:
+      "Vídeo de feira transforma a participação em aftermovie, prova de investimento e conteúdo evergreen. Entenda o que entrega e como planejar.",
+    excerpt:
+      "Feira é investimento caro. O vídeo transforma a presença em ativo que continua trabalhando depois do estande desmontado.",
+    tldr:
+      "O vídeo de feira registra a participação e gera dois ativos: conteúdo para redes/site (aftermovie) e a prova concreta do investimento. Como feira é cara e difícil de justificar, o vídeo transforma a presença em resultado tangível, que continua trabalhando depois do estande desmontado.",
+    category: "Eventos e feiras",
+    coverQuery: "trade show business booth exhibition",
+    coverAlt:
+      "Estande corporativo em feira de negócios com público circulando durante exposição",
+    datePublished: "2026-06-05",
+    keywords:
+      "vídeo para feira de negócios, aftermovie feira, cobertura feira corporativa, vídeo evento empresarial",
+    bodyHtml: `
+<p>[IMAGEM: trade fair exhibition booth]</p>
+
+<h2>Por que filmar</h2>
+<p>[IMAGEM: business networking event crowd]</p>
+<p>Feiras concentram, em poucos dias, os formadores de opinião do setor. É investimento alto, e costuma sobrar pouca evidência depois. O vídeo captura movimento, conversas, lançamentos e energia, e converte em material reutilizável.</p>
+
+<h2>O que entrega</h2>
+<p>[IMAGEM: videographer filming event]</p>
+<p>Aftermovie (resumo dinâmico, semanas de conteúdo); prova de investimento para a diretoria; conteúdo evergreen para campanhas; posicionamento de autoridade no setor.</p>
+
+<h2>O que faz um bom registro</h2>
+<p>[IMAGEM: camera operator event coverage]</p>
+<p>Planejamento: agenda do estande, horários de pico, lançamentos, pessoas certas. Improviso em feira é perder o momento que não volta.</p>
+`,
+    faqs: [
+      {
+        q: "Qual a diferença entre cobertura e aftermovie?",
+        a: "Cobertura é a captação durante o evento; aftermovie é o vídeo editado, com narrativa, ritmo e trilha, pronto para divulgação.",
+      },
+      {
+        q: "Quando recebo o material?",
+        a: "Aftermovies têm entrega acelerada para aproveitar o calor do evento, geralmente em poucos dias após a feira.",
+      },
+      {
+        q: "Vale para estande pequeno?",
+        a: "Sim. Um bom registro valoriza a presença independentemente do tamanho do estande e ajuda a comunicar autoridade no setor.",
+      },
+    ],
+  },
+  {
+    slug: "o-que-e-video-institucional",
+    title: "O que é vídeo institucional e para que serve (com exemplos)",
+    metaTitle: "O que é vídeo institucional e para que serve",
+    metaDescription:
+      "Vídeo institucional apresenta a empresa — história, valores, estrutura e diferencial. Veja para que serve, exemplos de uso e o que um bom vídeo precisa ter.",
+    excerpt:
+      "Um filme curto que apresenta a empresa e transmite credibilidade. Veja para que serve e como reconhecer um bom institucional.",
+    tldr:
+      "Vídeo institucional é um filme curto que apresenta a empresa — sua história, valores, estrutura, produtos e diferencial. Serve para transmitir credibilidade ao público externo (clientes, parceiros, investidores) e interno (equipe), e é usado no site, em propostas, redes sociais, eventos e treinamentos.",
+    category: "Tipos de vídeo",
+    coverQuery: "corporate office team filming",
+    coverAlt:
+      "Equipe corporativa em escritório durante gravação de vídeo institucional",
+    datePublished: "2026-06-06",
+    keywords:
+      "o que é vídeo institucional, para que serve vídeo institucional, exemplos vídeo corporativo, filme institucional empresa",
+    bodyHtml: `
+<p>[IMAGEM: corporate video filming office]</p>
+
+<h2>Para que serve, na prática</h2>
+<p>[IMAGEM: business team office collaboration]</p>
+<p>Apresentar a empresa em segundos; abrir reuniões comerciais; fortalecer propostas; ocupar a home do site; integrar novos colaboradores; reforçar marca em eventos. É um dos conteúdos mais versáteis da comunicação corporativa.</p>
+
+<h2>Exemplos de uso</h2>
+<p>[IMAGEM: factory industrial tour video]</p>
+<p>Empresa que abre reunião com um institucional de 90s; indústria que mostra a fábrica e o processo; escritório que comunica seus valores; companhia que celebra um marco (aniversário, expansão).</p>
+
+<h2>O que um bom institucional tem</h2>
+<p>[IMAGEM: film director camera quality]</p>
+<p>Mensagem central clara, roteiro enxuto, boa captação (luz e áudio), e um CTA. Tudo a serviço de comunicar com clareza e respeitar a reputação da marca.</p>
+`,
+    faqs: [
+      {
+        q: "Vídeo institucional é o mesmo que vídeo publicitário?",
+        a: "Não. O institucional apresenta a empresa como um todo; o publicitário vende um produto, serviço ou campanha específica.",
+      },
+      {
+        q: "Qual a duração ideal?",
+        a: "Em geral entre 60 segundos e 2 minutos. O suficiente para comunicar a essência sem cansar o espectador.",
+      },
+      {
+        q: "Toda empresa precisa?",
+        a: "Qualquer empresa que queira passar credibilidade e profissionalizar a comunicação se beneficia de um bom institucional.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

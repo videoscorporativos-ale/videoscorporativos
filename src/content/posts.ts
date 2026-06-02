@@ -347,6 +347,98 @@ export const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "video-institucional-publicitario-manifesto-diferenca",
+    title: "Vídeo institucional, publicitário e manifesto: qual a diferença",
+    metaTitle: "Vídeo institucional, publicitário e manifesto: qual a diferença",
+    metaDescription:
+      "Entenda a diferença entre vídeo institucional, publicitário e manifesto: objetivos, tom e quando usar cada um para sua empresa.",
+    excerpt:
+      "Institucional apresenta a empresa. Publicitário vende. Manifesto inspira. Veja quando usar cada um.",
+    tldr:
+      "Institucional apresenta a empresa (história, valores, estrutura). Publicitário vende um produto ou campanha específica, com foco em conversão. Manifesto é emocional e de posicionamento, comunica uma causa ou visão de marca. São objetivos diferentes — escolher o tipo certo começa pelo que você quer alcançar.",
+    category: "Tipos de vídeo",
+    coverQuery: "film clapperboard director",
+    coverAlt: "Claquete de cinema em set de filmagem representando tipos de produção audiovisual",
+    datePublished: "2026-06-07",
+    keywords:
+      "vídeo institucional publicitário manifesto, diferença tipos de vídeo, vídeo institucional vs publicitário, manifesto de marca vídeo",
+    bodyHtml: `
+<p>[IMAGEM: clapperboard film production]</p>
+
+<h2>As diferenças</h2>
+<p>[IMAGEM: video types comparison screens]</p>
+<ul>
+  <li><strong>Institucional</strong> — quem somos, o que fazemos; tom de credibilidade; uso duradouro.</li>
+  <li><strong>Publicitário</strong> — foco num produto/oferta; tom persuasivo; ligado a campanha.</li>
+  <li><strong>Manifesto</strong> — emoção e posicionamento; comunica propósito; fortalece identidade.</li>
+</ul>
+
+<h2>Como escolher</h2>
+<p>[IMAGEM: creative team brainstorm strategy]</p>
+<p>Pergunte o objetivo: apresentar a empresa? Institucional. Vender algo específico? Publicitário. Inspirar e posicionar? Manifesto. Muitas vezes uma captação rende versões para mais de um propósito.</p>
+`,
+    faqs: [
+      {
+        q: "Posso ter os três?",
+        a: "Sim, e às vezes a partir de um mesmo dia de filmagem com bom planejamento.",
+      },
+      {
+        q: "Qual converte mais?",
+        a: "O publicitário é o mais direto; o institucional gera confiança que apoia a venda.",
+      },
+      {
+        q: "Manifesto serve para empresa pequena?",
+        a: "Sim, quando há um propósito claro a comunicar.",
+      },
+    ],
+  },
+  {
+    slug: "quanto-tempo-produzir-video-corporativo",
+    title: "Quanto tempo leva para produzir um vídeo corporativo",
+    metaTitle: "Quanto tempo leva para produzir um vídeo corporativo",
+    metaDescription:
+      "Prazo de produção de vídeo corporativo: o que define o tempo, as etapas e como acelerar sem perder qualidade.",
+    excerpt:
+      "O prazo varia com a complexidade. Entenda o que define o tempo e como acelerar sem perder qualidade.",
+    tldr:
+      "O prazo varia com a complexidade. Um vídeo institucional padrão costuma levar algumas semanas, somando roteiro, pré-produção, captação e finalização. Aftermovies de eventos têm entrega mais rápida. O prazo exato é definido no início, com um cronograma por etapa.",
+    category: "Preço e contratação",
+    coverQuery: "production schedule planning calendar",
+    coverAlt: "Calendário de planejamento de produção audiovisual com cronograma de etapas",
+    datePublished: "2026-06-08",
+    keywords:
+      "quanto tempo produzir vídeo corporativo, prazo vídeo institucional, tempo de produção audiovisual, cronograma vídeo empresa",
+    bodyHtml: `
+<p>[IMAGEM: calendar schedule planning]</p>
+
+<h2>O que define o prazo</h2>
+<p>[IMAGEM: film production planning meeting]</p>
+<p>Complexidade do roteiro; número de diárias e locações; disponibilidade de pessoas para gravar; volume de pós-produção (edição, color, trilha, animações); rodadas de revisão.</p>
+
+<h2>As etapas e o tempo</h2>
+<p>[IMAGEM: video production stages workflow]</p>
+<p>Pré-produção (briefing, roteiro, planejamento) — onde se ganha tempo depois. Captação — concentrada em uma ou mais diárias. Pós-produção — geralmente a fase mais longa, onde o vídeo toma forma.</p>
+
+<h2>Como acelerar sem perder qualidade</h2>
+<p>[IMAGEM: team fast workflow office]</p>
+<p>Briefing claro desde o início, decisões rápidas nas aprovações, e agenda de gravação bem definida. A maior fonte de atraso é indefinição na pré-produção.</p>
+`,
+    faqs: [
+      {
+        q: "Dá para fazer com urgência?",
+        a: "Em muitos casos sim, com escopo ajustado; vale conversar.",
+      },
+      {
+        q: "Quantas revisões?",
+        a: "Definidas na proposta, para evitar retrabalho sem fim.",
+      },
+      {
+        q: "O cliente precisa participar?",
+        a: "Sim, principalmente no briefing e nas aprovações.",
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

@@ -9,11 +9,13 @@ export const Route = createFileRoute("/api/public/seo/resubmit-sitemap")({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        // Auth: must carry the project's Supabase anon/publishable key.
-        const expected = process.env.SUPABASE_PUBLISHABLE_KEY;
+        // Auth: must carry the server-only CRON_SECRET. The previous
+        // check used the public anon key, which ships in client bundles
+        // and let anyone trigger this endpoint.
+        const expected = process.env.CRON_SECRET;
         const provided =
-          request.headers.get("apikey") ??
-          request.headers.get("x-api-key") ??
+          request.headers.get("x-cron-secret") ??
+          request.headers.get("authorization")?.replace(/^Bearer\s+/i, "") ??
           "";
         if (!expected || provided !== expected) {
           return new Response("Unauthorized", { status: 401 });

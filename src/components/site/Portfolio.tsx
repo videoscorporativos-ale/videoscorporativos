@@ -7,6 +7,11 @@ type Category = "Todos" | "Institucional" | "Eventos" | "Feiras";
 export type PortfolioItem = { title: string; category: Exclude<Category, "Todos">; videoId: string };
 
 export const portfolioItems: PortfolioItem[] = [
+  { title: "Vídeo Manifesto — Empreendimento, Estrutura e Propósito", category: "Institucional", videoId: "isrDJDmcOvE" },
+  { title: "BMX Logística — Vídeo Institucional", category: "Institucional", videoId: "fsx2OBjkzFc" },
+  { title: "Curso de Prestação de Contas Eleitorais 2026 — Professora Rita", category: "Institucional", videoId: "qsmVfufY6TM" },
+  { title: "VIII Congresso Brasileiro de Direito da Empresa — IBDE Rio 2026", category: "Eventos", videoId: "6A7a7AaCX2Y" },
+  { title: "Faz Farma Faz Negócio — 9ª Edição", category: "Feiras", videoId: "dFn6YIwakBI" },
   { title: "UNITEC — Vídeo Institucional", category: "Institucional", videoId: "_bdJOuE4I3Q" },
   { title: "Rocha & Queiroz Advogados — Institucional", category: "Institucional", videoId: "ITBhZlBQd6E" },
   { title: "IBIS Botucatu — Vídeo Manifesto", category: "Institucional", videoId: "PDFwTUHOwiY" },

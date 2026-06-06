@@ -4,7 +4,8 @@ export type BlogCategory =
   | "Eventos e feiras"
   | "Resultado e ROI"
   | "Retratos Corporativos"
-  | "Eventos Corporativos";
+  | "Eventos Corporativos"
+  | "Estratégia de Vídeo";
 
 export interface FaqItem {
   q: string;
@@ -549,6 +550,68 @@ export const posts: BlogPost[] = [
 <p>👉 <strong>Veja também:</strong> <a href="https://videoscorporativos.com.br/blog/cobertura-eventos-corporativos-video-guia">Cobertura de eventos corporativos em vídeo: o guia definitivo</a> — tudo que você precisa saber sobre a parte audiovisual do seu evento.</p>
 
 <p><a href="/#contato">Próximo evento? Vamos conversar →</a></p>
+`,
+  },
+  {
+    slug: "video-corporativo-afastando-clientes",
+    title: "Seu vídeo corporativo está afastando clientes — e você nem sabe disso",
+    metaDescription:
+      "Descubra por que vídeos corporativos mal produzidos custam mais do que você imagina — e como corrigir isso antes do próximo evento da sua empresa.",
+    excerpt:
+      "Vídeos corporativos mal produzidos custam mais do que você imagina. Veja os 5 sinais de alerta e como um vídeo profissional transforma resultados.",
+    tldr:
+      "Um vídeo corporativo mal produzido é pior do que não ter vídeo: comunica descuido e amadorismo. Os principais sinais de alerta são áudio ruim, iluminação fraca, roteiro genérico, falta de CTA e ausência de legendas. Um vídeo profissional transfere confiança e pode aumentar a conversão em até 80%.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "frustrated businessman laptop video corporate",
+    coverAlt:
+      "Empresário frustrado assistindo vídeo corporativo em notebook",
+    datePublished: "2026-06-11",
+    keywords:
+      "vídeo corporativo ruim, erros vídeo institucional, vídeo afastando clientes, produção audiovisual profissional, briefing estratégico vídeo",
+    bodyHtml: `
+<p>Você já entrou num site de uma empresa, assistiu ao vídeo institucional e saiu antes de terminar? Pois é. Seus clientes também fazem isso.</p>
+
+<p>A verdade que ninguém conta: um vídeo corporativo ruim é pior do que não ter vídeo nenhum. Ele comunica descuido, amadorismo e falta de seriedade — exatamente o oposto do que sua empresa quer transmitir.</p>
+
+<p>[IMAGEM: businessman frustrated watching video laptop corporate]</p>
+
+<h2>O custo invisível do vídeo mal feito</h2>
+
+<p>Pense assim: você investiu R$ 3.000 num vídeo caseiro feito pelo sobrinho. Parece economia, certo? Mas e se esse vídeo estiver na homepage que recebe 2.000 acessos por mês? E se 30% dessas pessoas saírem antes de 10 segundos porque o áudio está ruim e a imagem tremendo?</p>
+
+<p>Você está perdendo contratos que nunca saberá que existiram.</p>
+
+<p>[IMAGEM: corporate meeting room modern executives discussion]</p>
+
+<h2>Os 5 sinais de que seu vídeo está te prejudicando</h2>
+
+<ol>
+  <li><strong>Áudio com eco ou chiado</strong> — soa como gravação de celular num corredor</li>
+  <li><strong>Iluminação amarelada ou com sombras duras</strong> — envelhece sua marca 10 anos</li>
+  <li><strong>Roteiro genérico</strong> — "somos uma empresa com foco no cliente" não convence ninguém</li>
+  <li><strong>Sem chamada para ação clara</strong> — o espectador termina sem saber o que fazer</li>
+  <li><strong>Sem legendas ou sem versão vertical</strong> — invisível para 60% dos usuários mobile</li>
+</ol>
+
+<p>[IMAGEM: professional camera studio setup corporate production]</p>
+
+<h2>O que um vídeo profissional realmente entrega</h2>
+
+<p>Não é apenas imagem bonita. É confiança transferida. É o tomador de decisão do outro lado da tela sentindo que pode confiar na sua empresa antes mesmo de falar com você.</p>
+
+<p>Estudos da Forbes e HubSpot mostram que landing pages com vídeo convertem até 80% mais. No mercado B2B brasileiro, onde a decisão de compra passa por 3 a 7 pessoas, um vídeo corporativo bem feito é o vendedor que trabalha 24h por dia.</p>
+
+<p>[IMAGEM: professional recording testimonial corporate lighting]</p>
+
+<h2>Por onde começar?</h2>
+
+<p>Se você quer entender qual tipo de vídeo faz mais sentido para o momento da sua empresa — institucional, depoimento de clientes, vídeo de produto ou cobertura de evento — o primeiro passo é um briefing estratégico.</p>
+
+<p>👉 <strong>Veja também:</strong> <a href="https://alefotografos.com.br/blog/fotografia-eventos-corporativos-conteudo">Como fotografar eventos corporativos para gerar conteúdo de alto impacto</a> — porque foto e vídeo juntos multiplicam o resultado.</p>
+
+<p><strong>Quer saber o que um vídeo profissional custaria para a sua empresa?</strong></p>
+
+<p><a href="/#contato">Solicite um orçamento sem compromisso →</a></p>
 `,
   },
 ];

@@ -498,6 +498,59 @@ export const posts: BlogPost[] = [
 <p><a href="/#contato">Agende sua sessão de retratos corporativos →</a></p>
 `,
   },
+  {
+    slug: "fotografia-eventos-corporativos-briefing",
+    title: "Fotografia de eventos corporativos: o que seu fotógrafo precisa saber antes de chegar",
+    metaTitle: "Fotografia de eventos corporativos: briefing completo",
+    metaDescription:
+      "Briefing inadequado é a causa número 1 de decepção com fotógrafos de eventos. Veja o checklist completo que garante imagens que contam a história do seu evento.",
+    excerpt:
+      "Briefing inadequado é a causa número 1 de decepção com fotógrafos de eventos. Veja o checklist que garante imagens que contam a história.",
+    tldr:
+      "A maioria das decepções com fotografia de evento corporativo começa no briefing. Comunicar o propósito do evento, os VIPs, os momentos obrigatórios, o uso das imagens e o prazo de entrega transforma um registro genérico em uma narrativa visual que conta a história do evento.",
+    category: "Eventos Corporativos",
+    coverQuery: "corporate event photographer camera auditorium",
+    coverAlt:
+      "Fotógrafo profissional com câmera em auditório de evento corporativo",
+    datePublished: "2026-06-10",
+    keywords:
+      "fotografia eventos corporativos, briefing fotógrafo evento, cobertura fotográfica empresa, fotógrafo evento corporativo, fotografia convenção",
+    bodyHtml: `
+<p>[IMAGEM: photographer dslr camera corporate event auditorium]</p>
+
+<h2>O briefing que transforma um fotógrafo em contador de histórias</h2>
+<p>Antes de qualquer evento, o fotógrafo precisa saber:</p>
+<ol>
+  <li><strong>Qual é o propósito do evento?</strong> (aniversário de empresa, lançamento, convenção?)</li>
+  <li><strong>Quem são os VIPs?</strong> (CEO, diretor, palestrante principal — eles precisam de atenção especial)</li>
+  <li><strong>Quais momentos são obrigatórios?</strong> (assinatura de contrato, entrega de prêmio, discurso de abertura)</li>
+  <li><strong>Onde as fotos vão ser usadas?</strong> (redes sociais, press release, relatório anual?)</li>
+  <li><strong>Qual o prazo de entrega?</strong></li>
+</ol>
+
+<p>[IMAGEM: corporate event stage logo illuminated podium]</p>
+
+<h2>O que diferencia uma cobertura comum de uma cobertura memorável</h2>
+<p>Fotografia de evento não é documentação — é narrativa. O fotógrafo que entende isso busca:</p>
+<ul>
+  <li><strong>O momento antes do momento:</strong> o nervosismo dos bastidores</li>
+  <li><strong>A reação da plateia:</strong> o riso, o aplauso, a surpresa</li>
+  <li><strong>Os detalhes que contam a escala:</strong> o salão visto de cima, a mesa de coffee fartamente servida</li>
+  <li><strong>Os encontros nos corredores:</strong> onde os negócios reais acontecem</li>
+</ul>
+
+<p>[IMAGEM: corporate event audience applause genuine reaction]</p>
+
+<h2>Por que contratar fotografia e vídeo do mesmo profissional</h2>
+<p>Quando foto e vídeo vêm do mesmo produtor, a narrativa é coerente, a logística de produção no dia é mais limpa e o custo total é menor.</p>
+
+<p>[IMAGEM: photographer videographer side by side corporate event production]</p>
+
+<p>👉 <strong>Veja também:</strong> <a href="https://videoscorporativos.com.br/blog/cobertura-eventos-corporativos-video-guia">Cobertura de eventos corporativos em vídeo: o guia definitivo</a> — tudo que você precisa saber sobre a parte audiovisual do seu evento.</p>
+
+<p><a href="/#contato">Próximo evento? Vamos conversar →</a></p>
+`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

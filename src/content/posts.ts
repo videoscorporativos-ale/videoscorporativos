@@ -440,6 +440,63 @@ export const posts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "foto-perfil-linkedin-gestor-contratos",
+    title: "Por que a foto de perfil do LinkedIn do seu gestor está custando contratos",
+    metaTitle: "Foto de perfil no LinkedIn: por que ela custa contratos",
+    metaDescription:
+      "Uma foto de perfil profissional no LinkedIn pode ser o fator decisivo entre fechar ou perder um negócio. Veja por que e como resolver isso hoje.",
+    excerpt:
+      "A primeira impressão no LinkedIn acontece em menos de 100 milissegundos. Veja como uma foto de perfil profissional pode ser o fator entre fechar ou perder um negócio.",
+    tldr:
+      "A foto de perfil do LinkedIn é avaliada em menos de 100 milissegundos. Uma imagem escura, amadora ou com fundo bagunçado comunica descuido antes mesmo da primeira mensagem. O retrato corporativo profissional — com iluminação direcional, expressão confiante e fundo neutro — cria a primeira impressão que abre portas.",
+    category: "Retratos Corporativos",
+    coverQuery: "professional headshot corporate portrait",
+    coverAlt:
+      "Retrato corporativo profissional de executivo com fundo neutro e iluminação direcional",
+    datePublished: "2026-06-09",
+    keywords:
+      "foto perfil LinkedIn, retrato corporativo, foto profissional LinkedIn, retrato executivo, imagem corporativa LinkedIn",
+    bodyHtml: `
+<p>[IMAGEM: man wearing white dress shirt looking at camera]</p>
+
+<h2>O que sua foto comunica sem você saber</h2>
+<p>Pesquisas de psicologia da percepção mostram que levamos menos de 100 milissegundos para formar uma primeira impressão de uma face. Competência, confiança e simpatia são julgadas antes de você dizer uma palavra.</p>
+<p>Uma foto escura, com expressão tensa, fundo bagunçado ou tirada por celular comunica:</p>
+<ul>
+  <li>Descuido com a própria imagem</li>
+  <li>Desorganização</li>
+  <li>Amadorismo</li>
+</ul>
+<p>Mesmo que não seja a realidade, é o que a foto diz.</p>
+
+<p>[IMAGEM: woman in black blazer smiling looking at camera]</p>
+
+<h2>O retrato corporativo profissional: o que faz diferença</h2>
+<p><strong>Iluminação:</strong> suave, direcional, sem sombras agressivas.</p>
+<p><strong>Expressão:</strong> acessível mas séria. Confiante mas não arrogante.</p>
+<p><strong>Fundo:</strong> neutro ou levemente desfocado (bokeh) para destacar o rosto.</p>
+<p><strong>Enquadramento:</strong> meio-busto, levemente lateralizado. Nunca full-face frontal.</p>
+<p><strong>Roupa:</strong> adequada ao setor — executivo, criativo ou técnico.</p>
+
+<p>[IMAGEM: people in front of light source]</p>
+
+<h2>Quantas fotos você precisa?</h2>
+<p>Para uso profissional completo (LinkedIn, site, apresentações, crachá, press kit), recomendo no mínimo:</p>
+<ul>
+  <li>3 variações de expressão</li>
+  <li>2 enquadramentos (busto e meio-corpo)</li>
+  <li>2 opções de fundo ou locação</li>
+</ul>
+<p>Uma sessão bem planejada entrega tudo isso em 60-90 minutos.</p>
+
+<p>[IMAGEM: photography of woman in pink top]</p>
+
+<p>👉 <strong>Veja também:</strong> <a href="https://videoscorporativos.com.br/blog/linkedin-video-corporativo-oportunidades-b2b">Vídeo de apresentação pessoal para LinkedIn: o complemento perfeito do retrato</a> — foto + vídeo curto de apresentação criam uma presença profissional imbatível.</p>
+
+<p><a href="/#contato">Agende sua sessão de retratos corporativos →</a></p>
+`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

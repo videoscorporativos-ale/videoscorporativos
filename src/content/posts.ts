@@ -3,7 +3,8 @@ export type BlogCategory =
   | "Tipos de vídeo"
   | "Eventos e feiras"
   | "Resultado e ROI"
-  | "Retratos Corporativos";
+  | "Retratos Corporativos"
+  | "Eventos Corporativos";
 
 export interface FaqItem {
   q: string;

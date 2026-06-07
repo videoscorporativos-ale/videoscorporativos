@@ -640,7 +640,7 @@ export const posts: BlogPost[] = [
 
 <h2>Vídeo Institucional: construindo autoridade</h2>
 
-<p>O vídeo institucional é o cartão de visitas audiovisual da sua empresa. Ele responde a pergunta: <strong>"Quem vocês são e por que devo confiar em você?"</strong></p>
+<p>O <a href="/blog/video-institucional-vale-a-pena">vídeo institucional</a> é o cartão de visitas audiovisual da sua empresa. Ele responde a pergunta: <strong>"Quem vocês são e por que devo confiar em você?"</strong></p>
 
 <p>Ideal para:</p>
 

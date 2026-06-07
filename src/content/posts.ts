@@ -647,7 +647,7 @@ export const posts: BlogPost[] = [
 <ul>
   <li>Homepage do site</li>
   <li>Apresentações comerciais</li>
-  <li>Stands em feiras e eventos</li>
+  <li><a href="/blog/video-para-feira-de-negocios">Stands em feiras e eventos</a></li>
   <li>Prospecção B2B</li>
   <li>Candidatos a vagas de emprego</li>
 </ul>

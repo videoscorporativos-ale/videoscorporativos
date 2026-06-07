@@ -52,6 +52,15 @@ export const Route = createFileRoute("/blog/$slug")({
     const modified = post.dateModified ?? post.datePublished;
     const metaTitle = post.metaTitle ?? post.title;
     const metaDescription = post.metaDescription ?? post.tldr;
+    const wordCount = post.bodyHtml
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .split(" ")
+      .filter(Boolean).length;
+    const tags = post.keywords
+      ? post.keywords.split(",").map((t) => t.trim()).filter(Boolean)
+      : [];
 
     const articleSchema = {
       "@context": "https://schema.org",
@@ -61,10 +70,19 @@ export const Route = createFileRoute("/blog/$slug")({
       image: [{ "@type": "ImageObject", url: image, width: 1600, height: 900 }],
       datePublished: post.datePublished,
       dateModified: modified,
+      wordCount,
+      keywords: post.keywords,
+      articleSection: post.category,
+      inLanguage: "pt-BR",
       author: {
         "@type": "Person",
         name: "Alexandre Machado",
-        url: `${SITE}/#business`,
+        url: `${SITE}/autor/alexandre-machado`,
+        sameAs: [
+          "https://alefotografo.com.br",
+          "https://www.linkedin.com/in/alexandremachado-fotografo",
+          "https://www.instagram.com/alefotografo",
+        ],
       },
       publisher: {
         "@type": "Organization",
@@ -72,8 +90,10 @@ export const Route = createFileRoute("/blog/$slug")({
         logo: { "@type": "ImageObject", url: `${SITE}/favicon.ico` },
       },
       mainEntityOfPage: { "@type": "WebPage", "@id": url },
-      articleSection: post.category,
-      inLanguage: "pt-BR",
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: ["h1", ".prose-blog p:first-of-type"],
+      },
     };
 
     const scripts: Array<{ type: string; children: string }> = [
@@ -117,8 +137,9 @@ export const Route = createFileRoute("/blog/$slug")({
         { name: "author", content: "Alexandre Machado" },
         { property: "article:published_time", content: post.datePublished },
         { property: "article:modified_time", content: modified },
-        { property: "article:author", content: "Alexandre Machado" },
+        { property: "article:author", content: `${SITE}/autor/alexandre-machado` },
         { property: "article:section", content: post.category },
+        ...tags.map((tag) => ({ property: "article:tag", content: tag })),
         { property: "og:title", content: metaTitle },
         { property: "og:description", content: metaDescription },
         { property: "og:url", content: url },
@@ -126,10 +147,12 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:image", content: image },
         { property: "og:image:width", content: "1600" },
         { property: "og:image:height", content: "900" },
+        { property: "og:image:alt", content: post.coverAlt },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: metaTitle },
         { name: "twitter:description", content: metaDescription },
         { name: "twitter:image", content: image },
+        { name: "twitter:image:alt", content: post.coverAlt },
       ],
       links: [{ rel: "canonical", href: url }],
       scripts,

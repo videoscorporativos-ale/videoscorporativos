@@ -14,6 +14,7 @@ import { Route as PrecosRouteImport } from './routes/precos'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as AutorAlexandreMachadoRouteImport } from './routes/autor.alexandre-machado'
 import { Route as AdminSeoRouteImport } from './routes/admin.seo'
 import { Route as ApiPublicSeoResubmitSitemapRouteImport } from './routes/api/public/seo.resubmit-sitemap'
 
@@ -42,6 +43,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AutorAlexandreMachadoRoute = AutorAlexandreMachadoRouteImport.update({
+  id: '/autor/alexandre-machado',
+  path: '/autor/alexandre-machado',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminSeoRoute = AdminSeoRouteImport.update({
   id: '/admin/seo',
   path: '/admin/seo',
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/seo': typeof AdminSeoRoute
+  '/autor/alexandre-machado': typeof AutorAlexandreMachadoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/seo': typeof AdminSeoRoute
+  '/autor/alexandre-machado': typeof AutorAlexandreMachadoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
   '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/admin/seo': typeof AdminSeoRoute
+  '/autor/alexandre-machado': typeof AutorAlexandreMachadoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/precos'
     | '/sitemap.xml'
     | '/admin/seo'
+    | '/autor/alexandre-machado'
     | '/blog/$slug'
     | '/blog/'
     | '/api/public/seo/resubmit-sitemap'
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/precos'
     | '/sitemap.xml'
     | '/admin/seo'
+    | '/autor/alexandre-machado'
     | '/blog/$slug'
     | '/blog'
     | '/api/public/seo/resubmit-sitemap'
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/precos'
     | '/sitemap.xml'
     | '/admin/seo'
+    | '/autor/alexandre-machado'
     | '/blog/$slug'
     | '/blog/'
     | '/api/public/seo/resubmit-sitemap'
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   PrecosRoute: typeof PrecosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   AdminSeoRoute: typeof AdminSeoRoute
+  AutorAlexandreMachadoRoute: typeof AutorAlexandreMachadoRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
   ApiPublicSeoResubmitSitemapRoute: typeof ApiPublicSeoResubmitSitemapRoute
@@ -159,6 +172,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/autor/alexandre-machado': {
+      id: '/autor/alexandre-machado'
+      path: '/autor/alexandre-machado'
+      fullPath: '/autor/alexandre-machado'
+      preLoaderRoute: typeof AutorAlexandreMachadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/seo': {
       id: '/admin/seo'
       path: '/admin/seo'
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrecosRoute: PrecosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   AdminSeoRoute: AdminSeoRoute,
+  AutorAlexandreMachadoRoute: AutorAlexandreMachadoRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
   ApiPublicSeoResubmitSitemapRoute: ApiPublicSeoResubmitSitemapRoute,

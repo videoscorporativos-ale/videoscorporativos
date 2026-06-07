@@ -4,6 +4,7 @@ import { logSitemapPing } from "./sitemap-ping-log.server";
 const GATEWAY = "https://connector-gateway.lovable.dev/google_search_console";
 const SITE_URL = "https://videoscorporativos.com.br/";
 const SITEMAP_URL = `${SITE_URL}sitemap.xml`;
+const INDEXNOW_KEY = "8f3a2b1c9d4e5f6071829304a5b6c7d8";
 
 // Module-level guard. Cloudflare Workers spin up a fresh isolate per deploy,
 // so this resets on every publish — first request after deploy triggers the
@@ -15,6 +16,18 @@ let inflight: Promise<void> | null = null;
 async function doResubmit() {
   const lov = process.env.LOVABLE_API_KEY;
   const gsc = process.env.GOOGLE_SEARCH_CONSOLE_API_KEY;
+  // IndexNow ping (Bing + Yandex). Independent of Google Search Console.
+  // Pings the sitemap URL — engines fetch it and discover changed URLs.
+  fetch(
+    `https://api.indexnow.org/indexnow?url=${encodeURIComponent(SITEMAP_URL)}&key=${INDEXNOW_KEY}`,
+    { method: "GET" },
+  )
+    .then((r) => console.log(`[seo-on-deploy] IndexNow ping: ${r.status}`))
+    .catch((e) => console.warn("[seo-on-deploy] IndexNow ping failed:", e));
+  // Bing also accepts a sitemap-ping endpoint directly.
+  fetch(`https://www.bing.com/ping?sitemap=${encodeURIComponent(SITEMAP_URL)}`, {
+    method: "GET",
+  }).catch(() => {});
   if (!lov || !gsc) return;
   const siteParam = encodeURIComponent(SITE_URL);
   const feedParam = encodeURIComponent(SITEMAP_URL);

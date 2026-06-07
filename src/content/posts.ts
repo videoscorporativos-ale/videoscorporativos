@@ -614,6 +614,80 @@ export const posts: BlogPost[] = [
 <p><a href="/#contato">Solicite um orçamento sem compromisso →</a></p>
 `,
   },
+  {
+    slug: "video-institucional-vs-video-de-vendas",
+    title: "Vídeo institucional vs. vídeo de vendas: qual a sua empresa precisa agora?",
+    metaDescription:
+      "Entenda a diferença real entre vídeo institucional e vídeo de vendas — e descubra qual formato vai gerar mais resultado para o momento do seu negócio.",
+    excerpt:
+      "Descubra a diferença entre vídeo institucional e vídeo de vendas, e qual formato gera mais resultado para o momento do seu negócio.",
+    tldr:
+      "Vídeo institucional constrói autoridade e confiança na empresa. Vídeo de vendas acelera a decisão de compra. As empresas que crescem usam os dois em momentos diferentes da jornada do cliente.",
+    category: "Tipos de vídeo",
+    coverQuery: "corporate video screens comparison business",
+    coverAlt:
+      "Monitores lado a lado exibindo cenas de vídeo corporativo diferente",
+    datePublished: "2026-06-12",
+    keywords:
+      "vídeo institucional, vídeo de vendas, vídeo institucional vs vendas, tipos de vídeo corporativo, vídeo B2B, vídeo comercial",
+    bodyHtml: `
+<p>Quando uma empresa decide investir em vídeo, a primeira pergunta quase sempre é: "Mas que tipo de vídeo eu preciso?"</p>
+
+<p>É uma pergunta excelente — e a resposta errada pode desperdiçar todo o investimento.</p>
+
+<p>[IMAGEM: two monitors side by side different video scenes office]</p>
+
+<h2>Vídeo Institucional: construindo autoridade</h2>
+
+<p>O vídeo institucional é o cartão de visitas audiovisual da sua empresa. Ele responde a pergunta: <strong>"Quem vocês são e por que devo confiar em você?"</strong></p>
+
+<p>Ideal para:</p>
+
+<ul>
+  <li>Homepage do site</li>
+  <li>Apresentações comerciais</li>
+  <li>Stands em feiras e eventos</li>
+  <li>Prospecção B2B</li>
+  <li>Candidatos a vagas de emprego</li>
+</ul>
+
+<p>[IMAGEM: executive presenting corporate meeting room audience]</p>
+
+<h2>Vídeo de Vendas: acelerando decisões</h2>
+
+<p>O vídeo de vendas tem uma função cirúrgica: <strong>mover o prospect de "estou interessado" para "quero comprar"</strong>. Ele fala de dor, solução e resultado — nessa ordem.</p>
+
+<p>Ideal para:</p>
+
+<ul>
+  <li>Landing pages de produtos/serviços</li>
+  <li>Sequências de email marketing</li>
+  <li>Propostas comerciais</li>
+  <li>WhatsApp de vendedores</li>
+  <li>Remarketing no YouTube e Instagram</li>
+</ul>
+
+<p>[IMAGEM: sales funnel graph laptop screen business growth]</p>
+
+<h2>A combinação que empresas inteligentes usam</h2>
+
+<p>As empresas que crescem mais rápido não escolhem entre um ou outro — elas usam os dois em momentos diferentes da jornada do cliente.</p>
+
+<p>Um prospect descobre sua empresa → assiste ao vídeo institucional e confia.</p>
+
+<p>Ele entra na página de serviços → assiste ao vídeo de vendas e decide.</p>
+
+<p>[IMAGEM: customer journey funnel discovery consideration decision]</p>
+
+<h2>Quanto custa cada um?</h2>
+
+<p>Os valores variam com complexidade, locação, número de dias de gravação e pós-produção. O que posso garantir: o custo de <strong>não ter</strong> um bom vídeo é sempre maior.</p>
+
+<p>👉 <strong>Veja também:</strong> <a href="https://alefotografos.com.br/blog/fotografia-corporativa-estrategia-de-conteudo">Como a fotografia corporativa complementa sua estratégia de vídeo</a> — fotos e vídeo do mesmo evento criam um arsenal de conteúdo imbatível.</p>
+
+<p><a href="/#contato">Fale comigo e descubra qual formato é ideal para você →</a></p>
+`,
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {

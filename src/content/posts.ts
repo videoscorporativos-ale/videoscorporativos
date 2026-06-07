@@ -623,7 +623,7 @@ export const posts: BlogPost[] = [
       "Descubra a diferença entre vídeo institucional e vídeo de vendas, e qual formato gera mais resultado para o momento do seu negócio.",
     tldr:
       "Vídeo institucional constrói autoridade e confiança na empresa. Vídeo de vendas acelera a decisão de compra. As empresas que crescem usam os dois em momentos diferentes da jornada do cliente.",
-    category: "Tipos de Vídeo",
+    category: "Tipos de vídeo",
     coverQuery: "corporate video screens comparison business",
     coverAlt:
       "Monitores lado a lado exibindo cenas de vídeo corporativo diferente",

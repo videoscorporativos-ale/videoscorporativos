@@ -640,14 +640,14 @@ export const posts: BlogPost[] = [
 
 <h2>Vídeo Institucional: construindo autoridade</h2>
 
-<p>O vídeo institucional é o cartão de visitas audiovisual da sua empresa. Ele responde a pergunta: <strong>"Quem vocês são e por que devo confiar em você?"</strong></p>
+<p>O <a href="/blog/video-institucional-vale-a-pena">vídeo institucional</a> é o cartão de visitas audiovisual da sua empresa. Ele responde a pergunta: <strong>"Quem vocês são e por que devo confiar em você?"</strong></p>
 
 <p>Ideal para:</p>
 
 <ul>
   <li>Homepage do site</li>
   <li>Apresentações comerciais</li>
-  <li>Stands em feiras e eventos</li>
+  <li><a href="/blog/video-para-feira-de-negocios">Stands em feiras e eventos</a></li>
   <li>Prospecção B2B</li>
   <li>Candidatos a vagas de emprego</li>
 </ul>
@@ -661,7 +661,7 @@ export const posts: BlogPost[] = [
 <p>Ideal para:</p>
 
 <ul>
-  <li>Landing pages de produtos/serviços</li>
+  <li><a href="/blog/video-corporativo-afastando-clientes">Landing pages de produtos/serviços</a></li>
   <li>Sequências de email marketing</li>
   <li>Propostas comerciais</li>
   <li>WhatsApp de vendedores</li>
@@ -682,7 +682,7 @@ export const posts: BlogPost[] = [
 
 <h2>Quanto custa cada um?</h2>
 
-<p>Os valores variam com complexidade, locação, número de dias de gravação e pós-produção. O que posso garantir: o custo de <strong>não ter</strong> um bom vídeo é sempre maior.</p>
+<p>Os valores variam com complexidade, locação, número de dias de gravação e pós-produção. Para entender em detalhe como o orçamento é montado, veja <a href="/blog/quanto-custa-um-video-institucional">quanto custa um vídeo institucional</a>. O que posso garantir: o custo de <strong>não ter</strong> um bom vídeo é sempre maior.</p>
 
 <p>👉 <strong>Veja também:</strong> <a href="https://alefotografos.com.br/blog/fotografia-corporativa-estrategia-de-conteudo">Como a fotografia corporativa complementa sua estratégia de vídeo</a> — fotos e vídeo do mesmo evento criam um arsenal de conteúdo imbatível.</p>
 

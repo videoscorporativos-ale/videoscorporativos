@@ -693,7 +693,7 @@ export const posts: BlogPost[] = [
   {
     slug: "empresas-sao-paulo-abandonando-videos-genericos",
     title: "Por que grandes empresas em São Paulo estão abandonando vídeos genéricos",
-    metaTitle: "Por que empresas em SP abandonam vídeos genéricos",
+    metaTitle: "Empresas em SP abandonam vídeos genéricos",
     metaDescription:
       "Empresas líderes em São Paulo estão abandonando vídeos genéricos e apostando em storytelling real. Entenda por que isso gera mais negócios.",
     excerpt:
@@ -710,15 +710,15 @@ export const posts: BlogPost[] = [
     bodyHtml: `
 <p>Existe um padrão que se repete em empresas que crescem consistentemente no mercado B2B de São Paulo: elas pararam de fazer vídeos que "apresentam a empresa" e começaram a fazer vídeos que <strong>contam histórias que o cliente reconhece como a própria história</strong>.</p>
 
-<p>[IMAGEM: sao paulo corporate skyline sunset]</p>
+<p>[IMAGEM: sao paulo corporate skyline sunset | alt: Skyline corporativo de São Paulo ao entardecer]</p>
 
 <h2>O problema com vídeos "de vitrine"</h2>
 
 <p>O <a href="/blog/erros-comuns-em-videos-institucionais">vídeo genérico corporativo</a> tem uma estrutura previsível: imagens aéreas do prédio, executivos caminhando em corredor, frase de missão-visão-valores, logo no final. Todo mundo já viu. Ninguém se lembra.</p>
 
-<p>[IMAGEM: modern corporate building sao paulo]</p>
+<p>[IMAGEM: modern corporate building sao paulo | alt: Edifício corporativo moderno em São Paulo]</p>
 
-<h2>O que está funcionando agora</h2>
+<h2>Storytelling corporativo: o formato que está funcionando em São Paulo</h2>
 
 <p>As empresas que estão se destacando usam:</p>
 
@@ -728,13 +728,13 @@ export const posts: BlogPost[] = [
 
 <p><strong>Ambiente autêntico:</strong> gravado onde a empresa realmente opera, não em estúdio artificial.</p>
 
-<p>[IMAGEM: corporate interview professional camera filming]</p>
+<p>[IMAGEM: corporate interview professional camera filming | alt: Entrevista corporativa sendo gravada com câmera profissional]</p>
 
 <h2>Case: o poder do depoimento bem produzido</h2>
 
 <p>Um <a href="/blog/video-institucional-vs-video-de-vendas">depoimento de cliente</a> gravado com luz profissional, áudio limpo e edição elegante pode ser o ativo de marketing mais valioso que sua empresa já criou. Ele responde objeções, cria prova social e gera identificação — tudo ao mesmo tempo.</p>
 
-<p>[IMAGEM: satisfied client corporate interview professional lighting]</p>
+<p>[IMAGEM: satisfied client corporate interview professional lighting | alt: Cliente satisfeito em entrevista corporativa com iluminação profissional]</p>
 
 <p>👉 <strong>Veja também:</strong> <a href="https://alefotografos.com.br/blog/retrato-corporativo-percepacao-negocio">Retrato corporativo: como a foto certa transforma a percepção do seu negócio</a> — porque o rosto da sua empresa também precisa transmitir confiança.</p>
 

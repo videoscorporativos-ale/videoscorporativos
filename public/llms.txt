@@ -1,16 +1,35 @@
-# Ale Fotógrafo
+# Ale Fotógrafo — Vídeo Corporativo em São Paulo
 
-> Fotógrafo profissional e produtor de vídeo corporativo em São Paulo, com mais de 30 anos de experiência. Retrato corporativo, fotografia institucional, cobertura de eventos e vídeo institucional em todo o Brasil. Alexandre Machado (Ale Fotógrafo) atende empresas com atendimento direto, estúdio próprio e estrutura móvel.
+> Alexandre Machado (Ale Fotógrafo) é produtor de vídeo corporativo e fotógrafo profissional em São Paulo, com mais de 30 anos de experiência. Atende empresas em todo o Brasil com vídeo institucional, cobertura de eventos corporativos, feiras de negócios, retratos profissionais e fotografia institucional. Atendimento direto, estúdio próprio e estrutura móvel.
 
-## Pages
+## Páginas principais
 
-- [Início](/): Visão geral dos serviços, portfólio em vídeo, processo de produção, depoimentos e contato.
+- [Início](https://videoscorporativos.com.br/): visão geral dos serviços, portfólio em vídeo, processo, depoimentos e contato.
+- [Preços](https://videoscorporativos.com.br/precos): faixas de investimento, o que está incluso e como solicitar orçamento.
+- [Blog](https://videoscorporativos.com.br/blog): artigos sobre produção de vídeo corporativo, mercado, preços e estratégia.
 
-## Seções principais
+## Seções da home
 
-- [Serviços](/#servicos): Vídeo institucional, eventos corporativos, feiras de negócios e convenções.
-- [Portfólio](/#portfolio): Cases reais em vídeo (institucionais, eventos e feiras).
-- [Processo](/#processo): Como conduzimos um projeto, do briefing à entrega.
-- [Sobre](/#sobre): Quem somos e nossa trajetória de +30 anos.
-- [FAQ](/#faq): Perguntas frequentes sobre prazos, valores, atendimento e entregas.
-- [Contato](/#contato): WhatsApp (11) 91355-0533 e comercial@alefotografo.com.br.
+- [Serviços](https://videoscorporativos.com.br/#servicos): vídeo institucional, eventos corporativos, feiras e convenções.
+- [Portfólio](https://videoscorporativos.com.br/#portfolio): cases reais em vídeo (institucionais, eventos e feiras).
+- [Processo](https://videoscorporativos.com.br/#processo): briefing → roteiro → captação → pós-produção → entrega.
+- [Sobre](https://videoscorporativos.com.br/#sobre): Alexandre Machado e +30 anos de trajetória.
+- [FAQ](https://videoscorporativos.com.br/#faq): prazos, valores, atendimento e entregas.
+- [Contato](https://videoscorporativos.com.br/#contato): WhatsApp (11) 91355-0533, comercial@alefotografo.com.br.
+
+## Autor
+
+- [Alexandre Machado](https://videoscorporativos.com.br/autor/alexandre-machado): bio, credenciais e perfis profissionais do fotógrafo responsável pelo conteúdo.
+
+## Blog — artigos
+
+- [Quanto custa um vídeo institucional? Entenda o que forma o preço](https://videoscorporativos.com.br/blog/quanto-custa-um-video-institucional): cinco fatores que definem o preço — duração, diárias, locações, equipe e pós-produção.
+- [Vídeo institucional vs. vídeo de vendas: qual sua empresa precisa?](https://videoscorporativos.com.br/blog/video-institucional-vs-video-de-vendas): diferença de objetivo, formato, métricas e quando usar cada um.
+- [Erros comuns em vídeos institucionais (e como evitá-los)](https://videoscorporativos.com.br/blog/erros-comuns-em-videos-institucionais): armadilhas frequentes que tornam um vídeo corporativo ineficaz.
+- [Por que grandes empresas em São Paulo estão abandonando vídeos genéricos](https://videoscorporativos.com.br/blog/empresas-sao-paulo-abandonando-videos-genericos): tendência do mercado B2B paulistano em direção a storytelling real, depoimentos autênticos e ambientes próprios.
+
+## Contato direto
+
+- WhatsApp: https://wa.me/5511913550533
+- E-mail comercial: comercial@alefotografo.com.br
+- Site institucional histórico: https://alefotografo.com.br

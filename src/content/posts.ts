@@ -5,7 +5,8 @@ export type BlogCategory =
   | "Resultado e ROI"
   | "Retratos Corporativos"
   | "Eventos Corporativos"
-  | "Estratégia de Vídeo";
+  | "Estratégia de Vídeo"
+  | "Mercado & Tendências";
 
 export interface FaqItem {
   q: string;
@@ -686,8 +687,75 @@ export const posts: BlogPost[] = [
 
 <p>👉 <strong>Veja também:</strong> <a href="https://alefotografos.com.br/blog/fotografia-corporativa-estrategia-de-conteudo">Como a fotografia corporativa complementa sua estratégia de vídeo</a> — fotos e vídeo do mesmo evento criam um arsenal de conteúdo imbatível.</p>
 
-<p><a href="/#contato">Fale comigo e descubra qual formato é ideal para você →</a></p>
+    <p><a href="/#contato">Fale comigo e descubra qual formato é ideal para você →</a></p>
 `,
+  },
+  {
+    slug: "empresas-sao-paulo-abandonando-videos-genericos",
+    title: "Por que grandes empresas em São Paulo estão abandonando vídeos genéricos",
+    metaTitle: "Por que empresas em SP abandonam vídeos genéricos",
+    metaDescription:
+      "Empresas líderes em São Paulo estão abandonando vídeos genéricos e apostando em storytelling real. Entenda por que isso gera mais negócios.",
+    excerpt:
+      "O mercado corporativo paulistano mudou. Veja por que empresas líderes estão apostando em vídeos com identidade e storytelling real.",
+    tldr:
+      "Empresas que crescem no B2B paulistano abandonaram vídeos genéricos de 'vitrine' e adotam storytelling de problema-solução, depoimentos reais e ambientes autênticos. Esse formato gera identificação, prova social e resultados superiores.",
+    category: "Mercado & Tendências",
+    coverQuery: "sao paulo corporate skyline sunset",
+    coverAlt:
+      "Skyline de São Paulo ao entardecer com prédios corporativos iluminados",
+    datePublished: "2026-06-13",
+    keywords:
+      "vídeo corporativo São Paulo, empresas abandonando vídeos genéricos, storytelling corporativo, depoimento cliente vídeo, produção audiovisual SP",
+    bodyHtml: `
+<p>Existe um padrão que se repete em empresas que crescem consistentemente no mercado B2B de São Paulo: elas pararam de fazer vídeos que "apresentam a empresa" e começaram a fazer vídeos que <strong>contam histórias que o cliente reconhece como a própria história</strong>.</p>
+
+<p>[IMAGEM: sao paulo corporate skyline sunset]</p>
+
+<h2>O problema com vídeos "de vitrine"</h2>
+
+<p>O <a href="/blog/erros-comuns-em-videos-institucionais">vídeo genérico corporativo</a> tem uma estrutura previsível: imagens aéreas do prédio, executivos caminhando em corredor, frase de missão-visão-valores, logo no final. Todo mundo já viu. Ninguém se lembra.</p>
+
+<p>[IMAGEM: modern corporate building sao paulo]</p>
+
+<h2>O que está funcionando agora</h2>
+
+<p>As empresas que estão se destacando usam:</p>
+
+<p><strong>Storytelling de problema-solução:</strong> começam mostrando a dor do cliente, não os prêmios da empresa.</p>
+
+<p><strong>Depoimentos reais:</strong> não atores, não textos ensaiados. Clientes reais falando de resultados reais.</p>
+
+<p><strong>Ambiente autêntico:</strong> gravado onde a empresa realmente opera, não em estúdio artificial.</p>
+
+<p>[IMAGEM: corporate interview professional camera filming]</p>
+
+<h2>Case: o poder do depoimento bem produzido</h2>
+
+<p>Um <a href="/blog/video-institucional-vs-video-de-vendas">depoimento de cliente</a> gravado com luz profissional, áudio limpo e edição elegante pode ser o ativo de marketing mais valioso que sua empresa já criou. Ele responde objeções, cria prova social e gera identificação — tudo ao mesmo tempo.</p>
+
+<p>[IMAGEM: satisfied client corporate interview professional lighting]</p>
+
+<p>👉 <strong>Veja também:</strong> <a href="https://alefotografos.com.br/blog/retrato-corporativo-percepacao-negocio">Retrato corporativo: como a foto certa transforma a percepção do seu negócio</a> — porque o rosto da sua empresa também precisa transmitir confiança.</p>
+
+<p>👉 <strong>Leia também:</strong> <a href="/blog/quanto-custa-um-video-institucional">Quanto custa um vídeo institucional</a> — entenda os fatores que definem o investimento em um vídeo com identidade real.</p>
+
+<p><a href="/#contato">Solicite uma proposta para o seu vídeo →</a></p>
+`,
+    faqs: [
+      {
+        q: "Por que vídeos genéricos não funcionam mais no B2B?",
+        a: "O público corporativo está saturado de conteúdo visual. Vídeos com estrutura previsível não geram atenção nem memória. O que funciona é conteúdo que o espectador reconhece como relevante para a própria realidade.",
+      },
+      {
+        q: "Depoimentos reais funcionam melhor que atores?",
+        a: "Sim. Clientes reais transmitem autenticidade e credibilidade que atores não conseguem reproduzir. A chave está na produção: luz profissional, áudio limpo e edição elegante elevam o depoimento sem perder a naturalidade.",
+      },
+      {
+        q: "Qual a diferença entre vídeo 'de vitrine' e storytelling de problema-solução?",
+        a: "O vídeo de vitrine apresenta a empresa (prêmios, estrutura, valores). O storytelling de problema-solução começa pela dor do cliente e mostra como a empresa resolve — gerando identificação imediata.",
+      },
+    ],
   },
 ];
 

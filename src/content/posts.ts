@@ -617,6 +617,7 @@ export const posts: BlogPost[] = [
   {
     slug: "video-institucional-vs-video-de-vendas",
     title: "Vídeo institucional vs. vídeo de vendas: qual a sua empresa precisa agora?",
+    metaTitle: "Vídeo institucional vs. vídeo de vendas: qual usar?",
     metaDescription:
       "Entenda a diferença real entre vídeo institucional e vídeo de vendas — e descubra qual formato vai gerar mais resultado para o momento do seu negócio.",
     excerpt:

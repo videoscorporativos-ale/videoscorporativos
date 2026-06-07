@@ -682,7 +682,7 @@ export const posts: BlogPost[] = [
 
 <h2>Quanto custa cada um?</h2>
 
-<p>Os valores variam com complexidade, locação, número de dias de gravação e pós-produção. O que posso garantir: o custo de <strong>não ter</strong> um bom vídeo é sempre maior.</p>
+<p>Os valores variam com complexidade, locação, número de dias de gravação e pós-produção. Para entender em detalhe como o orçamento é montado, veja <a href="/blog/quanto-custa-um-video-institucional">quanto custa um vídeo institucional</a>. O que posso garantir: o custo de <strong>não ter</strong> um bom vídeo é sempre maior.</p>
 
 <p>👉 <strong>Veja também:</strong> <a href="https://alefotografos.com.br/blog/fotografia-corporativa-estrategia-de-conteudo">Como a fotografia corporativa complementa sua estratégia de vídeo</a> — fotos e vídeo do mesmo evento criam um arsenal de conteúdo imbatível.</p>
 

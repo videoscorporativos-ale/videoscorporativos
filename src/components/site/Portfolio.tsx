@@ -7,23 +7,32 @@ type Category = "Todos" | "Institucional" | "Eventos" | "Feiras";
 export type PortfolioItem = { title: string; category: Exclude<Category, "Todos">; videoId: string };
 
 export const portfolioItems: PortfolioItem[] = [
-  // Ordem espelhada do site alefotografo.com.br (seção Vídeos)
+  // Ordenado por categoria, do mais novo ao mais antigo (espelhando alefotografo.com.br/videos-para-empresas)
+  // Institucional
+  { title: "Fiorde Logística — Soluções Logísticas Integradas para Empresas", category: "Institucional", videoId: "iod4JyF9l6w" },
+  { title: "Nitriflex — Indústria Química de Polímeros Especiais e Borrachas Nitrílicas", category: "Institucional", videoId: "VzEBf22nMJg" },
+  { title: "ATIVA Log — Vídeo Institucional", category: "Institucional", videoId: "nkHJbeXx5Qo" },
+  { title: "Vídeo Manifesto — Empreendimento, Estrutura e Propósito", category: "Institucional", videoId: "isrDJDmcOvE" },
+  { title: "Curso de Prestação de Contas Eleitorais 2026 — Professora Rita", category: "Institucional", videoId: "qsmVfufY6TM" },
+  { title: "BMX Logística — Vídeo Institucional", category: "Institucional", videoId: "fsx2OBjkzFc" },
+  { title: "ATIVA Log — Estrutura, Operação e Eficiência Logística", category: "Institucional", videoId: "x_XuKwIA5cE" },
+  { title: "Rocha & Queiroz Advogados — Institucional", category: "Institucional", videoId: "ITBhZlBQd6E" },
+  { title: "SQ Química — Unidade Vinhedo", category: "Institucional", videoId: "g5Lvz0ugdyI" },
+  { title: "UNITEC — Vídeo Institucional", category: "Institucional", videoId: "_bdJOuE4I3Q" },
+  { title: "IBIS Botucatu — Vídeo Manifesto", category: "Institucional", videoId: "PDFwTUHOwiY" },
   { title: "ATIVA Logística — Programa de Sustentabilidade", category: "Institucional", videoId: "aOiYST9L8ec" },
   { title: "ATIVA Logística — Centro de Distribuição Itapevi", category: "Institucional", videoId: "T4Uh7_Zcka8" },
-  { title: "Vídeo Manifesto — Empreendimento, Estrutura e Propósito", category: "Institucional", videoId: "isrDJDmcOvE" },
-  { title: "IBIS Botucatu — Vídeo Manifesto", category: "Institucional", videoId: "PDFwTUHOwiY" },
-  // Demais trabalhos selecionados
-  { title: "BMX Logística — Vídeo Institucional", category: "Institucional", videoId: "fsx2OBjkzFc" },
-  { title: "UNITEC — Vídeo Institucional", category: "Institucional", videoId: "_bdJOuE4I3Q" },
-  { title: "Rocha & Queiroz Advogados — Institucional", category: "Institucional", videoId: "ITBhZlBQd6E" },
-  { title: "Curso de Prestação de Contas Eleitorais 2026 — Professora Rita", category: "Institucional", videoId: "qsmVfufY6TM" },
+  // Eventos
   { title: "VIII Congresso Brasileiro de Direito da Empresa — IBDE Rio 2026", category: "Eventos", videoId: "6A7a7AaCX2Y" },
+  { title: "22º Fórum de Compras & Sourcing", category: "Eventos", videoId: "DT4MCU5Xtqw" },
+  { title: "OneMBA — Produção Audiovisual", category: "Eventos", videoId: "EmO4fVfDYWM" },
   { title: "Galena 35 Anos", category: "Eventos", videoId: "JG6KloCm3jA" },
-  { title: "Convenção de Vendas Tecnisa 2023", category: "Eventos", videoId: "cm3c0eMpL9M" },
   { title: "15ª Convenção ABRADILAN — Punta Cana", category: "Eventos", videoId: "TAv6Obk3TVE" },
+  { title: "Convenção de Vendas Tecnisa 2023", category: "Eventos", videoId: "cm3c0eMpL9M" },
   { title: "LATAM Sales Meeting 2021 — Convatec", category: "Eventos", videoId: "YT44mYNhlkA" },
   { title: "Encontro de Craques — Germed", category: "Eventos", videoId: "MVea__twp3A" },
   { title: "FCW — Prêmio Almirante Álvaro Alberto", category: "Eventos", videoId: "IEJhGi9yiMk" },
+  // Feiras
   { title: "Faz Farma Faz Negócio — 9ª Edição", category: "Feiras", videoId: "dFn6YIwakBI" },
   { title: "SQ Química na ABRAFATI Show 2022", category: "Feiras", videoId: "ufqmkFC6lrw" },
   { title: "Faz Negócios 3", category: "Feiras", videoId: "C6XQuyikcrM" },

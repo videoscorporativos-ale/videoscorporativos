@@ -661,7 +661,7 @@ export const posts: BlogPost[] = [
 <p>Ideal para:</p>
 
 <ul>
-  <li>Landing pages de produtos/serviços</li>
+  <li><a href="/blog/video-corporativo-afastando-clientes">Landing pages de produtos/serviços</a></li>
   <li>Sequências de email marketing</li>
   <li>Propostas comerciais</li>
   <li>WhatsApp de vendedores</li>

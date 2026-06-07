@@ -699,7 +699,7 @@ export const posts: BlogPost[] = [
     excerpt:
       "O mercado corporativo paulistano mudou. Veja por que empresas líderes estão apostando em vídeos com identidade e storytelling real.",
     tldr:
-      "Empresas que crescem no B2B paulistano abandonaram vídeos genéricos de 'vitirne' e adotam storytelling de problema-solução, depoimentos reais e ambientes autênticos. Esse formato gera identificação, prova social e resultados superiores.",
+      "Empresas que crescem no B2B paulistano abandonaram vídeos genéricos de 'vitrine' e adotam storytelling de problema-solução, depoimentos reais e ambientes autênticos. Esse formato gera identificação, prova social e resultados superiores.",
     category: "Mercado & Tendências",
     coverQuery: "sao paulo corporate skyline sunset",
     coverAlt:

@@ -95,6 +95,11 @@ const BANK_KEY_RE = /^[A-Z]+\d+$/;
  */
 export function coverImageUrl(keyOrQuery: string, width = 1600): string {
   const trimmed = keyOrQuery.trim();
+  if (/^https?:\/\//i.test(trimmed)) {
+    // Direct CDN URL: swap or add w= param
+    if (/[?&]w=\d+/.test(trimmed)) return trimmed.replace(/([?&]w=)\d+/, `$1${width}`);
+    return trimmed + (trimmed.includes("?") ? "&" : "?") + `w=${width}&q=80&auto=format&fit=crop`;
+  }
   if (BANK_KEY_RE.test(trimmed) && IMAGE_BANK[trimmed]) {
     return `${IMAGE_BANK[trimmed]}?w=${width}&q=80&auto=format&fit=crop`;
   }
@@ -595,9 +600,9 @@ export const posts: BlogPost[] = [
     tldr:
       "Um vídeo corporativo mal produzido é pior do que não ter vídeo: comunica descuido e amadorismo. Um vídeo profissional transfere confiança e pode aumentar a conversão em até 80%.",
     category: "Estratégia de Vídeo",
-    coverQuery: "M2",
+    coverQuery: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1600&q=80&auto=format&fit=crop",
     coverAlt:
-      "Executivo apresentando para equipe em ambiente corporativo",
+      "Executivo apresentando para equipe",
     datePublished: "2026-06-11",
     keywords:
       "vídeo corporativo ruim, erros vídeo institucional, vídeo afastando clientes, produção audiovisual profissional, briefing estratégico vídeo",
@@ -606,12 +611,12 @@ export const posts: BlogPost[] = [
 
 <p>A verdade que ninguém conta: um vídeo corporativo ruim é pior do que não ter vídeo nenhum.</p>
 
-<p>[IMAGEM: E1 | alt: Profissional analisando vídeo institucional no notebook]</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1528109966604-5a6a4a964e8d?w=800&q=80&auto=format&fit=crop | alt: Edição de vídeo em notebook]</p>
 
 <h2>O custo invisível do vídeo mal feito</h2>
 <p>Você investiu R$ 3.000 num vídeo caseiro. Parece economia, certo? Mas e se esse vídeo estiver na homepage que recebe 2.000 acessos por mês e 30% saírem antes de 10 segundos? Você está perdendo contratos que nunca saberá que existiram.</p>
 
-<p>[IMAGEM: M1 | alt: Executivos em reunião corporativa]</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format&fit=crop | alt: Executivos em reunião corporativa]</p>
 
 <h2>Os 5 sinais de que seu vídeo está te prejudicando</h2>
 <ol>
@@ -622,12 +627,12 @@ export const posts: BlogPost[] = [
   <li><strong>Sem legendas ou sem versão vertical</strong></li>
 </ol>
 
-<p>[IMAGEM: V2 | alt: Câmera profissional em tripé para vídeo corporativo]</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1625690303837-654c9666d2d0?w=800&q=80&auto=format&fit=crop | alt: Câmera profissional em tripé]</p>
 
 <h2>O que um vídeo profissional realmente entrega</h2>
 <p>Não é apenas imagem bonita. É confiança transferida. Estudos da Forbes e HubSpot mostram que landing pages com vídeo convertem até 80% mais.</p>
 
-<p>[IMAGEM: V3 | alt: Cinegrafista gravando depoimento corporativo]</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1576280314550-773c50583407?w=800&q=80&auto=format&fit=crop | alt: Cinegrafista gravando vídeo corporativo]</p>
 
 <h2>Por onde começar?</h2>
 <p>O primeiro passo é um briefing estratégico.</p>
@@ -646,16 +651,16 @@ export const posts: BlogPost[] = [
     tldr:
       "Vídeo institucional constrói autoridade e confiança. Vídeo de vendas acelera a decisão de compra. As empresas que crescem usam os dois.",
     category: "Tipos de vídeo",
-    coverQuery: "M10",
+    coverQuery: "https://images.unsplash.com/photo-1573167507387-6b4b98cb7c13?w=1600&q=80&auto=format&fit=crop",
     coverAlt:
-      "Plateia ouvindo apresentação corporativa",
+      "Plateia ouvindo apresentação",
     datePublished: "2026-06-12",
     keywords:
       "vídeo institucional, vídeo de vendas, vídeo institucional vs vendas, tipos de vídeo corporativo, vídeo B2B, vídeo comercial",
     bodyHtml: `
 <p>Quando uma empresa decide investir em vídeo, a primeira pergunta quase sempre é: "Mas que tipo de vídeo eu preciso?"</p>
 
-<p>[IMAGEM: E3 | alt: Tela de edição de vídeo corporativo]</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80&auto=format&fit=crop | alt: Monitor de pós-produção]</p>
 
 <h2>Vídeo Institucional: construindo autoridade</h2>
 <p>O <a href="/blog/video-institucional-vale-a-pena">vídeo institucional</a> é o cartão de visitas audiovisual. Responde: <strong>"Quem vocês são e por que devo confiar?"</strong></p>
@@ -666,7 +671,7 @@ export const posts: BlogPost[] = [
   <li>Prospecção B2B</li>
 </ul>
 
-<p>[IMAGEM: M2 | alt: Executivo apresentando em reunião]</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&auto=format&fit=crop | alt: Executivo apresentando para equipe]</p>
 
 <h2>Vídeo de Vendas: acelerando decisões</h2>
 <p>O vídeo de vendas tem função cirúrgica: <strong>mover o prospect de "estou interessado" para "quero comprar"</strong>. Fala de dor, solução e resultado.</p>
@@ -677,12 +682,12 @@ export const posts: BlogPost[] = [
   <li>WhatsApp de vendedores</li>
 </ul>
 
-<p>[IMAGEM: E1 | alt: Análise de funil de vendas em notebook]</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1528109966604-5a6a4a964e8d?w=800&q=80&auto=format&fit=crop | alt: Edição de vídeo em notebook]</p>
 
 <h2>A combinação que empresas inteligentes usam</h2>
 <p>Um prospect descobre sua empresa → assiste ao vídeo institucional e confia. Entra na página de serviços → assiste ao vídeo de vendas e decide.</p>
 
-<p>[IMAGEM: M3 | alt: Jornada do cliente em ambiente corporativo]</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?w=800&q=80&auto=format&fit=crop | alt: Profissionais em ambiente corporativo]</p>
 
 <h2>Quanto custa cada um?</h2>
 <p>Os valores variam com complexidade, locação e pós-produção. Veja <a href="/blog/quanto-custa-um-video-institucional">quanto custa um vídeo institucional</a>.</p>
@@ -701,33 +706,33 @@ export const posts: BlogPost[] = [
     tldr:
       "Empresas que crescem no B2B paulistano abandonaram vídeos genéricos e adotam storytelling de problema-solução, depoimentos reais e ambientes autênticos.",
     category: "Mercado & Tendências",
-    coverQuery: "B1",
+    coverQuery: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80&auto=format&fit=crop",
     coverAlt:
-      "Skyline corporativo de São Paulo",
+      "Skyline corporativo urbano",
     datePublished: "2026-06-13",
     keywords:
       "vídeo corporativo São Paulo, empresas abandonando vídeos genéricos, storytelling corporativo, depoimento cliente vídeo, produção audiovisual SP",
     bodyHtml: `
 <p>Existe um padrão que se repete em empresas que crescem consistentemente no mercado B2B de São Paulo: elas pararam de fazer vídeos que "apresentam a empresa" e começaram a fazer vídeos que <strong>contam histórias que o cliente reconhece como a própria história</strong>.</p>
 
-<p>[IMAGEM: B1 | alt: Skyline corporativo de São Paulo]</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80&auto=format&fit=crop | alt: Skyline corporativo urbano]</p>
 
 <h2>O problema com vídeos "de vitrine"</h2>
 <p>O <a href="/blog/erros-comuns-em-videos-institucionais">vídeo genérico corporativo</a> tem uma estrutura previsível: imagens aéreas do prédio, executivos caminhando em corredor, frase de missão-visão-valores, logo no final. Todo mundo já viu. Ninguém se lembra.</p>
 
-<p>[IMAGEM: B2 | alt: Edifícios corporativos modernos em São Paulo]</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?w=800&q=80&auto=format&fit=crop | alt: Edifícios corporativos modernos]</p>
 
 <h2>Storytelling corporativo: o formato que está funcionando em São Paulo</h2>
 <p><strong>Storytelling de problema-solução:</strong> começam mostrando a dor do cliente.</p>
 <p><strong>Depoimentos reais:</strong> não atores, não textos ensaiados.</p>
 <p><strong>Ambiente autêntico:</strong> gravado onde a empresa realmente opera.</p>
 
-<p>[IMAGEM: V6 | alt: Entrevista corporativa em produção com equipe]</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1632187989763-c9c620420b4d?w=800&q=80&auto=format&fit=crop | alt: Equipe de produção em set de gravação]</p>
 
 <h2>Case: o poder do depoimento bem produzido</h2>
 <p>Um <a href="/blog/video-institucional-vs-video-de-vendas">depoimento de cliente</a> com luz profissional, áudio limpo e edição elegante pode ser o ativo de marketing mais valioso da sua empresa.</p>
 
-<p>[IMAGEM: M9 | alt: Depoimento de cliente em ambiente corporativo]</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?w=800&q=80&auto=format&fit=crop | alt: Retrato profissional acolhedor]</p>
 
 <p><a href="/#contato">Solicite uma proposta para o seu vídeo →</a></p>
 `,
@@ -747,644 +752,567 @@ export const posts: BlogPost[] = [
     ],
   },
   {
-    slug: "video-imobiliario-empreendimentos-alto-padrao",
-    title: "Vídeo imobiliário para empreendimentos de alto padrão: o que realmente vende",
-    metaTitle: "Vídeo imobiliário de alto padrão: o que realmente vende",
+    slug: "ceo-rosto-da-empresa-foto-video",
+    title: "O CEO é o rosto da empresa — e hoje esse rosto precisa estar em foto e vídeo",
+    metaTitle: "O CEO é o rosto da empresa — e hoje esse rosto precisa estar em foto e vídeo",
     metaDescription:
-      "Vídeo imobiliário para empreendimentos de alto padrão exige tour de qualidade cinematográfica, imagens aéreas e narrativa de bairro. Veja como produzir.",
+      "Em decisões B2B de médio e grande porte, o decisor pesquisa o líder antes da empresa. Veja por que o CEO precisa de imagem profissional — e como começar.",
     excerpt:
-      "No alto padrão, vídeo amador queima o produto. Veja o que diferencia um tour imobiliário que realmente vende.",
+      "Em decisões B2B de médio e grande porte, o decisor pesquisa o líder antes da empresa. Veja por que o CEO precisa de imagem profissional — e como começar.",
     tldr:
-      "Vídeo imobiliário de alto padrão exige captação cinematográfica do interior, imagens aéreas do entorno e narrativa que comunique estilo de vida — não só metragem. O cliente do segmento de luxo compra experiência, e a produção precisa estar à altura.",
-    category: "Tipos de vídeo",
-    coverQuery: "R3",
-    coverAlt:
-      "Interior moderno de apartamento de alto padrão",
-    datePublished: "2026-06-15",
-    keywords:
-      "vídeo imobiliário alto padrão, tour virtual apartamento luxo, vídeo lançamento imobiliário, drone imobiliário, video marketing imobiliário",
-    bodyHtml: `
-<p>[IMAGEM: R3 | alt: Interior de empreendimento de alto padrão]</p>
-
-<h2>Por que o vídeo amador queima o produto de luxo</h2>
-<p>[IMAGEM: R1 | alt: Sala de apartamento decorado para tour imobiliário]</p>
-<p>No segmento de alto padrão, o cliente compara o vídeo do seu empreendimento ao do concorrente em segundos. Câmera tremida, luz dura ou narração genérica desvalorizam o produto antes da visita. A produção tem que comunicar o mesmo padrão do imóvel.</p>
-
-<h2>O tour cinematográfico</h2>
-<p>[IMAGEM: B2 | alt: Vista aérea de empreendimento corporativo]</p>
-<p>Movimentos de câmera estáveis (gimbal ou slider), iluminação que valoriza as texturas dos acabamentos, planos que respeitam a arquitetura. O ritmo é contemplativo — o espectador precisa absorver cada ambiente.</p>
-
-<h2>O entorno conta a história</h2>
-<p>[IMAGEM: B1 | alt: Vista aérea de bairro nobre]</p>
-<p>Drone do bairro, vizinhança, conveniências. No alto padrão, localização e estilo de vida vendem tanto quanto a planta.</p>
-`,
-    faqs: [
-      {
-        q: "Drone é obrigatório?",
-        a: "Para alto padrão, é praticamente obrigatório. A imagem aérea comunica localização, escala e exclusividade.",
-      },
-      {
-        q: "Quantos vídeos saem de uma captação?",
-        a: "Tipicamente um vídeo principal de 90s, cortes verticais para Instagram/Reels e um teaser curto para anúncios.",
-      },
-      {
-        q: "Preciso de decoração pronta?",
-        a: "Sim. Apartamento decorado vende muito mais do que apartamento vazio em vídeo.",
-      },
-    ],
-  },
-  {
-    slug: "video-hotelaria-experiencia-hospede",
-    title: "Vídeo para hotelaria: como comunicar a experiência antes da reserva",
-    metaTitle: "Vídeo para hotelaria: comunique a experiência do hóspede",
-    metaDescription:
-      "Vídeo para hotelaria precisa comunicar a experiência completa — lobby, quarto, lazer, eventos. Veja como produzir vídeos que aumentam reservas diretas.",
-    excerpt:
-      "Hóspede de hotel decide pelo sentimento, não pela diária. Veja como o vídeo comunica essa experiência.",
-    tldr:
-      "Vídeo para hotelaria precisa comunicar a experiência completa do hóspede: lobby, quarto, gastronomia, lazer e eventos. Quando bem produzido, reduz a dependência de OTAs e aumenta a reserva direta no site.",
-    category: "Tipos de vídeo",
-    coverQuery: "H1",
-    coverAlt:
-      "Lobby de hotel de luxo",
-    datePublished: "2026-06-17",
-    keywords:
-      "vídeo hotelaria, vídeo hotel, vídeo pousada, marketing hoteleiro, vídeo resort, reservas diretas hotel",
-    bodyHtml: `
-<p>[IMAGEM: H1 | alt: Lobby de hotel de luxo]</p>
-
-<h2>O hóspede compra sentimento</h2>
-<p>[IMAGEM: R2 | alt: Quarto de hotel de alto padrão]</p>
-<p>Ninguém escolhe hotel só pelo preço. Escolhe pela expectativa da experiência. O vídeo é a forma mais eficiente de transmitir essa expectativa antes da decisão.</p>
-
-<h2>Os quatro blocos de um vídeo de hotel</h2>
-<p>[IMAGEM: H2 | alt: Ambiente de lazer de hotel]</p>
-<ul>
-  <li><strong>Hospitalidade</strong> — lobby, recepção, pequenos gestos.</li>
-  <li><strong>Acomodação</strong> — quarto, vista, conforto.</li>
-  <li><strong>Lazer e gastronomia</strong> — piscina, restaurante, ambientes sociais.</li>
-  <li><strong>Eventos e convenções</strong> — salões, infraestrutura para empresas.</li>
-</ul>
-
-<h2>Para eventos corporativos no hotel</h2>
-<p>[IMAGEM: EV4 | alt: Salão de eventos montado em hotel]</p>
-<p>Hotéis que captam eventos corporativos precisam de um vídeo específico dos salões prontos para receber convenções, com configurações típicas e infraestrutura técnica.</p>
-`,
-    faqs: [
-      {
-        q: "Drone vale para hotel?",
-        a: "Sim, principalmente para resorts e hotéis com piscina, jardim ou vista privilegiada.",
-      },
-      {
-        q: "Quantos vídeos preciso?",
-        a: "Tipicamente um vídeo principal de 90-120s, cortes por categoria (suíte, gastronomia, eventos) e Reels para redes.",
-      },
-      {
-        q: "Precisa de ator/figurante?",
-        a: "Para alguns planos sim, principalmente para humanizar o ambiente. Sempre com autorização de uso de imagem.",
-      },
-    ],
-  },
-  {
-    slug: "video-treinamento-corporativo-rh",
-    title: "Vídeo de treinamento corporativo: por que o RH está abandonando o presencial",
-    metaTitle: "Vídeo de treinamento corporativo: o novo padrão do RH",
-    metaDescription:
-      "Vídeo de treinamento corporativo escala onboarding, padroniza conhecimento e reduz custo. Veja como o RH moderno produz e mede resultado.",
-    excerpt:
-      "Treinamento em vídeo escala, padroniza e é mensurável. Veja por que o RH moderno aposta nesse formato.",
-    tldr:
-      "Vídeo de treinamento corporativo padroniza o conhecimento, escala para todas as unidades, fica disponível 24/7 e tem métricas claras de consumo. Para onboarding, compliance e capacitação técnica, supera o treinamento presencial em custo e consistência.",
-    category: "Tipos de vídeo",
-    coverQuery: "M8",
-    coverAlt:
-      "Equipe corporativa em treinamento com laptops",
-    datePublished: "2026-06-19",
-    keywords:
-      "vídeo treinamento corporativo, vídeo onboarding, vídeo capacitação RH, treinamento online empresa, LMS vídeo, vídeo instrucional",
-    bodyHtml: `
-<p>[IMAGEM: M8 | alt: Equipe corporativa em treinamento]</p>
-
-<h2>Por que vídeo virou o padrão de treinamento</h2>
-<p>[IMAGEM: E1 | alt: Colaborador assistindo a videotreinamento]</p>
-<p>Treinamento presencial não escala: depende de instrutor, sala, agenda. O vídeo elimina tudo isso e ainda padroniza o conteúdo — todos recebem exatamente a mesma instrução, sem variação de qualidade entre turmas.</p>
-
-<h2>Os formatos que funcionam</h2>
-<p>[IMAGEM: M5 | alt: Equipe em treinamento corporativo presencial]</p>
-<ul>
-  <li><strong>Onboarding</strong> — cultura, processos, ferramentas.</li>
-  <li><strong>Compliance</strong> — código de conduta, LGPD, segurança.</li>
-  <li><strong>Capacitação técnica</strong> — passo a passo, demonstrações.</li>
-  <li><strong>Microlearning</strong> — vídeos curtos para reforço pontual.</li>
-</ul>
-
-<h2>O que diferencia um vídeo instrucional bem feito</h2>
-<p>[IMAGEM: E4 | alt: Gravação de vídeo de treinamento profissional]</p>
-<p>Roteiro didático, presença do instrutor, recursos gráficos (legendas, ilustrações, infográficos animados) e ritmo que respeita a atenção. Vídeo de treinamento ruim não é assistido — e quando é, não é absorvido.</p>
-
-<h2>Métricas que o RH passa a ter</h2>
-<p>[IMAGEM: E3 | alt: Painel de métricas de aprendizado corporativo]</p>
-<p>Quem assistiu, quantas vezes, onde parou, quem completou. Plataformas de LMS plugam o vídeo a dashboards de RH e transformam treinamento em dado.</p>
-`,
-    faqs: [
-      {
-        q: "Posso usar o CEO ou diretor como apresentador?",
-        a: "Sim — e funciona muito bem em conteúdos de cultura. Para conteúdo técnico, especialista interno costuma ser melhor.",
-      },
-      {
-        q: "Quanto tempo deve ter cada módulo?",
-        a: "Idealmente entre 3 e 8 minutos por tópico. Acima disso, divida em capítulos.",
-      },
-      {
-        q: "Vídeo substitui treinamento presencial?",
-        a: "Substitui boa parte. Para soft skills e dinâmicas, o presencial ainda agrega — mas vídeo cobre o conhecimento técnico e processual com folga.",
-      },
-    ],
-  },
-  {
-    slug: "video-corporativo-contabilidade-juridico",
-    title: "Vídeo corporativo para contabilidade e jurídico: como vender confiança",
-    metaTitle: "Vídeo corporativo para contabilidade e jurídico",
-    metaDescription:
-      "Escritórios de contabilidade e jurídico vendem confiança. Veja como o vídeo corporativo posiciona o escritório e atrai o cliente certo.",
-    excerpt:
-      "Cliente de contabilidade e jurídico compra confiança. O vídeo é o melhor ativo para comunicar isso.",
-    tldr:
-      "Escritórios de contabilidade e advocacia vendem um produto intangível: confiança e segurança. O vídeo corporativo profissional comunica autoridade, humaniza o sócio e diferencia o escritório em um mercado saturado de sites genéricos.",
-    category: "Tipos de vídeo",
-    coverQuery: "M9",
-    coverAlt:
-      "Reunião de consultoria entre advogado e cliente",
-    datePublished: "2026-06-21",
-    keywords:
-      "vídeo escritório contabilidade, vídeo advocacia, vídeo escritório advocacia, marketing jurídico, vídeo corporativo contábil, vídeo serviços profissionais",
-    bodyHtml: `
-<p>[IMAGEM: E4 | alt: Profissional em escritório de serviços profissionais]</p>
-
-<h2>O cliente compra a pessoa antes do serviço</h2>
-<p>[IMAGEM: M7 | alt: Reunião de consultoria com cliente]</p>
-<p>Em escritórios de serviços profissionais, o cliente está delegando algo crítico — sua contabilidade, seu processo, seu patrimônio. A decisão é emocional antes de racional: ele precisa sentir confiança no profissional. Texto frio em um site não comunica isso.</p>
-
-<h2>O formato que funciona</h2>
-<p>[IMAGEM: E1 | alt: Gravação de vídeo educativo profissional]</p>
-<p>Vídeo do sócio explicando como o escritório atua, conteúdo educativo respondendo dúvidas comuns do cliente ideal (com isso o profissional já entrega valor antes de cobrar) e depoimentos curtos de clientes satisfeitos.</p>
-
-<h2>Conteúdo recorrente posiciona autoridade</h2>
-<p>[IMAGEM: M6 | alt: Equipe de escritório contábil em reunião]</p>
-<p>Uma gravação consegue render vários vídeos curtos para LinkedIn e YouTube. Conteúdo consistente, ao longo do tempo, transforma o sócio em autoridade reconhecida no nicho.</p>
-`,
-    faqs: [
-      {
-        q: "Não tenho desenvoltura na frente da câmera. Funciona mesmo assim?",
-        a: "Sim. Boa direção e edição compensam a falta de prática. Em poucas gravações o sócio ganha naturalidade.",
-      },
-      {
-        q: "Posso falar de casos reais?",
-        a: "Com cuidado e sempre respeitando sigilo profissional. Cases anonimizados e exemplos genéricos funcionam bem.",
-      },
-      {
-        q: "Quantos vídeos preciso para começar?",
-        a: "Um institucional do escritório + 3 a 5 vídeos curtos respondendo dúvidas comuns já posicionam.",
-      },
-    ],
-  },
-  {
-    slug: "drone-video-corporativo-quando-vale",
-    title: "Drone em vídeo corporativo: quando vale e quando é só firula",
-    metaTitle: "Drone em vídeo corporativo: quando vale e quando é firula",
-    metaDescription:
-      "Drone em vídeo corporativo tem usos onde transforma o resultado e usos onde só encarece. Veja onde realmente vale incluir imagens aéreas.",
-    excerpt:
-      "Drone virou padrão, mas nem todo vídeo precisa. Veja onde aérea agrega e onde só infla o orçamento.",
-    tldr:
-      "Imagem aérea agrega muito em empreendimentos imobiliários, indústria, logística, eventos e qualquer projeto onde a escala importa. Para escritórios em prédios comerciais ou serviços urbanos, costuma ser firula que encarece sem entregar valor proporcional.",
-    category: "Tipos de vídeo",
-    coverQuery: "B2",
-    coverAlt:
-      "Vista aérea de complexo corporativo",
-    datePublished: "2026-06-23",
-    keywords:
-      "drone vídeo corporativo, drone imobiliário, drone indústria, filmagem aérea empresa, drone evento, drone marketing",
-    bodyHtml: `
-<p>[IMAGEM: B1 | alt: Imagem aérea urbana para vídeo corporativo]</p>
-
-<h2>Quando o drone transforma o vídeo</h2>
-<p>[IMAGEM: B2 | alt: Vista aérea de complexo corporativo]</p>
-<p>Empreendimentos imobiliários (mostra entorno e implantação), indústria e logística (escala da operação), eventos ao ar livre (público e estrutura), agronegócio (extensão da área), construção civil (acompanhamento de obra). Em todos esses casos, a aérea entrega informação que a câmera no chão não consegue.</p>
-
-<h2>Quando é só firula</h2>
-<p>[IMAGEM: V3 | alt: Operação audiovisual em campo]</p>
-<p>Escritórios em prédios comerciais (a aérea do prédio não diz nada do serviço), serviços puramente digitais, depoimentos de cliente. O plano aéreo entra no vídeo só para "parecer caro" e acaba comunicando o oposto: que faltou conteúdo.</p>
-
-<h2>Cuidados técnicos e regulatórios</h2>
-<p>[IMAGEM: B1 | alt: Imagem aérea cinematográfica de cidade]</p>
-<p>Drone profissional exige piloto certificado pela ANAC, autorização DECEA na maior parte das áreas urbanas e seguro. Operação caseira sem registro pode multar e inviabilizar o material para uso comercial.</p>
-`,
-    faqs: [
-      {
-        q: "Drone gera quanto a mais no orçamento?",
-        a: "Depende da locação e do tempo de voo, mas é um adicional relevante. Pedimos sempre se faz sentido para o objetivo.",
-      },
-      {
-        q: "Posso usar drone em qualquer lugar?",
-        a: "Não. Áreas próximas a aeroportos, helipontos e algumas regiões urbanas exigem autorização específica.",
-      },
-      {
-        q: "Vale para evento indoor?",
-        a: "Em geral não. Espaço fechado limita o drone e a imagem perde o impacto que justifica o uso.",
-      },
-    ],
-  },
-  {
-    slug: "video-lancamento-produto-roteiro",
-    title: "Vídeo de lançamento de produto: o roteiro que faz o lançamento converter",
-    metaTitle: "Vídeo de lançamento de produto: roteiro que converte",
-    metaDescription:
-      "Vídeo de lançamento de produto: estrutura de roteiro, captação e métricas que separam um lançamento que vende de um que passa despercebido.",
-    excerpt:
-      "Lançamento de produto é janela curta. Veja a estrutura de vídeo que aumenta a conversão na hora certa.",
-    tldr:
-      "Um bom vídeo de lançamento estrutura o roteiro em problema → solução → diferencial → prova → CTA, capta o produto com iluminação dedicada e tem cortes para o feed, anúncio e PDV. Lançamento é janela curta — produção amadora desperdiça o investimento de toda a equipe de marketing.",
+      "Em decisões B2B de médio e grande porte, o decisor pesquisa o líder antes da empresa. Veja por que o CEO precisa de imagem profissional — e como começar.",
     category: "Estratégia de Vídeo",
-    coverQuery: "V1",
+    coverQuery: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1600&q=80&auto=format&fit=crop",
     coverAlt:
-      "Briefing de produção com claquete para lançamento de produto",
-    datePublished: "2026-06-25",
-    keywords:
-      "vídeo lançamento produto, roteiro vídeo lançamento, vídeo go-to-market, vídeo produto novo, vídeo campanha lançamento",
+      "Retrato executivo de CEO em ambiente corporativo",
+    datePublished: "2025-06-10",
     bodyHtml: `
-<p>[IMAGEM: V1 | alt: Briefing de produção com claquete]</p>
-
-<h2>A estrutura do roteiro</h2>
-<p>[IMAGEM: V4 | alt: Captação de produto com câmera profissional]</p>
-<ol>
-  <li><strong>Problema</strong> — a dor que o produto resolve, em 5–10 segundos.</li>
-  <li><strong>Solução</strong> — o produto entra como resposta.</li>
-  <li><strong>Diferencial</strong> — o que faz esse produto ser melhor que as alternativas.</li>
-  <li><strong>Prova</strong> — depoimento, número, demonstração.</li>
-  <li><strong>CTA</strong> — onde comprar, o que fazer agora.</li>
-</ol>
-
-<h2>A captação que valoriza o produto</h2>
-<p>[IMAGEM: M10 | alt: Equipe de marketing avaliando o vídeo de lançamento]</p>
-<p>Iluminação dedicada, câmera estável, planos detalhados das texturas e funcionalidades. Produto bem filmado vende sozinho — produto mal filmado precisa de muito argumento para compensar.</p>
-
-<h2>Versões que multiplicam o investimento</h2>
-<p>[IMAGEM: E3 | alt: Métricas de engajamento de vídeo de lançamento]</p>
-<p>De uma captação saem: vídeo principal de 60-90s, teaser de 15s, Reels verticais, GIFs para WhatsApp, peças para anúncio. Pensar nessas versões na pré-produção evita retrabalho caro depois.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80&auto=format&fit=crop | alt: Retrato executivo de CEO em ambiente corporativo]</p>
+<p>Antes de uma empresa fechar um contrato relevante, alguém do outro lado digita o nome do seu CEO no Google e no LinkedIn. O que essa pessoa encontra define o tom da primeira reunião — às vezes, define se a reunião acontece.</p>
+<p>No mercado B2B brasileiro, a decisão de compra passa por três a sete pessoas. Cada uma delas avalia risco. E nada reduz a percepção de risco mais rápido do que ver, com clareza, <strong>quem lidera a empresa</strong>: um rosto, uma postura, uma voz que transmite competência.</p>
+<h2>O problema da liderança "invisível"</h2>
+<p>A maioria dos CEOs de empresas sólidas tem uma presença digital frágil: uma foto de celular cortada de um evento, nenhum vídeo, nenhum posicionamento. Enquanto isso, concorrentes menores — porém mais visíveis — ocupam o espaço de autoridade que deveria ser seu.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&auto=format&fit=crop | alt: Executivo apresentando em ambiente corporativo]</p>
+<h2>O que a imagem do líder comunica (sem dizer uma palavra)</h2>
+<p>Um retrato executivo bem feito e um vídeo de posicionamento transmitem três coisas em segundos: <strong>solidez</strong> (a empresa é séria), <strong>proximidade</strong> (dá para confiar nessa pessoa) e <strong>liderança</strong> (esse é alguém que entende do assunto). Isso encurta o ciclo de vendas e melhora a qualidade do lead que chega até você.</p>
+<h2>Por onde o CEO começa</h2>
+<p>O ponto de partida costuma ser um pacote enxuto: um retrato executivo profissional + um vídeo curto de posicionamento (60 a 90 segundos) para o LinkedIn e o site. A partir daí, a presença cresce de forma consistente.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/video-posicionamento-ceo-linkedin">Vídeo de posicionamento para CEOs</a> e <a href="/blog/linkedin-video-corporativo-oportunidades-b2b">LinkedIn e vídeo corporativo: mais oportunidades B2B</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/retratos-executivos-linkedin-guia-definitivo">Retratos executivos para LinkedIn</a></p>
+<p><strong>Quer transformar a presença do seu CEO em um ativo de negócios?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento sem compromisso →</a></p>
 `,
-    faqs: [
-      {
-        q: "Quando começar a produzir o vídeo de lançamento?",
-        a: "Idealmente 60 a 90 dias antes da data de lançamento. Roteiro, captação, edição e aprovações tomam mais tempo do que se imagina.",
-      },
-      {
-        q: "Preciso de um teaser antes do vídeo principal?",
-        a: "Para lançamentos relevantes, sim. O teaser cria expectativa e ajuda o algoritmo a entender o público antes do principal entrar.",
-      },
-      {
-        q: "Quanto custa em relação ao institucional?",
-        a: "Geralmente mais, porque exige captação dedicada do produto, mais cortes e versões para várias mídias.",
-      },
-    ],
   },
   {
-    slug: "linkedin-video-corporativo-oportunidades-b2b",
-    title: "Vídeo no LinkedIn: como o B2B está perdendo oportunidades sem ele",
-    metaTitle: "Vídeo no LinkedIn: o que o B2B perde sem produzir",
+    slug: "retrato-executivo-c-level-imagem",
+    title: "Retrato executivo para o C-level: o ativo de imagem que abre portas",
+    metaTitle: "Retrato executivo para o C-level: o ativo de imagem que abre portas",
     metaDescription:
-      "Vídeo no LinkedIn entrega 5x mais engajamento que texto, mas exige formato certo. Veja como produzir vídeo corporativo que funciona no LinkedIn.",
+      "Diretores e C-level que investem em retrato executivo profissional são percebidos como mais competentes e confiáveis. Entenda o impacto — e como fazer o seu.",
     excerpt:
-      "Vídeo no LinkedIn tem 5x mais engajamento que texto. Veja o formato que realmente funciona para B2B.",
+      "Diretores e C-level que investem em retrato executivo profissional são percebidos como mais competentes e confiáveis. Entenda o impacto — e como fazer o seu.",
     tldr:
-      "Vídeo no LinkedIn entrega cerca de 5x mais engajamento que post de texto, mas exige formato específico: vertical ou quadrado, legendas obrigatórias (85% assiste sem som), primeiros 3 segundos decisivos e CEO/sócio na frente da câmera. B2B que ignora vídeo no LinkedIn perde alcance para concorrentes que produzem.",
+      "Diretores e C-level que investem em retrato executivo profissional são percebidos como mais competentes e confiáveis. Entenda o impacto — e como fazer o seu.",
     category: "Estratégia de Vídeo",
-    coverQuery: "M2",
+    coverQuery: "https://images.unsplash.com/photo-1648474484044-bb82df2f5a1f?w=1600&q=80&auto=format&fit=crop",
     coverAlt:
-      "Executivo apresentando para equipe corporativa",
-    datePublished: "2026-06-27",
-    keywords:
-      "vídeo LinkedIn, vídeo corporativo LinkedIn, marketing B2B LinkedIn, vídeo CEO LinkedIn, vídeo executivo, vídeo profissional LinkedIn",
+      "Retrato corporativo de executivo de terno",
+    datePublished: "2025-06-17",
     bodyHtml: `
-<p>[IMAGEM: E1 | alt: Profissional usando LinkedIn no notebook]</p>
-
-<h2>Por que o LinkedIn priorizou vídeo</h2>
-<p>[IMAGEM: E3 | alt: Painel de analytics de vídeo no LinkedIn]</p>
-<p>O algoritmo do LinkedIn entrega vídeos para mais pessoas que post de texto, porque vídeo segura o usuário mais tempo na plataforma. Resultado: post em vídeo gera, em média, 5x mais engajamento que post escrito.</p>
-
-<h2>O formato que funciona</h2>
-<p>[IMAGEM: E4 | alt: Executivo gravando vídeo para LinkedIn]</p>
-<ul>
-  <li><strong>Vertical (9:16) ou quadrado (1:1)</strong> — feed mobile.</li>
-  <li><strong>Legendas embutidas</strong> — 85% assiste sem som.</li>
-  <li><strong>Hook nos primeiros 3 segundos</strong> — se não prendeu, perdeu.</li>
-  <li><strong>Duração entre 30s e 2min</strong> — depende do conteúdo.</li>
-  <li><strong>CEO/sócio na frente da câmera</strong> — pessoa real conecta mais que marca.</li>
-</ul>
-
-<h2>Calendário editorial e consistência</h2>
-<p>[IMAGEM: E2 | alt: Planejamento de calendário editorial de vídeos]</p>
-<p>O ganho real está na consistência. Uma gravação por mês com bom planejamento rende 8-12 vídeos curtos, suficientes para uma cadência semanal de meses.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1648474484044-bb82df2f5a1f?w=800&q=80&auto=format&fit=crop | alt: Retrato corporativo de executivo de terno]</p>
+<p>Existe um detalhe que separa o perfil de um diretor que inspira confiança do perfil de um diretor que passa despercebido: a foto. Não é vaidade — é leitura de mercado. Em segundos, o cérebro de quem avalia decide se aquela pessoa parece competente, acessível e no comando.</p>
+<h2>O custo de uma foto amadora no perfil</h2>
+<p>Uma selfie, uma foto recortada de casamento ou uma imagem desatualizada comunicam descuido. Para um C-level de empresa de médio ou grande porte, isso é caro: enfraquece a autoridade exatamente onde ela mais importa — diante de investidores, conselhos, clientes estratégicos e talentos que você quer atrair.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80&auto=format&fit=crop | alt: Executiva em retrato corporativo profissional]</p>
+<h2>O que muda com um retrato profissional</h2>
+<p>Iluminação correta, direção de pose, enquadramento e tratamento transformam a percepção. O mesmo executivo passa a transmitir presença. E como a foto vive por anos no LinkedIn, no site institucional, em releases e apresentações, é um dos investimentos de imagem com maior retorno por real aplicado.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/ceo-rosto-da-empresa-foto-video">O CEO é o rosto da empresa</a> e <a href="/blog/imagem-decisao-compra-b2b">Como a imagem influencia a decisão de compra B2B</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/retrato-corporativo-percepacao-negocio">Retrato corporativo: como a foto certa transforma a percepção do negócio</a></p>
+<p><strong>Pronto para uma imagem à altura do seu cargo?</strong> <a href="https://wa.me/5511913550533">Solicite seu orçamento de retrato executivo →</a></p>
 `,
-    faqs: [
-      {
-        q: "Posso gravar no celular?",
-        a: "Para algumas situações, sim. Para vídeo do CEO ou conteúdo de marca, vale produção profissional — celular denuncia rápido.",
-      },
-      {
-        q: "Vídeo horizontal funciona no LinkedIn?",
-        a: "Funciona, mas vertical/quadrado tem melhor performance no feed mobile, que domina o consumo.",
-      },
-      {
-        q: "Com que frequência postar?",
-        a: "1 a 2 vídeos por semana é uma cadência sustentável e suficiente para gerar resultado consistente.",
-      },
-    ],
   },
   {
-    slug: "video-corporativo-saude-farmaceutico",
-    title: "Vídeo corporativo para saúde e farmacêutico: o que comunicar (e o que não pode)",
-    metaTitle: "Vídeo corporativo para saúde e farmacêutico",
+    slug: "video-posicionamento-ceo-linkedin",
+    title: "Vídeo de posicionamento para CEOs: como liderar a conversa do seu setor",
+    metaTitle: "Vídeo de posicionamento para CEOs: como liderar a conversa do seu setor",
     metaDescription:
-      "Vídeo corporativo para saúde e farmacêutico precisa equilibrar comunicação e regras de Anvisa, CFM, CRF. Veja o que pode e o que não pode.",
+      "Vídeos curtos de posicionamento colocam o CEO como referência no setor e geram oportunidades B2B no LinkedIn. Veja o formato que funciona — e como produzir.",
     excerpt:
-      "Saúde e farmacêutico têm regras de comunicação rígidas. Veja como produzir vídeo institucional sem comprometer o compliance.",
+      "Vídeos curtos de posicionamento colocam o CEO como referência no setor e geram oportunidades B2B no LinkedIn. Veja o formato que funciona — e como produzir.",
     tldr:
-      "Vídeo corporativo para empresas de saúde e farmacêutico precisa respeitar as regras de Anvisa, CFM, CRF e CRO sobre publicidade de produtos e serviços de saúde. Comunique processo, equipe, infraestrutura e cultura — não prometa resultados clínicos.",
-    category: "Tipos de vídeo",
-    coverQuery: "HC1",
-    coverAlt:
-      "Profissionais de saúde em ambiente clínico",
-    datePublished: "2026-06-29",
-    keywords:
-      "vídeo corporativo saúde, vídeo farmacêutico, vídeo hospital, vídeo clínica, marketing médico, vídeo institucional saúde, vídeo Anvisa",
-    bodyHtml: `
-<p>[IMAGEM: HC1 | alt: Profissionais de saúde em ambiente clínico]</p>
-
-<h2>Por que esse setor exige cuidado redobrado</h2>
-<p>[IMAGEM: M2 | alt: Reunião corporativa do setor de saúde]</p>
-<p>Anvisa, CFM, CRF, CRO e outras entidades de classe têm regras claras sobre o que pode ser comunicado em publicidade de saúde. Prometer cura, exibir antes/depois sem critério, fazer comparação direta entre marcas ou usar depoimentos sem ressalvas pode gerar autuação e dano de imagem maior do que o vídeo trouxe de benefício.</p>
-
-<h2>O que comunicar com segurança</h2>
-<p><strong>Processo e diferenciais técnicos</strong> — tecnologias, certificações, protocolos.</p>
-<p><strong>Equipe</strong> — profissionais, qualificação, especialidades.</p>
-<p><strong>Infraestrutura</strong> — instalações, equipamentos, capacidade.</p>
-<p><strong>Cultura e responsabilidade</strong> — humanização, segurança do paciente, pesquisa.</p>
-
-<h2>O briefing certo evita problema depois</h2>
-<p>Antes de gravar, alinhe roteiro com a área de compliance ou jurídica. Custa pouco e evita retrabalho, multa e a pior consequência — tirar o vídeo do ar.</p>
-`,
-    faqs: [
-      {
-        q: "Posso usar depoimento de paciente?",
-        a: "Com cuidado. Anvisa e CFM têm restrições. Sempre com autorização escrita e ressalvas adequadas.",
-      },
-      {
-        q: "Posso citar nome de medicamento?",
-        a: "Depende do produto e do público. Medicamentos de prescrição têm regras estritas; OTCs têm mais flexibilidade, mas ainda sob a Anvisa.",
-      },
-      {
-        q: "Quem aprova o vídeo antes da publicação?",
-        a: "Idealmente compliance ou jurídico do contratante. A produtora não pode ser a única responsável por avaliar adequação regulatória.",
-      },
-    ],
-  },
-  {
-    slug: "depoimento-cliente-video-corporativo",
-    title: "Depoimento de cliente em vídeo: por que vende mais que qualquer outro formato",
-    metaTitle: "Depoimento de cliente em vídeo: o ativo de marketing mais forte",
-    metaDescription:
-      "Depoimento de cliente em vídeo é o ativo de marketing com maior taxa de conversão. Veja como produzir um depoimento que realmente vende.",
-    excerpt:
-      "Cliente falando de resultado vale mais que qualquer texto comercial. Veja como produzir um depoimento que converte.",
-    tldr:
-      "Depoimento de cliente bem produzido é o ativo de marketing com maior taxa de conversão no B2B. Cliente real, falando de problema real e resultado mensurável, derruba as principais objeções do prospect em menos de 90 segundos. Produção precisa ser profissional para que o cliente apareça da melhor forma.",
+      "Vídeos curtos de posicionamento colocam o CEO como referência no setor e geram oportunidades B2B no LinkedIn. Veja o formato que funciona — e como produzir.",
     category: "Estratégia de Vídeo",
-    coverQuery: "M9",
+    coverQuery: "https://images.unsplash.com/photo-1497015289639-54688650d173?w=1600&q=80&auto=format&fit=crop",
     coverAlt:
-      "Depoimento de cliente sendo gravado em ambiente corporativo",
-    datePublished: "2026-07-01",
-    keywords:
-      "depoimento cliente vídeo, case de sucesso vídeo, vídeo testimonial, vídeo case cliente, prova social vídeo",
+      "Executivo gravando vídeo de posicionamento",
+    datePublished: "2025-06-24",
     bodyHtml: `
-<p>[IMAGEM: M9 | alt: Depoimento de cliente sendo gravado]</p>
-
-<h2>Por que depoimento converte mais</h2>
-<p>O prospect confia mais em outro cliente do que na própria empresa. É comportamento humano. Quando um cliente real, em vídeo, descreve o problema que tinha, como sua empresa resolveu e qual o resultado, ele derruba as três objeções mais comuns: "isso funciona?", "funciona para empresa como a minha?" e "vale o investimento?".</p>
-
-<h2>O roteiro do depoimento</h2>
-<p>[IMAGEM: M7 | alt: Fechamento de negócio entre empresas]</p>
-<p>Três blocos: <strong>antes</strong> (qual era o problema, qual o impacto), <strong>durante</strong> (como foi trabalhar com sua empresa) e <strong>depois</strong> (o resultado concreto, com números sempre que possível).</p>
-
-<h2>A produção que valoriza o depoente</h2>
-<p>Iluminação cuidadosa, áudio limpo, fundo neutro do ambiente do cliente, edição que respeita o ritmo da fala. Cliente bem filmado dá depoimento que ele mesmo quer compartilhar. Cliente mal filmado fica constrangido — e o vídeo não chega ao prospect.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1497015289639-54688650d173?w=800&q=80&auto=format&fit=crop | alt: Executivo gravando vídeo de posicionamento]</p>
+<p>Os CEOs que mais crescem em relevância no Brasil não esperam o jornalista ligar. Eles publicam vídeos curtos, com opinião clara sobre o próprio mercado, e ocupam o espaço de autoridade que antes pertencia só à imprensa.</p>
+<h2>Por que vídeo, e por que agora</h2>
+<p>O algoritmo do LinkedIn entrega vídeo nativo para muito mais gente do que texto puro. Para um CEO, isso significa aparecer recorrentemente diante de decisores que você nunca alcançaria por prospecção fria. Um vídeo de 60 a 90 segundos bem produzido vale mais que dez posts escritos.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1576280314550-773c50583407?w=800&q=80&auto=format&fit=crop | alt: Captação profissional de vídeo de posicionamento]</p>
+<h2>O formato que converte</h2>
+<p>Funciona assim: o CEO comenta uma tendência ou dor real do setor, traz uma visão própria e fecha com um convite à conversa. Sem teleprompter robótico, sem jargão. Luz boa, áudio limpo, edição enxuta com legendas. Uma série de 6 a 10 vídeos, gravada em um único dia, abastece meses de presença.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/linkedin-video-corporativo-oportunidades-b2b">LinkedIn e vídeo corporativo: oportunidades B2B</a> e <a href="/blog/ceo-rosto-da-empresa-foto-video">O CEO é o rosto da empresa</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/retratos-executivos-linkedin-guia-definitivo">Retratos executivos para LinkedIn</a></p>
+<p><strong>Vamos gravar sua série de posicionamento em um único dia?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
 `,
-    faqs: [
-      {
-        q: "E se o cliente não quiser aparecer?",
-        a: "Existem alternativas: depoimento em texto com foto, áudio com slides, ou cliente filmado sem foco no rosto. Mas vídeo é o formato mais forte.",
-      },
-      {
-        q: "Quanto tempo de depoimento gravar?",
-        a: "Captação de 30-45 minutos rende um vídeo principal de 60-90s e cortes curtos para redes.",
-      },
-      {
-        q: "Posso enviar perguntas antes?",
-        a: "Sim, e recomendamos. Cliente preparado entrega depoimento mais articulado e em menos tempo de gravação.",
-      },
-    ],
   },
   {
-    slug: "motion-graphics-video-corporativo",
-    title: "Motion graphics em vídeo corporativo: quando vale e quando atrapalha",
-    metaTitle: "Motion graphics em vídeo corporativo: quando vale a pena",
+    slug: "marketing-medico-etico-foto-video",
+    title: "Marketing médico com ética: como foto e vídeo constroem autoridade dentro das regras do CFM",
+    metaTitle: "Marketing médico com ética: como foto e vídeo constroem autoridade dentro das regras do CFM",
     metaDescription:
-      "Motion graphics traz clareza, mas mal usado polui. Veja quando usar animação 2D, infográficos e elementos gráficos em vídeo corporativo.",
+      "Médicos podem (e devem) construir autoridade com imagem profissional respeitando o Código de Ética. Veja o que funciona em foto e vídeo — sem risco de infração.",
     excerpt:
-      "Motion graphics deve servir à mensagem, não a si mesmo. Veja onde animação eleva o vídeo e onde estraga.",
+      "Médicos podem (e devem) construir autoridade com imagem profissional respeitando o Código de Ética. Veja o que funciona em foto e vídeo — sem risco de infração.",
     tldr:
-      "Motion graphics — animações 2D, infográficos, transições — agrega muito em conteúdo explicativo, dados e processos. Em depoimentos, institucionais emocionais e vídeos de cultura, costuma atrapalhar. A regra é simples: o gráfico está a serviço da mensagem, nunca o contrário.",
-    category: "Tipos de vídeo",
-    coverQuery: "E1",
-    coverAlt:
-      "Edição e motion em pós-produção de vídeo corporativo",
-    datePublished: "2026-07-03",
-    keywords:
-      "motion graphics, animação vídeo corporativo, infográfico animado, explainer vídeo, motion design empresa, vídeo animado corporativo",
-    bodyHtml: `
-<p>[IMAGEM: E1 | alt: Edição e motion em pós-produção]</p>
-
-<h2>Quando motion graphics agrega</h2>
-<p>[IMAGEM: E3 | alt: Tela de pós-produção com gráficos animados]</p>
-<ul>
-  <li><strong>Explainer videos</strong> — explicar produto ou serviço complexo.</li>
-  <li><strong>Dados e resultados</strong> — visualizar números de forma memorável.</li>
-  <li><strong>Processos</strong> — mostrar etapas de um workflow.</li>
-  <li><strong>Conceitos abstratos</strong> — segurança, dados, tecnologia.</li>
-</ul>
-
-<h2>Quando atrapalha</h2>
-<p>Depoimentos emocionais, vídeos institucionais de cultura, conteúdo humanizado. Nesses casos, gráfico tira o foco da pessoa e quebra a conexão emocional. O excesso de motion vira ruído.</p>
-
-<h2>O custo escondido</h2>
-<p>Motion graphics é trabalho denso de pós-produção. Vídeo cheio de animação custa significativamente mais — e demora mais — do que um institucional bem filmado. Vale planejar na pré-produção, não pedir "umas animaçõezinhas" depois da edição.</p>
-`,
-    faqs: [
-      {
-        q: "Posso fazer um vídeo só com motion graphics?",
-        a: "Sim, é o típico explainer animado. Funciona muito bem para produtos digitais e conceitos complexos.",
-      },
-      {
-        q: "Motion encarece muito?",
-        a: "Significativamente. Dependendo do volume, pode dobrar o custo da pós-produção. Vale pesar o ganho de clareza.",
-      },
-      {
-        q: "Qual a diferença entre motion graphics e edição comum?",
-        a: "Edição organiza o que foi filmado. Motion graphics cria elementos animados que não foram filmados — gráficos, textos, ilustrações.",
-      },
-    ],
-  },
-  {
-    slug: "video-industrial-logistica-operacao",
-    title: "Vídeo industrial e logístico: como mostrar a operação sem parar a operação",
-    metaTitle: "Vídeo industrial e logístico: produção em ambiente operacional",
-    metaDescription:
-      "Vídeo industrial e logístico exige planejamento de segurança, sem interromper a produção. Veja como filmar fábrica, CD e operação com qualidade.",
-    excerpt:
-      "Filmar fábrica e CD pede planejamento de segurança e operação. Veja como produzir sem parar a linha.",
-    tldr:
-      "Vídeo industrial e logístico precisa equilibrar três coisas: comunicar a escala e o controle da operação, respeitar normas de segurança (EPI, áreas de risco, NRs) e não interromper a produção. Equipe enxuta, equipamento adequado e planejamento prévio com o time de operações são decisivos.",
-    category: "Tipos de vídeo",
-    coverQuery: "I1",
-    coverAlt:
-      "Operação industrial com maquinário em fábrica",
-    datePublished: "2026-07-05",
-    keywords:
-      "vídeo industrial, vídeo fábrica, vídeo logística, vídeo CD centro de distribuição, vídeo operação industrial, vídeo segurança trabalho",
-    bodyHtml: `
-<p>[IMAGEM: I1 | alt: Operação industrial com maquinário]</p>
-
-<h2>O que o vídeo industrial precisa comunicar</h2>
-<p>[IMAGEM: I2 | alt: Logística e transporte corporativo]</p>
-<p>Escala da operação, controle de qualidade, segurança, certificações, capacidade produtiva, integração logística. O cliente B2B que assiste quer conferir robustez — não estética.</p>
-
-<h2>Os cuidados de segurança que sempre aparecem</h2>
-<p>EPI completo (e adequado à área), respeito a sinalizações, briefing prévio com brigada/SESMT, autorização para áreas classificadas e horários de menor movimento. Equipe que ignora isso vira problema operacional sério.</p>
-
-<h2>Captação sem parar a produção</h2>
-<p>Câmera com estabilizador para acompanhar fluxos, drone interno (em CDs amplos) para mostrar escala, planos longos sem cortes para transmitir continuidade. Quando bem produzido, o vídeo industrial vira ativo comercial poderoso — clientes B2B fecham contrato depois de verem a operação.</p>
-`,
-    faqs: [
-      {
-        q: "Drone pode ser usado dentro de galpão?",
-        a: "Em geral sim, com cuidados de segurança e autorização do gestor da operação. Em fábricas com áreas classificadas (Ex), não.",
-      },
-      {
-        q: "Preciso parar a linha de produção?",
-        a: "Idealmente não. Bom planejamento permite captar sem interrupção. Pausas, quando necessárias, são curtas e pontuais.",
-      },
-      {
-        q: "Pessoas filmadas precisam assinar autorização?",
-        a: "Sim. Todo colaborador filmado de forma identificável deve autorizar o uso de imagem por escrito.",
-      },
-    ],
-  },
-  {
-    slug: "acessibilidade-video-corporativo-legendas",
-    title: "Acessibilidade em vídeo corporativo: por que legendas viraram obrigação",
-    metaTitle: "Acessibilidade em vídeo corporativo: legendas e mais",
-    metaDescription:
-      "Legendas, audiodescrição e LIBRAS em vídeo corporativo deixaram de ser bônus. Veja por que acessibilidade impacta alcance, ESG e compliance.",
-    excerpt:
-      "Acessibilidade em vídeo virou padrão: legendas, audiodescrição e LIBRAS deixaram de ser bônus. Veja por quê.",
-    tldr:
-      "Legendas, audiodescrição e LIBRAS em vídeo corporativo deixaram de ser diferencial e viraram padrão. Aumentam alcance (85% assiste sem som), atendem ESG e LBI (Lei Brasileira de Inclusão), e melhoram SEO. Produção que não considera acessibilidade desde o briefing fica para trás.",
+      "Médicos podem (e devem) construir autoridade com imagem profissional respeitando o Código de Ética. Veja o que funciona em foto e vídeo — sem risco de infração.",
     category: "Estratégia de Vídeo",
-    coverQuery: "M5",
+    coverQuery: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1600&q=80&auto=format&fit=crop",
     coverAlt:
-      "Equipe corporativa inclusiva em reunião",
-    datePublished: "2026-07-07",
-    keywords:
-      "acessibilidade vídeo, legenda vídeo corporativo, LIBRAS vídeo, audiodescrição vídeo, ESG vídeo, LBI lei brasileira inclusão",
+      "Médicos em ambiente clínico",
+    datePublished: "2025-07-01",
     bodyHtml: `
-<p>[IMAGEM: E1 | alt: Vídeo corporativo com legendas no notebook]</p>
-
-<h2>Os três motivos que tornaram acessibilidade obrigatória</h2>
-<p>[IMAGEM: M5 | alt: Equipe corporativa inclusiva em reunião]</p>
-<p><strong>Alcance:</strong> 85% das pessoas assiste vídeo no celular sem som. Sem legenda, sua mensagem some.</p>
-<p><strong>ESG e compliance:</strong> grandes empresas exigem fornecedores aderentes a critérios de acessibilidade. A LBI (Lei 13.146/2015) determina padrões.</p>
-<p><strong>SEO:</strong> plataformas indexam o texto da legenda. Vídeo legendado é mais encontrado.</p>
-
-<h2>Os formatos de acessibilidade</h2>
-<ul>
-  <li><strong>Legenda descritiva</strong> — texto da fala + indicações de áudio (música, ruído).</li>
-  <li><strong>Audiodescrição</strong> — narração que descreve o que aparece em tela, para deficientes visuais.</li>
-  <li><strong>LIBRAS</strong> — janela com intérprete de Língua Brasileira de Sinais.</li>
-</ul>
-
-<h2>Planejar acessibilidade na pré-produção custa menos</h2>
-<p>Adicionar legendas e LIBRAS depois é trabalho retroativo caro. Quando entram no briefing, o roteiro já considera pausas, enquadramentos com espaço para janela e ritmo compatível.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&q=80&auto=format&fit=crop | alt: Médicos em ambiente clínico]</p>
+<p>O médico vive um paradoxo: precisa ser conhecido para atrair pacientes, mas opera sob regras rígidas de publicidade do Conselho Federal de Medicina. A boa notícia é que <strong>autoridade não é propaganda</strong> — e é exatamente aí que foto e vídeo profissionais entram.</p>
+<h2>O que o CFM permite (e valoriza)</h2>
+<p>O caminho ético não é prometer resultado nem expor "antes e depois" sensacionalista. É <strong>informar com seriedade</strong> e <strong>humanizar o profissional</strong>. Conteúdo educativo, um retrato que transmite competência e acolhimento, e vídeos que explicam condições e tratamentos de forma responsável constroem confiança sem cruzar nenhuma linha.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1497015289639-54688650d173?w=800&q=80&auto=format&fit=crop | alt: Médico gravando vídeo educativo]</p>
+<h2>O arsenal de imagem do médico moderno</h2>
+<p>Um retrato profissional para o perfil e o site, fotos reais do consultório (ambiente transmite cuidado) e vídeos educativos curtos. Esse conjunto faz o paciente chegar à primeira consulta já confiando — e diferencia você de colegas que dependem só de indicação.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/video-institucional-clinicas-consultorios">Vídeo institucional para clínicas e consultórios</a> e <a href="/blog/retrato-profissional-medicos">Retrato profissional para médicos</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/fotografia-medica-clinicas-hospitais">Fotografia médica para clínicas e consultórios</a></p>
+<p><strong>Quer construir sua autoridade médica com segurança e elegância?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
 `,
-    faqs: [
-      {
-        q: "Legenda automática do YouTube serve?",
-        a: "Para conteúdo informal sim, mas tem erros. Para vídeo corporativo, legenda revisada é o padrão.",
-      },
-      {
-        q: "LIBRAS é obrigatória?",
-        a: "Para órgãos públicos e algumas situações, sim. Para empresas privadas, é fortemente recomendada e cada vez mais cobrada por contratantes.",
-      },
-      {
-        q: "Quanto encarece adicionar acessibilidade?",
-        a: "Legenda é barata. LIBRAS e audiodescrição têm custo proporcional ao tempo do vídeo, mas planejadas na pré-produção ficam mais econômicas.",
-      },
-    ],
   },
   {
-    slug: "employer-branding-video-rh-cultura",
-    title: "Vídeo de employer branding: como o RH vence a guerra por talento",
-    metaTitle: "Vídeo de employer branding: o RH ganha a guerra por talento",
+    slug: "video-institucional-clinicas-consultorios",
+    title: "Vídeo institucional para clínicas e consultórios: confiança antes da primeira consulta",
+    metaTitle: "Vídeo institucional para clínicas e consultórios: confiança antes da primeira consulta",
     metaDescription:
-      "Vídeo de employer branding mostra cultura, equipe e propósito. Veja como o RH usa vídeo para atrair e reter os melhores talentos.",
+      "Clínicas e consultórios que investem em vídeo institucional reduzem a barreira da primeira consulta e atraem pacientes mais qualificados. Veja como estruturar o seu.",
     excerpt:
-      "Talento bom escolhe onde quer trabalhar. Veja como o vídeo de employer branding faz sua empresa ser a escolha.",
+      "Clínicas e consultórios que investem em vídeo institucional reduzem a barreira da primeira consulta e atraem pacientes mais qualificados. Veja como estruturar o seu.",
     tldr:
-      "Vídeo de employer branding mostra cultura real, equipe e propósito — não folder corporativo. Em um mercado em que o talento bom escolhe a empresa, o vídeo é a forma mais eficaz de comunicar por que vale trabalhar ali. Reduz custo de recrutamento e melhora retenção.",
+      "Clínicas e consultórios que investem em vídeo institucional reduzem a barreira da primeira consulta e atraem pacientes mais qualificados. Veja como estruturar o seu.",
     category: "Estratégia de Vídeo",
-    coverQuery: "M6",
+    coverQuery: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=1600&q=80&auto=format&fit=crop",
     coverAlt:
-      "Reunião de equipe corporativa engajada",
-    datePublished: "2026-07-09",
-    keywords:
-      "employer branding, vídeo RH, vídeo cultura empresa, atração de talento, vídeo recrutamento, marca empregadora",
+      "Equipe de saúde em ambiente clínico",
+    datePublished: "2025-07-08",
     bodyHtml: `
-<p>[IMAGEM: M6 | alt: Cultura organizacional em reunião de equipe]</p>
-
-<h2>Por que o vídeo de cultura virou estratégia de RH</h2>
-<p>[IMAGEM: M4 | alt: Time corporativo engajado em apresentação]</p>
-<p>Candidato sênior pesquisa a empresa antes de aceitar entrevista. LinkedIn, Glassdoor, redes sociais — em todos esses lugares, vídeo de cultura aparece. Quando bem produzido, ele encurta o funil de recrutamento, atrai perfis aderentes e reduz turnover de quem entra.</p>
-
-<h2>O que mostrar (e o que não mostrar)</h2>
-<p><strong>Sim:</strong> rotina real, lideranças acessíveis, equipe diversa, projetos relevantes, benefícios concretos, momentos genuínos.</p>
-<p><strong>Não:</strong> coreografia de happy hour, frases prontas sobre "ser família", clichês de comunicação interna que ninguém acredita.</p>
-
-<h2>O depoimento do colaborador é o melhor formato</h2>
-<p>Funcionário falando por que escolheu a empresa, o que faz no dia a dia e como a cultura aparece na prática vale mais que qualquer manifesto institucional. Captação simples, edição que respeita a fala, mínima narração — o conteúdo é a pessoa.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=800&q=80&auto=format&fit=crop | alt: Equipe de saúde em ambiente clínico]</p>
+<p>A decisão de escolher um médico ou uma clínica é movida por uma palavra: confiança. E confiança se constrói muito antes da recepção — ela começa quando o paciente assiste a um vídeo e sente que está em boas mãos.</p>
+<h2>O que o vídeo institucional resolve</h2>
+<p>Ele responde, em silêncio, às perguntas que travam a marcação: o ambiente é seguro? A equipe é competente? Vou ser bem atendido? Um tour pela estrutura, a apresentação dos profissionais e o cuidado visível no atendimento dissolvem a insegurança que faz o paciente adiar.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format&fit=crop | alt: Atendimento humanizado em consultório]</p>
+<h2>Estrutura que funciona na saúde</h2>
+<p>Tom sóbrio e acolhedor, sem exageros. Imagem limpa, luz natural valorizada, áudio impecável. E sempre dentro das diretrizes do CFM: informar e humanizar, nunca prometer. O resultado é um ativo que trabalha pela sua clínica 24 horas por dia.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/marketing-medico-etico-foto-video">Marketing médico com ética</a> e <a href="/blog/video-setor-farmaceutico-saude-corporativa">Vídeo para o setor farmacêutico e saúde corporativa</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/fotografia-medica-clinicas-hospitais">Fotografia médica para clínicas e hospitais</a></p>
+<p><strong>Vamos mostrar ao paciente por que sua clínica é a escolha certa?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
 `,
-    faqs: [
-      {
-        q: "Posso ter colaboradores em vídeo sem autorização?",
-        a: "Não. Todo colaborador identificável precisa assinar autorização de uso de imagem, mesmo em vídeo interno.",
-      },
-      {
-        q: "Funciona para empresa pequena?",
-        a: "Sim, e até mais. Empresa pequena tem cultura mais visível e personalidade clara — material rico para vídeo.",
-      },
-      {
-        q: "Com que frequência produzir?",
-        a: "Um vídeo principal por ano + 4 a 6 vídeos curtos de equipe ao longo do ano é uma cadência sustentável.",
-      },
-    ],
+  },
+  {
+    slug: "retrato-profissional-medicos",
+    title: "Retrato profissional para médicos: a imagem que transmite competência e acolhimento",
+    metaTitle: "Retrato profissional para médicos: a imagem que transmite competência e acolhimento",
+    metaDescription:
+      "O retrato é o primeiro contato do paciente com o médico. Veja por que uma foto profissional aumenta a confiança e a taxa de agendamento — com elegância e ética.",
+    excerpt:
+      "O retrato é o primeiro contato do paciente com o médico. Veja por que uma foto profissional aumenta a confiança e a taxa de agendamento — com elegância e ética.",
+    tldr:
+      "O retrato é o primeiro contato do paciente com o médico. Veja por que uma foto profissional aumenta a confiança e a taxa de agendamento — com elegância e ética.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Retrato profissional de médico com expressão acolhedora",
+    datePublished: "2025-07-15",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1611432579402-7037e3e2c1e4?w=800&q=80&auto=format&fit=crop | alt: Retrato profissional de médico com expressão acolhedora]</p>
+<p>Quando um paciente busca um especialista, ele clica em vários perfis em segundos. A foto decide quem ele lê primeiro — e quem ele descarta. Para o médico, o retrato não é estética: é a porta de entrada da relação de confiança.</p>
+<h2>O que uma boa foto transmite na saúde</h2>
+<p>Equilíbrio entre <strong>competência</strong> (firmeza, seriedade) e <strong>acolhimento</strong> (olhar, postura, leveza). É um equilíbrio difícil de alcançar com câmera de celular e fácil de obter com direção profissional. A diferença aparece direto na sensação de "esse médico me passa segurança".</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80&auto=format&fit=crop | alt: Profissional da saúde em retrato corporativo]</p>
+<h2>Onde esse retrato trabalha por você</h2>
+<p>Perfil no Doctoralia e Google, site, redes sociais, materiais da clínica, palestras e congressos. Uma única sessão alimenta todos esses pontos por anos — sempre respeitando as diretrizes do CFM.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/marketing-medico-etico-foto-video">Marketing médico com ética</a> e <a href="/blog/retrato-executivo-c-level-imagem">Retrato executivo para o C-level</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/fotografia-medica-clinicas-hospitais">Fotografia médica para clínicas e hospitais</a></p>
+<p><strong>Quer um retrato que faça o paciente confiar antes de entrar?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "imagem-profissional-advogados-escritorios",
+    title: "Imagem profissional para advogados e escritórios: autoridade que respeita as regras da OAB",
+    metaTitle: "Imagem profissional para advogados e escritórios: autoridade que respeita as regras da OAB",
+    metaDescription:
+      "Advogados podem construir autoridade com foto e vídeo profissionais sem infringir o Código de Ética da OAB. Veja o que é permitido — e o que realmente gera clientes.",
+    excerpt:
+      "Advogados podem construir autoridade com foto e vídeo profissionais sem infringir o Código de Ética da OAB. Veja o que é permitido — e o que realmente gera clientes.",
+    tldr:
+      "Advogados podem construir autoridade com foto e vídeo profissionais sem infringir o Código de Ética da OAB. Veja o que é permitido — e o que realmente gera clientes.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1648474484044-bb82df2f5a1f?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Retrato de advogado em escritório",
+    datePublished: "2025-07-22",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1648474484044-bb82df2f5a1f?w=800&q=80&auto=format&fit=crop | alt: Retrato de advogado em escritório]</p>
+<p>A advocacia vende confiança e discrição — e tem um código de ética que limita a publicidade. Por isso muitos escritórios travam: têm medo de "fazer marketing". Mas há uma diferença enorme entre publicidade mercantil (vedada) e <strong>construção sóbria de autoridade</strong> (permitida e poderosa).</p>
+<h2>O que é permitido — e funciona</h2>
+<p>Imagem institucional séria, retratos profissionais dos sócios, conteúdo informativo de qualidade e vídeos que explicam temas com profundidade. Nada de promessa de resultado, nada de sensacionalismo. Apenas a transmissão clara de competência, experiência e seriedade.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=800&q=80&auto=format&fit=crop | alt: Ambiente de escritório de advocacia]</p>
+<h2>Por que isso importa para o cliente certo</h2>
+<p>Empresas de médio e grande porte contratam escritórios pela percepção de solidez. Um site com imagem amadora levanta dúvida; um retrato e um vídeo institucional bem produzidos posicionam o escritório no patamar dos grandes — antes mesmo da primeira reunião.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/video-institucional-advocacia">Vídeo institucional para escritórios de advocacia</a> e <a href="/blog/video-contabilidade-escritorios-servicos-profissionais">Vídeo para contabilidade e serviços profissionais</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/retratos-corporativos-advogados-contadores">Retratos corporativos para advogados e contadores</a></p>
+<p><strong>Quer elevar a percepção do seu escritório com segurança ética?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "video-institucional-advocacia",
+    title: "Vídeo institucional para escritórios de advocacia: confiança sem parecer propaganda",
+    metaTitle: "Vídeo institucional para escritórios de advocacia: confiança sem parecer propaganda",
+    metaDescription:
+      "Como produzir um vídeo institucional para advocacia que gera autoridade e respeita o Código de Ética da OAB. Estrutura, tom e o que evitar.",
+    excerpt:
+      "Como produzir um vídeo institucional para advocacia que gera autoridade e respeita o Código de Ética da OAB. Estrutura, tom e o que evitar.",
+    tldr:
+      "Como produzir um vídeo institucional para advocacia que gera autoridade e respeita o Código de Ética da OAB. Estrutura, tom e o que evitar.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Sala de reunião de escritório jurídico",
+    datePublished: "2025-07-29",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=800&q=80&auto=format&fit=crop | alt: Sala de reunião de escritório jurídico]</p>
+<p>Um bom vídeo institucional de advocacia não "vende serviço". Ele apresenta uma banca: quem são os sócios, qual a filosofia de atuação, como o cliente é tratado. É posicionamento sóbrio — e é exatamente isso que conquista o cliente corporativo.</p>
+<h2>O tom certo para o jurídico</h2>
+<p>Sobriedade acima de tudo. Imagem elegante, ritmo calmo, narração precisa, ambiente que transmite tradição e segurança. Nada de trilha exagerada ou frases de efeito. O cliente que você quer atrair valoriza discrição — o vídeo precisa refletir isso.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&auto=format&fit=crop | alt: Sócio apresentando a filosofia do escritório]</p>
+<h2>O retorno de um único vídeo</h2>
+<p>Ele trabalha no site, em propostas comerciais, em apresentações e na prospecção de clientes corporativos. Para uma banca, é o "cartão de visitas" que sustenta a percepção de solidez em todos os pontos de contato.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/imagem-profissional-advogados-escritorios">Imagem profissional para advogados</a> e <a href="/blog/video-contabilidade-escritorios-servicos-profissionais">Vídeo para serviços profissionais</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/retratos-corporativos-advogados-contadores">Retratos para advogados e contadores</a></p>
+<p><strong>Pronto para um institucional à altura da sua banca?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "banco-de-imagens-proprio-marketing",
+    title: "Banco de imagens próprio: por que todo diretor de marketing deveria largar a foto de banco genérica",
+    metaTitle: "Banco de imagens próprio: por que todo diretor de marketing deveria largar a foto de banco genérica",
+    metaDescription:
+      "Foto de banco genérica enfraquece a marca. Veja por que um banco de imagens próprio, com foto e vídeo reais da sua empresa, converte mais e diferencia.",
+    excerpt:
+      "Foto de banco genérica enfraquece a marca. Veja por que um banco de imagens próprio, com foto e vídeo reais da sua empresa, converte mais e diferencia.",
+    tldr:
+      "Foto de banco genérica enfraquece a marca. Veja por que um banco de imagens próprio, com foto e vídeo reais da sua empresa, converte mais e diferencia.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Diretor de marketing analisando desempenho de conteúdo",
+    datePublished: "2025-08-05",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=800&q=80&auto=format&fit=crop | alt: Diretor de marketing analisando desempenho de conteúdo]</p>
+<p>Aquela foto de "equipe sorrindo apontando para um gráfico" está em milhares de sites. Quando o seu cliente reconhece a imagem de banco, algo se quebra: a marca parece menos real, menos confiável, menos premium. Para um diretor de marketing, isso é vazamento de credibilidade.</p>
+<h2>O problema da imagem genérica</h2>
+<p>Stock genérico comunica "qualquer empresa". Mas sua empresa não é qualquer uma. Cada vez que você usa uma foto que o concorrente também pode usar, você dilui exatamente aquilo que deveria diferenciar.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=800&q=80&auto=format&fit=crop | alt: Equipe real da empresa em ambiente de trabalho]</p>
+<h2>O que um banco de imagens próprio entrega</h2>
+<p>Fotos e vídeos reais da sua operação, sua equipe, seus produtos e seus escritórios — padronizados, com identidade visual, prontos para site, redes, campanhas e apresentações. Um único dia de produção bem planejado gera um acervo que abastece o marketing por meses.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/conteudo-audiovisual-em-escala-um-dia">Conteúdo audiovisual em escala</a> e <a href="/blog/roi-video-corporativo-board">ROI de vídeo corporativo para o board</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/banco-de-imagens-corporativo">Banco de imagens corporativo profissional</a></p>
+<p><strong>Quer um acervo visual que só a sua empresa tem?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "conteudo-audiovisual-em-escala-um-dia",
+    title: "Conteúdo audiovisual em escala: abasteça o calendário de marketing com um único dia de produção",
+    metaTitle: "Conteúdo audiovisual em escala: abasteça o calendário de marketing com um único dia de produção",
+    metaDescription:
+      "Um dia de produção bem planejado gera dezenas de peças de foto e vídeo. Veja como diretores de marketing multiplicam conteúdo sem multiplicar o orçamento.",
+    excerpt:
+      "Um dia de produção bem planejado gera dezenas de peças de foto e vídeo. Veja como diretores de marketing multiplicam conteúdo sem multiplicar o orçamento.",
+    tldr:
+      "Um dia de produção bem planejado gera dezenas de peças de foto e vídeo. Veja como diretores de marketing multiplicam conteúdo sem multiplicar o orçamento.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1632187989763-c9c620420b4d?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Equipe de produção captando conteúdo em um dia",
+    datePublished: "2025-08-12",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1632187989763-c9c620420b4d?w=800&q=80&auto=format&fit=crop | alt: Equipe de produção captando conteúdo em um dia]</p>
+<p>O maior desafio de um diretor de marketing não é ter ideias — é alimentar o calendário com material de qualidade, mês após mês, sem estourar o orçamento. A solução não é produzir mais vezes. É produzir <strong>melhor, de uma vez só</strong>.</p>
+<h2>A lógica do "produzir em lote"</h2>
+<p>Com roteiro e planejamento de captação, um único dia de produção rende: vídeos institucionais, cortes curtos para redes, depoimentos, fotos para site e campanhas, e material para apresentações. O custo por peça despenca e a consistência visual aumenta.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1528109966604-5a6a4a964e8d?w=800&q=80&auto=format&fit=crop | alt: Edição transformando um dia de captação em dezenas de peças]</p>
+<h2>O que muda na rotina do time</h2>
+<p>Em vez de correr atrás de imagem toda semana, seu time passa a distribuir um acervo já pronto. Menos pressa, mais estratégia, e uma marca que aparece com regularidade — exatamente o que os algoritmos recompensam.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/banco-de-imagens-proprio-marketing">Banco de imagens próprio</a> e <a href="/blog/foto-video-mesmo-dia-multiplica-resultado">Foto + vídeo no mesmo dia</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/banco-de-imagens-corporativo">Banco de imagens corporativo</a></p>
+<p><strong>Vamos planejar seu dia de produção e abastecer meses de conteúdo?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "roi-video-corporativo-board",
+    title: "ROI de vídeo corporativo: o que apresentar ao board para aprovar o investimento",
+    metaTitle: "ROI de vídeo corporativo: o que apresentar ao board para aprovar o investimento",
+    metaDescription:
+      "Precisa defender o orçamento de vídeo na frente da diretoria? Veja os números e argumentos que transformam custo em investimento com retorno mensurável.",
+    excerpt:
+      "Precisa defender o orçamento de vídeo na frente da diretoria? Veja os números e argumentos que transformam custo em investimento com retorno mensurável.",
+    tldr:
+      "Precisa defender o orçamento de vídeo na frente da diretoria? Veja os números e argumentos que transformam custo em investimento com retorno mensurável.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Dashboard de resultados de conteúdo audiovisual",
+    datePublished: "2025-08-19",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?w=800&q=80&auto=format&fit=crop | alt: Dashboard de resultados de conteúdo audiovisual]</p>
+<p>Todo diretor de marketing já viveu a cena: a ideia é boa, mas o board pergunta "qual o retorno?". Vídeo corporativo não é gasto de imagem — é um ativo com impacto direto em conversão, ciclo de vendas e custo de aquisição. Basta apresentar do jeito certo.</p>
+<h2>Os números que convencem o board</h2>
+<p>Landing pages com vídeo convertem significativamente mais. Vídeo nativo amplia o alcance orgânico. Depoimentos em vídeo encurtam o ciclo de vendas porque respondem objeções antes da reunião. E o ativo se paga: um vídeo fica no ar por anos, diluindo o custo a cada novo lead.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1638262052640-82e94d64664a?w=800&q=80&auto=format&fit=crop | alt: O resultado final: mais negócios fechados]</p>
+<h2>Como estruturar a apresentação</h2>
+<p>Conecte cada peça a um indicador: taxa de conversão da landing, tempo médio de fechamento, CAC, alcance orgânico. Transforme "vídeo bonito" em "ferramenta de receita". É a linguagem que o board entende e aprova.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/quanto-custa-video-corporativo-sao-paulo">Quanto custa um vídeo corporativo</a> e <a href="/blog/banco-de-imagens-proprio-marketing">Banco de imagens próprio</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/quanto-custa-sessao-fotos-corporativas">Quanto custa uma sessão de fotos corporativas</a></p>
+<p><strong>Quer um orçamento com argumentos prontos para o board?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "video-produto-b2b-90-segundos",
+    title: "Vídeo de produto B2B: como explicar uma solução complexa em 90 segundos",
+    metaTitle: "Vídeo de produto B2B: como explicar uma solução complexa em 90 segundos",
+    metaDescription:
+      "Diretores de produto sabem o desafio: explicar uma solução técnica de forma clara e desejável. Veja como o vídeo de produto B2B faz isso em 90 segundos.",
+    excerpt:
+      "Diretores de produto sabem o desafio: explicar uma solução técnica de forma clara e desejável. Veja como o vídeo de produto B2B faz isso em 90 segundos.",
+    tldr:
+      "Diretores de produto sabem o desafio: explicar uma solução técnica de forma clara e desejável. Veja como o vídeo de produto B2B faz isso em 90 segundos.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1612548403247-aa2873e9422d?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Captação profissional de vídeo de produto",
+    datePublished: "2025-08-26",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1612548403247-aa2873e9422d?w=800&q=80&auto=format&fit=crop | alt: Captação profissional de vídeo de produto]</p>
+<p>Quanto mais sofisticada a solução, mais difícil explicá-la — e mais o cliente trava na hora de entender o valor. O vídeo de produto B2B existe para resolver isso: transformar complexidade em clareza, e clareza em desejo, em menos de dois minutos.</p>
+<h2>A estrutura que faz o cliente "entender e querer"</h2>
+<p>Dor → por que as soluções atuais falham → sua solução → como funciona → prova → próximo passo. Quando essa sequência é traduzida em imagem, motion graphics e narração precisa, o prospect sai do vídeo sabendo exatamente por que falar com você.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80&auto=format&fit=crop | alt: Motion e edição traduzindo a solução em clareza visual]</p>
+<h2>Onde o vídeo de produto acelera vendas</h2>
+<p>Landing pages, propostas comerciais, e-mails de nutrição, demonstrações e até o WhatsApp do time comercial. Ele padroniza a melhor explicação do produto e a entrega sempre no mesmo nível — sem depender do dia bom (ou ruim) do vendedor.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/video-demonstracao-produto-ciclo-vendas">Demonstração de produto em vídeo</a> e <a href="/blog/video-lancamento-produtos-corporativos-roteiro">Roteiro de lançamento que converte</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/fotografia-produto-corporativo-lancamento">Fotografia de produto para fortalecer o lançamento</a></p>
+<p><strong>Quer traduzir sua solução em 90 segundos que vendem?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "video-demonstracao-produto-ciclo-vendas",
+    title: "Demonstração de produto em vídeo: o material que encurta o ciclo de vendas",
+    metaTitle: "Demonstração de produto em vídeo: o material que encurta o ciclo de vendas",
+    metaDescription:
+      "Vídeos de demonstração reduzem o número de reuniões necessárias para fechar. Veja como diretores de produto e vendas usam demos em vídeo para acelerar pipeline.",
+    excerpt:
+      "Vídeos de demonstração reduzem o número de reuniões necessárias para fechar. Veja como diretores de produto e vendas usam demos em vídeo para acelerar pipeline.",
+    tldr:
+      "Vídeos de demonstração reduzem o número de reuniões necessárias para fechar. Veja como diretores de produto e vendas usam demos em vídeo para acelerar pipeline.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1632187989763-c9c620420b4d?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Produção de vídeo de demonstração de produto",
+    datePublished: "2025-09-02",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1632187989763-c9c620420b4d?w=800&q=80&auto=format&fit=crop | alt: Produção de vídeo de demonstração de produto]</p>
+<p>Cada reunião de demonstração consome tempo do seu time mais caro. E muitas delas terminam com o mesmo "vou levar para a equipe avaliar". O vídeo de demonstração resolve os dois problemas: explica com qualidade constante e circula internamente no cliente sem precisar do seu vendedor presente.</p>
+<h2>Por que a demo em vídeo funciona</h2>
+<p>Ela mostra o produto em ação, no ritmo certo, destacando exatamente os pontos que importam para o decisor. E, diferente de uma demo ao vivo, ela pode ser assistida por todos os envolvidos na decisão — aqueles 3 a 7 nomes que precisam dizer "sim".</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1622675363311-3e1904dc1885?w=800&q=80&auto=format&fit=crop | alt: Comitê de decisão assistindo à demo internamente]</p>
+<h2>O efeito no pipeline</h2>
+<p>Menos reuniões repetitivas, leads mais qualificados chegando à conversa final e um ciclo de vendas mais curto. É o tipo de ativo que paga a produção já no primeiro trimestre.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/video-produto-b2b-90-segundos">Vídeo de produto B2B em 90 segundos</a> e <a href="/blog/imagem-decisao-compra-b2b">Como a imagem influencia a decisão de compra B2B</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/fotografia-produto-corporativo-lancamento">Fotografia de produto corporativo</a></p>
+<p><strong>Quer uma demo em vídeo que vende enquanto você dorme?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "employer-branding-video-atrair-talentos",
+    title: "Employer branding em vídeo: como atrair talentos que escolhem cultura, não só salário",
+    metaTitle: "Employer branding em vídeo: como atrair talentos que escolhem cultura, não só salário",
+    metaDescription:
+      "Diretores de RH de empresas de médio e grande porte usam vídeo de employer branding para atrair os melhores talentos. Veja o que mostrar — e o que evitar.",
+    excerpt:
+      "Diretores de RH de empresas de médio e grande porte usam vídeo de employer branding para atrair os melhores talentos. Veja o que mostrar — e o que evitar.",
+    tldr:
+      "Diretores de RH de empresas de médio e grande porte usam vídeo de employer branding para atrair os melhores talentos. Veja o que mostrar — e o que evitar.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Equipe engajada representando a cultura da empresa",
+    datePublished: "2025-09-09",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=800&q=80&auto=format&fit=crop | alt: Equipe engajada representando a cultura da empresa]</p>
+<p>Os melhores profissionais escolhem onde trabalhar — e pesquisam a empresa antes de aceitar uma proposta. Nessa pesquisa, o que eles encontram sobre a sua cultura pode atrair o talento certo ou afastá-lo para o concorrente. O vídeo de employer branding é a forma mais poderosa de mostrar quem a empresa realmente é.</p>
+<h2>O que talentos querem ver</h2>
+<p>Não é a fachada do prédio. É gente real, ambiente real, propósito real. Como as equipes trabalham, como as pessoas são tratadas, no que a empresa acredita. Autenticidade vence produção engessada — e é justamente isso que um profissional experiente sabe reconhecer.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&q=80&auto=format&fit=crop | alt: Time real demonstrando a cultura no dia a dia]</p>
+<h2>O retorno para o RH</h2>
+<p>Vagas preenchidas mais rápido, candidatos mais alinhados e redução do custo de recrutamento. Além de fortalecer a retenção: quem entra sabendo da cultura tende a ficar mais.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/video-onboarding-cultura-rh">Vídeo de onboarding e cultura</a> e <a href="/blog/video-rh-employer-branding-talentos">Vídeo para RH: employer branding que atrai talentos</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/fotografia-cultura-organizacional">Fotografia de cultura organizacional</a></p>
+<p><strong>Quer mostrar sua cultura para atrair os melhores?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "video-onboarding-cultura-rh",
+    title: "Vídeo de onboarding e cultura: o que diretores de RH de grandes empresas estão produzindo",
+    metaTitle: "Vídeo de onboarding e cultura: o que diretores de RH de grandes empresas estão produzindo",
+    metaDescription:
+      "Vídeo de onboarding reduz tempo de integração e padroniza a cultura. Veja como estruturar um programa de videoonboarding para empresas de médio e grande porte.",
+    excerpt:
+      "Vídeo de onboarding reduz tempo de integração e padroniza a cultura. Veja como estruturar um programa de videoonboarding para empresas de médio e grande porte.",
+    tldr:
+      "Vídeo de onboarding reduz tempo de integração e padroniza a cultura. Veja como estruturar um programa de videoonboarding para empresas de médio e grande porte.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Novos colaboradores em integração",
+    datePublished: "2025-09-16",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=800&q=80&auto=format&fit=crop | alt: Novos colaboradores em integração]</p>
+<p>Em empresas que crescem, o onboarding presencial não escala. Cada nova leva de contratados consome horas de gestores repetindo a mesma apresentação de cultura, processos e estrutura. O vídeo resolve isso — e ainda garante que todos recebam a melhor versão da mensagem.</p>
+<h2>O que o vídeo de onboarding entrega</h2>
+<p>Padronização: cada colaborador conhece a história, os valores e o funcionamento da empresa da mesma forma. Velocidade: a integração acontece sem depender da agenda dos líderes. E memória: o material fica disponível para revisão sempre que necessário.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1497015289639-54688650d173?w=800&q=80&auto=format&fit=crop | alt: Liderança apresentando a cultura em vídeo]</p>
+<h2>Como medir o resultado</h2>
+<p>Tempo de integração reduzido, menos dúvidas repetitivas chegando ao RH e colaboradores produtivos mais cedo. Um investimento que se paga já nas primeiras contratações do ano.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/employer-branding-video-atrair-talentos">Employer branding em vídeo</a> e <a href="/blog/video-treinamento-corporativo-capacitacao">Vídeo de treinamento corporativo</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/fotografia-cultura-organizacional">Fotografia de cultura organizacional</a></p>
+<p><strong>Vamos estruturar seu vídeo de onboarding?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "cultura-organizacional-video-foto",
+    title: "Fotografia de cultura organizacional: mostrando quem a empresa realmente é",
+    metaTitle: "Fotografia de cultura organizacional: mostrando quem a empresa realmente é",
+    metaDescription:
+      "Imagens reais da cultura fortalecem employer branding, comunicação interna e marca. Veja como foto e vídeo de cultura organizacional transformam a percepção da empresa.",
+    excerpt:
+      "Imagens reais da cultura fortalecem employer branding, comunicação interna e marca. Veja como foto e vídeo de cultura organizacional transformam a percepção da empresa.",
+    tldr:
+      "Imagens reais da cultura fortalecem employer branding, comunicação interna e marca. Veja como foto e vídeo de cultura organizacional transformam a percepção da empresa.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1624555130581-1d9cca783bc0?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Equipe real em seu ambiente de trabalho",
+    datePublished: "2025-09-23",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1624555130581-1d9cca783bc0?w=800&q=80&auto=format&fit=crop | alt: Equipe real em seu ambiente de trabalho]</p>
+<p>Cultura não se descreve — se mostra. Por mais que o RH escreva sobre "ambiente colaborativo" e "propósito", são as imagens reais das pessoas trabalhando que tornam isso crível. Foto e vídeo de cultura organizacional dão rosto e verdade à marca empregadora.</p>
+<h2>Onde essas imagens trabalham</h2>
+<p>Página de carreiras, LinkedIn da empresa, comunicação interna, relatórios, apresentações institucionais e campanhas de recrutamento. Um acervo autêntico substitui o stock genérico e faz a empresa parecer — porque é — única.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?w=800&q=80&auto=format&fit=crop | alt: Colaboradores reais em ambiente corporativo]</p>
+<h2>Foto e vídeo: melhores juntos</h2>
+<p>A foto congela a identidade; o vídeo dá movimento e emoção. Produzidos no mesmo dia, criam um acervo completo de cultura que serve a todas as frentes do RH e do marketing.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/employer-branding-video-atrair-talentos">Employer branding em vídeo</a> e <a href="/blog/video-rh-employer-branding-talentos">Vídeo para RH</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/fotografia-cultura-organizacional">Fotografia de cultura organizacional</a></p>
+<p><strong>Quer mostrar a cultura real da sua empresa?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "imagem-decisao-compra-b2b",
+    title: "Como a imagem da sua empresa influencia a decisão de compra B2B (mesmo antes da reunião)",
+    metaTitle: "Como a imagem da sua empresa influencia a decisão de compra B2B (mesmo antes da reunião)",
+    metaDescription:
+      "Compradores de empresas de médio e grande porte avaliam fornecedores pela imagem antes da primeira conversa. Veja como foto e vídeo reduzem a percepção de risco.",
+    excerpt:
+      "Compradores de empresas de médio e grande porte avaliam fornecedores pela imagem antes da primeira conversa. Veja como foto e vídeo reduzem a percepção de risco.",
+    tldr:
+      "Compradores de empresas de médio e grande porte avaliam fornecedores pela imagem antes da primeira conversa. Veja como foto e vídeo reduzem a percepção de risco.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "A imagem do fornecedor influencia a percepção do comprador",
+    datePublished: "2025-09-30",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80&auto=format&fit=crop | alt: A imagem do fornecedor influencia a percepção do comprador]</p>
+<p>Quem compra para uma grande empresa carrega um medo silencioso: escolher o fornecedor errado. Por isso, antes de qualquer reunião, o comprador pesquisa. E o que ele vê — site, LinkedIn, vídeos, fotos da equipe — define se você entra na lista curta ou é descartado em segundos.</p>
+<h2>Imagem é gestão de risco</h2>
+<p>Para o comprador, imagem amadora = empresa de risco. Imagem profissional = empresa estabelecida, séria, confiável. Não é superficial: é o único sinal disponível antes do contato. E sinais fracos eliminam fornecedores tecnicamente competentes só porque "não pareciam à altura".</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1672380135241-c024f7fbfa13?w=800&q=80&auto=format&fit=crop | alt: A percepção de solidez encurta o caminho até o sim]</p>
+<h2>O que blinda sua empresa nessa avaliação</h2>
+<p>Vídeo institucional sólido, retratos profissionais da liderança, fotos reais da operação e depoimentos de clientes. Esse conjunto transmite estabilidade e faz o comprador chegar à reunião já inclinado a confiar.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/foto-video-propostas-comerciais-rfp">Foto e vídeo para propostas comerciais e RFPs</a> e <a href="/blog/retrato-executivo-c-level-imagem">Retrato executivo para o C-level</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/retrato-corporativo-percepacao-negocio">Retrato corporativo e percepção do negócio</a></p>
+<p><strong>Quer ser o fornecedor que inspira confiança antes da reunião?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "foto-video-propostas-comerciais-rfp",
+    title: "Foto e vídeo para propostas comerciais e RFPs: o detalhe que diferencia fornecedores",
+    metaTitle: "Foto e vídeo para propostas comerciais e RFPs: o detalhe que diferencia fornecedores",
+    metaDescription:
+      "Em concorrências e RFPs, propostas com foto e vídeo profissionais transmitem mais credibilidade e se destacam. Veja como usar o audiovisual para vencer.",
+    excerpt:
+      "Em concorrências e RFPs, propostas com foto e vídeo profissionais transmitem mais credibilidade e se destacam. Veja como usar o audiovisual para vencer.",
+    tldr:
+      "Em concorrências e RFPs, propostas com foto e vídeo profissionais transmitem mais credibilidade e se destacam. Veja como usar o audiovisual para vencer.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Comitê avaliando propostas concorrentes",
+    datePublished: "2025-10-07",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&q=80&auto=format&fit=crop | alt: Comitê avaliando propostas concorrentes]</p>
+<p>Numa concorrência, o comitê recebe propostas técnicas parecidas. Todas prometem qualidade, prazo e preço justo. O que faz uma proposta saltar não é só o conteúdo — é a percepção de solidez que ela transmite. E imagem profissional é o diferencial mais barato de produzir.</p>
+<h2>Onde foto e vídeo entram na proposta</h2>
+<p>Um vídeo institucional curto anexado à proposta, fotos reais da equipe e da estrutura, retratos dos responsáveis pelo projeto. Enquanto o concorrente entrega um PDF frio, você entrega uma apresentação que faz o comitê <strong>ver</strong> com quem está lidando.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80&auto=format&fit=crop | alt: Apresentação que transmite domínio e confiança]</p>
+<h2>O efeito na concorrência</h2>
+<p>Diferenciação imediata, percepção de empresa maior e mais estruturada, e uma vantagem emocional que pesa quando os critérios técnicos empatam. Em decisões de alto valor, esse empurrão decide contratos.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/imagem-decisao-compra-b2b">Como a imagem influencia a decisão B2B</a> e <a href="/blog/video-produto-b2b-90-segundos">Vídeo de produto B2B</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/banco-de-imagens-corporativo">Banco de imagens corporativo</a></p>
+<p><strong>Quer propostas que se destacam na concorrência?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "foto-video-mesmo-dia-multiplica-resultado",
+    title: "Foto + vídeo no mesmo dia: por que produzir junto multiplica resultado e reduz custo",
+    metaTitle: "Foto + vídeo no mesmo dia: por que produzir junto multiplica resultado e reduz custo",
+    metaDescription:
+      "Contratar foto e vídeo na mesma produção gera mais conteúdo, narrativa coerente e custo menor. Veja por que empresas inteligentes não separam mais as duas coisas.",
+    excerpt:
+      "Contratar foto e vídeo na mesma produção gera mais conteúdo, narrativa coerente e custo menor. Veja por que empresas inteligentes não separam mais as duas coisas.",
+    tldr:
+      "Contratar foto e vídeo na mesma produção gera mais conteúdo, narrativa coerente e custo menor. Veja por que empresas inteligentes não separam mais as duas coisas.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1577190651915-bf62d54d5b36?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Equipe captando foto e vídeo na mesma produção",
+    datePublished: "2025-10-14",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1577190651915-bf62d54d5b36?w=800&q=80&auto=format&fit=crop | alt: Equipe captando foto e vídeo na mesma produção]</p>
+<p>Muitas empresas contratam o vídeo num mês e a foto no outro — com fornecedores diferentes, em dias diferentes, com estéticas que não conversam. O resultado é mais caro, menos coerente e mais trabalhoso. Produzir foto e vídeo <strong>juntos</strong> resolve os três problemas de uma vez.</p>
+<h2>O que você ganha produzindo junto</h2>
+<p><strong>Mais conteúdo:</strong> o mesmo set, a mesma luz e a mesma equipe rendem foto e vídeo simultaneamente. <strong>Coerência:</strong> a narrativa visual fica alinhada em todos os canais. <strong>Custo menor:</strong> uma única diária de produção em vez de duas.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1632187989763-c9c620420b4d?w=800&q=80&auto=format&fit=crop | alt: Um único dia, um acervo completo de foto e vídeo]</p>
+<h2>Para quem isso faz diferença</h2>
+<p>Para o diretor de marketing que precisa abastecer canais, para o RH que documenta cultura, para o time de produto que lança soluções — e para qualquer empresa que quer máximo resultado com orçamento inteligente.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/conteudo-audiovisual-em-escala-um-dia">Conteúdo audiovisual em escala</a> e <a href="/blog/o-que-esperar-produtora-corporativa">O que esperar de uma produtora corporativa de verdade</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/quanto-custa-sessao-fotos-corporativas">Quanto custa uma sessão de fotos corporativas</a></p>
+<p><strong>Vamos produzir foto e vídeo no mesmo dia e multiplicar seu acervo?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
+  },
+  {
+    slug: "o-que-esperar-produtora-corporativa",
+    title: "O que esperar de uma produtora corporativa de verdade: processo, prazos e entrega",
+    metaTitle: "O que esperar de uma produtora corporativa de verdade: processo, prazos e entrega",
+    metaDescription:
+      "Contratar produtora de foto e vídeo sem dor de cabeça começa por entender o processo. Veja as etapas, prazos e o que cobrar de uma produtora corporativa séria.",
+    excerpt:
+      "Contratar produtora de foto e vídeo sem dor de cabeça começa por entender o processo. Veja as etapas, prazos e o que cobrar de uma produtora corporativa séria.",
+    tldr:
+      "Contratar produtora de foto e vídeo sem dor de cabeça começa por entender o processo. Veja as etapas, prazos e o que cobrar de uma produtora corporativa séria.",
+    category: "Estratégia de Vídeo",
+    coverQuery: "https://images.unsplash.com/photo-1632187989763-c9c620420b4d?w=1600&q=80&auto=format&fit=crop",
+    coverAlt:
+      "Produtora corporativa em produção planejada",
+    datePublished: "2025-10-21",
+    bodyHtml: `
+<p>[IMAGEM: https://images.unsplash.com/photo-1632187989763-c9c620420b4d?w=800&q=80&auto=format&fit=crop | alt: Produtora corporativa em produção planejada]</p>
+<p>Quem já contratou produção audiovisual sabe: o resultado depende menos do equipamento e mais do <strong>processo</strong>. Uma produtora corporativa séria conduz o projeto com método — do briefing à entrega — para que você não tenha surpresas nem retrabalho.</p>
+<h2>As etapas de um projeto bem conduzido</h2>
+<p><strong>Briefing estratégico:</strong> entender objetivo, público e onde o material será usado. <strong>Pré-produção:</strong> roteiro, cronograma, locação e logística. <strong>Produção:</strong> captação com equipe e equipamento adequados. <strong>Pós-produção:</strong> edição, tratamento, motion, áudio e legendas. <strong>Entrega:</strong> arquivos nos formatos certos para cada canal.</p>
+<p>[IMAGEM: https://images.unsplash.com/photo-1528109966604-5a6a4a964e8d?w=800&q=80&auto=format&fit=crop | alt: Pós-produção: onde o material ganha acabamento profissional]</p>
+<h2>O que cobrar de uma produtora séria</h2>
+<p>Clareza de escopo, cronograma definido, comunicação ao longo do projeto e um portfólio com clientes reais. Mais de 30 anos de experiência atendendo empresas em todo o Brasil dizem muito sobre previsibilidade e qualidade de entrega.</p>
+<p>👉 <strong>Leia também:</strong> <a href="/blog/foto-video-mesmo-dia-multiplica-resultado">Foto + vídeo no mesmo dia</a> e <a href="/blog/como-escolher-produtora-video-corporativo">Como escolher a produtora de vídeo certa</a>.</p>
+<p>🔗 <strong>Veja o lado fotográfico no Alê Fotógrafo →</strong> <a href="https://alefotografos.com.br/blog/como-escolher-fotografo-corporativo">Como escolher um fotógrafo corporativo</a></p>
+<p><strong>Quer trabalhar com uma produtora que entrega com método?</strong> <a href="https://wa.me/5511913550533">Solicite um orçamento →</a></p>
+`,
   },
 ];
 

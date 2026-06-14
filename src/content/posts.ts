@@ -759,18 +759,11 @@ export const posts: BlogPost[] = [
   },
 ];
 
-function isPublished(post: BlogPost): boolean {
-  const today = new Date().toISOString().slice(0, 10);
-  return post.datePublished <= today;
-}
-
 export function getPostBySlug(slug: string): BlogPost | undefined {
-  const post = posts.find((p) => p.slug === slug);
-  return post && isPublished(post) ? post : undefined;
+  return posts.find((p) => p.slug === slug);
 }
 
 export function getAllPosts(): BlogPost[] {
   return posts
-    .filter(isPublished)
     .sort((a, b) => (a.datePublished < b.datePublished ? 1 : -1));
 }

@@ -1392,7 +1392,7 @@ export const posts: BlogPost[] = [
     category: "Tipos de vídeo",
     coverQuery: "ceo recording internal message video corporate office",
     coverAlt: `Líder gravando mensagem em vídeo para comunicação interna`,
-    datePublished: "2026-06-17",
+    datePublished: "2026-06-16",
     keywords: `vídeo de comunicação interna, endomarketing, comunicação da liderança, engajamento de equipe, vídeo corporativo interno`,
     faqs: [
       { q: `Vídeo interno precisa de alta produção?`, a: `Não necessariamente. O que importa é clareza e autenticidade. Uma produção sóbria e bem dirigida supera qualquer texto, sem precisar de superprodução.` },

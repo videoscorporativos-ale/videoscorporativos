@@ -1596,7 +1596,7 @@ export const posts: BlogPost[] = [
     category: "Resultado e ROI",
     coverQuery: "customer support video tutorial help center screen",
     coverAlt: `Cliente assistindo a vídeo tutorial de suporte na central de ajuda`,
-    datePublished: "2026-06-23",
+    datePublished: "2026-06-22",
     keywords: `vídeo de suporte ao cliente, vídeo de FAQ, redução de chamados, autoatendimento, tutorial em vídeo`,
     faqs: [
       { q: `Vídeo de FAQ substitui o atendimento humano?`, a: `Não. Resolve o repetitivo e libera o time para os casos complexos, onde a presença humana realmente faz diferença.` },

@@ -1630,7 +1630,7 @@ export const posts: BlogPost[] = [
     category: "Estratégia de Vídeo",
     coverQuery: "ceo addressing camera serious professional statement",
     coverAlt: `Líder dirigindo-se à câmera em pronunciamento sério e profissional`,
-    datePublished: "2026-06-24",
+    datePublished: "2026-06-23",
     keywords: `comunicação de crise em vídeo, gestão de crise, posicionamento da liderança, reputação corporativa, comunicação corporativa`,
     faqs: [
       { q: `Não é mais seguro só emitir uma nota escrita?`, a: `Nem sempre. Nota protege juridicamente, mas comunica frieza. Em muitos casos, o vídeo da liderança é o que preserva a confiança que a nota sozinha perde.` },

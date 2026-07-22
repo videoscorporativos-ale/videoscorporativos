@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { BlogCTA } from "@/components/site/BlogCTA";
 import { getPostBySlug, coverImageUrl, type FaqItem } from "@/content/posts";
+import { getAllPosts } from "@/content/posts";
 
 const SITE = "https://videoscorporativos.com.br";
 
@@ -38,7 +39,19 @@ export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
     const post = getPostBySlug(params.slug);
     if (!post) throw notFound();
-    return { post };
+    const all = getAllPosts().filter((p) => p.slug !== post.slug);
+    // Prefer same-category posts; fill remainder with most recent.
+    const sameCat = all.filter((p) => p.category === post.category).slice(0, 3);
+    const filler = all.filter((p) => !sameCat.includes(p)).slice(0, 3 - sameCat.length);
+    const related = [...sameCat, ...filler].slice(0, 3).map((p) => ({
+      slug: p.slug,
+      title: p.title,
+      excerpt: p.excerpt,
+      category: p.category,
+      coverQuery: p.coverQuery,
+      coverAlt: p.coverAlt,
+    }));
+    return { post, related };
   },
   head: ({ params, loaderData }) => {
     const post = loaderData?.post;
@@ -200,7 +213,7 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function BlogPostPage() {
-  const { post } = Route.useLoaderData();
+  const { post, related } = Route.useLoaderData();
   const image = coverImageUrl(post.coverQuery);
   const dateLabel = new Date(post.datePublished + "T12:00:00").toLocaleDateString("pt-BR", {
     day: "2-digit",
@@ -269,6 +282,42 @@ function BlogPostPage() {
           )}
 
           <BlogCTA />
+
+          {related.length > 0 && (
+            <section className="mt-20 border-t border-border pt-12" aria-labelledby="related-heading">
+              <h2 id="related-heading" className="font-display text-2xl md:text-3xl font-semibold tracking-tight">
+                Leia também
+              </h2>
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {related.map((r) => (
+                  <Link
+                    key={r.slug}
+                    to="/blog/$slug"
+                    params={{ slug: r.slug }}
+                    className="group block overflow-hidden rounded-2xl border border-border bg-surface/60 transition hover:border-brand/60"
+                  >
+                    <div className="aspect-[16/9] overflow-hidden">
+                      <img
+                        src={coverImageUrl(r.coverQuery, 800)}
+                        alt={r.coverAlt}
+                        loading="lazy"
+                        width={800}
+                        height={450}
+                        className="size-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <p className="text-[11px] uppercase tracking-[0.2em] text-brand">{r.category}</p>
+                      <h3 className="mt-2 font-display text-lg font-medium leading-snug text-balance group-hover:text-brand">
+                        {r.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-muted-foreground line-clamp-3">{r.excerpt}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
         </article>
       </main>
       <SiteFooter />

@@ -2212,7 +2212,401 @@ export const posts: BlogPost[] = [
 <p><a href="/#contato">Pronto para começar o seu projeto? →</a></p>
 `,
   },
-
+  {
+    slug: "video-onboarding-novos-colaboradores",
+    title: `Vídeo de onboarding: acelere a integração de novos colaboradores`,
+    metaTitle: `Vídeo de onboarding: integração mais rápida no RH`,
+    metaDescription: `Vídeo de onboarding reduz tempo de rampa, padroniza cultura e libera o RH de repetir a mesma apresentação toda semana. Veja como estruturar.`,
+    excerpt: `Onboarding em vídeo padroniza a mensagem, acelera a rampa do novo colaborador e libera horas do RH toda semana.`,
+    tldr: `Vídeo de onboarding padroniza cultura, encurta a rampa e libera o RH. Estrutura ideal: boas-vindas do CEO, tour, políticas, ferramentas e próximos passos.`,
+    category: "Tipos de vídeo",
+    coverQuery: "M4",
+    coverAlt: `Novo colaborador assistindo vídeo de integração`,
+    datePublished: "2026-07-23",
+    keywords: `vídeo onboarding, integração de novos colaboradores, vídeo para RH, treinamento corporativo em vídeo`,
+    bodyHtml: `
+<p>Repetir a mesma apresentação para cada novo contratado consome horas do RH — e ainda assim a mensagem chega diferente para cada um.</p>
+[IMAGEM: M4 | alt: Nova colaboradora sendo integrada]
+<h2>Blocos essenciais</h2>
+<ul>
+  <li>Boas-vindas do CEO (60 a 90 segundos)</li>
+  <li>Tour pelos espaços e times</li>
+  <li>Políticas, benefícios e código de conduta</li>
+  <li>Ferramentas e primeiros acessos</li>
+  <li>Próximos passos das duas primeiras semanas</li>
+</ul>
+<h2>Ganho real</h2>
+<p>Empresas que padronizam onboarding em vídeo reduzem a rampa em 20% a 40% e melhoram a retenção nos primeiros 90 dias.</p>
+<p>Veja também <a href="/blog/video-rh-employer-branding-talentos">vídeo para RH e employer branding</a> e <a href="/blog/video-comunicacao-interna-endomarketing">vídeo de comunicação interna</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/fotografia-cultura-organizacional">Fotografia de cultura organizacional →</a></p>
+<p><a href="/#contato">Vamos estruturar seu onboarding em vídeo →</a></p>
+`,
+  },
+  {
+    slug: "video-produto-lancamento-b2b",
+    title: `Vídeo de lançamento de produto B2B: estrutura que gera pipeline`,
+    metaTitle: `Vídeo de lançamento de produto B2B que gera pipeline`,
+    metaDescription: `Lançamento B2B em vídeo precisa de posicionamento claro, prova e call-to-action mensurável. Veja a estrutura que converte lead qualificado.`,
+    excerpt: `Um vídeo de lançamento B2B não é comercial: é ativo de vendas. Veja a estrutura de 5 blocos que gera pipeline de verdade.`,
+    tldr: `Lançamento B2B em vídeo funciona quando entrega: problema, solução, prova, diferencial e CTA. Sem storytelling raso.`,
+    category: "Tipos de vídeo",
+    coverQuery: "V3",
+    coverAlt: `Lançamento de produto sendo filmado em set`,
+    datePublished: "2026-07-24",
+    keywords: `vídeo de lançamento, vídeo produto B2B, vídeo de vendas, product launch video, marketing B2B`,
+    bodyHtml: `
+<p>Vídeo de lançamento B2B raramente vende sozinho — mas é o ativo que o time comercial usa em cada reunião pelos próximos 12 meses.</p>
+[IMAGEM: V3 | alt: Set de gravação para vídeo de produto]
+<h2>Estrutura de 5 blocos</h2>
+<ol>
+  <li><strong>Problema:</strong> a dor específica que seu ICP sente</li>
+  <li><strong>Solução:</strong> como o produto resolve, sem jargão</li>
+  <li><strong>Prova:</strong> case, número ou demo real</li>
+  <li><strong>Diferencial:</strong> por que você, e não a concorrência</li>
+  <li><strong>CTA:</strong> um único próximo passo mensurável</li>
+</ol>
+<p>Veja também <a href="/blog/video-institucional-vs-video-de-vendas">institucional vs. vídeo de vendas</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/fotografia-de-produto-b2b">Fotografia de produto B2B →</a></p>
+<p><a href="/#contato">Vamos planejar o vídeo do seu próximo lançamento →</a></p>
+`,
+  },
+  {
+    slug: "roi-video-corporativo-como-medir",
+    title: `ROI de vídeo corporativo: como medir sem enganar o board`,
+    metaTitle: `ROI de vídeo corporativo: métricas que importam`,
+    metaDescription: `Views não pagam boleto. Veja as métricas de ROI de vídeo corporativo que o board realmente entende: CPL, ciclo de venda e retenção.`,
+    excerpt: `Views e likes não provam ROI. As métricas que o board aceita são CPL, tempo de fechamento, retenção e economia operacional.`,
+    tldr: `Meça ROI de vídeo corporativo por: custo por lead qualificado, redução do ciclo de venda, retenção e horas economizadas em treinamento.`,
+    category: "Resultado e ROI",
+    coverQuery: "E4",
+    coverAlt: `Dashboard de métricas de vídeo`,
+    datePublished: "2026-07-25",
+    keywords: `ROI vídeo corporativo, métricas vídeo B2B, CPL vídeo, resultado vídeo institucional`,
+    bodyHtml: `
+<p>Se seu único indicador é "views", você não está medindo ROI — está medindo ego.</p>
+[IMAGEM: E4 | alt: Dashboard de métricas em tela]
+<h2>Métricas que o board aceita</h2>
+<ul>
+  <li><strong>CPL:</strong> custo por lead qualificado gerado pelo vídeo</li>
+  <li><strong>Ciclo de venda:</strong> dias a menos entre 1º contato e fechamento</li>
+  <li><strong>Retenção:</strong> % que assiste até o CTA</li>
+  <li><strong>Economia operacional:</strong> horas de RH/comercial poupadas</li>
+</ul>
+<p>Veja também <a href="/blog/video-para-feira-de-negocios">vídeo para feira: como provar o resultado</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/metricas-fotografia-corporativa">Métricas em fotografia corporativa →</a></p>
+<p><a href="/#contato">Quer medir ROI de verdade? →</a></p>
+`,
+  },
+  {
+    slug: "cases-video-corporativo-cliente-fala",
+    title: `Vídeo case: por que deixar o cliente falar vende mais que você`,
+    metaTitle: `Vídeo case de cliente: prova social que fecha venda`,
+    metaDescription: `Vídeo case é a prova social mais forte do funil B2B. Veja como estruturar sem parecer roteirizado — e o que nunca pedir para o cliente dizer.`,
+    excerpt: `Vídeo case funciona porque tira você da posição de "vendedor" e coloca outro cliente na sua frente. Veja como estruturar sem parecer roteirizado.`,
+    tldr: `Vídeo case forte segue: contexto, dor, escolha, resultado com número. Nunca peça para o cliente decorar frase — pergunte e edite.`,
+    category: "Tipos de vídeo",
+    coverQuery: "M8",
+    coverAlt: `Cliente sendo entrevistado em vídeo case`,
+    datePublished: "2026-07-26",
+    keywords: `vídeo case, depoimento em vídeo, prova social B2B, testimonial video, cliente fala`,
+    bodyHtml: `
+<p>Você pode dizer que seu produto é excelente mil vezes. Um cliente dizendo uma vez vende mais.</p>
+[IMAGEM: M8 | alt: Cliente sendo entrevistado]
+<h2>Estrutura</h2>
+<ol>
+  <li>Contexto do cliente (empresa, mercado, papel)</li>
+  <li>Dor antes da contratação</li>
+  <li>Por que escolheu você</li>
+  <li>Resultado com número concreto</li>
+</ol>
+<h2>O que nunca fazer</h2>
+<p>Não entregue roteiro pronto. Faça perguntas abertas e edite depois — a espontaneidade é o ativo.</p>
+<p>Veja também <a href="/blog/roi-video-corporativo-como-medir">como medir ROI de vídeo</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/retratos-clientes-b2b">Retratos de clientes B2B →</a></p>
+<p><a href="/#contato">Vamos gravar seu próximo case →</a></p>
+`,
+  },
+  {
+    slug: "video-vertical-linkedin-instagram-b2b",
+    title: `Vídeo vertical no LinkedIn e Instagram: o formato que domina B2B`,
+    metaTitle: `Vídeo vertical no LinkedIn e Instagram para B2B`,
+    metaDescription: `Vertical não é só para dança no TikTok. LinkedIn e Instagram priorizam 9:16 — e o B2B que se adapta ganha alcance orgânico gratuito.`,
+    excerpt: `Se você ainda entrega só 16:9, está perdendo alcance orgânico grátis. Veja como planejar vídeo B2B pensando vertical desde o set.`,
+    tldr: `LinkedIn e Instagram priorizam 9:16. Filme pensando enquadramento vertical desde a produção — não corte 16:9 depois.`,
+    category: "Estratégia de Vídeo",
+    coverQuery: "V5",
+    coverAlt: `Câmera em enquadramento vertical`,
+    datePublished: "2026-07-27",
+    keywords: `vídeo vertical, 9:16 LinkedIn, reels B2B, formato vertical corporativo`,
+    bodyHtml: `
+<p>Cortar um 16:9 no meio para virar vertical mata o vídeo. Bom vertical se pensa no set, não na edição.</p>
+[IMAGEM: V5 | alt: Câmera enquadrada em vertical]
+<h2>Regras de set</h2>
+<ul>
+  <li>Enquadramento pensando safe area de 9:16</li>
+  <li>Legenda queimada — 85% assiste sem áudio</li>
+  <li>Primeiro segundo com movimento ou rosto</li>
+  <li>Duração ideal: 30 a 60 segundos</li>
+</ul>
+<p>Veja também <a href="/blog/video-institucional-vs-video-de-vendas">institucional vs. vídeo de vendas</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/foto-vertical-linkedin">Foto vertical para LinkedIn →</a></p>
+<p><a href="/#contato">Vamos planejar seu conteúdo vertical →</a></p>
+`,
+  },
+  {
+    slug: "video-institucional-industria-manufatura",
+    title: `Vídeo institucional para indústria: mostre processo, não só fachada`,
+    metaTitle: `Vídeo institucional para indústria e manufatura`,
+    metaDescription: `Indústria brasileira ainda entrega vídeo com drone e fachada. O que fecha venda B2B é mostrar processo, controle e gente.`,
+    excerpt: `Drone e fachada não fecham venda B2B industrial. O que converte é processo, controle de qualidade e o operador com nome.`,
+    tldr: `Vídeo industrial forte mostra chão de fábrica real, controle de qualidade, certificações e o operador que executa. Não só drone e fachada.`,
+    category: "Tipos de vídeo",
+    coverQuery: "I1",
+    coverAlt: `Chão de fábrica sendo filmado`,
+    datePublished: "2026-07-28",
+    keywords: `vídeo indústria, vídeo institucional manufatura, vídeo chão de fábrica, video corporativo industrial`,
+    bodyHtml: `
+<p>O comprador industrial não decide por drone bonito. Decide por evidência de que você entrega no prazo e no padrão.</p>
+[IMAGEM: I1 | alt: Linha de produção industrial]
+<h2>O que mostrar</h2>
+<ul>
+  <li>Processo produtivo de ponta a ponta</li>
+  <li>Controle de qualidade e certificações</li>
+  <li>Operadores com nome e função</li>
+  <li>Logística e prazo de entrega</li>
+</ul>
+[IMAGEM: I2 | alt: Logística industrial]
+<p>Veja também <a href="/blog/empresas-sao-paulo-abandonando-videos-genericos">empresas abandonando vídeos genéricos</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/fotografia-industrial">Fotografia industrial →</a></p>
+<p><a href="/#contato">Vamos filmar sua fábrica de verdade →</a></p>
+`,
+  },
+  {
+    slug: "preco-video-institucional-vs-comercial-tv",
+    title: `Preço de vídeo institucional vs. comercial de TV: por que a diferença`,
+    metaTitle: `Preço vídeo institucional vs. comercial de TV`,
+    metaDescription: `Comercial de TV custa 5x um institucional pela mesma duração. Entenda o que muda em equipe, direitos e veiculação — e o que faz sentido para você.`,
+    excerpt: `Um comercial de 30s pode custar 5x um institucional de 3 minutos. Não é margem: é escopo. Veja o que muda.`,
+    tldr: `Comercial de TV envolve diretor, atores registrados, direitos de veiculação, aprovação de agência e mídia. Institucional não precisa nada disso.`,
+    category: "Preço e contratação",
+    coverQuery: "V4",
+    coverAlt: `Set de gravação comercial`,
+    datePublished: "2026-07-29",
+    keywords: `preço comercial de TV, preço vídeo institucional, diferença comercial e institucional, custo produção audiovisual`,
+    bodyHtml: `
+<p>Cliente pergunta: "por que 30s de TV custa mais que 3 minutos institucional?". Resposta: quase nada em comum.</p>
+[IMAGEM: V4 | alt: Set de gravação profissional]
+<h2>O que muda no comercial</h2>
+<ul>
+  <li>Direção e roteiro autoral</li>
+  <li>Atores registrados (DRT) e cachês</li>
+  <li>Direitos de imagem por praça e período</li>
+  <li>Aprovação de agência e cliente</li>
+  <li>Compra e planejamento de mídia</li>
+</ul>
+<p>Veja também <a href="/blog/quanto-custa-um-video-institucional">quanto custa um vídeo institucional</a> e <a href="/blog/video-institucional-publicitario-manifesto-diferenca">institucional vs. publicitário vs. manifesto</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/quanto-custa-fotografia-corporativa">Quanto custa fotografia corporativa →</a></p>
+<p><a href="/#contato">Vamos definir qual formato serve para você →</a></p>
+`,
+  },
+  {
+    slug: "video-hotelaria-experiencia-hospede",
+    title: `Vídeo para hotelaria: venda a experiência, não o quarto`,
+    metaTitle: `Vídeo para hotel e resort: venda a experiência`,
+    metaDescription: `Foto de quarto todo mundo tem. Vídeo com sensorial — luz, som, ritmo — é o que faz o hóspede escolher você e não o concorrente.`,
+    excerpt: `Hóspede não compra quarto: compra experiência. Vídeo entrega isso melhor que qualquer galeria de fotos.`,
+    tldr: `Vídeo de hotelaria forte foca em luz, som e ritmo — café da manhã, banho de piscina, pôr do sol no bar. Quarto é consequência.`,
+    category: "Tipos de vídeo",
+    coverQuery: "H1",
+    coverAlt: `Área de lazer de hotel sendo filmada`,
+    datePublished: "2026-07-30",
+    keywords: `vídeo para hotel, vídeo resort, vídeo hotelaria, marketing hoteleiro em vídeo`,
+    bodyHtml: `
+<p>Booking está cheio de foto de quarto. O que faz a pessoa escolher você é a promessa de uma experiência que ela consegue sentir antes de chegar.</p>
+[IMAGEM: H1 | alt: Área comum de hotel]
+<h2>Cenas que vendem</h2>
+<ul>
+  <li>Café da manhã com luz de manhã de verdade</li>
+  <li>Mergulho na piscina em ritmo natural</li>
+  <li>Detalhe do drink no bar ao pôr do sol</li>
+  <li>Um hóspede real reagindo à vista</li>
+</ul>
+[IMAGEM: H2 | alt: Vista de hotel ao entardecer]
+<p>Veja também <a href="/blog/o-que-e-video-institucional">o que é vídeo institucional</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/fotografia-para-hotelaria">Fotografia para hotelaria →</a></p>
+<p><a href="/#contato">Vamos captar a experiência do seu hotel →</a></p>
+`,
+  },
+  {
+    slug: "video-imobiliario-alto-padrao",
+    title: `Vídeo imobiliário de alto padrão: o que muda em relação ao comum`,
+    metaTitle: `Vídeo imobiliário de alto padrão: padrões de mercado`,
+    metaDescription: `Alto padrão exige direção de arte, luz cinema e ritmo lento. Não é o mesmo tour de imóvel comum — e o comprador percebe na primeira cena.`,
+    excerpt: `Alto padrão exige luz cinema, direção de arte e ritmo lento. Tour rápido de imobiliária afasta o comprador certo.`,
+    tldr: `Vídeo imobiliário de alto padrão: câmera lenta, luz natural respeitada, direção de arte real, som ambiente. Sem locução vendedora.`,
+    category: "Tipos de vídeo",
+    coverQuery: "R1",
+    coverAlt: `Interior de imóvel de alto padrão`,
+    datePublished: "2026-07-31",
+    keywords: `vídeo imobiliário alto padrão, vídeo imóvel de luxo, tour de imóvel premium, video real estate luxo`,
+    bodyHtml: `
+<p>Comprador de alto padrão percebe amadorismo em 3 segundos. Iluminação errada, locução exagerada ou ritmo apressado matam o interesse.</p>
+[IMAGEM: R1 | alt: Living de imóvel de alto padrão]
+<h2>Padrões que o mercado espera</h2>
+<ul>
+  <li>Câmera em movimento lento (gimbal ou slider)</li>
+  <li>Luz natural preservada, sem softbox agressivo</li>
+  <li>Direção de arte na mesa, cama e bancada</li>
+  <li>Som ambiente real, trilha discreta</li>
+</ul>
+[IMAGEM: R2 | alt: Cozinha de imóvel premium]
+<p>Veja também <a href="/blog/o-que-esperar-produtora-corporativa">o que esperar de uma produtora</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/fotografia-imobiliaria-alto-padrao">Fotografia imobiliária de alto padrão →</a></p>
+<p><a href="/#contato">Vamos filmar seu imóvel do jeito certo →</a></p>
+`,
+  },
+  {
+    slug: "video-treinamento-corporativo-microlearning",
+    title: `Vídeo de treinamento corporativo: microlearning que o time realmente assiste`,
+    metaTitle: `Vídeo treinamento corporativo: microlearning eficaz`,
+    metaDescription: `Ninguém assiste treinamento de 40 minutos. Microlearning em vídeos de 3 a 5 minutos tem 4x mais retenção e é fácil de atualizar.`,
+    excerpt: `Treinamento de 40 minutos ninguém termina. Microlearning de 3 a 5 min tem 4x mais retenção — e é fácil de atualizar.`,
+    tldr: `Divida treinamento em módulos de 3 a 5 minutos. Um conceito por vídeo, exemplo prático, quiz opcional no final.`,
+    category: "Tipos de vídeo",
+    coverQuery: "E2",
+    coverAlt: `Colaborador assistindo treinamento em vídeo`,
+    datePublished: "2026-08-01",
+    keywords: `vídeo treinamento corporativo, microlearning, T&D em vídeo, capacitação em vídeo`,
+    bodyHtml: `
+<p>Você faria um curso de 40 minutos hoje à tarde? Seu time também não faz.</p>
+[IMAGEM: E2 | alt: Colaborador em treinamento online]
+<h2>Formato que funciona</h2>
+<ul>
+  <li>3 a 5 minutos por vídeo</li>
+  <li>Um único conceito por módulo</li>
+  <li>Exemplo prático no meio</li>
+  <li>Quiz curto opcional no final</li>
+</ul>
+<p>Veja também <a href="/blog/video-onboarding-novos-colaboradores">vídeo de onboarding</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/fotografia-treinamento-corporativo">Fotografia de treinamento corporativo →</a></p>
+<p><a href="/#contato">Vamos estruturar sua trilha em vídeo →</a></p>
+`,
+  },
+  {
+    slug: "video-esg-relatorio-anual",
+    title: `Vídeo ESG e relatório anual: transparência que investidor lê`,
+    metaTitle: `Vídeo ESG e relatório anual para investidores`,
+    metaDescription: `Relatório ESG em PDF de 200 páginas ninguém lê. Vídeo com narrativa e dados visuais é o que investidor e stakeholder consomem hoje.`,
+    excerpt: `PDF de 200 páginas ninguém lê. Vídeo com dado visual e narrativa curta é o que investidor e stakeholder de fato consomem.`,
+    tldr: `Traduza o relatório ESG anual em 3 a 5 vídeos curtos: highlights, meta ambiental, meta social, governança e mensagem do CEO.`,
+    category: "Estratégia de Vídeo",
+    coverQuery: "M9",
+    coverAlt: `Executivos apresentando relatório anual`,
+    datePublished: "2026-08-02",
+    keywords: `vídeo ESG, relatório anual em vídeo, comunicação para investidores, vídeo sustentabilidade corporativa`,
+    bodyHtml: `
+<p>Investidor institucional lê o executive summary. Todo o resto do relatório precisa de outro formato — e vídeo é o formato do momento.</p>
+[IMAGEM: M9 | alt: Executivos em apresentação]
+<h2>Como fatiar</h2>
+<ul>
+  <li>Highlights do ano (90s, para redes sociais)</li>
+  <li>Meta ambiental com dado visual</li>
+  <li>Meta social e diversidade</li>
+  <li>Governança e compliance</li>
+  <li>Mensagem do CEO</li>
+</ul>
+<p>Veja também <a href="/blog/roi-video-corporativo-como-medir">como medir ROI de vídeo</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/fotografia-relatorio-anual">Fotografia para relatório anual →</a></p>
+<p><a href="/#contato">Vamos traduzir seu relatório em vídeo →</a></p>
+`,
+  },
+  {
+    slug: "video-saude-clinica-hospital-etica",
+    title: `Vídeo para clínica e hospital: comunicação eficaz dentro da ética`,
+    metaTitle: `Vídeo para clínica e hospital: dentro do CFM`,
+    metaDescription: `Vídeo em saúde precisa comunicar sem ferir o CFM: sem antes-e-depois, sem promessa, sem sensacionalismo. Veja o que funciona.`,
+    excerpt: `Saúde não permite antes-e-depois nem promessa. O vídeo que respeita a ética e ainda converte foca em processo, equipe e experiência.`,
+    tldr: `Vídeo em saúde funciona quando mostra processo, credenciais da equipe, tecnologia e experiência do paciente — sem promessa de resultado.`,
+    category: "Tipos de vídeo",
+    coverQuery: "HC1",
+    coverAlt: `Ambiente clínico moderno`,
+    datePublished: "2026-08-03",
+    keywords: `vídeo clínica médica, vídeo hospital, marketing médico ético, vídeo saúde CFM`,
+    bodyHtml: `
+<p>Marketing de saúde é campo minado. O que a Resolução do CFM proíbe é justamente o que o mercado quer fazer.</p>
+[IMAGEM: HC1 | alt: Ambiente clínico moderno]
+<h2>O que pode</h2>
+<ul>
+  <li>Processo de atendimento e jornada do paciente</li>
+  <li>Equipe médica com credenciais</li>
+  <li>Tecnologia e estrutura</li>
+  <li>Depoimento sobre experiência (não sobre resultado)</li>
+</ul>
+<h2>O que não pode</h2>
+<ul>
+  <li>Antes-e-depois</li>
+  <li>Promessa de resultado</li>
+  <li>Sensacionalismo ou apelo emocional</li>
+</ul>
+<p>Veja também <a href="/blog/marketing-medico-etico-foto-video">marketing médico ético em foto e vídeo</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/fotografia-clinica-medica">Fotografia para clínica médica →</a></p>
+<p><a href="/#contato">Vamos comunicar sua clínica com segurança →</a></p>
+`,
+  },
+  {
+    slug: "video-institucional-startup-fundraising",
+    title: `Vídeo institucional para startup em fundraising: o que o investidor vê`,
+    metaTitle: `Vídeo institucional para startup em fundraising`,
+    metaDescription: `Investidor não pede vídeo, mas todo bom investidor assiste antes da call. Veja o que colocar no vídeo institucional de startup em rodada.`,
+    excerpt: `Investidor não pede vídeo — mas assiste antes da call. É a diferença entre virar meeting ou virar "não fit".`,
+    tldr: `Vídeo institucional de startup em rodada: fundador, problema, tração, mercado e ask. Máximo 2 minutos.`,
+    category: "Tipos de vídeo",
+    coverQuery: "M3",
+    coverAlt: `Fundadora de startup apresentando`,
+    datePublished: "2026-08-04",
+    keywords: `vídeo para startup, vídeo fundraising, pitch em vídeo, vídeo institucional venture capital`,
+    bodyHtml: `
+<p>Fundo lê deck. Sócio decisor assiste vídeo. Se o seu não existe, você já perdeu diferencial na disputa por atenção.</p>
+[IMAGEM: M3 | alt: Reunião de investimento]
+<h2>Estrutura de 2 minutos</h2>
+<ol>
+  <li>Fundador em cena (15s)</li>
+  <li>Problema real com dado (25s)</li>
+  <li>Solução e tração (40s)</li>
+  <li>Mercado e diferencial (25s)</li>
+  <li>Ask claro e CTA (15s)</li>
+</ol>
+<p>Veja também <a href="/blog/video-produto-lancamento-b2b">vídeo de lançamento B2B</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/fotografia-para-startups">Fotografia para startups →</a></p>
+<p><a href="/#contato">Vamos preparar seu vídeo de rodada →</a></p>
+`,
+  },
+  {
+    slug: "video-corporativo-frequencia-publicacao",
+    title: `Com que frequência publicar vídeo corporativo: 1 forte ou 4 fracos?`,
+    metaTitle: `Frequência ideal de vídeo corporativo por mês`,
+    metaDescription: `Publicar 4 vídeos fracos por mês perde para 1 forte por trimestre — no orgânico e na percepção de marca. Veja como planejar frequência real.`,
+    excerpt: `4 vídeos fracos por mês perdem para 1 forte por trimestre. Frequência sem consistência de qualidade destrói a marca.`,
+    tldr: `Prefira 1 vídeo forte por mês + cortes verticais semanais a 4 vídeos medianos. Consistência de qualidade importa mais que volume.`,
+    category: "Estratégia de Vídeo",
+    coverQuery: "V6",
+    coverAlt: `Calendário editorial de vídeo`,
+    datePublished: "2026-08-05",
+    keywords: `frequência publicação vídeo, calendário editorial vídeo, quantos vídeos por mês, estratégia vídeo B2B`,
+    bodyHtml: `
+<p>A pergunta certa não é "quantos vídeos por mês?". É "o que consigo entregar com padrão, para sempre?".</p>
+[IMAGEM: V6 | alt: Planejamento de conteúdo em vídeo]
+<h2>Ritmo saudável</h2>
+<ul>
+  <li>1 vídeo âncora por mês (case, produto, institucional curto)</li>
+  <li>4 a 6 cortes verticais por mês (a partir do âncora)</li>
+  <li>1 bastidor ao vivo por mês</li>
+</ul>
+<p>Veja também <a href="/blog/video-vertical-linkedin-instagram-b2b">vídeo vertical em LinkedIn e Instagram</a>.</p>
+<p>🔗 <a href="https://alefotografos.com.br/blog/calendario-editorial-fotografia">Calendário editorial em fotografia →</a></p>
+<p><a href="/#contato">Vamos montar seu calendário de vídeo →</a></p>
+`,
+  },
 ];
 
 /** Hoje em YYYY-MM-DD (fuso do servidor). */

@@ -289,7 +289,7 @@ function BlogPostPage() {
                 Leia também
               </h2>
               <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {related.map((r) => (
+                {related.map((r: typeof related[number]) => (
                   <Link
                     key={r.slug}
                     to="/blog/$slug"

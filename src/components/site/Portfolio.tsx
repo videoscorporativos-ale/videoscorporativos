@@ -8,61 +8,73 @@ export type PortfolioItem = { title: string; category: Exclude<Category, "Todos"
 
 export const portfolioItems: PortfolioItem[] = [
   // Ordem espelhada de alefotografo.com.br/videos-para-empresas (do mais novo ao mais antigo).
+  { title: "Tecnisa — Almoço com Fornecedores", category: "Eventos", videoId: "zmUyWgXxOnk" },
+  { title: "Curso de Prestação de Contas Eleitorais 2026 — Turma São Paulo", category: "Eventos", videoId: "xYb2yPxMcL8" },
+  { title: "Nini Bambini — Moda Infantil com Encanto e Estilo", category: "Institucional", videoId: "iyxP0y_nSgc" },
+  { title: "Unipac 50 Anos", category: "Eventos", videoId: "Ze3Tf9X1q_g" },
+  { title: "Women in Tech Brasil", category: "Eventos", videoId: "4-HGedVzqAA" },
+  { title: "FINCON — 1º Encontro da Comunicação Financeira", category: "Eventos", videoId: "z_98miIgOZA" },
+  { title: "Genesis IA na Feira Hospitalar", category: "Feiras", videoId: "0fYFQ9PCQhM" },
   { title: "11º Fórum ABRADILAN 2026", category: "Eventos", videoId: "p-JHaQ8GJ5M" },
+  { title: "11º Fórum ABRADILAN 2026 — Vídeo Corporativo do Evento", category: "Eventos", videoId: "gSngB97GbcQ" },
+  { title: "Nitriflex — Indústria Química de Polímeros e Borrachas Nitrílicas", category: "Institucional", videoId: "VzEBf22nMJg" },
+  { title: "FlexFunds — Fundos de Investimento e Soluções Financeiras", category: "Institucional", videoId: "S5Uc9ZfKObI" },
   { title: "Fiorde Logística — Soluções Logísticas Integradas para Empresas", category: "Institucional", videoId: "iod4JyF9l6w" },
-  { title: "Nitriflex — Indústria Química de Polímeros Especiais e Borrachas Nitrílicas", category: "Institucional", videoId: "VzEBf22nMJg" },
   { title: "ATIVA Log — Vídeo Institucional", category: "Institucional", videoId: "nkHJbeXx5Qo" },
   { title: "Vídeo Manifesto — Empreendimento, Estrutura e Propósito", category: "Institucional", videoId: "isrDJDmcOvE" },
+  { title: "ibis Jaú — Evento e Experiência Audiovisual", category: "Eventos", videoId: "0b5TzqvHyxs" },
   { title: "Curso de Prestação de Contas Eleitorais 2026 — Professora Rita", category: "Eventos", videoId: "qsmVfufY6TM" },
   { title: "VIII Congresso Brasileiro de Direito da Empresa — IBDE Rio 2026", category: "Eventos", videoId: "6A7a7AaCX2Y" },
-  { title: "Faz Farma Faz Negócio — 9ª Edição", category: "Feiras", videoId: "dFn6YIwakBI" },
-  { title: "BMX Logística — Vídeo Institucional", category: "Institucional", videoId: "fsx2OBjkzFc" },
-  { title: "22º Fórum de Compras & Sourcing", category: "Eventos", videoId: "DT4MCU5Xtqw" },
   { title: "OneMBA — Produção Audiovisual", category: "Eventos", videoId: "EmO4fVfDYWM" },
-  { title: "ATIVA Log — Estrutura, Operação e Eficiência Logística", category: "Institucional", videoId: "x_XuKwIA5cE" },
-  { title: "Rocha & Queiroz Advogados — Institucional", category: "Institucional", videoId: "ITBhZlBQd6E" },
-  { title: "SQ Química — Unidade Vinhedo", category: "Institucional", videoId: "g5Lvz0ugdyI" },
-  { title: "Galena 35 Anos", category: "Eventos", videoId: "JG6KloCm3jA" },
-  { title: "UNITEC — Vídeo Institucional", category: "Institucional", videoId: "_bdJOuE4I3Q" },
-  { title: "Retratos Profissionais em Estúdio", category: "Institucional", videoId: "ZPBa1hfp9S0" },
-  { title: "IBIS Botucatu — Vídeo Manifesto", category: "Institucional", videoId: "PDFwTUHOwiY" },
-  { title: "IBIS Botucatu — Teaser de Inauguração", category: "Institucional", videoId: "niLTzkDS8_8" },
-  { title: "Ensaio de Retratos Profissionais — Ale Fotógrafo", category: "Institucional", videoId: "h2lRpMbOF_w" },
+  { title: "22º Fórum de Compras & Sourcing", category: "Eventos", videoId: "DT4MCU5Xtqw" },
+  { title: "Faz Farma Faz Negócio — 9ª Edição", category: "Feiras", videoId: "dFn6YIwakBI" },
+  { title: "Depoimento de Cliente — Hausy Robotton", category: "Institucional", videoId: "3oqAVErx48w" },
+  { title: "BMX Logística — Vídeo Institucional", category: "Institucional", videoId: "fsx2OBjkzFc" },
   { title: "9º Fórum ABRADILAN", category: "Eventos", videoId: "285bF1csiwA" },
-  { title: "Retrato Corporativo — Ensaio Fotográfico", category: "Institucional", videoId: "zuPikKnrM40" },
-  { title: "Galena Celebra", category: "Eventos", videoId: "9lX_53reZN8" },
-  { title: "15ª Convenção ABRADILAN — Punta Cana", category: "Eventos", videoId: "TAv6Obk3TVE" },
   { title: "Professora Rita — Curso de Prestação de Contas Eleitorais 2024", category: "Eventos", videoId: "-CiaVIA5dpQ" },
+  { title: "UNITEC — Vídeo Institucional", category: "Institucional", videoId: "_bdJOuE4I3Q" },
+  { title: "ATIVA Log — Estrutura, Operação e Eficiência Logística", category: "Institucional", videoId: "x_XuKwIA5cE" },
   { title: "IBDE Mendoza — III Congresso Internacional", category: "Eventos", videoId: "GPmdEz8JwxU" },
-  { title: "Encontro Farmarcas 2023", category: "Eventos", videoId: "b91pHq5zOPc" },
   { title: "ABRADILAN 25 Anos", category: "Eventos", videoId: "Xm_357kCK00" },
+  { title: "Encontro Farmarcas 2023", category: "Eventos", videoId: "b91pHq5zOPc" },
+  { title: "15ª Convenção ABRADILAN — Punta Cana", category: "Eventos", videoId: "TAv6Obk3TVE" },
   { title: "Convenção de Vendas Tecnisa 2023", category: "Eventos", videoId: "cm3c0eMpL9M" },
+  { title: "Copapharma — Coquetel de Lançamento", category: "Eventos", videoId: "I2r_IBgFbdE" },
   { title: "Faz Negócios 3", category: "Feiras", videoId: "C6XQuyikcrM" },
   { title: "Festa de Confraternização Tecnisa 2022", category: "Eventos", videoId: "-PL7myCgsgw" },
-  { title: "Encontro Farmarcas 2022", category: "Eventos", videoId: "osKTMaS96D8" },
-  { title: "II Congresso Brasileiro de Direito da Empresa", category: "Eventos", videoId: "b1z0NHf4QYU" },
+  { title: "III Congresso Brasileiro de Direito da Empresa", category: "Eventos", videoId: "b1z0NHf4QYU" },
   { title: "SQ Química — 34º Prêmio SITIVESP de Fornecedor do Ano", category: "Eventos", videoId: "dk38Bmjy-Os" },
   { title: "OneMBA Class 2023 — São Paulo", category: "Eventos", videoId: "clXZzDxmSh0" },
+  { title: "Galena Celebra", category: "Eventos", videoId: "9lX_53reZN8" },
   { title: "SIPAT 2022 — Foseco", category: "Eventos", videoId: "Js0RdcfsXo4" },
+  { title: "SQ Química — Unidade Vinhedo", category: "Institucional", videoId: "g5Lvz0ugdyI" },
+  { title: "Encontro Farmarcas 2022", category: "Eventos", videoId: "osKTMaS96D8" },
   { title: "I Congresso Brasileiro de Direito da Empresa no Novo Futebol — IBDE", category: "Eventos", videoId: "3LECyXdj3HQ" },
+  { title: "Galena 35 Anos", category: "Eventos", videoId: "JG6KloCm3jA" },
   { title: "ATIVA Logística — Programa de Sustentabilidade", category: "Institucional", videoId: "aOiYST9L8ec" },
   { title: "SQ Química na ABRAFATI Show 2022", category: "Feiras", videoId: "ufqmkFC6lrw" },
+  { title: "Ensaio de Retratos Profissionais — Ale Fotógrafo", category: "Institucional", videoId: "h2lRpMbOF_w" },
   { title: "Confraternização ABRADILAN", category: "Eventos", videoId: "2xd_0_EuMpM" },
-  { title: "Salomão Concursos — Aulão em São Paulo", category: "Eventos", videoId: "Ou1-75sNL-s" },
   { title: "7º Fórum ABRADILAN de Desenvolvimento Empresarial", category: "Eventos", videoId: "8wnIwksSzZY" },
+  { title: "Retratos Profissionais em Estúdio", category: "Institucional", videoId: "ZPBa1hfp9S0" },
+  { title: "Retrato Corporativo — Ensaio Fotográfico", category: "Institucional", videoId: "zuPikKnrM40" },
+  { title: "IBIS Botucatu — Teaser de Inauguração", category: "Institucional", videoId: "niLTzkDS8_8" },
+  { title: "IBIS Botucatu — Vídeo Manifesto", category: "Institucional", videoId: "PDFwTUHOwiY" },
   { title: "Curso de Prestação de Contas Eleitorais — Professora Rita Gonçalves", category: "Eventos", videoId: "bpsY_yi4qfQ" },
   { title: "Latin Sales Meeting 2022 — Punta Cana", category: "Eventos", videoId: "YhHZU7MULgE" },
   { title: "Jantar Febrafar 2022", category: "Eventos", videoId: "MaG2NwbxVxc" },
+  { title: "Salomão Concursos — Aulão em São Paulo", category: "Eventos", videoId: "Ou1-75sNL-s" },
   { title: "Renove Mudanças — Institucional", category: "Institucional", videoId: "Y7YKDeR9TrE" },
   { title: "SITIVESP 80 Anos", category: "Eventos", videoId: "2hCd4N_QAJg" },
   { title: "Rocha & Queiroz — Vídeo do Escritório", category: "Institucional", videoId: "3Jm3PyVBZDo" },
-  { title: "Sustainable Foods Summit — São Paulo", category: "Feiras", videoId: "utaOjr3Dqxw" },
-  { title: "ATIVA Logística — Institucional", category: "Institucional", videoId: "jRq5LqzarHc" },
   { title: "LATAM Sales Meeting 2021 — Convatec", category: "Eventos", videoId: "YT44mYNhlkA" },
+  { title: "ATIVA Logística — Institucional", category: "Institucional", videoId: "jRq5LqzarHc" },
+  { title: "Rocha & Queiroz Advogados — Institucional", category: "Institucional", videoId: "ITBhZlBQd6E" },
   { title: "ATIVALOG — Vídeo de Boas Festas", category: "Institucional", videoId: "M5rpZqjInHE" },
+  { title: "Sustainable Foods Summit — São Paulo", category: "Feiras", videoId: "utaOjr3Dqxw" },
   { title: "Encontro de Craques — Germed", category: "Eventos", videoId: "MVea__twp3A" },
-  { title: "FCW — Prêmio Almirante Álvaro Alberto", category: "Eventos", videoId: "IEJhGi9yiMk" },
   { title: "ATIVA Logística — Centro de Distribuição Itapevi", category: "Institucional", videoId: "T4Uh7_Zcka8" },
+  { title: "FCW — Prêmio Almirante Álvaro Alberto", category: "Eventos", videoId: "IEJhGi9yiMk" },
 ];
 
 export const thumbFor = (videoId: string) => `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
@@ -109,12 +121,13 @@ export function Portfolio() {
             <button
               key={item.title}
               onClick={() => setOpenVideo(item.videoId)}
+              aria-label={`Assistir: ${item.title}`}
               className="group relative aspect-video rounded-xl overflow-hidden border border-border bg-surface text-left"
             >
               <img
                 loading="lazy"
                 src={thumbFor(item.videoId)}
-                alt={item.title}
+                alt={`${item.title} — vídeo ${item.category.toLowerCase()} corporativo por Ale Fotógrafo`}
                 className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />

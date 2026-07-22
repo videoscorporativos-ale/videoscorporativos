@@ -2215,11 +2215,24 @@ export const posts: BlogPost[] = [
 
 ];
 
+/** Hoje em YYYY-MM-DD (fuso do servidor). */
+function todayISO(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
+/** Um post está publicado quando datePublished ≤ hoje. */
+export function isPublished(post: BlogPost): boolean {
+  return post.datePublished <= todayISO();
+}
+
 export function getPostBySlug(slug: string): BlogPost | undefined {
-  return posts.find((p) => p.slug === slug);
+  const post = posts.find((p) => p.slug === slug);
+  if (!post || !isPublished(post)) return undefined;
+  return post;
 }
 
 export function getAllPosts(): BlogPost[] {
   return posts
+    .filter(isPublished)
     .sort((a, b) => (a.datePublished < b.datePublished ? 1 : -1));
 }

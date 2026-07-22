@@ -121,6 +121,7 @@ export function Portfolio() {
             <button
               key={item.title}
               onClick={() => setOpenVideo(item.videoId)}
+              aria-label={`Assistir: ${item.title}`}
               className="group relative aspect-video rounded-xl overflow-hidden border border-border bg-surface text-left"
             >
               <img

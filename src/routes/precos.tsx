@@ -68,6 +68,15 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Início", item: "https://videoscorporativos.com.br/" },
+    { "@type": "ListItem", position: 2, name: "Preços", item: URL },
+  ],
+};
+
 export const Route = createFileRoute("/precos")({
   head: () => ({
     meta: [
@@ -90,6 +99,7 @@ export const Route = createFileRoute("/precos")({
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(articleSchema) },
       { type: "application/ld+json", children: JSON.stringify(faqSchema) },
+      { type: "application/ld+json", children: JSON.stringify(breadcrumbSchema) },
     ],
   }),
   component: PrecosPage,

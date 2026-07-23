@@ -9,15 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VideoParaFeiraDeNegociosRouteImport } from './routes/video-para-feira-de-negocios'
+import { Route as VideoInstitucionalSaoPauloRouteImport } from './routes/video-institucional-sao-paulo'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrecosRouteImport } from './routes/precos'
+import { Route as FilmagemEventoCorporativoSaoPauloRouteImport } from './routes/filmagem-evento-corporativo-sao-paulo'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CasesIndexRouteImport } from './routes/cases.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as CasesSlugRouteImport } from './routes/cases.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AutorAlexandreMachadoRouteImport } from './routes/autor.alexandre-machado'
 import { Route as AdminSeoRouteImport } from './routes/admin.seo'
 import { Route as ApiPublicSeoResubmitSitemapRouteImport } from './routes/api/public/seo.resubmit-sitemap'
 
+const VideoParaFeiraDeNegociosRoute =
+  VideoParaFeiraDeNegociosRouteImport.update({
+    id: '/video-para-feira-de-negocios',
+    path: '/video-para-feira-de-negocios',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const VideoInstitucionalSaoPauloRoute =
+  VideoInstitucionalSaoPauloRouteImport.update({
+    id: '/video-institucional-sao-paulo',
+    path: '/video-institucional-sao-paulo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -28,14 +45,30 @@ const PrecosRoute = PrecosRouteImport.update({
   path: '/precos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FilmagemEventoCorporativoSaoPauloRoute =
+  FilmagemEventoCorporativoSaoPauloRouteImport.update({
+    id: '/filmagem-evento-corporativo-sao-paulo',
+    path: '/filmagem-evento-corporativo-sao-paulo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CasesIndexRoute = CasesIndexRouteImport.update({
+  id: '/cases/',
+  path: '/cases/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasesSlugRoute = CasesSlugRouteImport.update({
+  id: '/cases/$slug',
+  path: '/cases/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -62,81 +95,130 @@ const ApiPublicSeoResubmitSitemapRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/video-institucional-sao-paulo': typeof VideoInstitucionalSaoPauloRoute
+  '/video-para-feira-de-negocios': typeof VideoParaFeiraDeNegociosRoute
   '/admin/seo': typeof AdminSeoRoute
   '/autor/alexandre-machado': typeof AutorAlexandreMachadoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/cases/$slug': typeof CasesSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/cases/': typeof CasesIndexRoute
   '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/video-institucional-sao-paulo': typeof VideoInstitucionalSaoPauloRoute
+  '/video-para-feira-de-negocios': typeof VideoParaFeiraDeNegociosRoute
   '/admin/seo': typeof AdminSeoRoute
   '/autor/alexandre-machado': typeof AutorAlexandreMachadoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/cases/$slug': typeof CasesSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/cases': typeof CasesIndexRoute
   '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/video-institucional-sao-paulo': typeof VideoInstitucionalSaoPauloRoute
+  '/video-para-feira-de-negocios': typeof VideoParaFeiraDeNegociosRoute
   '/admin/seo': typeof AdminSeoRoute
   '/autor/alexandre-machado': typeof AutorAlexandreMachadoRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/cases/$slug': typeof CasesSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/cases/': typeof CasesIndexRoute
   '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/filmagem-evento-corporativo-sao-paulo'
     | '/precos'
     | '/sitemap.xml'
+    | '/video-institucional-sao-paulo'
+    | '/video-para-feira-de-negocios'
     | '/admin/seo'
     | '/autor/alexandre-machado'
     | '/blog/$slug'
+    | '/cases/$slug'
     | '/blog/'
+    | '/cases/'
     | '/api/public/seo/resubmit-sitemap'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/filmagem-evento-corporativo-sao-paulo'
     | '/precos'
     | '/sitemap.xml'
+    | '/video-institucional-sao-paulo'
+    | '/video-para-feira-de-negocios'
     | '/admin/seo'
     | '/autor/alexandre-machado'
     | '/blog/$slug'
+    | '/cases/$slug'
     | '/blog'
+    | '/cases'
     | '/api/public/seo/resubmit-sitemap'
   id:
     | '__root__'
     | '/'
+    | '/filmagem-evento-corporativo-sao-paulo'
     | '/precos'
     | '/sitemap.xml'
+    | '/video-institucional-sao-paulo'
+    | '/video-para-feira-de-negocios'
     | '/admin/seo'
     | '/autor/alexandre-machado'
     | '/blog/$slug'
+    | '/cases/$slug'
     | '/blog/'
+    | '/cases/'
     | '/api/public/seo/resubmit-sitemap'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FilmagemEventoCorporativoSaoPauloRoute: typeof FilmagemEventoCorporativoSaoPauloRoute
   PrecosRoute: typeof PrecosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  VideoInstitucionalSaoPauloRoute: typeof VideoInstitucionalSaoPauloRoute
+  VideoParaFeiraDeNegociosRoute: typeof VideoParaFeiraDeNegociosRoute
   AdminSeoRoute: typeof AdminSeoRoute
   AutorAlexandreMachadoRoute: typeof AutorAlexandreMachadoRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  CasesSlugRoute: typeof CasesSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  CasesIndexRoute: typeof CasesIndexRoute
   ApiPublicSeoResubmitSitemapRoute: typeof ApiPublicSeoResubmitSitemapRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/video-para-feira-de-negocios': {
+      id: '/video-para-feira-de-negocios'
+      path: '/video-para-feira-de-negocios'
+      fullPath: '/video-para-feira-de-negocios'
+      preLoaderRoute: typeof VideoParaFeiraDeNegociosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-institucional-sao-paulo': {
+      id: '/video-institucional-sao-paulo'
+      path: '/video-institucional-sao-paulo'
+      fullPath: '/video-institucional-sao-paulo'
+      preLoaderRoute: typeof VideoInstitucionalSaoPauloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -151,6 +233,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrecosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/filmagem-evento-corporativo-sao-paulo': {
+      id: '/filmagem-evento-corporativo-sao-paulo'
+      path: '/filmagem-evento-corporativo-sao-paulo'
+      fullPath: '/filmagem-evento-corporativo-sao-paulo'
+      preLoaderRoute: typeof FilmagemEventoCorporativoSaoPauloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -158,11 +247,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cases/': {
+      id: '/cases/'
+      path: '/cases'
+      fullPath: '/cases/'
+      preLoaderRoute: typeof CasesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
       fullPath: '/blog/'
       preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cases/$slug': {
+      id: '/cases/$slug'
+      path: '/cases/$slug'
+      fullPath: '/cases/$slug'
+      preLoaderRoute: typeof CasesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -198,24 +301,20 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FilmagemEventoCorporativoSaoPauloRoute:
+    FilmagemEventoCorporativoSaoPauloRoute,
   PrecosRoute: PrecosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  VideoInstitucionalSaoPauloRoute: VideoInstitucionalSaoPauloRoute,
+  VideoParaFeiraDeNegociosRoute: VideoParaFeiraDeNegociosRoute,
   AdminSeoRoute: AdminSeoRoute,
   AutorAlexandreMachadoRoute: AutorAlexandreMachadoRoute,
   BlogSlugRoute: BlogSlugRoute,
+  CasesSlugRoute: CasesSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
+  CasesIndexRoute: CasesIndexRoute,
   ApiPublicSeoResubmitSitemapRoute: ApiPublicSeoResubmitSitemapRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

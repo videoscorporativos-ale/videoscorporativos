@@ -8,6 +8,13 @@
 - E-mail comercial: comercial@alefotografo.com.br
 - Site institucional histórico: https://alefotografo.com.br
 
+## Perfis oficiais
+
+- Instagram: https://www.instagram.com/alefotografo
+- LinkedIn: https://www.linkedin.com/in/alexandremachadofotografo
+- YouTube: https://www.youtube.com/@alefotografo
+- Google Business Profile: GOOGLE_BUSINESS_PROFILE_URL_PLACEHOLDER (substituir quando o perfil for aprovado)
+
 ## Páginas principais
 
 - [Início](https://videoscorporativos.com.br/): visão geral dos serviços, portfólio, processo, depoimentos.

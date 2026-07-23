@@ -75,13 +75,17 @@ const localBusinessSchema = {
     bestRating: "5",
     worstRating: "1",
   },
-  // sameAs: adicione aqui a URL curta do Google Business Profile assim que
-  // o perfil for aprovado (ex.: "https://g.co/kgs/XXXXX" ou o link do maps).
+  // TODO: substituir o placeholder abaixo pela URL curta do Google Business Profile
+  // assim que o perfil for aprovado. Exemplos válidos:
+  //   - Link curto do Google: "https://g.co/kgs/XXXXX"
+  //   - Link do Maps: "https://maps.google.com/?cid=YYYYY"
+  //   - Link público do perfil: "https://business.google.com/..."
   sameAs: [
     "https://alefotografo.com.br",
     "https://www.instagram.com/alefotografo",
     "https://www.linkedin.com/in/alexandremachadofotografo",
     "https://www.youtube.com/@alefotografo",
+    "GOOGLE_BUSINESS_PROFILE_URL_PLACEHOLDER",
   ],
 };
 

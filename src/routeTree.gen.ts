@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VideoParaFeiraDeNegociosRouteImport } from './routes/video-para-feira-de-negocios'
 import { Route as VideoInstitucionalSaoPauloRouteImport } from './routes/video-institucional-sao-paulo'
+import { Route as VideoCorporativoSaoPauloRouteImport } from './routes/video-corporativo-sao-paulo'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrecosRouteImport } from './routes/precos'
 import { Route as FilmagemEventoCorporativoSaoPauloRouteImport } from './routes/filmagem-evento-corporativo-sao-paulo'
@@ -33,6 +34,12 @@ const VideoInstitucionalSaoPauloRoute =
   VideoInstitucionalSaoPauloRouteImport.update({
     id: '/video-institucional-sao-paulo',
     path: '/video-institucional-sao-paulo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const VideoCorporativoSaoPauloRoute =
+  VideoCorporativoSaoPauloRouteImport.update({
+    id: '/video-corporativo-sao-paulo',
+    path: '/video-corporativo-sao-paulo',
     getParentRoute: () => rootRouteImport,
   } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -98,6 +105,7 @@ export interface FileRoutesByFullPath {
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/video-corporativo-sao-paulo': typeof VideoCorporativoSaoPauloRoute
   '/video-institucional-sao-paulo': typeof VideoInstitucionalSaoPauloRoute
   '/video-para-feira-de-negocios': typeof VideoParaFeiraDeNegociosRoute
   '/admin/seo': typeof AdminSeoRoute
@@ -113,6 +121,7 @@ export interface FileRoutesByTo {
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/video-corporativo-sao-paulo': typeof VideoCorporativoSaoPauloRoute
   '/video-institucional-sao-paulo': typeof VideoInstitucionalSaoPauloRoute
   '/video-para-feira-de-negocios': typeof VideoParaFeiraDeNegociosRoute
   '/admin/seo': typeof AdminSeoRoute
@@ -129,6 +138,7 @@ export interface FileRoutesById {
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/video-corporativo-sao-paulo': typeof VideoCorporativoSaoPauloRoute
   '/video-institucional-sao-paulo': typeof VideoInstitucionalSaoPauloRoute
   '/video-para-feira-de-negocios': typeof VideoParaFeiraDeNegociosRoute
   '/admin/seo': typeof AdminSeoRoute
@@ -146,6 +156,7 @@ export interface FileRouteTypes {
     | '/filmagem-evento-corporativo-sao-paulo'
     | '/precos'
     | '/sitemap.xml'
+    | '/video-corporativo-sao-paulo'
     | '/video-institucional-sao-paulo'
     | '/video-para-feira-de-negocios'
     | '/admin/seo'
@@ -161,6 +172,7 @@ export interface FileRouteTypes {
     | '/filmagem-evento-corporativo-sao-paulo'
     | '/precos'
     | '/sitemap.xml'
+    | '/video-corporativo-sao-paulo'
     | '/video-institucional-sao-paulo'
     | '/video-para-feira-de-negocios'
     | '/admin/seo'
@@ -176,6 +188,7 @@ export interface FileRouteTypes {
     | '/filmagem-evento-corporativo-sao-paulo'
     | '/precos'
     | '/sitemap.xml'
+    | '/video-corporativo-sao-paulo'
     | '/video-institucional-sao-paulo'
     | '/video-para-feira-de-negocios'
     | '/admin/seo'
@@ -192,6 +205,7 @@ export interface RootRouteChildren {
   FilmagemEventoCorporativoSaoPauloRoute: typeof FilmagemEventoCorporativoSaoPauloRoute
   PrecosRoute: typeof PrecosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  VideoCorporativoSaoPauloRoute: typeof VideoCorporativoSaoPauloRoute
   VideoInstitucionalSaoPauloRoute: typeof VideoInstitucionalSaoPauloRoute
   VideoParaFeiraDeNegociosRoute: typeof VideoParaFeiraDeNegociosRoute
   AdminSeoRoute: typeof AdminSeoRoute
@@ -217,6 +231,13 @@ declare module '@tanstack/react-router' {
       path: '/video-institucional-sao-paulo'
       fullPath: '/video-institucional-sao-paulo'
       preLoaderRoute: typeof VideoInstitucionalSaoPauloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-corporativo-sao-paulo': {
+      id: '/video-corporativo-sao-paulo'
+      path: '/video-corporativo-sao-paulo'
+      fullPath: '/video-corporativo-sao-paulo'
+      preLoaderRoute: typeof VideoCorporativoSaoPauloRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -305,6 +326,7 @@ const rootRouteChildren: RootRouteChildren = {
     FilmagemEventoCorporativoSaoPauloRoute,
   PrecosRoute: PrecosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  VideoCorporativoSaoPauloRoute: VideoCorporativoSaoPauloRoute,
   VideoInstitucionalSaoPauloRoute: VideoInstitucionalSaoPauloRoute,
   VideoParaFeiraDeNegociosRoute: VideoParaFeiraDeNegociosRoute,
   AdminSeoRoute: AdminSeoRoute,
@@ -318,13 +340,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

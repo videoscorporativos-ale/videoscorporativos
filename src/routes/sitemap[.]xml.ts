@@ -17,6 +17,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/autor/alexandre-machado", changefreq: "monthly", priority: "0.6", lastmod: today },
           { path: "/cases", changefreq: "weekly", priority: "0.9", lastmod: today },
           { path: "/video-institucional-sao-paulo", changefreq: "monthly", priority: "0.9", lastmod: today },
+          { path: "/video-corporativo-sao-paulo", changefreq: "monthly", priority: "0.9", lastmod: today },
           { path: "/filmagem-evento-corporativo-sao-paulo", changefreq: "monthly", priority: "0.9", lastmod: today },
           { path: "/video-para-feira-de-negocios", changefreq: "monthly", priority: "0.9", lastmod: today },
           ...getAllCases().map((c) => ({

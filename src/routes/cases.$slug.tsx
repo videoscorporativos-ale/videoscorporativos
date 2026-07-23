@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { BlogCTA } from "@/components/site/BlogCTA";
-import { getCaseBySlug, getAllCases } from "@/lib/portfolio-slugs";
+import { getCaseBySlug, getAllCases, type CaseItem } from "@/lib/portfolio-slugs";
 import { hiResThumbFor, thumbFor } from "@/components/site/Portfolio";
 
 const SITE = "https://videoscorporativos.com.br";
@@ -133,7 +133,7 @@ function CasePage() {
             <section className="mt-16 border-t border-border pt-10">
               <h2 className="font-display text-2xl font-semibold">Cases relacionados</h2>
               <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                {related.map((r) => (
+                {related.map((r: CaseItem) => (
                   <Link
                     key={r.slug}
                     to="/cases/$slug"

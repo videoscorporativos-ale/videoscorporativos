@@ -75,6 +75,14 @@ const localBusinessSchema = {
     bestRating: "5",
     worstRating: "1",
   },
+  // sameAs: adicione aqui a URL curta do Google Business Profile assim que
+  // o perfil for aprovado (ex.: "https://g.co/kgs/XXXXX" ou o link do maps).
+  sameAs: [
+    "https://alefotografo.com.br",
+    "https://www.instagram.com/alefotografo",
+    "https://www.linkedin.com/in/alexandremachadofotografo",
+    "https://www.youtube.com/@alefotografo",
+  ],
 };
 
 const videoObjectsSchema = {

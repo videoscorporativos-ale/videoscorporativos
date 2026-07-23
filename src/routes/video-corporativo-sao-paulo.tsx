@@ -8,7 +8,7 @@ const SITE = "https://videoscorporativos.com.br";
 const URL = `${SITE}/video-corporativo-sao-paulo`;
 const TITLE = "Vídeo Corporativo em São Paulo · Produtora com +30 anos";
 const DESCRIPTION =
-  "Vídeo corporativo em São Paulo: institucional, evento e feira. Roteiro, captação em cinema digital e entrega multi-formato. Atendimento em Paulista, Faria Lima, Berrini e todo SP.";
+  "Vídeo corporativo em SP: institucional, evento e feira. Roteiro, captação em cinema digital e entrega multi-formato. Atende Paulista, Faria Lima e Berrini.";
 const OG_IMAGE = "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg";
 
 const faqs = [

@@ -8,7 +8,7 @@ const SITE = "https://videoscorporativos.com.br";
 const URL = `${SITE}/video-para-feira-de-negocios`;
 const TITLE = "Vídeo para Feira de Negócios · São Paulo e Brasil";
 const DESCRIPTION =
-  "Vídeo para feira de negócios: registro do stand, depoimentos, entrevistas e aftermovie. Comprove o ROI da participação da sua empresa nas principais feiras do Brasil.";
+  "Vídeo para feira de negócios: registro do stand, depoimentos, entrevistas e aftermovie. Prove o ROI da participação da sua empresa nas feiras do Brasil.";
 const OG_IMAGE = "https://i.ytimg.com/vi/0fYFQ9PCQhM/maxresdefault.jpg";
 
 const faqs = [

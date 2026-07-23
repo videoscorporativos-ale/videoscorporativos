@@ -8,7 +8,7 @@ const SITE = "https://videoscorporativos.com.br";
 const URL = `${SITE}/video-institucional-sao-paulo`;
 const TITLE = "Vídeo Institucional em São Paulo · Produtora com +30 anos";
 const DESCRIPTION =
-  "Produção de vídeo institucional em São Paulo: roteiro, captação em cinema digital, edição e entrega. Atendimento em Paulista, Faria Lima, Berrini, Alphaville e todo SP.";
+  "Produção de vídeo institucional em São Paulo: roteiro, captação em cinema digital, edição e entrega. Atende Paulista, Faria Lima, Berrini e todo SP.";
 const OG_IMAGE = "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg";
 
 const faqs = [

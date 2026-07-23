@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { getAllPosts } from "@/content/posts";
+import { getAllCases } from "@/lib/portfolio-slugs";
 
 const BASE_URL = "https://videoscorporativos.com.br";
 
@@ -14,6 +15,16 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/precos", changefreq: "monthly", priority: "0.8", lastmod: today },
           { path: "/blog", changefreq: "weekly", priority: "0.8", lastmod: today },
           { path: "/autor/alexandre-machado", changefreq: "monthly", priority: "0.6", lastmod: today },
+          { path: "/cases", changefreq: "weekly", priority: "0.9", lastmod: today },
+          { path: "/video-institucional-sao-paulo", changefreq: "monthly", priority: "0.9", lastmod: today },
+          { path: "/filmagem-evento-corporativo-sao-paulo", changefreq: "monthly", priority: "0.9", lastmod: today },
+          { path: "/video-para-feira-de-negocios", changefreq: "monthly", priority: "0.9", lastmod: today },
+          ...getAllCases().map((c) => ({
+            path: `/cases/${c.slug}`,
+            changefreq: "monthly",
+            priority: "0.6",
+            lastmod: today,
+          })),
           ...getAllPosts().map((p) => ({
             path: `/blog/${p.slug}`,
             changefreq: "monthly",

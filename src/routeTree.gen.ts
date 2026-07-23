@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrecosRouteImport } from './routes/precos'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CasesIndexRouteImport } from './routes/cases.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AutorAlexandreMachadoRouteImport } from './routes/autor.alexandre-machado'
@@ -31,6 +32,11 @@ const PrecosRoute = PrecosRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasesIndexRoute = CasesIndexRouteImport.update({
+  id: '/cases/',
+  path: '/cases/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
@@ -68,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/autor/alexandre-machado': typeof AutorAlexandreMachadoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/cases/': typeof CasesIndexRoute
   '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
 }
 export interface FileRoutesByTo {
@@ -78,6 +85,7 @@ export interface FileRoutesByTo {
   '/autor/alexandre-machado': typeof AutorAlexandreMachadoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
+  '/cases': typeof CasesIndexRoute
   '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
 }
 export interface FileRoutesById {
@@ -89,6 +97,7 @@ export interface FileRoutesById {
   '/autor/alexandre-machado': typeof AutorAlexandreMachadoRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
+  '/cases/': typeof CasesIndexRoute
   '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
 }
 export interface FileRouteTypes {
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/autor/alexandre-machado'
     | '/blog/$slug'
     | '/blog/'
+    | '/cases/'
     | '/api/public/seo/resubmit-sitemap'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/autor/alexandre-machado'
     | '/blog/$slug'
     | '/blog'
+    | '/cases'
     | '/api/public/seo/resubmit-sitemap'
   id:
     | '__root__'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/autor/alexandre-machado'
     | '/blog/$slug'
     | '/blog/'
+    | '/cases/'
     | '/api/public/seo/resubmit-sitemap'
   fileRoutesById: FileRoutesById
 }
@@ -132,6 +144,7 @@ export interface RootRouteChildren {
   AutorAlexandreMachadoRoute: typeof AutorAlexandreMachadoRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  CasesIndexRoute: typeof CasesIndexRoute
   ApiPublicSeoResubmitSitemapRoute: typeof ApiPublicSeoResubmitSitemapRoute
 }
 
@@ -156,6 +169,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cases/': {
+      id: '/cases/'
+      path: '/cases'
+      fullPath: '/cases/'
+      preLoaderRoute: typeof CasesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/': {
@@ -204,6 +224,7 @@ const rootRouteChildren: RootRouteChildren = {
   AutorAlexandreMachadoRoute: AutorAlexandreMachadoRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
+  CasesIndexRoute: CasesIndexRoute,
   ApiPublicSeoResubmitSitemapRoute: ApiPublicSeoResubmitSitemapRoute,
 }
 export const routeTree = rootRouteImport

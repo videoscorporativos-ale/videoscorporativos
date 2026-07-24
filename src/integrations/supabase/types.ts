@@ -16,30 +16,57 @@ export type Database = {
     Tables: {
       contact_submissions: {
         Row: {
+          consent_at: string | null
           created_at: string
-          email: string
-          empresa: string
+          email: string | null
+          empresa: string | null
           id: string
+          landing_path: string | null
+          lgpd_consent: boolean
           mensagem: string
           nome: string
+          referrer: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
           whatsapp: string
         }
         Insert: {
+          consent_at?: string | null
           created_at?: string
-          email: string
-          empresa: string
+          email?: string | null
+          empresa?: string | null
           id?: string
+          landing_path?: string | null
+          lgpd_consent?: boolean
           mensagem: string
           nome: string
+          referrer?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
           whatsapp: string
         }
         Update: {
+          consent_at?: string | null
           created_at?: string
-          email?: string
-          empresa?: string
+          email?: string | null
+          empresa?: string | null
           id?: string
+          landing_path?: string | null
+          lgpd_consent?: boolean
           mensagem?: string
           nome?: string
+          referrer?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
           whatsapp?: string
         }
         Relationships: []

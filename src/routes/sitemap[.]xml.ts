@@ -15,6 +15,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/precos", changefreq: "monthly", priority: "0.8", lastmod: today },
           { path: "/blog", changefreq: "weekly", priority: "0.8", lastmod: today },
           { path: "/autor/alexandre-machado", changefreq: "monthly", priority: "0.6", lastmod: today },
+          { path: "/politica-de-privacidade", changefreq: "yearly", priority: "0.3", lastmod: today },
           { path: "/cases", changefreq: "weekly", priority: "0.9", lastmod: today },
           { path: "/video-institucional-sao-paulo", changefreq: "monthly", priority: "0.9", lastmod: today },
           { path: "/video-corporativo-sao-paulo", changefreq: "monthly", priority: "0.9", lastmod: today },

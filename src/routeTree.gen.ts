@@ -14,6 +14,7 @@ import { Route as VideoInstitucionalSaoPauloRouteImport } from './routes/video-i
 import { Route as VideoCorporativoSaoPauloRouteImport } from './routes/video-corporativo-sao-paulo'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrecosRouteImport } from './routes/precos'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as FilmagemEventoCorporativoSaoPauloRouteImport } from './routes/filmagem-evento-corporativo-sao-paulo'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CasesIndexRouteImport } from './routes/cases.index'
@@ -50,6 +51,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const PrecosRoute = PrecosRouteImport.update({
   id: '/precos',
   path: '/precos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FilmagemEventoCorporativoSaoPauloRoute =
@@ -103,6 +109,7 @@ const ApiPublicSeoResubmitSitemapRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/video-corporativo-sao-paulo': typeof VideoCorporativoSaoPauloRoute
@@ -119,6 +126,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/video-corporativo-sao-paulo': typeof VideoCorporativoSaoPauloRoute
@@ -136,6 +144,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
+  '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/video-corporativo-sao-paulo': typeof VideoCorporativoSaoPauloRoute
@@ -154,6 +163,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/filmagem-evento-corporativo-sao-paulo'
+    | '/politica-de-privacidade'
     | '/precos'
     | '/sitemap.xml'
     | '/video-corporativo-sao-paulo'
@@ -170,6 +180,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/filmagem-evento-corporativo-sao-paulo'
+    | '/politica-de-privacidade'
     | '/precos'
     | '/sitemap.xml'
     | '/video-corporativo-sao-paulo'
@@ -186,6 +197,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/filmagem-evento-corporativo-sao-paulo'
+    | '/politica-de-privacidade'
     | '/precos'
     | '/sitemap.xml'
     | '/video-corporativo-sao-paulo'
@@ -203,6 +215,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FilmagemEventoCorporativoSaoPauloRoute: typeof FilmagemEventoCorporativoSaoPauloRoute
+  PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   PrecosRoute: typeof PrecosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VideoCorporativoSaoPauloRoute: typeof VideoCorporativoSaoPauloRoute
@@ -252,6 +265,13 @@ declare module '@tanstack/react-router' {
       path: '/precos'
       fullPath: '/precos'
       preLoaderRoute: typeof PrecosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/filmagem-evento-corporativo-sao-paulo': {
@@ -324,6 +344,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FilmagemEventoCorporativoSaoPauloRoute:
     FilmagemEventoCorporativoSaoPauloRoute,
+  PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   PrecosRoute: PrecosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   VideoCorporativoSaoPauloRoute: VideoCorporativoSaoPauloRoute,
@@ -340,13 +361,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

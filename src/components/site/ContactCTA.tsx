@@ -68,6 +68,8 @@ export function ContactCTA() {
         utm_source: payload.utm_source,
         utm_medium: payload.utm_medium,
         utm_campaign: payload.utm_campaign,
+        utm_term: payload.utm_term,
+        utm_content: payload.utm_content,
       });
       toast.success("Recebemos! Abrindo o WhatsApp para continuar a conversa…");
       form.reset();

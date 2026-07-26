@@ -1,0 +1,1 @@
+DELETE FROM public.contact_submissions WHERE nome = 'QA Teste' AND empresa = 'QA Ltda';

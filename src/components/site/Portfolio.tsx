@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Play, X } from "lucide-react";
+import { Play, X, ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
 type Category = "Todos" | "Institucional" | "Eventos" | "Feiras";
@@ -80,31 +81,46 @@ export const portfolioItems: PortfolioItem[] = [
 export const thumbFor = (videoId: string) => `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 export const hiResThumbFor = (videoId: string) => `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
 
-const categories: Category[] = ["Todos", "Institucional", "Eventos", "Feiras"];
+const categories: Category[] = ["Institucional", "Eventos", "Feiras"];
+
+/** Destaques da home: os mais recentes de cada categoria (bento enxuto). */
+const HIGHLIGHTS_PER_CATEGORY = 2;
 
 export function Portfolio() {
-  const [active, setActive] = useState<Category>("Todos");
+  const [active, setActive] = useState<Category>("Institucional");
   const [openVideo, setOpenVideo] = useState<string | null>(null);
 
-  const filtered = active === "Todos" ? portfolioItems : portfolioItems.filter((i) => i.category === active);
+  const filtered = portfolioItems
+    .filter((i) => i.category === active)
+    .slice(0, HIGHLIGHTS_PER_CATEGORY * 2);
 
   return (
-    <section id="portfolio" className="py-24 md:py-32 bg-surface/40 border-y border-border">
+    <section id="portfolio" className="py-28 md:py-40 bg-surface/30 border-y border-border">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div className="max-w-2xl">
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-xl">
             <p className="text-sm uppercase tracking-[0.2em] text-brand">Portfólio</p>
-            <h2 className="mt-3 font-display text-4xl md:text-5xl font-semibold tracking-tight text-balance">
-              Trabalhos selecionados.
+            <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold tracking-tight text-balance">
+              Trabalhos selecionados
             </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Uma amostra por categoria. O portfólio completo, com {portfolioItems.length}{" "}
+              produções, está na página de cases.
+            </p>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div
+            className="flex flex-wrap gap-2"
+            role="tablist"
+            aria-label="Categorias do portfólio"
+          >
             {categories.map((c) => (
               <button
                 key={c}
+                role="tab"
+                aria-selected={active === c}
                 onClick={() => setActive(c)}
                 className={cn(
-                  "rounded-full px-4 py-1.5 text-sm border transition",
+                  "rounded-full px-5 py-2 text-sm border transition",
                   active === c
                     ? "bg-brand text-brand-foreground border-brand"
                     : "border-border text-muted-foreground hover:text-foreground hover:border-foreground/40",
@@ -116,13 +132,18 @@ export function Portfolio() {
           </div>
         </div>
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {filtered.map((item) => (
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-6 lg:grid-rows-2">
+          {filtered.map((item, idx) => (
             <button
               key={item.title}
               onClick={() => setOpenVideo(item.videoId)}
               aria-label={`Assistir: ${item.title}`}
-              className="group relative aspect-video rounded-xl overflow-hidden border border-border bg-surface text-left"
+              className={cn(
+                "group relative aspect-video overflow-hidden rounded-2xl border border-border bg-surface text-left transition hover:border-brand/40",
+                idx === 0
+                  ? "lg:col-span-4 lg:row-span-2 lg:aspect-auto"
+                  : "lg:col-span-2",
+              )}
             >
               <img
                 loading="lazy"
@@ -130,18 +151,28 @@ export function Portfolio() {
                 alt={`${item.title} — vídeo ${item.category.toLowerCase()} corporativo por Ale Fotógrafo`}
                 className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
                 <div className="size-14 rounded-full bg-brand text-brand-foreground flex items-center justify-center">
                   <Play className="size-5 fill-current ml-0.5" />
                 </div>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-4">
+              <div className="absolute bottom-0 left-0 right-0 p-5">
                 <p className="text-xs uppercase tracking-widest text-brand">{item.category}</p>
-                <p className="mt-1 font-display font-medium">{item.title}</p>
+                <p className="mt-1 font-display font-medium line-clamp-2">{item.title}</p>
               </div>
             </button>
           ))}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Link
+            to="/cases"
+            className="group inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-medium hover:bg-surface transition"
+          >
+            Ver todos os {portfolioItems.length} cases
+            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+          </Link>
         </div>
       </div>
 

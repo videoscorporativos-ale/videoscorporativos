@@ -132,7 +132,7 @@ export function Portfolio() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-6 lg:grid-rows-2">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-6 lg:grid-rows-[repeat(2,minmax(0,1fr))] lg:[grid-auto-rows:minmax(0,1fr)]">
           {filtered.map((item, idx) => (
             <button
               key={item.title}
@@ -141,7 +141,7 @@ export function Portfolio() {
               className={cn(
                 "group relative aspect-video overflow-hidden rounded-2xl border border-border bg-surface text-left transition hover:border-brand/40",
                 idx === 0
-                  ? "lg:col-span-4 lg:row-span-2 lg:aspect-auto"
+                  ? "lg:col-span-4 lg:row-span-2 lg:aspect-[16/10]"
                   : "lg:col-span-2 lg:aspect-auto lg:h-full",
               )}
             >

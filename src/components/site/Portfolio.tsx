@@ -83,8 +83,8 @@ export const hiResThumbFor = (videoId: string) => `https://i.ytimg.com/vi/${vide
 
 const categories: Category[] = ["Institucional", "Eventos", "Feiras"];
 
-/** Destaques da home: os mais recentes de cada categoria (bento enxuto). */
-const HIGHLIGHTS_PER_CATEGORY = 2;
+/** Destaques da home: 1 grande + 2 menores por categoria (bento enxuto). */
+const HIGHLIGHTS_PER_CATEGORY = 3;
 
 export function Portfolio() {
   const [active, setActive] = useState<Category>("Institucional");
@@ -92,7 +92,7 @@ export function Portfolio() {
 
   const filtered = portfolioItems
     .filter((i) => i.category === active)
-    .slice(0, HIGHLIGHTS_PER_CATEGORY * 2);
+    .slice(0, HIGHLIGHTS_PER_CATEGORY);
 
   return (
     <section id="portfolio" className="py-28 md:py-40 bg-surface/30 border-y border-border">
@@ -142,7 +142,7 @@ export function Portfolio() {
                 "group relative aspect-video overflow-hidden rounded-2xl border border-border bg-surface text-left transition hover:border-brand/40",
                 idx === 0
                   ? "lg:col-span-4 lg:row-span-2 lg:aspect-auto"
-                  : "lg:col-span-2",
+                  : "lg:col-span-2 lg:aspect-auto lg:h-full",
               )}
             >
               <img

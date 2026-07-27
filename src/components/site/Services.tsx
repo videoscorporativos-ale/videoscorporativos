@@ -31,15 +31,13 @@ export function Services() {
             Três frentes, um único padrão de qualidade.
           </h2>
         </div>
-        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((s, i) => {
+        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((s) => {
             const Icon = s.icon;
             return (
               <div
                 key={s.title}
-                className={`group relative rounded-3xl border border-border bg-surface/50 p-8 transition-all duration-300 hover:border-brand/50 hover:bg-surface ${
-                  i === 0 ? "lg:col-span-2 lg:row-span-1" : ""
-                }`}
+                className="group relative rounded-3xl border border-border bg-surface/50 p-8 transition-all duration-300 hover:border-brand/50 hover:bg-surface"
               >
                 <div className="mb-6 flex size-12 items-center justify-center rounded-2xl bg-brand/10 text-brand">
                   <Icon className="size-6" />
@@ -51,12 +49,12 @@ export function Services() {
           })}
           <a
             href="#contato"
-            className="group flex flex-col justify-between rounded-3xl border border-brand/30 bg-brand/5 p-8 transition hover:bg-brand/10"
+            className="group flex flex-col justify-between gap-3 rounded-3xl border border-brand/30 bg-brand/5 p-8 transition hover:bg-brand/10 md:col-span-2 md:flex-row md:items-center lg:col-span-3"
           >
             <p className="font-display text-xl font-medium text-brand">
               Não sabe qual formato precisa?
             </p>
-            <p className="mt-3 text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Conte o objetivo e eu indico o caminho — sem compromisso.
             </p>
           </a>

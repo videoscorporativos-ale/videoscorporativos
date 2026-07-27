@@ -5,7 +5,6 @@ import { ClientLogos } from "@/components/site/ClientLogos";
 import { Services } from "@/components/site/Services";
 import { Portfolio } from "@/components/site/Portfolio";
 import { Process } from "@/components/site/Process";
-import { WhyUs } from "@/components/site/WhyUs";
 import { About } from "@/components/site/About";
 import { Testimonials } from "@/components/site/Testimonials";
 import { ContactCTA } from "@/components/site/ContactCTA";
@@ -160,11 +159,10 @@ function Index() {
         <Services />
         <Portfolio />
         <Process />
-        <WhyUs />
         <About />
         <Testimonials />
-        <FAQ />
         <ContactCTA />
+        <FAQ />
       </main>
       <SiteFooter />
       <WhatsAppFloat />

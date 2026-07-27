@@ -56,6 +56,10 @@ export const Route = createFileRoute("/cases/")({
 
 function CasesIndex() {
   const cases = getAllCases();
+  const groups = (["Institucional", "Eventos", "Feiras"] as const).map((cat) => ({
+    cat,
+    items: cases.filter((c) => c.category === cat),
+  }));
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
@@ -73,28 +77,47 @@ function CasesIndex() {
             {cases.length} produções audiovisuais entregues para empresas — institucionais,
             cobertura de eventos corporativos e vídeo para feiras de negócios.
           </p>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {cases.map((c) => (
-              <Link
-                key={c.slug}
-                to="/cases/$slug"
-                params={{ slug: c.slug }}
-                className="group relative aspect-video overflow-hidden rounded-xl border border-border bg-surface"
+          <nav className="mt-8 flex flex-wrap gap-2" aria-label="Ir para categoria">
+            {groups.map((g) => (
+              <a
+                key={g.cat}
+                href={`#${g.cat.toLowerCase()}`}
+                className="rounded-full border border-border px-5 py-2 text-sm text-muted-foreground transition hover:border-brand/50 hover:text-foreground"
               >
-                <img
-                  loading="lazy"
-                  src={thumbFor(c.videoId)}
-                  alt={`${c.title} — case de vídeo ${c.category.toLowerCase()} corporativo`}
-                  className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <p className="text-xs uppercase tracking-widest text-brand">{c.category}</p>
-                  <p className="mt-1 font-display font-medium">{c.title}</p>
-                </div>
-              </Link>
+                {g.cat} ({g.items.length})
+              </a>
             ))}
-          </div>
+          </nav>
+
+          {groups.map((g) => (
+            <section key={g.cat} id={g.cat.toLowerCase()} className="mt-16 scroll-mt-28">
+              <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight">
+                {g.cat}
+              </h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {g.items.map((c) => (
+                  <Link
+                    key={c.slug}
+                    to="/cases/$slug"
+                    params={{ slug: c.slug }}
+                    className="group relative aspect-video overflow-hidden rounded-xl border border-border bg-surface"
+                  >
+                    <img
+                      loading="lazy"
+                      src={thumbFor(c.videoId)}
+                      alt={`${c.title} — case de vídeo ${c.category.toLowerCase()} corporativo`}
+                      className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                      <p className="text-xs uppercase tracking-widest text-brand">{c.category}</p>
+                      <p className="mt-1 font-display font-medium">{c.title}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
       </main>
       <SiteFooter />

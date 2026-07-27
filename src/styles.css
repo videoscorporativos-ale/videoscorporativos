@@ -63,6 +63,7 @@
   --font-body: "Manrope", sans-serif;
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
+  --color-brand-soft: var(--brand-soft);
   --color-surface: var(--surface);
 }
 

@@ -168,7 +168,7 @@
     background-size: 24px 24px;
   }
   .gradient-radial-brand {
-    background: radial-gradient(ellipse at center top, oklch(0.78 0.17 65 / 0.18), transparent 60%);
+    background: radial-gradient(ellipse at 20% 0%, oklch(0.755 0.095 88 / 0.13), transparent 62%);
   }
   .reveal {
     opacity: 0;

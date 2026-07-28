@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Youtube } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logoUrl from "@/assets/logo.png";
 
 export function SiteFooter() {
@@ -20,7 +21,7 @@ export function SiteFooter() {
         </div>
         <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
           <a href="/#servicos" className="hover:text-foreground">Serviços</a>
-          <a href="/#portfolio" className="hover:text-foreground">Portfólio</a>
+          <Link to="/cases" className="hover:text-foreground">Portfólio</Link>
           <a href="/#processo" className="hover:text-foreground">Processo</a>
           <a href="/#sobre" className="hover:text-foreground">Sobre</a>
           <a href="/precos" className="hover:text-foreground">Preços</a>

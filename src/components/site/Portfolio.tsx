@@ -83,68 +83,116 @@ export const portfolioItems: PortfolioItem[] = [
 export const thumbFor = (videoId: string) => `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 export const hiResThumbFor = (videoId: string) => `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
 
-const categories: Category[] = ["Institucional", "Eventos", "Feiras"];
+/** Frentes de serviço + destaques do portfólio, integrados em uma única dobra. */
+export const serviceSections: {
+  id: string;
+  category: Exclude<Category, "Todos">;
+  title: string;
+  description: string;
+  vertical?: boolean;
+  videoIds: string[];
+}[] = [
+  {
+    id: "institucional",
+    category: "Institucional",
+    title: "Vídeo Institucional",
+    description:
+      "Conte a história, os valores e o diferencial da sua empresa em um filme que transmite credibilidade.",
+    videoIds: ["nkHJbeXx5Qo", "isrDJDmcOvE", "iod4JyF9l6w", "Y7YKDeR9TrE"],
+  },
+  {
+    id: "eventos",
+    category: "Eventos",
+    title: "Eventos Corporativos",
+    description:
+      "Cobertura completa de convenções, congressos e confraternizações, com entrega ágil e qualidade de cinema.",
+    videoIds: ["xYb2yPxMcL8", "Ze3Tf9X1q_g", "0b5TzqvHyxs", "6A7a7AaCX2Y"],
+  },
+  {
+    id: "feiras",
+    category: "Feiras",
+    title: "Feiras de Negócios",
+    description:
+      "Registro e aftermovie da sua participação em feiras, para gerar conteúdo e provar resultado.",
+    videoIds: ["uFNcEB1uvAA", "WGtAZjK5v9Q", "dFn6YIwakBI", "ufqmkFC6lrw"],
+  },
+  {
+    id: "reels",
+    category: "Reels",
+    title: "Reels e Vídeos Verticais",
+    description:
+      "Conteúdo curto e vertical para Instagram, LinkedIn e TikTok — feito para prender atenção nos primeiros segundos.",
+    vertical: true,
+    videoIds: ["iyxP0y_nSgc", "4-HGedVzqAA", "z_98miIgOZA", "0fYFQ9PCQhM"],
+  },
+];
 
-/** Destaques da home: 1 grande + 2 menores por categoria (bento enxuto). */
-const HIGHLIGHTS_PER_CATEGORY = 3;
+const byId = new Map(portfolioItems.map((i) => [i.videoId, i]));
 
 export function Portfolio() {
-  const [active, setActive] = useState<Category>("Institucional");
+  const [active, setActive] = useState<string>(serviceSections[0].id);
   const [openVideo, setOpenVideo] = useState<string | null>(null);
 
-  const filtered = portfolioItems
-    .filter((i) => i.category === active)
-    .slice(0, HIGHLIGHTS_PER_CATEGORY);
+  const section = serviceSections.find((s) => s.id === active) ?? serviceSections[0];
+  const items = section.videoIds
+    .map((id) => byId.get(id))
+    .filter((i): i is PortfolioItem => Boolean(i));
 
   return (
-    <section id="portfolio" className="py-28 md:py-40 bg-surface/30 border-y border-border">
+    <section id="servicos" className="py-24 md:py-32 bg-surface/30 border-y border-border">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-xl">
-            <p className="text-sm uppercase tracking-[0.2em] text-brand">Portfólio</p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold tracking-tight text-balance">
-              Trabalhos selecionados
-            </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              Uma amostra por categoria. O portfólio completo, com {portfolioItems.length}{" "}
-              produções, está na página de cases.
-            </p>
-          </div>
-          <div
-            className="flex flex-wrap gap-2"
-            role="tablist"
-            aria-label="Categorias do portfólio"
-          >
-            {categories.map((c) => (
-              <button
-                key={c}
-                role="tab"
-                aria-selected={active === c}
-                onClick={() => setActive(c)}
-                className={cn(
-                  "rounded-full px-5 py-2 text-sm border transition",
-                  active === c
-                    ? "bg-brand text-brand-foreground border-brand"
-                    : "border-border text-muted-foreground hover:text-foreground hover:border-foreground/40",
-                )}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
+        <div className="max-w-2xl">
+          <p className="text-sm uppercase tracking-[0.2em] text-brand">Serviços & Portfólio</p>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold tracking-tight text-balance">
+            Quatro frentes, um único padrão de qualidade.
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            Escolha a frente e veja trabalhos reais entregues para empresas. O portfólio completo,
+            com {portfolioItems.length} produções, está na página de cases.
+          </p>
         </div>
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-6 lg:grid-rows-[repeat(2,minmax(0,1fr))] lg:[grid-auto-rows:minmax(0,1fr)]">
-          {filtered.map((item, idx) => (
+        <div
+          className="mt-10 flex flex-wrap gap-2"
+          role="tablist"
+          aria-label="Frentes de serviço"
+        >
+          {serviceSections.map((s) => (
             <button
-              key={item.title}
+              key={s.id}
+              role="tab"
+              aria-selected={active === s.id}
+              onClick={() => setActive(s.id)}
+              className={cn(
+                "rounded-full px-5 py-2 text-sm border transition",
+                active === s.id
+                  ? "bg-brand text-brand-foreground border-brand"
+                  : "border-border text-muted-foreground hover:text-foreground hover:border-foreground/40",
+              )}
+            >
+              {s.title}
+            </button>
+          ))}
+        </div>
+
+        <p className="mt-6 max-w-2xl text-muted-foreground leading-relaxed">
+          {section.description}
+        </p>
+
+        <div
+          className={cn(
+            "mt-8 grid gap-4 sm:grid-cols-2",
+            section.vertical ? "lg:grid-cols-4" : "lg:grid-cols-2",
+          )}
+        >
+          {items.map((item) => (
+            <button
+              key={item.videoId}
               onClick={() => setOpenVideo(item.videoId)}
               aria-label={`Assistir: ${item.title}`}
               className={cn(
-                "group relative aspect-video overflow-hidden rounded-2xl border border-border bg-surface text-left transition hover:border-brand/40",
-                idx === 0
-                  ? "lg:col-span-4 lg:row-span-2 lg:aspect-[16/10]"
-                  : "lg:col-span-2 lg:aspect-auto lg:h-full",
+                "group relative overflow-hidden rounded-2xl border border-border bg-surface text-left transition hover:border-brand/40",
+                section.vertical ? "aspect-[9/16]" : "aspect-video",
               )}
             >
               <img
@@ -167,7 +215,7 @@ export function Portfolio() {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             to="/cases"
             className="group inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-medium hover:bg-surface transition"
@@ -175,6 +223,12 @@ export function Portfolio() {
             Ver todos os {portfolioItems.length} cases
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
+          <a
+            href="#contato"
+            className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-6 py-3 text-sm font-medium text-brand transition hover:bg-brand/20"
+          >
+            Não sabe qual formato precisa? Fale comigo
+          </a>
         </div>
       </div>
 
@@ -191,7 +245,12 @@ export function Portfolio() {
             <X className="size-5" />
           </button>
           <div
-            className="w-full max-w-5xl aspect-video rounded-xl overflow-hidden border border-border"
+            className={cn(
+              "overflow-hidden rounded-xl border border-border",
+              section.vertical
+                ? "h-[80vh] aspect-[9/16] max-w-full"
+                : "w-full max-w-5xl aspect-video",
+            )}
             onClick={(e) => e.stopPropagation()}
           >
             <iframe

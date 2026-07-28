@@ -182,7 +182,7 @@ export function Portfolio() {
         <div
           className={cn(
             "mt-8 grid gap-4 sm:grid-cols-2",
-            section.vertical ? "lg:grid-cols-4" : "lg:grid-cols-2",
+            section.vertical ? "sm:grid-cols-4 gap-3 max-w-3xl" : "lg:grid-cols-2",
           )}
         >
           {items.map((item) => (
@@ -218,9 +218,10 @@ export function Portfolio() {
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             to="/cases"
+            hash={section.id}
             className="group inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-medium hover:bg-surface transition"
           >
-            Ver todos os {portfolioItems.length} cases
+            Ver todos os cases de {section.title}
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </Link>
           <a

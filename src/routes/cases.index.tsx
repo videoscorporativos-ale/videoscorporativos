@@ -56,7 +56,7 @@ export const Route = createFileRoute("/cases/")({
 
 function CasesIndex() {
   const cases = getAllCases();
-  const groups = (["Institucional", "Eventos", "Feiras"] as const).map((cat) => ({
+  const groups = (["Institucional", "Eventos", "Feiras", "Reels"] as const).map((cat) => ({
     cat,
     items: cases.filter((c) => c.category === cat),
   }));
@@ -75,7 +75,7 @@ function CasesIndex() {
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
             {cases.length} produções audiovisuais entregues para empresas — institucionais,
-            cobertura de eventos corporativos e vídeo para feiras de negócios.
+            cobertura de eventos corporativos, vídeo para feiras de negócios e reels verticais.
           </p>
           <nav className="mt-8 flex flex-wrap gap-2" aria-label="Ir para categoria">
             {groups.map((g) => (

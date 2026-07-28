@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { Hero } from "@/components/site/Hero";
 import { ClientLogos } from "@/components/site/ClientLogos";
-import { Services } from "@/components/site/Services";
 import { Portfolio } from "@/components/site/Portfolio";
 import { Process } from "@/components/site/Process";
 import { About } from "@/components/site/About";
@@ -110,16 +109,16 @@ const videoObjectsSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vídeo Institucional em São Paulo · Eventos e Feiras" },
-      { name: "description", content: "Vídeo institucional em São Paulo, filmagem de eventos corporativos e vídeo para feira de negócios. +30 anos de experiência, atendimento em todo o Brasil." },
-      { name: "keywords", content: "vídeo institucional São Paulo, filmagem de eventos corporativos, vídeo para feira de negócios, produtora de vídeo SP, fotografia corporativa" },
-      { property: "og:title", content: "Vídeo Institucional em São Paulo · Eventos e Feiras" },
-      { property: "og:description", content: "Vídeo institucional, filmagem de eventos corporativos e vídeo para feira de negócios. +30 anos atendendo empresas em São Paulo e em todo o Brasil." },
+      { title: "Vídeo Institucional em São Paulo · Eventos, Feiras e Reels" },
+      { name: "description", content: "Vídeo institucional em São Paulo, filmagem de eventos corporativos, vídeo para feira de negócios e reels verticais. +30 anos de experiência em todo o Brasil." },
+      { name: "keywords", content: "vídeo institucional São Paulo, filmagem de eventos corporativos, vídeo para feira de negócios, reels corporativos, produtora de vídeo SP" },
+      { property: "og:title", content: "Vídeo Institucional em São Paulo · Eventos, Feiras e Reels" },
+      { property: "og:description", content: "Vídeo institucional, eventos corporativos, feiras de negócios e reels verticais. +30 anos atendendo empresas em São Paulo e em todo o Brasil." },
       { property: "og:url", content: "https://videoscorporativos.com.br" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Vídeo Institucional em São Paulo · Eventos e Feiras" },
-      { name: "twitter:description", content: "Vídeo institucional, eventos corporativos e feiras de negócios. +30 anos em São Paulo." },
+      { name: "twitter:title", content: "Vídeo Institucional em São Paulo · Eventos, Feiras e Reels" },
+      { name: "twitter:description", content: "Vídeo institucional, eventos, feiras de negócios e reels verticais. +30 anos em São Paulo." },
       { property: "og:image", content: "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg" },
       { property: "og:image:width", content: "1280" },
       { property: "og:image:height", content: "720" },
@@ -156,7 +155,6 @@ function Index() {
       <main>
         <Hero />
         <ClientLogos />
-        <Services />
         <Portfolio />
         <Process />
         <About />

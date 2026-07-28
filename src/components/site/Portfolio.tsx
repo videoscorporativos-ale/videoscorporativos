@@ -3,19 +3,21 @@ import { Play, X, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
-type Category = "Todos" | "Institucional" | "Eventos" | "Feiras";
+type Category = "Todos" | "Institucional" | "Eventos" | "Feiras" | "Reels";
 
 export type PortfolioItem = { title: string; category: Exclude<Category, "Todos">; videoId: string };
 
 export const portfolioItems: PortfolioItem[] = [
   // Ordem espelhada de alefotografo.com.br/videos-para-empresas (do mais novo ao mais antigo).
+  { title: "Procooler na FEBRAVA — Cobertura de Feiras e Eventos Corporativos", category: "Feiras", videoId: "uFNcEB1uvAA" },
+  { title: "SQ Química na FCE Pharma — Cobertura em Vídeo para Feiras de Negócios", category: "Feiras", videoId: "WGtAZjK5v9Q" },
   { title: "Tecnisa — Almoço com Fornecedores", category: "Eventos", videoId: "zmUyWgXxOnk" },
   { title: "Curso de Prestação de Contas Eleitorais 2026 — Turma São Paulo", category: "Eventos", videoId: "xYb2yPxMcL8" },
-  { title: "Nini Bambini — Moda Infantil com Encanto e Estilo", category: "Institucional", videoId: "iyxP0y_nSgc" },
+  { title: "Nini Bambini — Moda Infantil com Encanto e Estilo", category: "Reels", videoId: "iyxP0y_nSgc" },
   { title: "Unipac 50 Anos", category: "Eventos", videoId: "Ze3Tf9X1q_g" },
-  { title: "Women in Tech Brasil", category: "Eventos", videoId: "4-HGedVzqAA" },
-  { title: "FINCON — 1º Encontro da Comunicação Financeira", category: "Eventos", videoId: "z_98miIgOZA" },
-  { title: "Genesis IA na Feira Hospitalar", category: "Feiras", videoId: "0fYFQ9PCQhM" },
+  { title: "Women in Tech Brasil", category: "Reels", videoId: "4-HGedVzqAA" },
+  { title: "FINCON — 1º Encontro da Comunicação Financeira", category: "Reels", videoId: "z_98miIgOZA" },
+  { title: "Genesis IA na Feira Hospitalar", category: "Reels", videoId: "0fYFQ9PCQhM" },
   { title: "11º Fórum ABRADILAN 2026", category: "Eventos", videoId: "p-JHaQ8GJ5M" },
   { title: "11º Fórum ABRADILAN 2026 — Vídeo Corporativo do Evento", category: "Eventos", videoId: "gSngB97GbcQ" },
   { title: "Nitriflex — Indústria Química de Polímeros e Borrachas Nitrílicas", category: "Institucional", videoId: "VzEBf22nMJg" },
@@ -54,11 +56,11 @@ export const portfolioItems: PortfolioItem[] = [
   { title: "Galena 35 Anos", category: "Eventos", videoId: "JG6KloCm3jA" },
   { title: "ATIVA Logística — Programa de Sustentabilidade", category: "Institucional", videoId: "aOiYST9L8ec" },
   { title: "SQ Química na ABRAFATI Show 2022", category: "Feiras", videoId: "ufqmkFC6lrw" },
-  { title: "Ensaio de Retratos Profissionais — Ale Fotógrafo", category: "Institucional", videoId: "h2lRpMbOF_w" },
+  { title: "Ensaio de Retratos Profissionais — Ale Fotógrafo", category: "Reels", videoId: "h2lRpMbOF_w" },
   { title: "Confraternização ABRADILAN", category: "Eventos", videoId: "2xd_0_EuMpM" },
   { title: "7º Fórum ABRADILAN de Desenvolvimento Empresarial", category: "Eventos", videoId: "8wnIwksSzZY" },
-  { title: "Retratos Profissionais em Estúdio", category: "Institucional", videoId: "ZPBa1hfp9S0" },
-  { title: "Retrato Corporativo — Ensaio Fotográfico", category: "Institucional", videoId: "zuPikKnrM40" },
+  { title: "Retratos Profissionais em Estúdio", category: "Reels", videoId: "ZPBa1hfp9S0" },
+  { title: "Retrato Corporativo — Ensaio Fotográfico", category: "Reels", videoId: "zuPikKnrM40" },
   { title: "IBIS Botucatu — Teaser de Inauguração", category: "Institucional", videoId: "niLTzkDS8_8" },
   { title: "IBIS Botucatu — Vídeo Manifesto", category: "Institucional", videoId: "PDFwTUHOwiY" },
   { title: "Curso de Prestação de Contas Eleitorais — Professora Rita Gonçalves", category: "Eventos", videoId: "bpsY_yi4qfQ" },

@@ -57,8 +57,8 @@ const normalizeSegment = (value: unknown): SegmentKey =>
     : "institucional";
 
 export const Route = createFileRoute("/cases/")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    segmento: normalizeSegment(search.segmento),
+  validateSearch: (search: Record<string, unknown>): { segmento?: SegmentKey } => ({
+    segmento: search.segmento === undefined ? undefined : normalizeSegment(search.segmento),
   }),
   loaderDeps: ({ search }) => ({ segmento: search.segmento }),
   loader: ({ deps }) => ({ segmento: deps.segmento }),

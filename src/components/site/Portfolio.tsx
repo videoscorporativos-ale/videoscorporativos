@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Play, X, ArrowRight } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
 type Category = "Todos" | "Institucional" | "Eventos" | "Feiras" | "Reels";

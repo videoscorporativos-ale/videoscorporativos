@@ -1,4 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { Play, X, ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";

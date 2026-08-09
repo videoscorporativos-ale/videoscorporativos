@@ -1,4 +1,5 @@
-import aboutImage from "@/assets/about-videomaker.avif";
+import aboutAsset from "@/assets/about-videomaker.jpg.asset.json";
+const aboutImage = aboutAsset.url;
 
 const stats = [
   { value: "+30", label: "anos de experiência" },

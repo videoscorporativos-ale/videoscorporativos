@@ -318,6 +318,29 @@ function BlogPostPage() {
               </div>
             </section>
           )}
+
+          <section className="mt-16 border-t border-border pt-10" aria-labelledby="links-uteis-heading">
+            <h2 id="links-uteis-heading" className="font-display text-xl font-semibold tracking-tight">
+              Próximos passos
+            </h2>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {[
+                { to: "/precos", label: "Quanto custa um vídeo institucional (guia de preços 2026)" },
+                { to: "/video-institucional-sao-paulo", label: "Vídeo institucional em São Paulo" },
+                { to: "/filmagem-evento-corporativo-sao-paulo", label: "Filmagem de evento corporativo" },
+                { to: "/cases", label: "Cases de vídeo corporativo" },
+              ].map((l) => (
+                <li key={l.to}>
+                  <Link
+                    to={l.to}
+                    className="block rounded-xl border border-border bg-surface/60 px-4 py-3 text-sm transition hover:border-brand/60 hover:text-brand"
+                  >
+                    {l.label} →
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
         </article>
       </main>
       <SiteFooter />

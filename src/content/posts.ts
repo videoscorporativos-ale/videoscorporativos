@@ -1656,15 +1656,15 @@ export const posts: BlogPost[] = [
   {
     slug: "cobertura-eventos-corporativos-video-guia",
     title: `Cobertura de eventos corporativos em vídeo: o guia definitivo para RH e Marketing`,
-    metaTitle: `Cobertura de eventos corporativos em vídeo: guia completo`,
-    metaDescription: `Tudo o que gestores de RH e Marketing precisam saber para contratar uma cobertura de evento corporativo em vídeo que realmente gere conteúdo útil depois.`,
+    metaTitle: `Cobertura de Evento Corporativo em Vídeo: Guia + Preços`,
+    metaDescription: `Como contratar cobertura de evento corporativo em vídeo em São Paulo: briefing certo, o que pedir, prazos de entrega e faixas de preço (R$ 4.000 a R$ 15.000).`,
     excerpt: `Cobertura de evento não é só registro: é matéria-prima para dezenas de peças de conteúdo pós-evento. Veja o briefing certo e o que pedir ao videomaker.`,
     tldr: `Uma boa cobertura de vídeo transforma um único evento em um vídeo principal, cortes para LinkedIn/Instagram, depoimentos e material de treinamento. O segredo é o briefing.`,
     category: "Eventos Corporativos",
     coverQuery: "EV1",
     coverAlt: `Auditório corporativo lotado durante evento`,
     datePublished: "2026-06-24",
-    keywords: `cobertura de evento corporativo, vídeo para eventos, filmagem de congresso, cortes para redes sociais, produção audiovisual de evento`,
+    keywords: `cobertura de evento corporativo, cobertura de eventos em vídeo São Paulo, empresa de vídeos para eventos, filmagem de congresso, aftermovie corporativo, quanto custa cobertura de evento`,
     bodyHtml: `
 <p>Você organizou durante meses. No dia, tudo correu bem. Mas e o registro? E o conteúdo que vai durar?</p>
 [IMAGEM: EV2 | alt: Palestra corporativa sendo gravada]
@@ -2184,15 +2184,15 @@ export const posts: BlogPost[] = [
   {
     slug: "processo-producao-video-corporativo",
     title: `Do briefing à entrega: como funciona a produção de um vídeo corporativo`,
-    metaTitle: `Como funciona a produção de um vídeo corporativo`,
-    metaDescription: `Processo transparente de produção de vídeo corporativo: do briefing à entrega final. Veja etapas, prazos e o que esperar em cada fase.`,
+    metaTitle: `Produção de Vídeo Corporativo: as 5 Etapas e os Prazos`,
+    metaDescription: `Como funciona a produção de um vídeo corporativo passo a passo: briefing, roteiro, filmagem, edição e entrega — com prazo real de cada etapa e o que aprovar.`,
     excerpt: `5 etapas do briefing à entrega: descoberta, pré-produção, produção, pós e entrega. Cada uma com prazo, entregável e ponto de aprovação.`,
     tldr: `Todo bom vídeo corporativo segue 5 fases: descoberta, pré-produção, produção, pós-produção e entrega. Cada uma com prazo definido e aprovação intermediária.`,
     category: "Preço e contratação",
     coverQuery: "M11",
     coverAlt: `Reunião de planejamento de produção`,
     datePublished: "2026-07-10",
-    keywords: `processo produção vídeo, etapas vídeo corporativo, workflow produção audiovisual, briefing vídeo corporativo`,
+    keywords: `processo produção vídeo corporativo, etapas de produção de vídeo institucional, prazo vídeo corporativo, briefing vídeo corporativo, como é feito um vídeo institucional`,
     bodyHtml: `
 <p>Cliente informado é cliente tranquilo. Aqui está o processo completo, sem mistério.</p>
 [IMAGEM: V1 | alt: Set de produção em preparação]

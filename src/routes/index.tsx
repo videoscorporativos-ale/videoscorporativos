@@ -134,7 +134,7 @@ const videoObjectsSchema = {
     publisher: {
       "@type": "Organization",
       name: "Ale Fotógrafo",
-      logo: { "@type": "ImageObject", url: "https://videoscorporativos.com.br/favicon.ico" },
+      logo: { "@type": "ImageObject", url: "https://videoscorporativos.com.br/logo.png" },
     },
   })),
 };

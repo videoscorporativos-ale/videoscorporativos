@@ -3507,6 +3507,76 @@ export const posts: BlogPost[] = [
 <p><a href="/#contato">Vamos preparar seu vídeo corporativo →</a></p>
 `,
   },
+  {
+    slug: "exemplos-de-video-institucional-para-inspirar",
+    title: "Exemplos de vídeo institucional para se inspirar (e o que copiar de cada um)",
+    metaTitle: "Exemplos de vídeo institucional para se inspirar | 2026",
+    metaDescription:
+      "6 formatos de vídeo institucional que funcionam, com o que observar em cada exemplo, quanto custa e como adaptar para a sua empresa em São Paulo.",
+    excerpt:
+      "Seis formatos de vídeo institucional que realmente funcionam — e o que observar em cada exemplo antes de gravar o seu.",
+    tldr:
+      "Bons exemplos de vídeo institucional têm um objetivo claro por trás: apresentar a empresa, mostrar processo, dar rosto à liderança, provar resultado com clientes, registrar cultura ou explicar um produto. Antes de se inspirar em um vídeo, identifique qual desses objetivos ele resolve — copiar o formato errado é o erro mais comum.",
+    category: "Tipos de vídeo",
+    coverQuery: "V2",
+    coverAlt: "Filmagem de vídeo institucional em empresa com câmera profissional",
+    datePublished: "2026-08-09",
+    keywords:
+      "exemplos de vídeo institucional, vídeo institucional exemplos, modelos de vídeo institucional, referências vídeo corporativo, vídeo institucional São Paulo",
+    bodyHtml: `
+<p>[IMAGEM: V2 | alt: Câmera de cinema gravando vídeo institucional em empresa]</p>
+<p>Procurar exemplos de vídeo institucional é o primeiro passo natural de quem vai gravar o seu. O problema é que a maioria das pessoas olha para o resultado (a estética, a música, o drone) e ignora a decisão que veio antes: qual pergunta esse vídeo responde. Abaixo estão seis formatos que funcionam, o que observar em cada um e quando faz sentido usá-los.</p>
+
+<h2>1. Institucional de apresentação (o "quem somos" bem feito)</h2>
+<p>Objetivo: responder em 60 a 90 segundos quem é a empresa, o que ela faz e por que confiar nela. É o vídeo que fica na home do site e abre reuniões comerciais.</p>
+<p><strong>O que observar:</strong> os primeiros 5 segundos entregam o contexto sem depender de narração? A empresa aparece trabalhando de verdade ou só há imagens genéricas de fachada?</p>
+
+<h2>2. Vídeo de processo (mostrar como o trabalho acontece)</h2>
+<p>[IMAGEM: I1 | alt: Registro de processo produtivo industrial em vídeo corporativo]</p>
+<p>Objetivo: transformar capacidade técnica em algo visível. Funciona muito bem para indústria, logística, engenharia e serviços complexos, onde o cliente não consegue imaginar o que acontece nos bastidores.</p>
+<p><strong>O que observar:</strong> a sequência segue uma lógica (entrada → transformação → entrega)? Há escala e detalhe alternados, ou só planos amplos que não explicam nada?</p>
+
+<h2>3. Vídeo de liderança (dar rosto à empresa)</h2>
+<p>Objetivo: gerar confiança. Quando o fundador ou diretor fala olhando para a câmera, o comprador deixa de negociar com uma marca abstrata. É também o formato mais usado em <a href="/blog/video-comunicacao-interna">comunicação interna</a>.</p>
+<p><strong>O que observar:</strong> a fala parece decorada ou natural? O áudio é limpo (microfone de lapela, sem eco)? Áudio ruim derruba um vídeo bom mais rápido que imagem mediana.</p>
+
+<h2>4. Depoimento de cliente (prova social filmada)</h2>
+<p>Objetivo: deixar que outro cliente venda por você. É o formato com melhor conversão em página de vendas e proposta comercial.</p>
+<p><strong>O que observar:</strong> o depoimento cita um problema concreto e um resultado, ou só elogia? Vídeo de depoimento sem número e sem contexto vira propaganda.</p>
+
+<h2>5. Vídeo de cultura e employer branding</h2>
+<p>[IMAGEM: M4 | alt: Equipe corporativa em ambiente de trabalho gravando vídeo de cultura]</p>
+<p>Objetivo: atrair e retenção de talento. Mostra ambiente, rituais e pessoas reais — não atores.</p>
+<p><strong>O que observar:</strong> as pessoas parecem confortáveis? Cenas encenadas demais produzem o efeito contrário e afastam candidatos.</p>
+
+<h2>6. Vídeo de produto ou serviço explicado</h2>
+<p>Objetivo: reduzir dúvida antes da compra. Combina demonstração real com apoio gráfico. É primo próximo do <a href="/blog/video-institucional-vs-video-de-vendas">vídeo de vendas</a>, mas com tom institucional.</p>
+<p><strong>O que observar:</strong> o vídeo mostra o produto em uso real ou apenas em animação? Uso real convence mais.</p>
+
+<h2>Como escolher a referência certa para a sua empresa</h2>
+<p>Antes de mandar links de referência para a produtora, responda três perguntas: onde esse vídeo vai ser exibido, quem vai assistir e o que essa pessoa precisa decidir depois de assistir. Referência escolhida por estética costuma gerar um vídeo bonito que não move nada. Se quiser ver projetos reais organizados por tipo, veja os <a href="/cases">cases de vídeo corporativo</a> e a página de <a href="/video-institucional-sao-paulo">vídeo institucional em São Paulo</a>.</p>
+<p>Para calibrar expectativa de investimento antes da conversa, o <a href="/precos">guia de preços de vídeo institucional</a> mostra as faixas por tipo de projeto e por duração.</p>
+<p><a href="/#contato">Quero um vídeo institucional para minha empresa →</a></p>
+`,
+    faqs: [
+      {
+        q: "Qual é o melhor tipo de vídeo institucional para começar?",
+        a: "Para a maioria das empresas, o institucional de apresentação de 60 a 90 segundos é o melhor primeiro vídeo: serve para site, propostas comerciais, redes sociais e apresentações, e pode ser reaproveitado por anos.",
+      },
+      {
+        q: "Quanto tempo deve ter um vídeo institucional?",
+        a: "Entre 60 e 120 segundos para uso em site e redes. Versões mais longas, de 3 a 5 minutos, fazem sentido quando o vídeo é exibido em eventos, feiras ou processos internos.",
+      },
+      {
+        q: "Posso me inspirar em vídeos de grandes marcas?",
+        a: "Sim, desde que a inspiração seja na estrutura narrativa, não no orçamento. Grandes marcas usam elenco, locações e efeitos que não são necessários para transmitir credibilidade.",
+      },
+      {
+        q: "Quanto custa produzir um vídeo institucional como esses exemplos?",
+        a: "Vídeos de apresentação com uma diária e uma locação ficam na faixa de R$ 3.000 a R$ 8.000. Produções com roteiro, depoimentos e várias locações partem de R$ 8.000.",
+      },
+    ],
+  },
 ];
 
 /** Hoje em YYYY-MM-DD (fuso do servidor). */

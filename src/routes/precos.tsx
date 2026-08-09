@@ -50,6 +50,21 @@ const faqs = [
   },
 ];
 
+const testimonials: { name: string; text: string }[] = [
+  {
+    name: "Jean Duarte",
+    text: "Profissional dedicado, que busca entender o seu momento para estruturar o trabalho e atender às suas expectativas. Recomendo sem dúvida.",
+  },
+  {
+    name: "Silvio Valente",
+    text: "Alexandre tem a rara combinação de experiência, competência e simpatia. Sem abdicar do rigor técnico, consegue fazer as fotos de forma leve.",
+  },
+  {
+    name: "Leandro Capolupo",
+    text: "Profissional ágil, competente e focado na qualidade. O processo foi leve e o resultado final ficou excelente.",
+  },
+];
+
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -257,6 +272,26 @@ function PrecosPage() {
               escopo: quantos dias de gravação, quantas locações e qual nível de finalização a sua
               empresa precisa.
             </p>
+          </Section>
+
+          <Section title="O que dizem os clientes">
+            <p>
+              Avaliações reais de clientes no Google, entre as mais de 137 recebidas.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {testimonials.map((t) => (
+                <blockquote
+                  key={t.name}
+                  className="rounded-2xl border border-border bg-surface/60 p-5"
+                >
+                  <p className="text-brand text-sm" aria-label="Nota 5 de 5">★★★★★</p>
+                  <p className="mt-3 text-sm leading-relaxed text-foreground/90">“{t.text}”</p>
+                  <footer className="mt-4 text-xs uppercase tracking-[0.15em] text-muted-foreground">
+                    {t.name}
+                  </footer>
+                </blockquote>
+              ))}
+            </div>
           </Section>
 
           <Section title="Perguntas frequentes">

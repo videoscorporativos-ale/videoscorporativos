@@ -51,6 +51,7 @@ const faqs = [
 ];
 
 const articleSchema = {
+  ...({} as Record<string, never>),
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Quanto custa um vídeo institucional? Guia 2026 com faixas de preço",

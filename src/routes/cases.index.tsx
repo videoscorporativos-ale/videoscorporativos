@@ -120,8 +120,9 @@ function CasesIndex() {
   const INITIAL = 4;
   const STEP = 4;
   const { segmento } = Route.useSearch();
-  const active =
-    CATS.find((c) => c.toLowerCase() === segmento.toLowerCase()) ?? "Institucional";
+  const segKey = normalizeSegment(segmento);
+  const seg = SEGMENTS[segKey];
+  const active = seg.cat;
   const [counts, setCounts] = useState<Record<string, number>>(
     () => Object.fromEntries(CATS.map((c) => [c, INITIAL])),
   );
@@ -141,14 +142,16 @@ function CasesIndex() {
           <nav className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
             <Link to="/" className="hover:text-brand">Início</Link>
             <span className="mx-2">/</span>
-            <span className="text-brand">Cases</span>
+            <Link to="/cases" className="hover:text-brand">Cases</Link>
+            <span className="mx-2">/</span>
+            <span className="text-brand">{seg.cat}</span>
           </nav>
           <h1 className="mt-6 font-display text-4xl md:text-5xl font-semibold tracking-tight">
-            Cases de vídeo corporativo
+            {seg.heading}
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            {cases.length} produções audiovisuais entregues para empresas — institucionais,
-            cobertura de eventos corporativos, vídeo para feiras de negócios e reels verticais.
+            {seg.intro} {group.items.length} de {cases.length} produções audiovisuais entregues
+            para empresas em São Paulo e em todo o Brasil.
           </p>
           <div className="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Categorias de cases">
             {groups.map((g) => (
@@ -174,7 +177,7 @@ function CasesIndex() {
 
           <section className="mt-10">
             <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight">
-              {group.cat}
+              {seg.cat} — {group.items.length} cases
             </h2>
             <div
               className={cn(

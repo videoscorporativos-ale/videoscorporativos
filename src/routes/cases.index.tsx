@@ -158,7 +158,7 @@ function CasesIndex() {
               <Link
                 key={g.cat}
                 to="/cases"
-                search={{ segmento: g.cat.toLowerCase() }}
+                search={{ segmento: normalizeSegment(g.cat) }}
                 replace
                 resetScroll={false}
                 role="tab"

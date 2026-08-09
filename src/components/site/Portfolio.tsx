@@ -202,14 +202,36 @@ export const serviceSections: {
 
 const byId = new Map(portfolioItems.map((i) => [i.videoId, i]));
 
+const INITIAL_VISIBLE = 4;
+const EXPAND_STEP = 4;
+
 export function Portfolio() {
   const [active, setActive] = useState<string>(serviceSections[0].id);
   const [openVideo, setOpenVideo] = useState<string | null>(null);
+  const [visibleCounts, setVisibleCounts] = useState<Record<string, number>>(() =>
+    Object.fromEntries(serviceSections.map((s) => [s.id, INITIAL_VISIBLE])),
+  );
 
   const section = serviceSections.find((s) => s.id === active) ?? serviceSections[0];
-  const items = section.videoIds
+  const allItems = section.videoIds
     .map((id) => byId.get(id))
     .filter((i): i is PortfolioItem => Boolean(i));
+  const visibleCount = visibleCounts[section.id] ?? INITIAL_VISIBLE;
+  const items = allItems.slice(0, visibleCount);
+  const hasMore = visibleCount < allItems.length;
+  const remaining = allItems.length - visibleCount;
+
+  const handleTabChange = (id: string) => {
+    setActive(id);
+    setVisibleCounts((prev) => ({ ...prev, [id]: prev[id] ?? INITIAL_VISIBLE }));
+  };
+
+  const handleExpand = () => {
+    setVisibleCounts((prev) => ({
+      ...prev,
+      [section.id]: Math.min(prev[section.id] ?? INITIAL_VISIBLE, allItems.length) + EXPAND_STEP,
+    }));
+  };
 
   return (
     <section id="servicos" className="py-24 md:py-32 bg-surface/30 border-y border-border">
@@ -220,8 +242,8 @@ export function Portfolio() {
             Quatro frentes, um único padrão de qualidade.
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Escolha a frente e veja trabalhos reais entregues para empresas. O portfólio completo,
-            com {portfolioItems.length} produções, está na página de cases.
+            Escolha a frente e veja trabalhos reais entregues para empresas. Expanda cada seção
+            para conferir mais cases do mesmo serviço.
           </p>
         </div>
 
@@ -235,7 +257,7 @@ export function Portfolio() {
               key={s.id}
               role="tab"
               aria-selected={active === s.id}
-              onClick={() => setActive(s.id)}
+              onClick={() => handleTabChange(s.id)}
               className={cn(
                 "rounded-full px-5 py-2 text-sm border transition",
                 active === s.id
@@ -289,14 +311,16 @@ export function Portfolio() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link
-            to="/cases"
-            hash={section.id}
-            className="group inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-medium hover:bg-surface transition"
-          >
-            Ver todos os cases de {section.title}
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-          </Link>
+          {hasMore && (
+            <button
+              type="button"
+              onClick={handleExpand}
+              className="group inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-medium hover:bg-surface transition"
+            >
+              Ver mais {Math.min(remaining, EXPAND_STEP)} cases de {section.title}
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+            </button>
+          )}
           <a
             href="#contato"
             className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-6 py-3 text-sm font-medium text-brand transition hover:bg-brand/20"

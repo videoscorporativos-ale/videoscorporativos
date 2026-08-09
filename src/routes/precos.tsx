@@ -4,9 +4,9 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
-const TITLE = "Quanto custa um vídeo institucional? Guia 2026 de preços";
+const TITLE = "Quanto Custa um Vídeo Institucional em 2026? Preços Reais";
 const DESCRIPTION =
-  "Quanto custa um vídeo institucional em 2026? Faixas de preço (R$ 3.000 a R$ 30.000+), o que define o valor, prazos e como pedir orçamento em São Paulo.";
+  "Tabela de preços de vídeo institucional em 2026: de R$ 3.000 a R$ 30.000. Veja quanto custa 1 minuto de vídeo, o que define o valor e peça orçamento em 24h.";
 const URL = "https://videoscorporativos.com.br/precos";
 const OG_IMAGE = "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg";
 const UPDATED = "2026-05-15";
@@ -31,6 +31,22 @@ const faqs = [
   {
     q: "Atende empresas fora de São Paulo?",
     a: "Sim. A base é em São Paulo (Grande SP, ABC, Alphaville, Faria Lima, Paulista, Berrini), com projetos em todo o Brasil.",
+  },
+  {
+    q: "Quanto custa um vídeo institucional de 1 minuto?",
+    a: "Um vídeo institucional de 1 minuto normalmente fica entre R$ 3.000 e R$ 8.000 quando envolve uma diária de filmagem e uma locação. O tempo final do vídeo pesa menos no preço do que o número de diárias, o tamanho da equipe e o nível de pós-produção.",
+  },
+  {
+    q: "Existe preço por minuto de vídeo institucional?",
+    a: "Não de forma confiável. O mercado costuma citar de R$ 3.000 a R$ 6.000 por minuto finalizado, mas esse número engana: um minuto gravado em um dia na sede da empresa custa muito menos do que um minuto com três locações, drone e animação.",
+  },
+  {
+    q: "Quanto custa gravar um vídeo institucional para loja ou empresa pequena?",
+    a: "Para lojas e pequenas empresas, o formato mais eficiente é uma diária enxuta com entrega de um vídeo principal curto mais cortes verticais para redes sociais — geralmente na faixa de R$ 3.000 a R$ 6.000.",
+  },
+  {
+    q: "Em quanto tempo recebo o orçamento?",
+    a: "O orçamento é enviado em até 24 horas úteis após o briefing pelo WhatsApp ou e-mail, já com escopo, prazo e formatos de entrega descritos.",
   },
 ];
 

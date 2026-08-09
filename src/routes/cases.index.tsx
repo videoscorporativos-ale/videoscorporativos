@@ -69,11 +69,22 @@ function CasesIndex() {
   }));
   const INITIAL = 4;
   const STEP = 4;
-  const [active, setActive] = useState<(typeof CATS)[number]>("Institucional");
+  const { segmento } = Route.useSearch();
+  const navigate = Route.useNavigate();
+  const active =
+    CATS.find((c) => c.toLowerCase() === segmento.toLowerCase()) ?? "Institucional";
   const [counts, setCounts] = useState<Record<string, number>>(
     () => Object.fromEntries(CATS.map((c) => [c, INITIAL])),
   );
   const [openVideo, setOpenVideo] = useState<string | null>(null);
+
+  const setActive = (cat: (typeof CATS)[number]) => {
+    navigate({
+      search: { segmento: cat.toLowerCase() },
+      replace: true,
+      resetScroll: false,
+    });
+  };
 
   const group = groups.find((g) => g.cat === active) ?? groups[0];
   const vertical = group.cat === "Reels";

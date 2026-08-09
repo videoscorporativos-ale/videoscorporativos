@@ -217,6 +217,48 @@ function PrecosPage() {
             </p>
           </Section>
 
+          <Section title="Quanto custa um vídeo institucional de 1 minuto?">
+            <p>
+              Essa é a pergunta mais comum — e a resposta surpreende: a duração final do vídeo é um
+              dos fatores que <em>menos</em> influencia o preço. Um vídeo de 1 minuto e um de 3
+              minutos gravados no mesmo dia, na mesma empresa, custam quase o mesmo, porque o custo
+              está na diária de filmagem e na equipe, não nos segundos entregues.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border">
+              <table className="w-full text-sm">
+                <caption className="sr-only">
+                  Faixas de preço de vídeo institucional por duração final em 2026
+                </caption>
+                <thead className="bg-surface/60 text-left">
+                  <tr>
+                    <th className="px-4 py-3 font-medium">Duração final</th>
+                    <th className="px-4 py-3 font-medium">Faixa de referência</th>
+                    <th className="px-4 py-3 font-medium">Cenário típico</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {[
+                    ["30 a 60 segundos", "R$ 3.000 – R$ 6.000", "1 diária, 1 locação, foco em redes sociais"],
+                    ["1 a 2 minutos", "R$ 3.000 – R$ 8.000", "1 diária, edição direta, versão vertical inclusa"],
+                    ["2 a 4 minutos", "R$ 8.000 – R$ 20.000", "Roteiro, depoimentos, 1–2 diárias"],
+                    ["Acima de 4 minutos", "R$ 20.000+", "Várias locações, equipe ampliada, animações"],
+                  ].map(([dur, faixa, cen]) => (
+                    <tr key={dur}>
+                      <td className="px-4 py-3 font-medium">{dur}</td>
+                      <td className="px-4 py-3 text-brand whitespace-nowrap">{faixa}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{cen}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Por isso desconfie de tabelas de “preço por minuto”. O mais honesto é orçar por
+              escopo: quantos dias de gravação, quantas locações e qual nível de finalização a sua
+              empresa precisa.
+            </p>
+          </Section>
+
           <Section title="Perguntas frequentes">
             <p>
               As dúvidas que mais aparecem em orçamentos de vídeo institucional, incluindo preço

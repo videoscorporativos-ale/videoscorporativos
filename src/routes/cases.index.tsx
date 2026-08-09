@@ -15,6 +15,9 @@ const DESCRIPTION =
   "Portfólio completo de vídeos corporativos produzidos pela Ale Fotógrafo: institucionais, eventos e feiras de negócios para empresas em São Paulo e no Brasil.";
 
 export const Route = createFileRoute("/cases/")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    segmento: typeof search.segmento === "string" ? search.segmento : "institucional",
+  }),
   head: () => {
     const cases = getAllCases();
     const itemList = {
@@ -66,7 +69,9 @@ function CasesIndex() {
   }));
   const INITIAL = 4;
   const STEP = 4;
-  const [active, setActive] = useState<(typeof CATS)[number]>("Institucional");
+  const { segmento } = Route.useSearch();
+  const active =
+    CATS.find((c) => c.toLowerCase() === segmento.toLowerCase()) ?? "Institucional";
   const [counts, setCounts] = useState<Record<string, number>>(
     () => Object.fromEntries(CATS.map((c) => [c, INITIAL])),
   );
@@ -97,11 +102,14 @@ function CasesIndex() {
           </p>
           <div className="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Categorias de cases">
             {groups.map((g) => (
-              <button
+              <Link
                 key={g.cat}
+                to="/cases"
+                search={{ segmento: g.cat.toLowerCase() }}
+                replace
+                resetScroll={false}
                 role="tab"
                 aria-selected={active === g.cat}
-                onClick={() => setActive(g.cat)}
                 className={cn(
                   "rounded-full border px-5 py-2 text-sm transition",
                   active === g.cat
@@ -110,7 +118,7 @@ function CasesIndex() {
                 )}
               >
                 {g.cat} ({g.items.length})
-              </button>
+              </Link>
             ))}
           </div>
 

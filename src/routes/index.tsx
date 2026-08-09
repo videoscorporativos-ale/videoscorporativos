@@ -30,8 +30,23 @@ const localBusinessSchema = {
   telephone: "+55-11-91355-0533",
   email: "comercial@alefotografo.com.br",
   image: "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg",
-  logo: "https://videoscorporativos.com.br/favicon.ico",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://videoscorporativos.com.br/logo.png",
+    width: 360,
+    height: 191,
+  },
   priceRange: "$$",
+  currenciesAccepted: "BRL",
+  paymentAccepted: "Pix, Transferência bancária, Boleto, Cartão de crédito",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
   areaServed: [
     { "@type": "Country", name: "Brasil" },
     { "@type": "City", name: "São Paulo" },
@@ -73,6 +88,29 @@ const localBusinessSchema = {
     bestRating: "5",
     worstRating: "1",
   },
+  review: [
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Jean Duarte" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
+      reviewBody:
+        "Profissional dedicado, que busca entender o seu momento para estruturar o trabalho e atender às suas expectativas. Recomendo sem dúvida.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Silvio Valente" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
+      reviewBody:
+        "Alexandre tem a rara combinação de experiência, competência e simpatia. Sem abdicar do rigor técnico, consegue fazer as fotos de forma leve.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Leandro Capolupo" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
+      reviewBody:
+        "Profissional ágil, competente e focado na qualidade. O processo foi leve e o resultado final ficou excelente.",
+    },
+  ],
   sameAs: [
     "https://alefotografo.com.br",
     "https://www.instagram.com/alefotografo",
@@ -96,7 +134,7 @@ const videoObjectsSchema = {
     publisher: {
       "@type": "Organization",
       name: "Ale Fotógrafo",
-      logo: { "@type": "ImageObject", url: "https://videoscorporativos.com.br/favicon.ico" },
+      logo: { "@type": "ImageObject", url: "https://videoscorporativos.com.br/logo.png" },
     },
   })),
 };

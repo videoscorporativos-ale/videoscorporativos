@@ -100,7 +100,7 @@ export const Route = createFileRoute("/blog/$slug")({
       publisher: {
         "@type": "Organization",
         name: "Ale Fotógrafo",
-        logo: { "@type": "ImageObject", url: `${SITE}/favicon.ico` },
+        logo: { "@type": "ImageObject", url: `${SITE}/logo.png` },
       },
       mainEntityOfPage: { "@type": "WebPage", "@id": url },
       speakable: {

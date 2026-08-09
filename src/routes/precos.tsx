@@ -68,7 +68,7 @@ const articleSchema = {
     name: "Ale Fotógrafo",
     logo: {
       "@type": "ImageObject",
-      url: "https://videoscorporativos.com.br/favicon.ico",
+      url: "https://videoscorporativos.com.br/logo.png",
     },
   },
   mainEntityOfPage: { "@type": "WebPage", "@id": URL },

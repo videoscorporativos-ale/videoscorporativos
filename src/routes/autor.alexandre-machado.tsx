@@ -13,7 +13,7 @@ const personSchema = {
   name: "Alexandre Machado",
   alternateName: "Ale Fotógrafo",
   url: URL,
-  image: `${SITE}/favicon.ico`,
+  image: `${SITE}/logo.png`,
   jobTitle: "Fotógrafo e Produtor de Vídeo Corporativo",
   description:
     "Fotógrafo profissional e produtor de vídeo corporativo em São Paulo, com mais de 30 anos de experiência atendendo empresas em todo o Brasil.",

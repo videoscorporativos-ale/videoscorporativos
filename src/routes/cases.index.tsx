@@ -15,6 +15,9 @@ const DESCRIPTION =
   "Portfólio completo de vídeos corporativos produzidos pela Ale Fotógrafo: institucionais, eventos e feiras de negócios para empresas em São Paulo e no Brasil.";
 
 export const Route = createFileRoute("/cases/")({
+  validateSearch: (search: Record<string, unknown>) => ({
+    segmento: typeof search.segmento === "string" ? search.segmento : "institucional",
+  }),
   head: () => {
     const cases = getAllCases();
     const itemList = {

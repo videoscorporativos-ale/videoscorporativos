@@ -73,17 +73,12 @@ const localBusinessSchema = {
     bestRating: "5",
     worstRating: "1",
   },
-  // TODO: substituir o placeholder abaixo pela URL curta do Google Business Profile
-  // assim que o perfil for aprovado. Exemplos válidos:
-  //   - Link curto do Google: "https://g.co/kgs/XXXXX"
-  //   - Link do Maps: "https://maps.google.com/?cid=YYYYY"
-  //   - Link público do perfil: "https://business.google.com/..."
   sameAs: [
     "https://alefotografo.com.br",
     "https://www.instagram.com/alefotografo",
     "https://www.linkedin.com/in/alexandremachadofotografo",
     "https://www.youtube.com/@alefotografo",
-    "GOOGLE_BUSINESS_PROFILE_URL_PLACEHOLDER",
+    "https://www.google.com/search?q=Ale+Fot%C3%B3grafo&stick=H4sIAAAAAAAA_-NgU1IxqLA0SU41s0wxNbA0SEuztEizMqiwSLRMMk4ySTU1Nzc1MjRcxMrnmJOq4JZfcnhzelFiWj4AuLpeizkAAAA&hl=pt-BR&mat=CTZmN1naZclzElcBa0lj__kKo65-BqWL0PBRiZvCtbboeTHDKHJ40NjJfgo5qSw32KcqLC4XzTlbSZjarLtsQgUyaHNRoIzOQY4ZVRCPKobAY30G7vozgyJBLdpasE6VFZw&authuser=0",
   ],
 };
 

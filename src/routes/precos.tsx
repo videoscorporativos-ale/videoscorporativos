@@ -218,6 +218,10 @@ function PrecosPage() {
           </Section>
 
           <Section title="Perguntas frequentes">
+            <p>
+              As dúvidas que mais aparecem em orçamentos de vídeo institucional, incluindo preço
+              por minuto e projetos de menor porte.
+            </p>
             <div className="space-y-6">
               {faqs.map((f) => (
                 <div key={f.q}>
@@ -232,7 +236,31 @@ function PrecosPage() {
             <p>
               O caminho mais rápido é enviar um briefing curto: objetivo do vídeo, onde será
               usado, duração desejada e prazo. Com isso, devolvo um orçamento personalizado e uma
-              primeira conversa estratégica, sem compromisso.
+              primeira conversa estratégica, sem compromisso — <strong>resposta em até 24 horas
+              úteis</strong>.
+            </p>
+            <p>
+              Quer ver o serviço específico antes de pedir preço? Veja{" "}
+              <Link to="/video-institucional-sao-paulo" className="text-brand underline underline-offset-4">
+                vídeo institucional em São Paulo
+              </Link>
+              ,{" "}
+              <Link to="/filmagem-evento-corporativo-sao-paulo" className="text-brand underline underline-offset-4">
+                filmagem de evento corporativo
+              </Link>{" "}
+              e{" "}
+              <Link to="/video-para-feira-de-negocios" className="text-brand underline underline-offset-4">
+                vídeo para feira de negócios
+              </Link>
+              . Para entender prazos e etapas, leia{" "}
+              <Link
+                to="/blog/$slug"
+                params={{ slug: "processo-producao-video-corporativo" }}
+                className="text-brand underline underline-offset-4"
+              >
+                como funciona a produção de um vídeo corporativo
+              </Link>
+              .
             </p>
             <div className="mt-8 rounded-2xl border border-border bg-surface/60 p-6 md:p-8">
               <p className="font-display text-xl font-semibold">Alexandre Machado — Ale Fotógrafo</p>

@@ -111,11 +111,14 @@ function CasesIndex() {
           </p>
           <div className="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Categorias de cases">
             {groups.map((g) => (
-              <button
+              <Link
                 key={g.cat}
+                to="/cases"
+                search={{ segmento: g.cat.toLowerCase() }}
+                replace
+                resetScroll={false}
                 role="tab"
                 aria-selected={active === g.cat}
-                onClick={() => setActive(g.cat)}
                 className={cn(
                   "rounded-full border px-5 py-2 text-sm transition",
                   active === g.cat
@@ -124,7 +127,7 @@ function CasesIndex() {
                 )}
               >
                 {g.cat} ({g.items.length})
-              </button>
+              </Link>
             ))}
           </div>
 

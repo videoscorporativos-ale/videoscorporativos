@@ -39,7 +39,7 @@ export const Route = createFileRoute("/cases/$slug")({
       publisher: {
         "@type": "Organization",
         name: "Ale Fotógrafo",
-        logo: { "@type": "ImageObject", url: `${SITE}/favicon.ico` },
+        logo: { "@type": "ImageObject", url: `${SITE}/logo.png` },
       },
     };
     const breadcrumb = {

@@ -50,8 +50,22 @@ const faqs = [
   },
 ];
 
+const testimonials: { name: string; text: string }[] = [
+  {
+    name: "Jean Duarte",
+    text: "Profissional dedicado, que busca entender o seu momento para estruturar o trabalho e atender às suas expectativas. Recomendo sem dúvida.",
+  },
+  {
+    name: "Silvio Valente",
+    text: "Alexandre tem a rara combinação de experiência, competência e simpatia. Sem abdicar do rigor técnico, consegue fazer as fotos de forma leve.",
+  },
+  {
+    name: "Leandro Capolupo",
+    text: "Profissional ágil, competente e focado na qualidade. O processo foi leve e o resultado final ficou excelente.",
+  },
+];
+
 const articleSchema = {
-  ...({} as Record<string, never>),
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Quanto custa um vídeo institucional? Guia 2026 com faixas de preço",

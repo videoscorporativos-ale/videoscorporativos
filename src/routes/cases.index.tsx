@@ -10,15 +10,64 @@ import { thumbFor } from "@/components/site/Portfolio";
 
 const SITE = "https://videoscorporativos.com.br";
 const URL = `${SITE}/cases`;
-const TITLE = "Cases de Vídeo Corporativo · Portfólio Ale Fotógrafo";
-const DESCRIPTION =
-  "Portfólio completo de vídeos corporativos produzidos pela Ale Fotógrafo: institucionais, eventos e feiras de negócios para empresas em São Paulo e no Brasil.";
+const SEGMENTS = {
+  institucional: {
+    cat: "Institucional" as const,
+    heading: "Cases de vídeo institucional",
+    title: "Cases de Vídeo Institucional · Portfólio Ale Fotógrafo",
+    description:
+      "Cases de vídeo institucional para empresas: filmes de marca, estrutura e depoimentos produzidos pela Ale Fotógrafo em São Paulo e em todo o Brasil.",
+    intro:
+      "Filmes institucionais que apresentam a empresa, a operação e o time — com direção, captação e finalização de ponta a ponta.",
+  },
+  eventos: {
+    cat: "Eventos" as const,
+    heading: "Cases de vídeo para eventos corporativos",
+    title: "Cases de Vídeo para Eventos Corporativos · Ale Fotógrafo",
+    description:
+      "Cases de cobertura em vídeo de convenções, congressos, fóruns e confraternizações corporativas em São Paulo e em todo o Brasil.",
+    intro:
+      "Cobertura completa de convenções, congressos e confraternizações, com entrega ágil e qualidade de cinema.",
+  },
+  feiras: {
+    cat: "Feiras" as const,
+    heading: "Cases de vídeo para feiras de negócios",
+    title: "Cases de Vídeo para Feiras de Negócios · Ale Fotógrafo",
+    description:
+      "Cases de vídeo em feiras de negócios: registro de estande, entrevistas e aftermovie para provar o resultado da participação.",
+    intro:
+      "Registro e aftermovie da participação em feiras, para gerar conteúdo e comprovar resultado.",
+  },
+  reels: {
+    cat: "Reels" as const,
+    heading: "Cases de reels e vídeos verticais",
+    title: "Cases de Reels e Vídeos Verticais Corporativos · Ale Fotógrafo",
+    description:
+      "Cases de reels e vídeos verticais corporativos para Instagram, LinkedIn e TikTok, feitos para prender atenção nos primeiros segundos.",
+    intro:
+      "Conteúdo curto e vertical para Instagram, LinkedIn e TikTok — feito para prender atenção nos primeiros segundos.",
+  },
+};
+
+type SegmentKey = keyof typeof SEGMENTS;
+
+const normalizeSegment = (value: unknown): SegmentKey =>
+  typeof value === "string" && value.toLowerCase() in SEGMENTS
+    ? (value.toLowerCase() as SegmentKey)
+    : "institucional";
 
 export const Route = createFileRoute("/cases/")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    segmento: typeof search.segmento === "string" ? search.segmento : "institucional",
+  validateSearch: (search: Record<string, unknown>): { segmento?: SegmentKey } => ({
+    segmento: search.segmento === undefined ? undefined : normalizeSegment(search.segmento),
   }),
-  head: () => {
+  loaderDeps: ({ search }) => ({ segmento: search.segmento }),
+  loader: ({ deps }) => ({ segmento: deps.segmento }),
+  head: ({ loaderData }) => {
+    const key = normalizeSegment(loaderData?.segmento);
+    const seg = SEGMENTS[key];
+    const pageUrl = key === "institucional" ? URL : `${URL}?segmento=${key}`;
+    const TITLE = seg.title;
+    const DESCRIPTION = seg.description;
     const cases = getAllCases();
     const itemList = {
       "@context": "https://schema.org",
@@ -36,6 +85,7 @@ export const Route = createFileRoute("/cases/")({
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Início", item: `${SITE}/` },
         { "@type": "ListItem", position: 2, name: "Cases", item: URL },
+        { "@type": "ListItem", position: 3, name: seg.cat, item: pageUrl },
       ],
     };
     return {
@@ -44,13 +94,13 @@ export const Route = createFileRoute("/cases/")({
         { name: "description", content: DESCRIPTION },
         { property: "og:title", content: TITLE },
         { property: "og:description", content: DESCRIPTION },
-        { property: "og:url", content: URL },
+        { property: "og:url", content: pageUrl },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: TITLE },
         { name: "twitter:description", content: DESCRIPTION },
       ],
-      links: [{ rel: "canonical", href: URL }],
+      links: [{ rel: "canonical", href: pageUrl }],
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(itemList) },
         { type: "application/ld+json", children: JSON.stringify(breadcrumb) },
@@ -70,8 +120,9 @@ function CasesIndex() {
   const INITIAL = 4;
   const STEP = 4;
   const { segmento } = Route.useSearch();
-  const active =
-    CATS.find((c) => c.toLowerCase() === segmento.toLowerCase()) ?? "Institucional";
+  const segKey = normalizeSegment(segmento);
+  const seg = SEGMENTS[segKey];
+  const active = seg.cat;
   const [counts, setCounts] = useState<Record<string, number>>(
     () => Object.fromEntries(CATS.map((c) => [c, INITIAL])),
   );
@@ -91,21 +142,23 @@ function CasesIndex() {
           <nav className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
             <Link to="/" className="hover:text-brand">Início</Link>
             <span className="mx-2">/</span>
-            <span className="text-brand">Cases</span>
+            <Link to="/cases" className="hover:text-brand">Cases</Link>
+            <span className="mx-2">/</span>
+            <span className="text-brand">{seg.cat}</span>
           </nav>
           <h1 className="mt-6 font-display text-4xl md:text-5xl font-semibold tracking-tight">
-            Cases de vídeo corporativo
+            {seg.heading}
           </h1>
           <p className="mt-4 max-w-2xl text-muted-foreground">
-            {cases.length} produções audiovisuais entregues para empresas — institucionais,
-            cobertura de eventos corporativos, vídeo para feiras de negócios e reels verticais.
+            {seg.intro} {group.items.length} de {cases.length} produções audiovisuais entregues
+            para empresas em São Paulo e em todo o Brasil.
           </p>
           <div className="mt-8 flex flex-wrap gap-2" role="tablist" aria-label="Categorias de cases">
             {groups.map((g) => (
               <Link
                 key={g.cat}
                 to="/cases"
-                search={{ segmento: g.cat.toLowerCase() }}
+                search={{ segmento: normalizeSegment(g.cat) }}
                 replace
                 resetScroll={false}
                 role="tab"
@@ -124,7 +177,7 @@ function CasesIndex() {
 
           <section className="mt-10">
             <h2 className="font-display text-2xl md:text-3xl font-semibold tracking-tight">
-              {group.cat}
+              {seg.cat} — {group.items.length} cases
             </h2>
             <div
               className={cn(

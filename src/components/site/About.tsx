@@ -16,7 +16,7 @@ export function About() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-surface">
             <img
               src={aboutImage}
-              alt="Videomaker profissional ajustando câmera em set cinematográfico"
+              alt="Alexandre Machado, o Alê Fotógrafo, fotógrafo e videomaker corporativo em São Paulo"
               className="absolute inset-0 size-full object-cover"
               loading="lazy"
             />

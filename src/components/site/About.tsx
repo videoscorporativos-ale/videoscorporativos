@@ -13,11 +13,11 @@ export function About() {
     <section id="sobre" className="py-28 md:py-40">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-surface">
+          <div className="group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-surface shadow-2xl shadow-brand/5">
             <img
               src={aboutImage}
               alt="Videomaker profissional filmando reunião corporativa em ambiente empresarial"
-              className="absolute inset-0 size-full object-cover"
+              className="absolute inset-0 size-full object-cover object-[30%_center] md:object-[22%_center] transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
             />
           </div>

@@ -30,6 +30,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/video-de-treinamento-corporativo", changefreq: "monthly", priority: "0.9" },
           { path: "/video-de-integracao", changefreq: "monthly", priority: "0.9" },
           { path: "/depoimentos-em-video", changefreq: "monthly", priority: "0.9" },
+          { path: "/video-para-empresas", changefreq: "monthly", priority: "0.9" },
+          { path: "/cobertura-de-eventos-corporativos", changefreq: "monthly", priority: "0.9" },
+          { path: "/reels-corporativos", changefreq: "monthly", priority: "0.8" },
+          { path: "/video-para-clinicas", changefreq: "monthly", priority: "0.8" },
+          { path: "/video-para-industrias", changefreq: "monthly", priority: "0.8" },
         ];
 
         const caseEntries: SitemapEntry[] = getAllCases().map((c) => ({

@@ -10,6 +10,8 @@ import { ContactCTA } from "@/components/site/ContactCTA";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { FAQ, faqSchema } from "@/components/site/FAQ";
+import { Services, servicesSchema } from "@/components/site/Services";
+import { Differentials } from "@/components/site/Differentials";
 import { portfolioItems, hiResThumbFor } from "@/components/site/Portfolio";
 
 const localBusinessSchema = {
@@ -142,16 +144,16 @@ const videoObjectsSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vídeo Institucional em São Paulo · Eventos, Feiras e Reels" },
-      { name: "description", content: "Vídeo institucional em São Paulo, filmagem de eventos corporativos, vídeo para feira de negócios e reels verticais. +30 anos de experiência em todo o Brasil." },
-      { name: "keywords", content: "vídeo institucional São Paulo, filmagem de eventos corporativos, vídeo para feira de negócios, reels corporativos, produtora de vídeo SP" },
-      { property: "og:title", content: "Vídeo Institucional em São Paulo · Eventos, Feiras e Reels" },
-      { property: "og:description", content: "Vídeo institucional, eventos corporativos, feiras de negócios e reels verticais. +30 anos atendendo empresas em São Paulo e em todo o Brasil." },
+      { title: "Vídeos Corporativos em São Paulo · Institucional e Treinamento" },
+      { name: "description", content: "Produção de vídeos corporativos em São Paulo: institucional, treinamento, integração, depoimentos e eventos empresariais. Orçamento pelo WhatsApp." },
+      { name: "keywords", content: "vídeos corporativos, vídeo corporativo em São Paulo, vídeo institucional, produção de vídeo institucional, vídeo para empresas, videomaker corporativo, vídeo de treinamento corporativo, depoimento em vídeo, cobertura de evento corporativo" },
+      { property: "og:title", content: "Vídeos Corporativos em São Paulo · Institucional e Treinamento" },
+      { property: "og:description", content: "Vídeos institucionais, de treinamento, de integração, depoimentos e cobertura de eventos empresariais. +30 anos atendendo empresas em São Paulo e no Brasil." },
       { property: "og:url", content: "https://videoscorporativos.com.br" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Vídeo Institucional em São Paulo · Eventos, Feiras e Reels" },
-      { name: "twitter:description", content: "Vídeo institucional, eventos, feiras de negócios e reels verticais. +30 anos em São Paulo." },
+      { name: "twitter:title", content: "Vídeos Corporativos em São Paulo · Institucional e Treinamento" },
+      { name: "twitter:description", content: "Vídeo institucional, treinamento, integração, depoimentos e eventos corporativos em São Paulo." },
       { property: "og:image", content: "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg" },
       { property: "og:image:width", content: "1280" },
       { property: "og:image:height", content: "720" },
@@ -176,6 +178,10 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify(videoObjectsSchema),
       },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(servicesSchema),
+      },
     ],
   }),
   component: Index,
@@ -188,8 +194,10 @@ function Index() {
       <main>
         <Hero />
         <ClientLogos />
+        <Services />
         <Portfolio />
         <Process />
+        <Differentials />
         <About />
         <Testimonials />
         <ContactCTA />

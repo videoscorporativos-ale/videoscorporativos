@@ -22,6 +22,9 @@ export function SiteFooter() {
         <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
           <a href="/#servicos" className="hover:text-foreground">Serviços</a>
           <Link to="/cases" className="hover:text-foreground">Portfólio</Link>
+          <a href="/video-de-treinamento-corporativo" className="hover:text-foreground">Treinamento</a>
+          <a href="/video-de-integracao" className="hover:text-foreground">Integração</a>
+          <a href="/depoimentos-em-video" className="hover:text-foreground">Depoimentos</a>
           <a href="/#processo" className="hover:text-foreground">Processo</a>
           <a href="/#sobre" className="hover:text-foreground">Sobre</a>
           <a href="/precos" className="hover:text-foreground">Preços</a>

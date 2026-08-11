@@ -27,6 +27,9 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/video-corporativo-sao-paulo", changefreq: "monthly", priority: "0.9" },
           { path: "/filmagem-evento-corporativo-sao-paulo", changefreq: "monthly", priority: "0.9" },
           { path: "/video-para-feira-de-negocios", changefreq: "monthly", priority: "0.9" },
+          { path: "/video-de-treinamento-corporativo", changefreq: "monthly", priority: "0.9" },
+          { path: "/video-de-integracao", changefreq: "monthly", priority: "0.9" },
+          { path: "/depoimentos-em-video", changefreq: "monthly", priority: "0.9" },
         ];
 
         const caseEntries: SitemapEntry[] = getAllCases().map((c) => ({

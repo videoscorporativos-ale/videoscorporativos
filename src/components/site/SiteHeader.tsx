@@ -6,6 +6,7 @@ import logoUrl from "@/assets/logo.png";
 const navLinks = [
   { href: "/#servicos", label: "Serviços" },
   { href: "/cases", label: "Cases" },
+  { href: "/#portfolio", label: "Portfólio" },
   { href: "/#processo", label: "Processo" },
   { href: "/#sobre", label: "Sobre" },
   { href: "/blog", label: "Blog" },

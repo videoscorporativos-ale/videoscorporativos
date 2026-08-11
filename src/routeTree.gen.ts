@@ -11,11 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VideoParaFeiraDeNegociosRouteImport } from './routes/video-para-feira-de-negocios'
 import { Route as VideoInstitucionalSaoPauloRouteImport } from './routes/video-institucional-sao-paulo'
+import { Route as VideoDeTreinamentoCorporativoRouteImport } from './routes/video-de-treinamento-corporativo'
+import { Route as VideoDeIntegracaoRouteImport } from './routes/video-de-integracao'
 import { Route as VideoCorporativoSaoPauloRouteImport } from './routes/video-corporativo-sao-paulo'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrecosRouteImport } from './routes/precos'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as FilmagemEventoCorporativoSaoPauloRouteImport } from './routes/filmagem-evento-corporativo-sao-paulo'
+import { Route as DepoimentosEmVideoRouteImport } from './routes/depoimentos-em-video'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CasesIndexRouteImport } from './routes/cases.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -37,6 +40,17 @@ const VideoInstitucionalSaoPauloRoute =
     path: '/video-institucional-sao-paulo',
     getParentRoute: () => rootRouteImport,
   } as any)
+const VideoDeTreinamentoCorporativoRoute =
+  VideoDeTreinamentoCorporativoRouteImport.update({
+    id: '/video-de-treinamento-corporativo',
+    path: '/video-de-treinamento-corporativo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const VideoDeIntegracaoRoute = VideoDeIntegracaoRouteImport.update({
+  id: '/video-de-integracao',
+  path: '/video-de-integracao',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VideoCorporativoSaoPauloRoute =
   VideoCorporativoSaoPauloRouteImport.update({
     id: '/video-corporativo-sao-paulo',
@@ -64,6 +78,11 @@ const FilmagemEventoCorporativoSaoPauloRoute =
     path: '/filmagem-evento-corporativo-sao-paulo',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DepoimentosEmVideoRoute = DepoimentosEmVideoRouteImport.update({
+  id: '/depoimentos-em-video',
+  path: '/depoimentos-em-video',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -108,11 +127,14 @@ const ApiPublicSeoResubmitSitemapRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/depoimentos-em-video': typeof DepoimentosEmVideoRoute
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/video-corporativo-sao-paulo': typeof VideoCorporativoSaoPauloRoute
+  '/video-de-integracao': typeof VideoDeIntegracaoRoute
+  '/video-de-treinamento-corporativo': typeof VideoDeTreinamentoCorporativoRoute
   '/video-institucional-sao-paulo': typeof VideoInstitucionalSaoPauloRoute
   '/video-para-feira-de-negocios': typeof VideoParaFeiraDeNegociosRoute
   '/admin/seo': typeof AdminSeoRoute
@@ -125,11 +147,14 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/depoimentos-em-video': typeof DepoimentosEmVideoRoute
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/video-corporativo-sao-paulo': typeof VideoCorporativoSaoPauloRoute
+  '/video-de-integracao': typeof VideoDeIntegracaoRoute
+  '/video-de-treinamento-corporativo': typeof VideoDeTreinamentoCorporativoRoute
   '/video-institucional-sao-paulo': typeof VideoInstitucionalSaoPauloRoute
   '/video-para-feira-de-negocios': typeof VideoParaFeiraDeNegociosRoute
   '/admin/seo': typeof AdminSeoRoute
@@ -143,11 +168,14 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/depoimentos-em-video': typeof DepoimentosEmVideoRoute
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/video-corporativo-sao-paulo': typeof VideoCorporativoSaoPauloRoute
+  '/video-de-integracao': typeof VideoDeIntegracaoRoute
+  '/video-de-treinamento-corporativo': typeof VideoDeTreinamentoCorporativoRoute
   '/video-institucional-sao-paulo': typeof VideoInstitucionalSaoPauloRoute
   '/video-para-feira-de-negocios': typeof VideoParaFeiraDeNegociosRoute
   '/admin/seo': typeof AdminSeoRoute
@@ -162,11 +190,14 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/depoimentos-em-video'
     | '/filmagem-evento-corporativo-sao-paulo'
     | '/politica-de-privacidade'
     | '/precos'
     | '/sitemap.xml'
     | '/video-corporativo-sao-paulo'
+    | '/video-de-integracao'
+    | '/video-de-treinamento-corporativo'
     | '/video-institucional-sao-paulo'
     | '/video-para-feira-de-negocios'
     | '/admin/seo'
@@ -179,11 +210,14 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/depoimentos-em-video'
     | '/filmagem-evento-corporativo-sao-paulo'
     | '/politica-de-privacidade'
     | '/precos'
     | '/sitemap.xml'
     | '/video-corporativo-sao-paulo'
+    | '/video-de-integracao'
+    | '/video-de-treinamento-corporativo'
     | '/video-institucional-sao-paulo'
     | '/video-para-feira-de-negocios'
     | '/admin/seo'
@@ -196,11 +230,14 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/depoimentos-em-video'
     | '/filmagem-evento-corporativo-sao-paulo'
     | '/politica-de-privacidade'
     | '/precos'
     | '/sitemap.xml'
     | '/video-corporativo-sao-paulo'
+    | '/video-de-integracao'
+    | '/video-de-treinamento-corporativo'
     | '/video-institucional-sao-paulo'
     | '/video-para-feira-de-negocios'
     | '/admin/seo'
@@ -214,11 +251,14 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DepoimentosEmVideoRoute: typeof DepoimentosEmVideoRoute
   FilmagemEventoCorporativoSaoPauloRoute: typeof FilmagemEventoCorporativoSaoPauloRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   PrecosRoute: typeof PrecosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VideoCorporativoSaoPauloRoute: typeof VideoCorporativoSaoPauloRoute
+  VideoDeIntegracaoRoute: typeof VideoDeIntegracaoRoute
+  VideoDeTreinamentoCorporativoRoute: typeof VideoDeTreinamentoCorporativoRoute
   VideoInstitucionalSaoPauloRoute: typeof VideoInstitucionalSaoPauloRoute
   VideoParaFeiraDeNegociosRoute: typeof VideoParaFeiraDeNegociosRoute
   AdminSeoRoute: typeof AdminSeoRoute
@@ -244,6 +284,20 @@ declare module '@tanstack/react-router' {
       path: '/video-institucional-sao-paulo'
       fullPath: '/video-institucional-sao-paulo'
       preLoaderRoute: typeof VideoInstitucionalSaoPauloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-de-treinamento-corporativo': {
+      id: '/video-de-treinamento-corporativo'
+      path: '/video-de-treinamento-corporativo'
+      fullPath: '/video-de-treinamento-corporativo'
+      preLoaderRoute: typeof VideoDeTreinamentoCorporativoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-de-integracao': {
+      id: '/video-de-integracao'
+      path: '/video-de-integracao'
+      fullPath: '/video-de-integracao'
+      preLoaderRoute: typeof VideoDeIntegracaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/video-corporativo-sao-paulo': {
@@ -279,6 +333,13 @@ declare module '@tanstack/react-router' {
       path: '/filmagem-evento-corporativo-sao-paulo'
       fullPath: '/filmagem-evento-corporativo-sao-paulo'
       preLoaderRoute: typeof FilmagemEventoCorporativoSaoPauloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/depoimentos-em-video': {
+      id: '/depoimentos-em-video'
+      path: '/depoimentos-em-video'
+      fullPath: '/depoimentos-em-video'
+      preLoaderRoute: typeof DepoimentosEmVideoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -342,12 +403,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DepoimentosEmVideoRoute: DepoimentosEmVideoRoute,
   FilmagemEventoCorporativoSaoPauloRoute:
     FilmagemEventoCorporativoSaoPauloRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   PrecosRoute: PrecosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   VideoCorporativoSaoPauloRoute: VideoCorporativoSaoPauloRoute,
+  VideoDeIntegracaoRoute: VideoDeIntegracaoRoute,
+  VideoDeTreinamentoCorporativoRoute: VideoDeTreinamentoCorporativoRoute,
   VideoInstitucionalSaoPauloRoute: VideoInstitucionalSaoPauloRoute,
   VideoParaFeiraDeNegociosRoute: VideoParaFeiraDeNegociosRoute,
   AdminSeoRoute: AdminSeoRoute,
@@ -361,13 +425,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

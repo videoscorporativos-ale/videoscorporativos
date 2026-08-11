@@ -1,5 +1,6 @@
 import { Instagram, Linkedin, Youtube } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { WhatsAppLink } from "./WhatsAppLink";
 import logoUrl from "@/assets/logo.png";
 
 export function SiteFooter() {
@@ -19,17 +20,28 @@ export function SiteFooter() {
             Fotografia e vídeo corporativo em São Paulo, para todo o Brasil.
           </p>
         </div>
-        <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
-          <a href="/#servicos" className="hover:text-foreground">Serviços</a>
-          <Link to="/cases" className="hover:text-foreground">Portfólio</Link>
-          <a href="/video-de-treinamento-corporativo" className="hover:text-foreground">Treinamento</a>
-          <a href="/video-de-integracao" className="hover:text-foreground">Integração</a>
-          <a href="/depoimentos-em-video" className="hover:text-foreground">Depoimentos</a>
-          <a href="/#processo" className="hover:text-foreground">Processo</a>
-          <a href="/#sobre" className="hover:text-foreground">Sobre</a>
+        <nav aria-label="Serviços de vídeo corporativo" className="grid gap-x-10 gap-y-2 text-sm text-muted-foreground sm:grid-cols-2 lg:grid-cols-3">
+          <a href="/#videos-corporativos" className="hover:text-foreground">Vídeos Corporativos</a>
+          <a href="/video-institucional-sao-paulo" className="hover:text-foreground">Vídeo Institucional</a>
+          <a href="/video-para-empresas" className="hover:text-foreground">Vídeo para Empresas</a>
+          <a href="/video-de-treinamento-corporativo" className="hover:text-foreground">Vídeo de Treinamento</a>
+          <a href="/video-de-integracao" className="hover:text-foreground">Vídeo de Integração</a>
+          <a href="/depoimentos-em-video" className="hover:text-foreground">Depoimentos em Vídeo</a>
+          <a href="/cobertura-de-eventos-corporativos" className="hover:text-foreground">Cobertura de Eventos Corporativos</a>
+          <a href="/reels-corporativos" className="hover:text-foreground">Reels Corporativos</a>
+          <a href="/video-para-clinicas" className="hover:text-foreground">Vídeo para Clínicas</a>
+          <a href="/video-para-industrias" className="hover:text-foreground">Vídeo para Indústrias</a>
+          <Link to="/cases" className="hover:text-foreground">Cases</Link>
           <a href="/precos" className="hover:text-foreground">Preços</a>
           <a href="/blog" className="hover:text-foreground">Blog</a>
           <a href="/#contato" className="hover:text-foreground">Contato</a>
+          <WhatsAppLink
+            location="footer_orcamento"
+            message="Olá, quero um orçamento de vídeo corporativo para minha empresa."
+            className="font-medium text-brand hover:underline"
+          >
+            Orçamento pelo WhatsApp
+          </WhatsAppLink>
         </nav>
         <div className="flex items-center gap-3">
           <a href="#" aria-label="Instagram" className="size-9 rounded-full border border-border flex items-center justify-center hover:bg-brand hover:text-brand-foreground hover:border-brand transition">
@@ -44,6 +56,12 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border">
+        <div className="mx-auto max-w-7xl px-6 pt-6 text-sm text-muted-foreground">
+          <p>
+            Produção de vídeos corporativos em São Paulo para empresas, clínicas, escritórios,
+            indústrias, logística, RH, marketing e eventos corporativos.
+          </p>
+        </div>
         <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-xs text-muted-foreground">
           <p>Alexandre Machado Fotografia · CNPJ 03.230.626/0001-82 · Desde 1999 atendendo clientes especiais.</p>
           <p>comercial@alefotografo.com.br · (11) 91355-0533</p>

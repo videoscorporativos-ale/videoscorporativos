@@ -20,19 +20,18 @@ export function Hero() {
             <span className="size-1.5 rounded-full bg-brand" />
             +30 anos produzindo imagem corporativa
           </span>
-          <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-balance">
-            Produção de vídeos corporativos em{" "}
-            <span className="text-brand">São Paulo</span>
+          <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-[3.4rem] font-semibold leading-[1.08] tracking-tight text-balance">
+            Vídeos corporativos em <span className="text-brand">São Paulo</span> para
+            empresas que precisam vender, treinar e comunicar melhor
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
-            Vídeos institucionais, de treinamento, de integração, depoimentos de
-            clientes e cobertura de eventos empresariais. Roteiro, captação e
-            edição com mais de 30 anos de experiência em imagem corporativa.
+            Produção de vídeos institucionais, vídeos de treinamento, integração,
+            depoimentos, eventos corporativos e conteúdos para comunicação
+            empresarial.
           </p>
           <p className="mt-4 max-w-xl text-sm text-muted-foreground">
-            Atendimento para empresas, indústrias, clínicas e hospitais,
-            escritórios de advocacia e empresas de logística — em São Paulo,
-            Grande SP e todo o Brasil.
+            Produção audiovisual para empresas · Atendimento em São Paulo · Vídeos
+            institucionais, treinamentos, eventos e depoimentos
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <WhatsAppLink
@@ -44,17 +43,18 @@ export function Hero() {
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </WhatsAppLink>
             <a
-              href="#servicos"
+              href="#tipos-de-video"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-medium hover:bg-surface transition"
             >
-              Ver serviços
+              Ver tipos de vídeo
             </a>
-            <a
-              href="#portfolio"
+            <WhatsAppLink
+              location="hero_planejar"
+              message="Olá, quero planejar um vídeo corporativo para minha empresa."
               className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-medium hover:bg-surface transition"
             >
-              Ver exemplos reais
-            </a>
+              Planejar meu vídeo corporativo
+            </WhatsAppLink>
           </div>
         </div>
 

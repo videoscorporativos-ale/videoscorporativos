@@ -7,20 +7,36 @@ import {
 
 const faqs = [
   {
-    q: "Quanto custa um vídeo institucional?",
-    a: "O investimento varia conforme o escopo do projeto: duração do vídeo, número de diárias de filmagem, locações, equipe envolvida e nível de pós-produção (edição, color grading, trilha). Vídeos institucionais costumam partir de um pacote sob medida, definido após uma conversa rápida para entender o objetivo. Envie uma mensagem com o briefing e devolvemos um orçamento personalizado.",
+    q: "Quanto custa um vídeo corporativo?",
+    a: "O investimento depende do escopo: duração, número de diárias de gravação, quantidade de locações, equipe envolvida e nível de pós-produção. Vídeos institucionais e corporativos são orçados sob medida após uma conversa curta para entender o objetivo. Envie o briefing pelo WhatsApp e devolvemos um orçamento personalizado.",
   },
   {
-    q: "Qual é o prazo de entrega?",
-    a: "Depende da complexidade. Um vídeo institucional padrão costuma ser entregue em algumas semanas, contando roteiro, captação e finalização. Para eventos e feiras, há a opção de aftermovie com entrega acelerada. O prazo exato é combinado no início do projeto, junto ao cronograma.",
+    q: "Quanto tempo leva para produzir?",
+    a: "Um vídeo institucional ou corporativo padrão costuma ser entregue em algumas semanas, contando roteiro, captação e finalização. Cobertura de eventos tem opção de aftermovie com entrega acelerada. O prazo exato é fechado no início do projeto, junto do cronograma de aprovações.",
   },
   {
-    q: "Vocês atendem fora de São Paulo?",
-    a: "Sim. A base é em São Paulo, com atendimento em toda a Grande SP, ABC, Alphaville, Faria Lima, Paulista e Berrini, mas realizamos projetos em todo o Brasil — e já produzimos coberturas inclusive no exterior, como convenções internacionais.",
+    q: "Vocês gravam na empresa?",
+    a: "Sim. A maior parte dos projetos é gravada nas próprias instalações do cliente — escritório, fábrica, centro de distribuição, clínica ou hospital — com equipe preparada para trabalhar durante a operação, sem interromper o funcionamento da área.",
   },
   {
-    q: "O que está incluído no serviço?",
-    a: "O serviço cobre todas as etapas: briefing e roteiro, pré-produção (planejamento, locações, equipe, cronograma), captação com equipamentos profissionais, edição, color grading, trilha e mixagem, e entrega nos formatos certos para cada canal — institucional, Reels, YouTube e mais.",
+    q: "Fazem roteiro?",
+    a: "Sim. O roteiro faz parte do serviço. Partimos do objetivo comercial ou de comunicação, definimos a mensagem, a ordem das informações e quem fala o quê. Em treinamentos e integração, o roteiro é construído a partir dos procedimentos e materiais internos da empresa.",
+  },
+  {
+    q: "Entregam vídeos para redes sociais?",
+    a: "Sim. Além da versão principal, entregamos cortes verticais para Reels, Shorts e TikTok, versões quadradas para LinkedIn e Instagram e cortes curtos para tráfego pago, todos com legendas.",
+  },
+  {
+    q: "Fazem cobertura de eventos corporativos?",
+    a: "Sim. Cobrimos convenções, fóruns, premiações, SIPAT, treinamentos presenciais, confraternizações e feiras de negócios, com entrevistas, aftermovie e cortes para divulgação da próxima edição.",
+  },
+  {
+    q: "Atendem clínicas, escritórios e indústrias?",
+    a: "Sim. Já produzimos para indústria química, logística, farmacêutico, hotelaria, escritórios de advocacia, associações e saúde. Cada segmento tem exigências próprias de acesso, segurança e linguagem, e isso entra no planejamento.",
+  },
+  {
+    q: "Como pedir orçamento?",
+    a: "Fale com a gente pelo WhatsApp informando o tipo de vídeo, o objetivo, a cidade da gravação e o prazo desejado. Com essas informações devolvemos escopo, cronograma e valor. Também é possível enviar o briefing pelo formulário de contato do site.",
   },
 ];
 
@@ -31,7 +47,7 @@ export function FAQ() {
         <div className="text-center">
           <p className="text-sm uppercase tracking-[0.2em] text-brand">FAQ</p>
           <h2 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
-            Perguntas frequentes
+            Perguntas frequentes sobre vídeo corporativo
           </h2>
         </div>
         <Accordion type="single" collapsible className="mt-10 w-full">

@@ -233,7 +233,7 @@ export function Portfolio() {
   };
 
   return (
-    <section id="servicos" className="py-24 md:py-32 bg-surface/30 border-y border-border">
+    <section id="portfolio" className="py-24 md:py-32 bg-surface/30 border-y border-border">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <p className="text-sm uppercase tracking-[0.2em] text-brand">Serviços & Portfólio</p>

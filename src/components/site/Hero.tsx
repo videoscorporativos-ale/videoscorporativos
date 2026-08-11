@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Play, ArrowRight, X } from "lucide-react";
+import { WhatsAppLink } from "./WhatsAppLink";
 
 const SHOWREEL_ID = "aOiYST9L8ec";
 const SHOWREEL_TITLE = "ATIVA Logística — Vídeo Institucional";
@@ -19,28 +20,40 @@ export function Hero() {
             <span className="size-1.5 rounded-full bg-brand" />
             +30 anos produzindo imagem corporativa
           </span>
-          <h1 className="mt-6 font-display text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] tracking-tight text-balance">
-            Vídeos que fazem a sua empresa ser{" "}
-            <span className="text-brand">levada a sério.</span>
+          <h1 className="mt-6 font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.08] tracking-tight text-balance">
+            Produção de vídeos corporativos em{" "}
+            <span className="text-brand">São Paulo</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed">
-            Produção de vídeo institucional, eventos corporativos e feiras de
-            negócios. Roteiro, captação e edição com mais de 30 anos de
-            bagagem — em São Paulo e todo o Brasil.
+            Vídeos institucionais, de treinamento, de integração, depoimentos de
+            clientes e cobertura de eventos empresariais. Roteiro, captação e
+            edição com mais de 30 anos de experiência em imagem corporativa.
+          </p>
+          <p className="mt-4 max-w-xl text-sm text-muted-foreground">
+            Atendimento para empresas, indústrias, clínicas e hospitais,
+            escritórios de advocacia e empresas de logística — em São Paulo,
+            Grande SP e todo o Brasil.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href="#portfolio"
+            <WhatsAppLink
+              location="hero_orcamento"
+              message="Olá, quero um orçamento de vídeo corporativo para minha empresa."
               className="group inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-medium text-brand-foreground hover:opacity-90 transition"
             >
-              Ver portfólio
+              Solicitar orçamento no WhatsApp
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
+            </WhatsAppLink>
             <a
-              href="#contato"
+              href="#servicos"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-medium hover:bg-surface transition"
             >
-              Solicitar orçamento
+              Ver serviços
+            </a>
+            <a
+              href="#portfolio"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-6 py-3 text-sm font-medium hover:bg-surface transition"
+            >
+              Ver exemplos reais
             </a>
           </div>
         </div>

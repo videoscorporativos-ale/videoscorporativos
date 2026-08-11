@@ -12,6 +12,9 @@ import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { FAQ, faqSchema } from "@/components/site/FAQ";
 import { Services, servicesSchema } from "@/components/site/Services";
 import { Differentials } from "@/components/site/Differentials";
+import { VideosCorporativosSP } from "@/components/site/VideosCorporativosSP";
+import { TiposDeVideo } from "@/components/site/TiposDeVideo";
+import { Segmentos } from "@/components/site/Segmentos";
 import { portfolioItems, hiResThumbFor } from "@/components/site/Portfolio";
 
 const localBusinessSchema = {
@@ -144,15 +147,15 @@ const videoObjectsSchema = {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vídeos Corporativos em São Paulo · Institucional e Treinamento" },
-      { name: "description", content: "Produção de vídeos corporativos em São Paulo: institucional, treinamento, integração, depoimentos e eventos empresariais. Orçamento pelo WhatsApp." },
+      { title: "Vídeos Corporativos em São Paulo | Vídeo Institucional para Empresas" },
+      { name: "description", content: "Produção de vídeos corporativos, vídeo institucional, treinamentos, integração, depoimentos e eventos empresariais em São Paulo. Solicite orçamento pelo WhatsApp." },
       { name: "keywords", content: "vídeos corporativos, vídeo corporativo em São Paulo, vídeo institucional, produção de vídeo institucional, vídeo para empresas, videomaker corporativo, vídeo de treinamento corporativo, depoimento em vídeo, cobertura de evento corporativo" },
-      { property: "og:title", content: "Vídeos Corporativos em São Paulo · Institucional e Treinamento" },
+      { property: "og:title", content: "Vídeos Corporativos em São Paulo | Vídeo Institucional para Empresas" },
       { property: "og:description", content: "Vídeos institucionais, de treinamento, de integração, depoimentos e cobertura de eventos empresariais. +30 anos atendendo empresas em São Paulo e no Brasil." },
       { property: "og:url", content: "https://videoscorporativos.com.br" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Vídeos Corporativos em São Paulo · Institucional e Treinamento" },
+      { name: "twitter:title", content: "Vídeos Corporativos em São Paulo | Vídeo Institucional para Empresas" },
       { name: "twitter:description", content: "Vídeo institucional, treinamento, integração, depoimentos e eventos corporativos em São Paulo." },
       { property: "og:image", content: "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg" },
       { property: "og:image:width", content: "1280" },
@@ -194,8 +197,11 @@ function Index() {
       <main>
         <Hero />
         <ClientLogos />
+        <VideosCorporativosSP />
+        <TiposDeVideo />
         <Services />
         <Portfolio />
+        <Segmentos />
         <Process />
         <Differentials />
         <About />

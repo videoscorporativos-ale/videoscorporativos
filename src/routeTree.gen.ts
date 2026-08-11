@@ -9,16 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VideoParaIndustriasRouteImport } from './routes/video-para-industrias'
 import { Route as VideoParaFeiraDeNegociosRouteImport } from './routes/video-para-feira-de-negocios'
+import { Route as VideoParaEmpresasRouteImport } from './routes/video-para-empresas'
+import { Route as VideoParaClinicasRouteImport } from './routes/video-para-clinicas'
 import { Route as VideoInstitucionalSaoPauloRouteImport } from './routes/video-institucional-sao-paulo'
 import { Route as VideoDeTreinamentoCorporativoRouteImport } from './routes/video-de-treinamento-corporativo'
 import { Route as VideoDeIntegracaoRouteImport } from './routes/video-de-integracao'
 import { Route as VideoCorporativoSaoPauloRouteImport } from './routes/video-corporativo-sao-paulo'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ReelsCorporativosRouteImport } from './routes/reels-corporativos'
 import { Route as PrecosRouteImport } from './routes/precos'
 import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
 import { Route as FilmagemEventoCorporativoSaoPauloRouteImport } from './routes/filmagem-evento-corporativo-sao-paulo'
 import { Route as DepoimentosEmVideoRouteImport } from './routes/depoimentos-em-video'
+import { Route as CoberturaDeEventosCorporativosRouteImport } from './routes/cobertura-de-eventos-corporativos'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CasesIndexRouteImport } from './routes/cases.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -28,12 +33,27 @@ import { Route as AutorAlexandreMachadoRouteImport } from './routes/autor.alexan
 import { Route as AdminSeoRouteImport } from './routes/admin.seo'
 import { Route as ApiPublicSeoResubmitSitemapRouteImport } from './routes/api/public/seo.resubmit-sitemap'
 
+const VideoParaIndustriasRoute = VideoParaIndustriasRouteImport.update({
+  id: '/video-para-industrias',
+  path: '/video-para-industrias',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VideoParaFeiraDeNegociosRoute =
   VideoParaFeiraDeNegociosRouteImport.update({
     id: '/video-para-feira-de-negocios',
     path: '/video-para-feira-de-negocios',
     getParentRoute: () => rootRouteImport,
   } as any)
+const VideoParaEmpresasRoute = VideoParaEmpresasRouteImport.update({
+  id: '/video-para-empresas',
+  path: '/video-para-empresas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideoParaClinicasRoute = VideoParaClinicasRouteImport.update({
+  id: '/video-para-clinicas',
+  path: '/video-para-clinicas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VideoInstitucionalSaoPauloRoute =
   VideoInstitucionalSaoPauloRouteImport.update({
     id: '/video-institucional-sao-paulo',
@@ -62,6 +82,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReelsCorporativosRoute = ReelsCorporativosRouteImport.update({
+  id: '/reels-corporativos',
+  path: '/reels-corporativos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrecosRoute = PrecosRouteImport.update({
   id: '/precos',
   path: '/precos',
@@ -83,6 +108,12 @@ const DepoimentosEmVideoRoute = DepoimentosEmVideoRouteImport.update({
   path: '/depoimentos-em-video',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CoberturaDeEventosCorporativosRoute =
+  CoberturaDeEventosCorporativosRouteImport.update({
+    id: '/cobertura-de-eventos-corporativos',
+    path: '/cobertura-de-eventos-corporativos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -127,16 +158,21 @@ const ApiPublicSeoResubmitSitemapRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cobertura-de-eventos-corporativos': typeof CoberturaDeEventosCorporativosRoute
   '/depoimentos-em-video': typeof DepoimentosEmVideoRoute
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
+  '/reels-corporativos': typeof ReelsCorporativosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/video-corporativo-sao-paulo': typeof VideoCorporativoSaoPauloRoute
   '/video-de-integracao': typeof VideoDeIntegracaoRoute
   '/video-de-treinamento-corporativo': typeof VideoDeTreinamentoCorporativoRoute
   '/video-institucional-sao-paulo': typeof VideoInstitucionalSaoPauloRoute
+  '/video-para-clinicas': typeof VideoParaClinicasRoute
+  '/video-para-empresas': typeof VideoParaEmpresasRoute
   '/video-para-feira-de-negocios': typeof VideoParaFeiraDeNegociosRoute
+  '/video-para-industrias': typeof VideoParaIndustriasRoute
   '/admin/seo': typeof AdminSeoRoute
   '/autor/alexandre-machado': typeof AutorAlexandreMachadoRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -147,16 +183,21 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cobertura-de-eventos-corporativos': typeof CoberturaDeEventosCorporativosRoute
   '/depoimentos-em-video': typeof DepoimentosEmVideoRoute
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
+  '/reels-corporativos': typeof ReelsCorporativosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/video-corporativo-sao-paulo': typeof VideoCorporativoSaoPauloRoute
   '/video-de-integracao': typeof VideoDeIntegracaoRoute
   '/video-de-treinamento-corporativo': typeof VideoDeTreinamentoCorporativoRoute
   '/video-institucional-sao-paulo': typeof VideoInstitucionalSaoPauloRoute
+  '/video-para-clinicas': typeof VideoParaClinicasRoute
+  '/video-para-empresas': typeof VideoParaEmpresasRoute
   '/video-para-feira-de-negocios': typeof VideoParaFeiraDeNegociosRoute
+  '/video-para-industrias': typeof VideoParaIndustriasRoute
   '/admin/seo': typeof AdminSeoRoute
   '/autor/alexandre-machado': typeof AutorAlexandreMachadoRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -168,16 +209,21 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cobertura-de-eventos-corporativos': typeof CoberturaDeEventosCorporativosRoute
   '/depoimentos-em-video': typeof DepoimentosEmVideoRoute
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
   '/politica-de-privacidade': typeof PoliticaDePrivacidadeRoute
   '/precos': typeof PrecosRoute
+  '/reels-corporativos': typeof ReelsCorporativosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/video-corporativo-sao-paulo': typeof VideoCorporativoSaoPauloRoute
   '/video-de-integracao': typeof VideoDeIntegracaoRoute
   '/video-de-treinamento-corporativo': typeof VideoDeTreinamentoCorporativoRoute
   '/video-institucional-sao-paulo': typeof VideoInstitucionalSaoPauloRoute
+  '/video-para-clinicas': typeof VideoParaClinicasRoute
+  '/video-para-empresas': typeof VideoParaEmpresasRoute
   '/video-para-feira-de-negocios': typeof VideoParaFeiraDeNegociosRoute
+  '/video-para-industrias': typeof VideoParaIndustriasRoute
   '/admin/seo': typeof AdminSeoRoute
   '/autor/alexandre-machado': typeof AutorAlexandreMachadoRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -190,16 +236,21 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/cobertura-de-eventos-corporativos'
     | '/depoimentos-em-video'
     | '/filmagem-evento-corporativo-sao-paulo'
     | '/politica-de-privacidade'
     | '/precos'
+    | '/reels-corporativos'
     | '/sitemap.xml'
     | '/video-corporativo-sao-paulo'
     | '/video-de-integracao'
     | '/video-de-treinamento-corporativo'
     | '/video-institucional-sao-paulo'
+    | '/video-para-clinicas'
+    | '/video-para-empresas'
     | '/video-para-feira-de-negocios'
+    | '/video-para-industrias'
     | '/admin/seo'
     | '/autor/alexandre-machado'
     | '/blog/$slug'
@@ -210,16 +261,21 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/cobertura-de-eventos-corporativos'
     | '/depoimentos-em-video'
     | '/filmagem-evento-corporativo-sao-paulo'
     | '/politica-de-privacidade'
     | '/precos'
+    | '/reels-corporativos'
     | '/sitemap.xml'
     | '/video-corporativo-sao-paulo'
     | '/video-de-integracao'
     | '/video-de-treinamento-corporativo'
     | '/video-institucional-sao-paulo'
+    | '/video-para-clinicas'
+    | '/video-para-empresas'
     | '/video-para-feira-de-negocios'
+    | '/video-para-industrias'
     | '/admin/seo'
     | '/autor/alexandre-machado'
     | '/blog/$slug'
@@ -230,16 +286,21 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/cobertura-de-eventos-corporativos'
     | '/depoimentos-em-video'
     | '/filmagem-evento-corporativo-sao-paulo'
     | '/politica-de-privacidade'
     | '/precos'
+    | '/reels-corporativos'
     | '/sitemap.xml'
     | '/video-corporativo-sao-paulo'
     | '/video-de-integracao'
     | '/video-de-treinamento-corporativo'
     | '/video-institucional-sao-paulo'
+    | '/video-para-clinicas'
+    | '/video-para-empresas'
     | '/video-para-feira-de-negocios'
+    | '/video-para-industrias'
     | '/admin/seo'
     | '/autor/alexandre-machado'
     | '/blog/$slug'
@@ -251,16 +312,21 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CoberturaDeEventosCorporativosRoute: typeof CoberturaDeEventosCorporativosRoute
   DepoimentosEmVideoRoute: typeof DepoimentosEmVideoRoute
   FilmagemEventoCorporativoSaoPauloRoute: typeof FilmagemEventoCorporativoSaoPauloRoute
   PoliticaDePrivacidadeRoute: typeof PoliticaDePrivacidadeRoute
   PrecosRoute: typeof PrecosRoute
+  ReelsCorporativosRoute: typeof ReelsCorporativosRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VideoCorporativoSaoPauloRoute: typeof VideoCorporativoSaoPauloRoute
   VideoDeIntegracaoRoute: typeof VideoDeIntegracaoRoute
   VideoDeTreinamentoCorporativoRoute: typeof VideoDeTreinamentoCorporativoRoute
   VideoInstitucionalSaoPauloRoute: typeof VideoInstitucionalSaoPauloRoute
+  VideoParaClinicasRoute: typeof VideoParaClinicasRoute
+  VideoParaEmpresasRoute: typeof VideoParaEmpresasRoute
   VideoParaFeiraDeNegociosRoute: typeof VideoParaFeiraDeNegociosRoute
+  VideoParaIndustriasRoute: typeof VideoParaIndustriasRoute
   AdminSeoRoute: typeof AdminSeoRoute
   AutorAlexandreMachadoRoute: typeof AutorAlexandreMachadoRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -272,11 +338,32 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/video-para-industrias': {
+      id: '/video-para-industrias'
+      path: '/video-para-industrias'
+      fullPath: '/video-para-industrias'
+      preLoaderRoute: typeof VideoParaIndustriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/video-para-feira-de-negocios': {
       id: '/video-para-feira-de-negocios'
       path: '/video-para-feira-de-negocios'
       fullPath: '/video-para-feira-de-negocios'
       preLoaderRoute: typeof VideoParaFeiraDeNegociosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-para-empresas': {
+      id: '/video-para-empresas'
+      path: '/video-para-empresas'
+      fullPath: '/video-para-empresas'
+      preLoaderRoute: typeof VideoParaEmpresasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-para-clinicas': {
+      id: '/video-para-clinicas'
+      path: '/video-para-clinicas'
+      fullPath: '/video-para-clinicas'
+      preLoaderRoute: typeof VideoParaClinicasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/video-institucional-sao-paulo': {
@@ -314,6 +401,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reels-corporativos': {
+      id: '/reels-corporativos'
+      path: '/reels-corporativos'
+      fullPath: '/reels-corporativos'
+      preLoaderRoute: typeof ReelsCorporativosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/precos': {
       id: '/precos'
       path: '/precos'
@@ -340,6 +434,13 @@ declare module '@tanstack/react-router' {
       path: '/depoimentos-em-video'
       fullPath: '/depoimentos-em-video'
       preLoaderRoute: typeof DepoimentosEmVideoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cobertura-de-eventos-corporativos': {
+      id: '/cobertura-de-eventos-corporativos'
+      path: '/cobertura-de-eventos-corporativos'
+      fullPath: '/cobertura-de-eventos-corporativos'
+      preLoaderRoute: typeof CoberturaDeEventosCorporativosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -403,17 +504,22 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CoberturaDeEventosCorporativosRoute: CoberturaDeEventosCorporativosRoute,
   DepoimentosEmVideoRoute: DepoimentosEmVideoRoute,
   FilmagemEventoCorporativoSaoPauloRoute:
     FilmagemEventoCorporativoSaoPauloRoute,
   PoliticaDePrivacidadeRoute: PoliticaDePrivacidadeRoute,
   PrecosRoute: PrecosRoute,
+  ReelsCorporativosRoute: ReelsCorporativosRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   VideoCorporativoSaoPauloRoute: VideoCorporativoSaoPauloRoute,
   VideoDeIntegracaoRoute: VideoDeIntegracaoRoute,
   VideoDeTreinamentoCorporativoRoute: VideoDeTreinamentoCorporativoRoute,
   VideoInstitucionalSaoPauloRoute: VideoInstitucionalSaoPauloRoute,
+  VideoParaClinicasRoute: VideoParaClinicasRoute,
+  VideoParaEmpresasRoute: VideoParaEmpresasRoute,
   VideoParaFeiraDeNegociosRoute: VideoParaFeiraDeNegociosRoute,
+  VideoParaIndustriasRoute: VideoParaIndustriasRoute,
   AdminSeoRoute: AdminSeoRoute,
   AutorAlexandreMachadoRoute: AutorAlexandreMachadoRoute,
   BlogSlugRoute: BlogSlugRoute,

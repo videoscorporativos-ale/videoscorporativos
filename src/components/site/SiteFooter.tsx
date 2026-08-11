@@ -1,5 +1,6 @@
 import { Instagram, Linkedin, Youtube } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { WhatsAppLink } from "./WhatsAppLink";
 import logoUrl from "@/assets/logo.png";
 
 export function SiteFooter() {

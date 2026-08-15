@@ -9,6 +9,8 @@ import {
   requestIndexing,
   inspectUrl,
   listSitemapPings,
+  generateMonthlySeoReport,
+  listMonthlySeoReports,
 } from "@/lib/seo-admin.functions";
 
 const SITE = "https://videoscorporativos.com.br";
@@ -65,6 +67,84 @@ function AdminSeoPage() {
   const [pings, setPings] = useState<PingRow[]>([]);
   const [pingsStatus, setPingsStatus] = useState<Status>({ kind: "idle" });
 
+  type ReportRow = {
+    key: string;
+    clicks: number;
+    impressions: number;
+    ctr: number;
+    position: number;
+    ctrDelta: number;
+    positionDelta: number;
+    clicksDelta: number;
+  };
+  type MonthlyReport = {
+    id: string;
+    source: string;
+    createdAt: string;
+    markdown: string;
+    report: {
+      periodStart: string;
+      periodEnd: string;
+      prevStart: string;
+      prevEnd: string;
+      totals: {
+        clicks: number;
+        impressions: number;
+        ctr: number;
+        position: number;
+        prevClicks: number;
+        prevImpressions: number;
+        prevCtr: number;
+        prevPosition: number;
+      };
+      pages: ReportRow[];
+      queries: ReportRow[];
+    };
+  };
+  const generateReportFn = useServerFn(generateMonthlySeoReport);
+  const listReportsFn = useServerFn(listMonthlySeoReports);
+  const [reports, setReports] = useState<MonthlyReport[]>([]);
+  const [reportStatus, setReportStatus] = useState<Status>({ kind: "idle" });
+  const [activeTab, setActiveTab] = useState<"pages" | "queries">("pages");
+
+  async function loadReports() {
+    if (!password) return;
+    try {
+      const r = await listReportsFn({ data: { password, limit: 12 } });
+      if (r.ok) setReports(r.reports as MonthlyReport[]);
+    } catch (e) {
+      setReportStatus({ kind: "err", msg: handleAuthError(e) });
+    }
+  }
+
+  async function handleGenerateReport() {
+    if (!password) return;
+    setReportStatus({ kind: "loading" });
+    try {
+      const r = await generateReportFn({ data: { password } });
+      if (r.ok) {
+        setReportStatus({
+          kind: "ok",
+          msg: `Relatório ${r.report.periodStart} → ${r.report.periodEnd} atualizado.`,
+        });
+        void loadReports();
+      } else {
+        setReportStatus({ kind: "err", msg: r.message });
+      }
+    } catch (e) {
+      setReportStatus({ kind: "err", msg: handleAuthError(e) });
+    }
+  }
+
+  function downloadMarkdown(r: MonthlyReport) {
+    const blob = new Blob([r.markdown], { type: "text/markdown;charset=utf-8" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `relatorio-seo-${r.report.periodStart.slice(0, 7)}.md`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
   async function loadPings() {
     if (!password) return;
     setPingsStatus({ kind: "loading" });
@@ -82,7 +162,10 @@ function AdminSeoPage() {
   }
 
   useEffect(() => {
-    if (password) void loadPings();
+    if (password) {
+      void loadPings();
+      void loadReports();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [password]);
 

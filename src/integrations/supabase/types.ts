@@ -71,6 +71,39 @@ export type Database = {
         }
         Relationships: []
       }
+      seo_reports: {
+        Row: {
+          created_at: string
+          id: string
+          pages: Json
+          period_end: string
+          period_start: string
+          queries: Json
+          source: string
+          totals: Json
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          pages?: Json
+          period_end: string
+          period_start: string
+          queries?: Json
+          source?: string
+          totals?: Json
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          pages?: Json
+          period_end?: string
+          period_start?: string
+          queries?: Json
+          source?: string
+          totals?: Json
+        }
+        Relationships: []
+      }
       sitemap_pings: {
         Row: {
           created_at: string

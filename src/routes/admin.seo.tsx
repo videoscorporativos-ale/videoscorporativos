@@ -401,10 +401,6 @@ function AdminSeoPage() {
           </section>
 
           {/* URLs list */}
-          <section className="mt-8">
-            {/* placeholder-anchor */}
-          </section>
-
           {/* Monthly report */}
           <section className="mt-8 rounded-2xl border border-border bg-surface/60 p-6">
             <div className="flex items-start justify-between gap-4 flex-wrap">
@@ -642,4 +638,36 @@ function labelSource(source: string): string {
     default:
       return source;
   }
+}
+function fmtDelta(n: number): string {
+  if (n === 0) return "—";
+  return n > 0 ? `+${n}` : `${n}`;
+}
+
+function deltaClass(n: number): string {
+  if (n === 0) return "text-muted-foreground";
+  return n > 0 ? "text-emerald-400" : "text-red-400";
+}
+
+function Metric({
+  label,
+  value,
+  delta,
+  suffix = "",
+}: {
+  label: string;
+  value: string | number;
+  delta: number;
+  suffix?: string;
+}) {
+  return (
+    <div className="rounded-xl border border-border bg-surface/40 p-4">
+      <p className="text-xs text-muted-foreground">{label}</p>
+      <p className="mt-1 font-display text-2xl font-semibold">{value}</p>
+      <p className={`mt-1 text-xs ${deltaClass(delta)}`}>
+        {fmtDelta(delta)}
+        {delta !== 0 ? suffix : ""}
+      </p>
+    </div>
+  );
 }

@@ -32,6 +32,7 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as AutorAlexandreMachadoRouteImport } from './routes/autor.alexandre-machado'
 import { Route as AdminSeoRouteImport } from './routes/admin.seo'
 import { Route as ApiPublicSeoResubmitSitemapRouteImport } from './routes/api/public/seo.resubmit-sitemap'
+import { Route as ApiPublicSeoMonthlyReportRouteImport } from './routes/api/public/seo.monthly-report'
 
 const VideoParaIndustriasRoute = VideoParaIndustriasRouteImport.update({
   id: '/video-para-industrias',
@@ -155,6 +156,12 @@ const ApiPublicSeoResubmitSitemapRoute =
     path: '/api/public/seo/resubmit-sitemap',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicSeoMonthlyReportRoute =
+  ApiPublicSeoMonthlyReportRouteImport.update({
+    id: '/api/public/seo/monthly-report',
+    path: '/api/public/seo/monthly-report',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -179,6 +186,7 @@ export interface FileRoutesByFullPath {
   '/cases/$slug': typeof CasesSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/cases/': typeof CasesIndexRoute
+  '/api/public/seo/monthly-report': typeof ApiPublicSeoMonthlyReportRoute
   '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
 }
 export interface FileRoutesByTo {
@@ -204,6 +212,7 @@ export interface FileRoutesByTo {
   '/cases/$slug': typeof CasesSlugRoute
   '/blog': typeof BlogIndexRoute
   '/cases': typeof CasesIndexRoute
+  '/api/public/seo/monthly-report': typeof ApiPublicSeoMonthlyReportRoute
   '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
 }
 export interface FileRoutesById {
@@ -230,6 +239,7 @@ export interface FileRoutesById {
   '/cases/$slug': typeof CasesSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/cases/': typeof CasesIndexRoute
+  '/api/public/seo/monthly-report': typeof ApiPublicSeoMonthlyReportRoute
   '/api/public/seo/resubmit-sitemap': typeof ApiPublicSeoResubmitSitemapRoute
 }
 export interface FileRouteTypes {
@@ -257,6 +267,7 @@ export interface FileRouteTypes {
     | '/cases/$slug'
     | '/blog/'
     | '/cases/'
+    | '/api/public/seo/monthly-report'
     | '/api/public/seo/resubmit-sitemap'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -282,6 +293,7 @@ export interface FileRouteTypes {
     | '/cases/$slug'
     | '/blog'
     | '/cases'
+    | '/api/public/seo/monthly-report'
     | '/api/public/seo/resubmit-sitemap'
   id:
     | '__root__'
@@ -307,6 +319,7 @@ export interface FileRouteTypes {
     | '/cases/$slug'
     | '/blog/'
     | '/cases/'
+    | '/api/public/seo/monthly-report'
     | '/api/public/seo/resubmit-sitemap'
   fileRoutesById: FileRoutesById
 }
@@ -333,6 +346,7 @@ export interface RootRouteChildren {
   CasesSlugRoute: typeof CasesSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
   CasesIndexRoute: typeof CasesIndexRoute
+  ApiPublicSeoMonthlyReportRoute: typeof ApiPublicSeoMonthlyReportRoute
   ApiPublicSeoResubmitSitemapRoute: typeof ApiPublicSeoResubmitSitemapRoute
 }
 
@@ -499,6 +513,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicSeoResubmitSitemapRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/seo/monthly-report': {
+      id: '/api/public/seo/monthly-report'
+      path: '/api/public/seo/monthly-report'
+      fullPath: '/api/public/seo/monthly-report'
+      preLoaderRoute: typeof ApiPublicSeoMonthlyReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -526,6 +547,7 @@ const rootRouteChildren: RootRouteChildren = {
   CasesSlugRoute: CasesSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
   CasesIndexRoute: CasesIndexRoute,
+  ApiPublicSeoMonthlyReportRoute: ApiPublicSeoMonthlyReportRoute,
   ApiPublicSeoResubmitSitemapRoute: ApiPublicSeoResubmitSitemapRoute,
 }
 export const routeTree = rootRouteImport

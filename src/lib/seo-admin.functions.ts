@@ -2,6 +2,12 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { logSitemapPing } from "./sitemap-ping-log.server";
+import {
+  generateAndStoreMonthlyReport,
+  reportToMarkdown,
+  rowToReport,
+  type SeoReport,
+} from "./seo-report.server";
 
 const GATEWAY = "https://connector-gateway.lovable.dev/google_search_console";
 const SITE_URL = "https://videoscorporativos.com.br/";
@@ -147,4 +153,50 @@ export const inspectUrl = createServerFn({ method: "POST" })
     } catch {
       return { ok: true as const, data: text };
     }
+  });
+
+/** Gera (ou regera) o relatório mensal de SEO do último mês completo. */
+export const generateMonthlySeoReport = createServerFn({ method: "POST" })
+  .inputValidator((input: unknown) =>
+    z.object({ password: z.string().min(1).max(200) }).parse(input),
+  )
+  .handler(async ({ data }) => {
+    assertAdmin(data.password);
+    try {
+      const report = await generateAndStoreMonthlyReport("admin-button");
+      return { ok: true as const, report, markdown: reportToMarkdown(report) };
+    } catch (err) {
+      return {
+        ok: false as const,
+        message: err instanceof Error ? err.message : String(err),
+      };
+    }
+  });
+
+/** Lista os relatórios mensais já gerados (mais recente primeiro). */
+export const listMonthlySeoReports = createServerFn({ method: "POST" })
+  .inputValidator((input: unknown) =>
+    z
+      .object({
+        password: z.string().min(1).max(200),
+        limit: z.number().int().min(1).max(24).default(12),
+      })
+      .parse(input),
+  )
+  .handler(async ({ data }) => {
+    assertAdmin(data.password);
+    const { data: rows, error } = await supabaseAdmin
+      .from("seo_reports")
+      .select("id, period_start, period_end, source, totals, pages, queries, created_at")
+      .order("period_start", { ascending: false })
+      .limit(data.limit);
+    if (error) return { ok: false as const, message: error.message, reports: [] };
+    const reports = (rows ?? []).map((row) => ({
+      id: row.id as string,
+      source: row.source as string,
+      createdAt: row.created_at as string,
+      report: rowToReport(row as never) as SeoReport,
+      markdown: reportToMarkdown(rowToReport(row as never)),
+    }));
+    return { ok: true as const, reports };
   });

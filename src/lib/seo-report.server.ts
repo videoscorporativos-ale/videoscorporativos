@@ -180,3 +180,73 @@ export async function generateAndStoreMonthlyReport(
   if (error) throw new Error(`Falha ao salvar relatório: ${error.message}`);
   return report;
 }
+
+function sign(n: number) {
+  return n > 0 ? `+${n}` : `${n}`;
+}
+
+/** Converte o relatório em Markdown pronto para download. */
+export function reportToMarkdown(report: SeoReport): string {
+  const t = report.totals;
+  const lines: string[] = [
+    `# Relatório de SEO — ${report.periodStart} a ${report.periodEnd}`,
+    "",
+    `Comparativo com o período anterior (${report.prevStart} a ${report.prevEnd}). Fonte: Google Search Console.`,
+    "",
+    "## Resumo",
+    "",
+    "| Métrica | Período | Anterior | Variação |",
+    "| --- | --- | --- | --- |",
+    `| Cliques | ${t.clicks} | ${t.prevClicks} | ${sign(t.clicks - t.prevClicks)} |`,
+    `| Impressões | ${t.impressions} | ${t.prevImpressions} | ${sign(t.impressions - t.prevImpressions)} |`,
+    `| CTR | ${t.ctr}% | ${t.prevCtr}% | ${sign(Number((t.ctr - t.prevCtr).toFixed(2)))} p.p. |`,
+    `| Posição média | ${t.position} | ${t.prevPosition} | ${sign(Number((t.prevPosition - t.position).toFixed(1)))} |`,
+    "",
+    "## Páginas",
+    "",
+    "| Página | Cliques | Impressões | CTR | Δ CTR (p.p.) | Posição | Δ Posição |",
+    "| --- | --- | --- | --- | --- | --- | --- |",
+    ...report.pages
+      .slice(0, 50)
+      .map(
+        (r) =>
+          `| ${r.key} | ${r.clicks} | ${r.impressions} | ${r.ctr}% | ${sign(r.ctrDelta)} | ${r.position} | ${sign(r.positionDelta)} |`,
+      ),
+    "",
+    "## Palavras-chave",
+    "",
+    "| Palavra-chave | Cliques | Impressões | CTR | Δ CTR (p.p.) | Posição | Δ Posição |",
+    "| --- | --- | --- | --- | --- | --- | --- |",
+    ...report.queries
+      .slice(0, 50)
+      .map(
+        (r) =>
+          `| ${r.key} | ${r.clicks} | ${r.impressions} | ${r.ctr}% | ${sign(r.ctrDelta)} | ${r.position} | ${sign(r.positionDelta)} |`,
+      ),
+    "",
+  ];
+  return lines.join("\n");
+}
+
+/** Reconstrói um SeoReport a partir da linha persistida. */
+export function rowToReport(row: {
+  period_start: string;
+  period_end: string;
+  totals: Record<string, unknown>;
+  pages: unknown;
+  queries: unknown;
+}): SeoReport {
+  const totals = row.totals as SeoReport["totals"] & {
+    prevStart?: string;
+    prevEnd?: string;
+  };
+  return {
+    periodStart: row.period_start,
+    periodEnd: row.period_end,
+    prevStart: totals.prevStart ?? "",
+    prevEnd: totals.prevEnd ?? "",
+    totals,
+    pages: (row.pages as ReportRow[]) ?? [],
+    queries: (row.queries as ReportRow[]) ?? [],
+  };
+}

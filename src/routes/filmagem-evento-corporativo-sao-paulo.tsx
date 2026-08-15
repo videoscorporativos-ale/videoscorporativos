@@ -6,9 +6,9 @@ import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 const SITE = "https://videoscorporativos.com.br";
 const URL = `${SITE}/filmagem-evento-corporativo-sao-paulo`;
-const TITLE = "Filmagem de Evento Corporativo em São Paulo · Aftermovie";
+const TITLE = "Filmagem de Evento Corporativo SP: Preços e Prazos 2026";
 const DESCRIPTION =
-  "Filmagem profissional de eventos corporativos em São Paulo: convenções, lançamentos, feiras, congressos e confraternizações. Aftermovie com entrega rápida.";
+  "Filmagem de evento corporativo em São Paulo de R$ 4.000 a R$ 15.000: convenções, lançamentos, congressos e feiras. Aftermovie em 5 a 10 dias úteis.";
 const OG_IMAGE = "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg";
 
 const faqs = [
@@ -104,6 +104,39 @@ function Page() {
                 <li key={t} className="rounded-lg border border-border bg-surface/40 px-3 py-2">{t}</li>
               ))}
             </ul>
+          </Section>
+
+          <Section title="Quanto custa e em quanto tempo entregamos">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border text-left text-muted-foreground">
+                    <th className="py-3 pr-4 font-medium">Formato</th>
+                    <th className="py-3 pr-4 font-medium">Investimento</th>
+                    <th className="py-3 font-medium">Prazo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["Cobertura de meio período + teaser 30s", "R$ 4.000 a R$ 6.000", "5 dias úteis"],
+                    ["Diária completa + aftermovie 60-90s", "R$ 6.000 a R$ 10.000", "5 a 10 dias úteis"],
+                    ["Multicam com palestras + aftermovie 2-4 min", "R$ 10.000 a R$ 15.000", "15 a 20 dias úteis"],
+                    ["Convenção de 2+ dias ou evento híbrido", "Sob medida", "Definido no cronograma"],
+                  ].map(([f, v, p]) => (
+                    <tr key={f} className="border-b border-border/60">
+                      <td className="py-3 pr-4">{f}</td>
+                      <td className="py-3 pr-4 text-brand">{v}</td>
+                      <td className="py-3 text-muted-foreground">{p}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Valores de referência para São Paulo e Grande SP em 2026. Deslocamento para outras
+              cidades entra no orçamento. Veja também as{" "}
+              <Link to="/precos" className="text-brand underline-offset-4 hover:underline">faixas de preço de vídeo institucional</Link>.
+            </p>
           </Section>
 
           <Section title="Perguntas frequentes">

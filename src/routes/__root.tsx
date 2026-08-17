@@ -151,9 +151,11 @@ function RootComponent() {
   useEffect(() => {
     initGoogleAnalytics();
     trackPageView(window.location.pathname + window.location.search);
+    scrollToCurrentHash();
 
     const unsub = router.subscribe("onResolved", () => {
       trackPageView(router.state.location.pathname + router.state.location.search);
+      scrollToCurrentHash();
     });
 
     return () => {

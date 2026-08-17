@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
 import { pingSitemapOnDeploy } from "@/lib/seo-on-deploy.functions";
 import { initGoogleAnalytics, trackPageView } from "@/lib/analytics";
+import { scrollToCurrentHash } from "@/lib/hash-scroll";
 
 function NotFoundComponent() {
   return (

@@ -2,6 +2,7 @@ import { forwardRef, type AnchorHTMLAttributes, type ReactNode } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { buildWhatsAppUrl, captureUtmFromUrl } from "@/lib/whatsapp";
 import { trackWhatsAppClick } from "@/lib/tracking.functions";
+import { trackWhatsAppConversion } from "@/lib/analytics";
 
 type Props = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
   location: string;
@@ -29,6 +30,7 @@ export const WhatsAppLink = forwardRef<HTMLAnchorElement, Props>(function WhatsA
         ...utm,
       },
     }).catch(() => undefined);
+    trackWhatsAppConversion(location);
   }
 
   return (

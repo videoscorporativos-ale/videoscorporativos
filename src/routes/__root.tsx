@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
 import { pingSitemapOnDeploy } from "@/lib/seo-on-deploy.functions";
+import { initGoogleAnalytics, trackPageView } from "@/lib/analytics";
 
 function NotFoundComponent() {
   return (
@@ -145,6 +146,20 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+
+  useEffect(() => {
+    initGoogleAnalytics();
+    trackPageView(window.location.pathname + window.location.search);
+
+    const unsub = router.subscribe("onResolved", () => {
+      trackPageView(router.state.location.pathname + router.state.location.search);
+    });
+
+    return () => {
+      unsub();
+    };
+  }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>

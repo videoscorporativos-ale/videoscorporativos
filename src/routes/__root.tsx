@@ -155,9 +155,12 @@ function RootComponent() {
     scrollToCurrentHash();
 
     const unsub = router.subscribe("onResolved", () => {
-      const loc = router.state.location;
-      trackPageView(loc.pathname + (loc.searchStr ?? ""));
-      scrollToCurrentHash();
+      try {
+        trackPageView(window.location.pathname + window.location.search);
+        scrollToCurrentHash();
+      } catch (err) {
+        console.error("[analytics] page view failed", err);
+      }
     });
 
     return () => {

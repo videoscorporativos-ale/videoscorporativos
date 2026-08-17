@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { handleAnchorClick } from "@/lib/hash-scroll";
 import logoUrl from "@/assets/logo.png";
 
 const navLinks = [
@@ -48,6 +49,7 @@ export function SiteHeader() {
             <a
               key={l.href}
               href={l.href}
+              onClick={(e) => handleAnchorClick(e, l.href)}
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               {l.label}
@@ -56,6 +58,7 @@ export function SiteHeader() {
         </nav>
         <a
           href="/#contato"
+          onClick={(e) => handleAnchorClick(e, "/#contato")}
           className="hidden md:inline-flex items-center justify-center rounded-full bg-brand px-5 py-2 text-sm font-medium text-brand-foreground hover:opacity-90 transition"
         >
           Solicitar orçamento
@@ -75,7 +78,10 @@ export function SiteHeader() {
               <a
                 key={l.href}
                 href={l.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  handleAnchorClick(e, l.href);
+                  setOpen(false);
+                }}
                 className="text-sm text-muted-foreground hover:text-foreground"
               >
                 {l.label}
@@ -83,7 +89,10 @@ export function SiteHeader() {
             ))}
             <a
               href="/#contato"
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                handleAnchorClick(e, "/#contato");
+                setOpen(false);
+              }}
               className="inline-flex items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-medium text-brand-foreground"
             >
               Solicitar orçamento

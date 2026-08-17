@@ -30,6 +30,7 @@ export const WhatsAppLink = forwardRef<HTMLAnchorElement, Props>(function WhatsA
         ...utm,
       },
     }).catch(() => undefined);
+    trackWhatsAppConversion(location);
   }
 
   return (

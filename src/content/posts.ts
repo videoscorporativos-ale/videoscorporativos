@@ -3537,7 +3537,7 @@ export const posts: BlogPost[] = [
 <p><strong>O que observar:</strong> a sequência segue uma lógica (entrada → transformação → entrega)? Há escala e detalhe alternados, ou só planos amplos que não explicam nada?</p>
 
 <h2>3. Vídeo de liderança (dar rosto à empresa)</h2>
-<p>Objetivo: gerar confiança. Quando o fundador ou diretor fala olhando para a câmera, o comprador deixa de negociar com uma marca abstrata. É também o formato mais usado em <a href="/blog/video-comunicacao-interna">comunicação interna</a>.</p>
+<p>Objetivo: gerar confiança. Quando o fundador ou diretor fala olhando para a câmera, o comprador deixa de negociar com uma marca abstrata. É também o formato mais usado em <a href="/blog/video-comunicacao-interna-endomarketing">comunicação interna</a>.</p>
 <p><strong>O que observar:</strong> a fala parece decorada ou natural? O áudio é limpo (microfone de lapela, sem eco)? Áudio ruim derruba um vídeo bom mais rápido que imagem mediana.</p>
 
 <h2>4. Depoimento de cliente (prova social filmada)</h2>

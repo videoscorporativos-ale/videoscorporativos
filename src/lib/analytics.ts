@@ -13,17 +13,20 @@ export function initGoogleAnalytics() {
   };
 
   w.dataLayer = w.dataLayer || [];
-  function gtag(...args: unknown[]) {
-    w.dataLayer!.push(args);
+  function gtag() {
+    // GA4 expects the raw `arguments` object to be pushed
+    // eslint-disable-next-line prefer-rest-params
+    w.dataLayer!.push(arguments);
   }
-  w.gtag = gtag;
+  w.gtag = gtag as unknown as (...args: unknown[]) => void;
 
-  gtag("js", new Date());
-  gtag("config", MEASUREMENT_ID, {
+  w.gtag("js", new Date());
+  w.gtag("config", MEASUREMENT_ID, {
     send_page_view: false,
     cookie_flags: "SameSite=None;Secure",
     allow_google_signals: true,
     allow_ad_personalization_signals: false,
+    transport_type: "beacon",
   });
 
   const script = document.createElement("script");
@@ -51,7 +54,13 @@ export function trackEvent(
   const clean = Object.fromEntries(
     Object.entries(params || {}).filter(([, v]) => v !== undefined && v !== null),
   );
-  w.gtag?.("event", name, clean);
+  w.gtag?.("event", name, {
+    ...clean,
+    send_to: MEASUREMENT_ID,
+    transport_type: "beacon",
+    page_location: window.location.href,
+    page_path: window.location.pathname,
+  });
 }
 
 export function trackWhatsAppConversion(location: string) {

@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
 import { pingSitemapOnDeploy } from "@/lib/seo-on-deploy.functions";
 import { initGoogleAnalytics, trackPageView } from "@/lib/analytics";
+import { scrollToCurrentHash } from "@/lib/hash-scroll";
 
 function NotFoundComponent() {
   return (
@@ -151,9 +152,15 @@ function RootComponent() {
   useEffect(() => {
     initGoogleAnalytics();
     trackPageView(window.location.pathname + window.location.search);
+    scrollToCurrentHash();
 
     const unsub = router.subscribe("onResolved", () => {
-      trackPageView(router.state.location.pathname + router.state.location.search);
+      try {
+        trackPageView(window.location.pathname + window.location.search);
+        scrollToCurrentHash();
+      } catch (err) {
+        console.error("[analytics] page view failed", err);
+      }
     });
 
     return () => {

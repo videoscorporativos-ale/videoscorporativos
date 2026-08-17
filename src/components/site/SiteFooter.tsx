@@ -1,6 +1,7 @@
 import { Instagram, Linkedin, Youtube } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { WhatsAppLink } from "./WhatsAppLink";
+import { handleAnchorClick } from "@/lib/hash-scroll";
 import logoUrl from "@/assets/logo.png";
 
 export function SiteFooter() {
@@ -21,7 +22,7 @@ export function SiteFooter() {
           </p>
         </div>
         <nav aria-label="Serviços de vídeo corporativo" className="grid gap-x-10 gap-y-2 text-sm text-muted-foreground sm:grid-cols-2 lg:grid-cols-3">
-          <a href="/#videos-corporativos" className="hover:text-foreground">Vídeos Corporativos</a>
+          <a href="/#videos-corporativos" onClick={(e) => handleAnchorClick(e, "/#videos-corporativos")} className="hover:text-foreground">Vídeos Corporativos</a>
           <a href="/video-institucional-sao-paulo" className="hover:text-foreground">Vídeo Institucional</a>
           <a href="/video-para-empresas" className="hover:text-foreground">Vídeo para Empresas</a>
           <a href="/video-de-treinamento-corporativo" className="hover:text-foreground">Vídeo de Treinamento</a>
@@ -34,7 +35,7 @@ export function SiteFooter() {
           <Link to="/cases" className="hover:text-foreground">Cases</Link>
           <a href="/precos" className="hover:text-foreground">Preços</a>
           <a href="/blog" className="hover:text-foreground">Blog</a>
-          <a href="/#contato" className="hover:text-foreground">Contato</a>
+          <a href="/#contato" onClick={(e) => handleAnchorClick(e, "/#contato")} className="hover:text-foreground">Contato</a>
           <WhatsAppLink
             location="footer_orcamento"
             message="Olá, quero um orçamento de vídeo corporativo para minha empresa."

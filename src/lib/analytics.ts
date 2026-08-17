@@ -26,7 +26,6 @@ export function initGoogleAnalytics() {
     cookie_flags: "SameSite=None;Secure",
     allow_google_signals: true,
     allow_ad_personalization_signals: false,
-    transport_type: "beacon",
   });
 
   const script = document.createElement("script");
@@ -57,7 +56,6 @@ export function trackEvent(
   w.gtag?.("event", name, {
     ...clean,
     send_to: MEASUREMENT_ID,
-    transport_type: "beacon",
     page_location: window.location.href,
     page_path: window.location.pathname,
   });

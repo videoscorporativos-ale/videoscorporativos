@@ -155,7 +155,8 @@ function RootComponent() {
     scrollToCurrentHash();
 
     const unsub = router.subscribe("onResolved", () => {
-      trackPageView(router.state.location.pathname + router.state.location.search);
+      const loc = router.state.location;
+      trackPageView(loc.pathname + (loc.searchStr ?? ""));
       scrollToCurrentHash();
     });
 

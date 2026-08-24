@@ -3521,6 +3521,7 @@ export const posts: BlogPost[] = [
     coverQuery: "V2",
     coverAlt: "Filmagem de vídeo institucional em empresa com câmera profissional",
     datePublished: "2026-08-09",
+    dateModified: "2026-08-24",
     keywords:
       "exemplos de vídeo institucional, vídeo institucional exemplos, modelos de vídeo institucional, referências vídeo corporativo, vídeo institucional São Paulo",
     bodyHtml: `

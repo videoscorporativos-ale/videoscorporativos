@@ -3521,6 +3521,7 @@ export const posts: BlogPost[] = [
     coverQuery: "V2",
     coverAlt: "Filmagem de vídeo institucional em empresa com câmera profissional",
     datePublished: "2026-08-09",
+    dateModified: "2026-08-24",
     keywords:
       "exemplos de vídeo institucional, vídeo institucional exemplos, modelos de vídeo institucional, referências vídeo corporativo, vídeo institucional São Paulo",
     bodyHtml: `
@@ -3556,7 +3557,25 @@ export const posts: BlogPost[] = [
 <h2>Como escolher a referência certa para a sua empresa</h2>
 <p>Antes de mandar links de referência para a produtora, responda três perguntas: onde esse vídeo vai ser exibido, quem vai assistir e o que essa pessoa precisa decidir depois de assistir. Referência escolhida por estética costuma gerar um vídeo bonito que não move nada. Se quiser ver projetos reais organizados por tipo, veja os <a href="/cases">cases de vídeo corporativo</a> e a página de <a href="/video-institucional-sao-paulo">vídeo institucional em São Paulo</a>.</p>
 <p>Para calibrar expectativa de investimento antes da conversa, o <a href="/precos">guia de preços de vídeo institucional</a> mostra as faixas por tipo de projeto e por duração.</p>
-<p><a href="/#contato">Quero um vídeo institucional para minha empresa →</a></p>
+
+<h2>Quanto custa cada um desses formatos (faixas reais em São Paulo)</h2>
+<table>
+<thead><tr><th>Formato</th><th>Duração final</th><th>Faixa de investimento</th></tr></thead>
+<tbody>
+<tr><td>Institucional de apresentação</td><td>60–90s</td><td>R$ 3.000 – R$ 8.000</td></tr>
+<tr><td>Vídeo de processo (indústria/logística)</td><td>90–180s</td><td>R$ 6.000 – R$ 14.000</td></tr>
+<tr><td>Vídeo de liderança / porta-voz</td><td>60–120s</td><td>R$ 3.500 – R$ 7.000</td></tr>
+<tr><td><a href="/depoimentos-em-video">Depoimento de cliente</a></td><td>60–90s por depoimento</td><td>R$ 2.500 – R$ 6.000</td></tr>
+<tr><td>Cultura / employer branding</td><td>90–150s</td><td>R$ 6.000 – R$ 12.000</td></tr>
+<tr><td>Produto ou serviço explicado</td><td>60–120s</td><td>R$ 5.000 – R$ 12.000</td></tr>
+</tbody>
+</table>
+<p>Valores para produção em São Paulo e Grande São Paulo, com equipe própria, roteiro, captação de áudio profissional, edição, trilha licenciada e entrega em versões para site, YouTube e redes sociais.</p>
+
+<h2>Próximo passo: adaptar o exemplo certo à sua empresa</h2>
+<p>Em uma conversa de 10 minutos é possível definir qual desses seis formatos resolve o seu objetivo, quantas diárias o projeto exige e qual o investimento aproximado. Você recebe um orçamento com escopo fechado, prazo e entregáveis — sem reunião obrigatória.</p>
+<p><strong>Quer um vídeo institucional que gere reunião comercial, e não só elogio?</strong> <a href="https://wa.me/5511913550533?text=Ol%C3%A1%2C%20vi%20os%20exemplos%20de%20v%C3%ADdeo%20institucional%20no%20blog%20e%20quero%20um%20or%C3%A7amento.">Solicitar orçamento no WhatsApp →</a></p>
+<p><a href="/#contato">Prefiro enviar meu briefing pelo formulário →</a></p>
 `,
     faqs: [
       {

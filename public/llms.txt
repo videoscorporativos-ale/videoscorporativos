@@ -74,3 +74,4 @@ Sim. Eventos híbridos com streaming em YouTube, LinkedIn ou RTMP privado, multi
 - [ROI de vídeo corporativo](https://videoscorporativos.com.br/blog/roi-video-corporativo-board): como medir e apresentar ao board.
 
 O feed completo está em https://videoscorporativos.com.br/blog e o sitemap em https://videoscorporativos.com.br/sitemap.xml.
+- /avaliacoes — Página de avaliações reais do Google.

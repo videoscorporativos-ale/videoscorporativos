@@ -62,6 +62,10 @@ export function SiteFooter() {
             Produção de vídeos corporativos em São Paulo para empresas, clínicas, escritórios,
             indústrias, logística, RH, marketing e eventos corporativos.
           </p>
+          <p className="mt-2">
+            <a href="/avaliacoes" className="hover:text-brand">Avaliações no Google</a> · Fotografia corporativa e retratos:{" "}
+            <a href="https://alefotografo.com.br" target="_blank" rel="noopener" className="text-brand hover:underline">alefotografo.com.br</a>
+          </p>
         </div>
         <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-xs text-muted-foreground">
           <p>Alexandre Machado Fotografia · CNPJ 03.230.626/0001-82 · Desde 1999 atendendo clientes especiais.</p>

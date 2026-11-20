@@ -52,6 +52,7 @@ export function Testimonials() {
           ))}
         </ul>
 
+        <p className="mt-6 text-center text-sm"><a href="/avaliacoes" className="text-brand hover:underline">Ver todas as {googleReviews.length} avaliações completas →</a></p>
         {shown < googleReviews.length && (
           <div className="mt-10 text-center">
             <button

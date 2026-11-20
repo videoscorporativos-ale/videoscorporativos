@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AvaliacoesRouteImport } from './routes/avaliacoes'
 import { Route as CoberturaDeEventosCorporativosRouteImport } from './routes/cobertura-de-eventos-corporativos'
 import { Route as DepoimentosEmVideoRouteImport } from './routes/depoimentos-em-video'
 import { Route as FilmagemEventoCorporativoSaoPauloRouteImport } from './routes/filmagem-evento-corporativo-sao-paulo'
@@ -37,6 +38,11 @@ import { Route as ApiPublicSeoResubmitSitemapRouteImport } from './routes/api/pu
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AvaliacoesRoute = AvaliacoesRouteImport.update({
+  id: '/avaliacoes',
+  path: '/avaliacoes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CoberturaDeEventosCorporativosRoute =
@@ -165,6 +171,7 @@ const ApiPublicSeoResubmitSitemapRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/avaliacoes': typeof AvaliacoesRoute
   '/cobertura-de-eventos-corporativos': typeof CoberturaDeEventosCorporativosRoute
   '/depoimentos-em-video': typeof DepoimentosEmVideoRoute
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
@@ -191,6 +198,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/avaliacoes': typeof AvaliacoesRoute
   '/cobertura-de-eventos-corporativos': typeof CoberturaDeEventosCorporativosRoute
   '/depoimentos-em-video': typeof DepoimentosEmVideoRoute
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
@@ -218,6 +226,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/avaliacoes': typeof AvaliacoesRoute
   '/cobertura-de-eventos-corporativos': typeof CoberturaDeEventosCorporativosRoute
   '/depoimentos-em-video': typeof DepoimentosEmVideoRoute
   '/filmagem-evento-corporativo-sao-paulo': typeof FilmagemEventoCorporativoSaoPauloRoute
@@ -246,6 +255,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/avaliacoes'
     | '/cobertura-de-eventos-corporativos'
     | '/depoimentos-em-video'
     | '/filmagem-evento-corporativo-sao-paulo'
@@ -272,6 +282,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/avaliacoes'
     | '/cobertura-de-eventos-corporativos'
     | '/depoimentos-em-video'
     | '/filmagem-evento-corporativo-sao-paulo'
@@ -298,6 +309,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/avaliacoes'
     | '/cobertura-de-eventos-corporativos'
     | '/depoimentos-em-video'
     | '/filmagem-evento-corporativo-sao-paulo'
@@ -325,6 +337,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AvaliacoesRoute: typeof AvaliacoesRoute
   CoberturaDeEventosCorporativosRoute: typeof CoberturaDeEventosCorporativosRoute
   DepoimentosEmVideoRoute: typeof DepoimentosEmVideoRoute
   FilmagemEventoCorporativoSaoPauloRoute: typeof FilmagemEventoCorporativoSaoPauloRoute
@@ -357,6 +370,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/avaliacoes': {
+      id: '/avaliacoes'
+      path: '/avaliacoes'
+      fullPath: '/avaliacoes'
+      preLoaderRoute: typeof AvaliacoesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cobertura-de-eventos-corporativos': {
@@ -525,6 +545,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AvaliacoesRoute: AvaliacoesRoute,
   CoberturaDeEventosCorporativosRoute: CoberturaDeEventosCorporativosRoute,
   DepoimentosEmVideoRoute: DepoimentosEmVideoRoute,
   FilmagemEventoCorporativoSaoPauloRoute:

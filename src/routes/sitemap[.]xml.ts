@@ -30,6 +30,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/video-de-treinamento-corporativo", changefreq: "monthly", priority: "0.9" },
           { path: "/video-de-integracao", changefreq: "monthly", priority: "0.9" },
           { path: "/depoimentos-em-video", changefreq: "monthly", priority: "0.9" },
+          { path: "/avaliacoes", changefreq: "monthly", priority: "0.8" },
           { path: "/video-para-empresas", changefreq: "monthly", priority: "0.9" },
           { path: "/cobertura-de-eventos-corporativos", changefreq: "monthly", priority: "0.9" },
           { path: "/reels-corporativos", changefreq: "monthly", priority: "0.8" },

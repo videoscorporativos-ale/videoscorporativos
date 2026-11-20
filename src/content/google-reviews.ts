@@ -75,6 +75,31 @@ export const googleReviews: GoogleReview[] = [
     "date": "2021-08-25"
   },
   {
+    "author": "Karen Cristina Pereira Silva",
+    "text": "Profissional pontual, rápido, super experiente!!!\nTem um humor muito legal, uma energia super boa!!!\nHoje recebi as fotos e elas ficaram incríveis!!!\nSuper recomendo e já virou nosso fotógrafo!!!\nA Clínica Odontológica Nerak e sua equipe agradece seu profissionalismo!!!",
+    "date": "2021-02-03"
+  },
+  {
+    "author": "Wilson R.de Sa",
+    "text": "Ale parabéns pelo trabalho.\nVocê sua equipe sempre animados e dispostos a atender as solicitações. A\ncada click de suas fotos você consegue de maneira incrível eternizar nossos momentos.\nShow de bola.",
+    "date": "2020-02-28"
+  },
+  {
+    "author": "Wellington Moreira Rocha",
+    "text": "O Alexandre e sua equipe sempre nos foi muito solicito , educado e consegue captar o que tem de mais precioso através de seus retratos.\n\nRecomendo , excelente profissional",
+    "date": "2020-02-28"
+  },
+  {
+    "author": "Aline Paquita",
+    "text": "Otimo profissional, atendeu exatamente oq esperavamos com o video de apresentação da nossa loja, recomendo e com certeza faremos outros trabalhos com ele assim q necessario",
+    "date": "2020-02-28"
+  },
+  {
+    "author": "thiago dos santos",
+    "text": "Fotógrafo corporativo, muito top, surpreendente , comprometido e muito rápido na entrega nota 10, parabéns.",
+    "date": "2019-06-24"
+  },
+  {
     "author": "Jean Duarte",
     "text": "Satisfação e agradecimento. Profissional dedicado e que busca entender seu momento para estruturar o trabalho a atender ás suas expectativas. Recomendo sem dúvida e com a certeza de que  me acompanhará daqui para frente.",
     "date": "2026-05-12"
@@ -313,5 +338,90 @@ export const googleReviews: GoogleReview[] = [
     "author": "Cristian Mella",
     "text": "Boa atenção. Ótimo costo-beneficio. Um grande profissional.\nObrigado, Alex.",
     "date": "2021-06-13"
+  },
+  {
+    "author": "Samira Rodrigues Santos",
+    "text": "Experiência incrível de fotografar com o Alê!\n\nDurante toda a sessão o Alê me guiou e orientou. Não poupa esforços para fazer o melhor trabalho! É atento a cada detalhe para fotografar nossas melhores poses e ângulos!\n\nFoi uma experiência encantadora! Eu sou tímida e meio travadona para fotos, mas o Alê tem o dom de nos deixar cada vez mais à vontade. No final das contas eu saí do estúdio me sentindo A modelo! Haha E quero voltar, é uma experiência única que nos valoriza como pessoas e eleva a auto-estima! Adorei de verdade! Obrigada Alê!",
+    "date": "2021-06-06"
+  },
+  {
+    "author": "Rodrigo Videira",
+    "text": "Muito profissional e competente. Preocupado a todo momento com a estética das fotos e muito atento aos detalhes. Ensaio correu super tranquilo, me deu total apoio e o resultado ficou excelente, muito melhor do que o esperado. Altamente recomendado.",
+    "date": "2021-06-06"
+  },
+  {
+    "author": "Clara Laface",
+    "text": "Excelente profissional, conseguiu captar a essência que eu queria transmitir nas minhas fotos profissionais! Recomendo!",
+    "date": "2021-06-05"
+  },
+  {
+    "author": "Francisco Bertoldo",
+    "text": "Excelente profissional! Muito atencioso e detalhista. Dá mtas dicas importantes. As fotos ficaram ótimas, fiquei muito satisfeito com o trabalho.",
+    "date": "2021-05-26"
+  },
+  {
+    "author": "Perdedor esperando seu fim",
+    "text": "Profissional de excelente qualidade de trabalho, muito atencioso, super detalhista, extrae o melhor de cada foto de forma muito autêntica.",
+    "date": "2021-03-24"
+  },
+  {
+    "author": "Carolina Marani",
+    "text": "Ale é um profissional completo! Cria excelente ambiente para deixar o cliente à vontade de forma respeitosa a agradável. Utilizando de pura técnica ajusta luz, cenário atendendo de forma perfeita a expectativa! Eu amei as minhas fotos e te recomendo essa experiência!",
+    "date": "2021-03-23"
+  },
+  {
+    "author": "Rafael De Cicco",
+    "text": "Alexandre é um profissional incrível!  Super competente, conhece bem o que faz, e o resultado do seu trabalho foi incrível! Recomendo!",
+    "date": "2021-03-21"
+  },
+  {
+    "author": "Leonardo Pereira",
+    "text": "Ótimo fotógrafo! Sempre trazendo boas idéias e profissionalismo aos trabalhos! recomendo mto.",
+    "date": "2021-03-18"
+  },
+  {
+    "author": "Alessandra Capatto",
+    "text": "Fiz a minha primeira sessão de fotos com o Alê hoje, foi muito legal e as fotos ficaram incríveis! Super recomendo e espero fazer mais fotos com ele em breve!",
+    "date": "2021-03-11"
+  },
+  {
+    "author": "Flavia Perssonelli",
+    "text": "Já contratei o serviço 2 vezes e em ambas o resultado foi espetacular.\nAlém de dar toda atenção, as fotos ficaram excelentes e entregou super rápido. Recomendo!",
+    "date": "2021-02-22"
+  },
+  {
+    "author": "Rafael Barreto Rodrigues",
+    "text": "Ótima experiência, profissional competente, atencioso e detalhista, gostei muito do trabalho!!!",
+    "date": "2021-02-09"
+  },
+  {
+    "author": "Bruno Alencar",
+    "text": "O trabalho feito com o Ale foi uma experiência sensacional! O trabalhou não só atendeu a expectativa, como superou, dada a qualidade do trabalho oferecido. Por certo quando for atualizar as fotos, procurarei ele novamente.",
+    "date": "2021-01-23"
+  },
+  {
+    "author": "Débora Anjos",
+    "text": "O Ale é um profissional incrível! Especialista no que faz! Me deixou super a vontade, conversou bastante,  deu várias dicas e conduziu a sessão de fotos de forma leve, tranquila e dinâmica! As fotos ficaram sensacionais! Super recomendo! Vale muito o investimento 👏👏",
+    "date": "2020-12-21"
+  },
+  {
+    "author": "Luciana Bravo",
+    "text": "Excelente fotógrafo o Alê! Fotografa com alegria e dá um up no nosso visual. Fotos maravilhosas!",
+    "date": "2020-03-17"
+  },
+  {
+    "author": "Diego Mendes",
+    "text": "Excelente profissional, material fora de série e principalmente... Um sujeito gente finíssima! Negociação coube no meu bolso... Vale mais do que cobra, sem dúvidas.",
+    "date": "2020-02-28"
+  },
+  {
+    "author": "Tiago Cavalcanti",
+    "text": "Fotógrafo extremamente competente! A foto do Linkedin ficou exatamente como eu esperava! Recomendo!",
+    "date": "2019-07-27"
+  },
+  {
+    "author": "Eduardo Sampaio",
+    "text": "Simpatia e profissionalismo.  Deixou-nos totalmente à vontade e as fotos ficaram ótimas.  Recomendo-o sem qualquer restrição.",
+    "date": "2019-06-27"
   }
 ];

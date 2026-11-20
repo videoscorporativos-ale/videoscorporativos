@@ -9,104 +9,34 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as VideoParaIndustriasRouteImport } from './routes/video-para-industrias'
-import { Route as VideoParaFeiraDeNegociosRouteImport } from './routes/video-para-feira-de-negocios'
-import { Route as VideoParaEmpresasRouteImport } from './routes/video-para-empresas'
-import { Route as VideoParaClinicasRouteImport } from './routes/video-para-clinicas'
-import { Route as VideoInstitucionalSaoPauloRouteImport } from './routes/video-institucional-sao-paulo'
-import { Route as VideoDeTreinamentoCorporativoRouteImport } from './routes/video-de-treinamento-corporativo'
-import { Route as VideoDeIntegracaoRouteImport } from './routes/video-de-integracao'
-import { Route as VideoCorporativoSaoPauloRouteImport } from './routes/video-corporativo-sao-paulo'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as ReelsCorporativosRouteImport } from './routes/reels-corporativos'
-import { Route as PrecosRouteImport } from './routes/precos'
-import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
-import { Route as FilmagemEventoCorporativoSaoPauloRouteImport } from './routes/filmagem-evento-corporativo-sao-paulo'
-import { Route as DepoimentosEmVideoRouteImport } from './routes/depoimentos-em-video'
-import { Route as CoberturaDeEventosCorporativosRouteImport } from './routes/cobertura-de-eventos-corporativos'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as CasesIndexRouteImport } from './routes/cases.index'
-import { Route as BlogIndexRouteImport } from './routes/blog.index'
-import { Route as CasesSlugRouteImport } from './routes/cases.$slug'
-import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
-import { Route as AutorAlexandreMachadoRouteImport } from './routes/autor.alexandre-machado'
+import { Route as CoberturaDeEventosCorporativosRouteImport } from './routes/cobertura-de-eventos-corporativos'
+import { Route as DepoimentosEmVideoRouteImport } from './routes/depoimentos-em-video'
+import { Route as FilmagemEventoCorporativoSaoPauloRouteImport } from './routes/filmagem-evento-corporativo-sao-paulo'
+import { Route as PoliticaDePrivacidadeRouteImport } from './routes/politica-de-privacidade'
+import { Route as PrecosRouteImport } from './routes/precos'
+import { Route as ReelsCorporativosRouteImport } from './routes/reels-corporativos'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as VideoCorporativoSaoPauloRouteImport } from './routes/video-corporativo-sao-paulo'
+import { Route as VideoDeIntegracaoRouteImport } from './routes/video-de-integracao'
+import { Route as VideoDeTreinamentoCorporativoRouteImport } from './routes/video-de-treinamento-corporativo'
+import { Route as VideoInstitucionalSaoPauloRouteImport } from './routes/video-institucional-sao-paulo'
+import { Route as VideoParaClinicasRouteImport } from './routes/video-para-clinicas'
+import { Route as VideoParaEmpresasRouteImport } from './routes/video-para-empresas'
+import { Route as VideoParaFeiraDeNegociosRouteImport } from './routes/video-para-feira-de-negocios'
+import { Route as VideoParaIndustriasRouteImport } from './routes/video-para-industrias'
 import { Route as AdminSeoRouteImport } from './routes/admin.seo'
-import { Route as ApiPublicSeoResubmitSitemapRouteImport } from './routes/api/public/seo.resubmit-sitemap'
+import { Route as AutorAlexandreMachadoRouteImport } from './routes/autor.alexandre-machado'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as CasesIndexRouteImport } from './routes/cases.index'
+import { Route as CasesSlugRouteImport } from './routes/cases.$slug'
 import { Route as ApiPublicSeoMonthlyReportRouteImport } from './routes/api/public/seo.monthly-report'
+import { Route as ApiPublicSeoResubmitSitemapRouteImport } from './routes/api/public/seo.resubmit-sitemap'
 
-const VideoParaIndustriasRoute = VideoParaIndustriasRouteImport.update({
-  id: '/video-para-industrias',
-  path: '/video-para-industrias',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const VideoParaFeiraDeNegociosRoute =
-  VideoParaFeiraDeNegociosRouteImport.update({
-    id: '/video-para-feira-de-negocios',
-    path: '/video-para-feira-de-negocios',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const VideoParaEmpresasRoute = VideoParaEmpresasRouteImport.update({
-  id: '/video-para-empresas',
-  path: '/video-para-empresas',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const VideoParaClinicasRoute = VideoParaClinicasRouteImport.update({
-  id: '/video-para-clinicas',
-  path: '/video-para-clinicas',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const VideoInstitucionalSaoPauloRoute =
-  VideoInstitucionalSaoPauloRouteImport.update({
-    id: '/video-institucional-sao-paulo',
-    path: '/video-institucional-sao-paulo',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const VideoDeTreinamentoCorporativoRoute =
-  VideoDeTreinamentoCorporativoRouteImport.update({
-    id: '/video-de-treinamento-corporativo',
-    path: '/video-de-treinamento-corporativo',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const VideoDeIntegracaoRoute = VideoDeIntegracaoRouteImport.update({
-  id: '/video-de-integracao',
-  path: '/video-de-integracao',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const VideoCorporativoSaoPauloRoute =
-  VideoCorporativoSaoPauloRouteImport.update({
-    id: '/video-corporativo-sao-paulo',
-    path: '/video-corporativo-sao-paulo',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReelsCorporativosRoute = ReelsCorporativosRouteImport.update({
-  id: '/reels-corporativos',
-  path: '/reels-corporativos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrecosRoute = PrecosRouteImport.update({
-  id: '/precos',
-  path: '/precos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
-  id: '/politica-de-privacidade',
-  path: '/politica-de-privacidade',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FilmagemEventoCorporativoSaoPauloRoute =
-  FilmagemEventoCorporativoSaoPauloRouteImport.update({
-    id: '/filmagem-evento-corporativo-sao-paulo',
-    path: '/filmagem-evento-corporativo-sao-paulo',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const DepoimentosEmVideoRoute = DepoimentosEmVideoRouteImport.update({
-  id: '/depoimentos-em-video',
-  path: '/depoimentos-em-video',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CoberturaDeEventosCorporativosRoute =
@@ -115,34 +45,79 @@ const CoberturaDeEventosCorporativosRoute =
     path: '/cobertura-de-eventos-corporativos',
     getParentRoute: () => rootRouteImport,
   } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const DepoimentosEmVideoRoute = DepoimentosEmVideoRouteImport.update({
+  id: '/depoimentos-em-video',
+  path: '/depoimentos-em-video',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CasesIndexRoute = CasesIndexRouteImport.update({
-  id: '/cases/',
-  path: '/cases/',
+const FilmagemEventoCorporativoSaoPauloRoute =
+  FilmagemEventoCorporativoSaoPauloRouteImport.update({
+    id: '/filmagem-evento-corporativo-sao-paulo',
+    path: '/filmagem-evento-corporativo-sao-paulo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PoliticaDePrivacidadeRoute = PoliticaDePrivacidadeRouteImport.update({
+  id: '/politica-de-privacidade',
+  path: '/politica-de-privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogIndexRoute = BlogIndexRouteImport.update({
-  id: '/blog/',
-  path: '/blog/',
+const PrecosRoute = PrecosRouteImport.update({
+  id: '/precos',
+  path: '/precos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CasesSlugRoute = CasesSlugRouteImport.update({
-  id: '/cases/$slug',
-  path: '/cases/$slug',
+const ReelsCorporativosRoute = ReelsCorporativosRouteImport.update({
+  id: '/reels-corporativos',
+  path: '/reels-corporativos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/blog/$slug',
-  path: '/blog/$slug',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AutorAlexandreMachadoRoute = AutorAlexandreMachadoRouteImport.update({
-  id: '/autor/alexandre-machado',
-  path: '/autor/alexandre-machado',
+const VideoCorporativoSaoPauloRoute =
+  VideoCorporativoSaoPauloRouteImport.update({
+    id: '/video-corporativo-sao-paulo',
+    path: '/video-corporativo-sao-paulo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const VideoDeIntegracaoRoute = VideoDeIntegracaoRouteImport.update({
+  id: '/video-de-integracao',
+  path: '/video-de-integracao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideoDeTreinamentoCorporativoRoute =
+  VideoDeTreinamentoCorporativoRouteImport.update({
+    id: '/video-de-treinamento-corporativo',
+    path: '/video-de-treinamento-corporativo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const VideoInstitucionalSaoPauloRoute =
+  VideoInstitucionalSaoPauloRouteImport.update({
+    id: '/video-institucional-sao-paulo',
+    path: '/video-institucional-sao-paulo',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const VideoParaClinicasRoute = VideoParaClinicasRouteImport.update({
+  id: '/video-para-clinicas',
+  path: '/video-para-clinicas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideoParaEmpresasRoute = VideoParaEmpresasRouteImport.update({
+  id: '/video-para-empresas',
+  path: '/video-para-empresas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VideoParaFeiraDeNegociosRoute =
+  VideoParaFeiraDeNegociosRouteImport.update({
+    id: '/video-para-feira-de-negocios',
+    path: '/video-para-feira-de-negocios',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const VideoParaIndustriasRoute = VideoParaIndustriasRouteImport.update({
+  id: '/video-para-industrias',
+  path: '/video-para-industrias',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminSeoRoute = AdminSeoRouteImport.update({
@@ -150,16 +125,41 @@ const AdminSeoRoute = AdminSeoRouteImport.update({
   path: '/admin/seo',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicSeoResubmitSitemapRoute =
-  ApiPublicSeoResubmitSitemapRouteImport.update({
-    id: '/api/public/seo/resubmit-sitemap',
-    path: '/api/public/seo/resubmit-sitemap',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+const AutorAlexandreMachadoRoute = AutorAlexandreMachadoRouteImport.update({
+  id: '/autor/alexandre-machado',
+  path: '/autor/alexandre-machado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasesIndexRoute = CasesIndexRouteImport.update({
+  id: '/cases/',
+  path: '/cases/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasesSlugRoute = CasesSlugRouteImport.update({
+  id: '/cases/$slug',
+  path: '/cases/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicSeoMonthlyReportRoute =
   ApiPublicSeoMonthlyReportRouteImport.update({
     id: '/api/public/seo/monthly-report',
     path: '/api/public/seo/monthly-report',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiPublicSeoResubmitSitemapRoute =
+  ApiPublicSeoResubmitSitemapRouteImport.update({
+    id: '/api/public/seo/resubmit-sitemap',
+    path: '/api/public/seo/resubmit-sitemap',
     getParentRoute: () => rootRouteImport,
   } as any)
 
@@ -352,102 +352,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/video-para-industrias': {
-      id: '/video-para-industrias'
-      path: '/video-para-industrias'
-      fullPath: '/video-para-industrias'
-      preLoaderRoute: typeof VideoParaIndustriasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/video-para-feira-de-negocios': {
-      id: '/video-para-feira-de-negocios'
-      path: '/video-para-feira-de-negocios'
-      fullPath: '/video-para-feira-de-negocios'
-      preLoaderRoute: typeof VideoParaFeiraDeNegociosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/video-para-empresas': {
-      id: '/video-para-empresas'
-      path: '/video-para-empresas'
-      fullPath: '/video-para-empresas'
-      preLoaderRoute: typeof VideoParaEmpresasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/video-para-clinicas': {
-      id: '/video-para-clinicas'
-      path: '/video-para-clinicas'
-      fullPath: '/video-para-clinicas'
-      preLoaderRoute: typeof VideoParaClinicasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/video-institucional-sao-paulo': {
-      id: '/video-institucional-sao-paulo'
-      path: '/video-institucional-sao-paulo'
-      fullPath: '/video-institucional-sao-paulo'
-      preLoaderRoute: typeof VideoInstitucionalSaoPauloRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/video-de-treinamento-corporativo': {
-      id: '/video-de-treinamento-corporativo'
-      path: '/video-de-treinamento-corporativo'
-      fullPath: '/video-de-treinamento-corporativo'
-      preLoaderRoute: typeof VideoDeTreinamentoCorporativoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/video-de-integracao': {
-      id: '/video-de-integracao'
-      path: '/video-de-integracao'
-      fullPath: '/video-de-integracao'
-      preLoaderRoute: typeof VideoDeIntegracaoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/video-corporativo-sao-paulo': {
-      id: '/video-corporativo-sao-paulo'
-      path: '/video-corporativo-sao-paulo'
-      fullPath: '/video-corporativo-sao-paulo'
-      preLoaderRoute: typeof VideoCorporativoSaoPauloRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reels-corporativos': {
-      id: '/reels-corporativos'
-      path: '/reels-corporativos'
-      fullPath: '/reels-corporativos'
-      preLoaderRoute: typeof ReelsCorporativosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/precos': {
-      id: '/precos'
-      path: '/precos'
-      fullPath: '/precos'
-      preLoaderRoute: typeof PrecosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/politica-de-privacidade': {
-      id: '/politica-de-privacidade'
-      path: '/politica-de-privacidade'
-      fullPath: '/politica-de-privacidade'
-      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/filmagem-evento-corporativo-sao-paulo': {
-      id: '/filmagem-evento-corporativo-sao-paulo'
-      path: '/filmagem-evento-corporativo-sao-paulo'
-      fullPath: '/filmagem-evento-corporativo-sao-paulo'
-      preLoaderRoute: typeof FilmagemEventoCorporativoSaoPauloRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/depoimentos-em-video': {
-      id: '/depoimentos-em-video'
-      path: '/depoimentos-em-video'
-      fullPath: '/depoimentos-em-video'
-      preLoaderRoute: typeof DepoimentosEmVideoRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cobertura-de-eventos-corporativos': {
@@ -457,46 +366,102 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CoberturaDeEventosCorporativosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/depoimentos-em-video': {
+      id: '/depoimentos-em-video'
+      path: '/depoimentos-em-video'
+      fullPath: '/depoimentos-em-video'
+      preLoaderRoute: typeof DepoimentosEmVideoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/cases/': {
-      id: '/cases/'
-      path: '/cases'
-      fullPath: '/cases/'
-      preLoaderRoute: typeof CasesIndexRouteImport
+    '/filmagem-evento-corporativo-sao-paulo': {
+      id: '/filmagem-evento-corporativo-sao-paulo'
+      path: '/filmagem-evento-corporativo-sao-paulo'
+      fullPath: '/filmagem-evento-corporativo-sao-paulo'
+      preLoaderRoute: typeof FilmagemEventoCorporativoSaoPauloRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/': {
-      id: '/blog/'
-      path: '/blog'
-      fullPath: '/blog/'
-      preLoaderRoute: typeof BlogIndexRouteImport
+    '/politica-de-privacidade': {
+      id: '/politica-de-privacidade'
+      path: '/politica-de-privacidade'
+      fullPath: '/politica-de-privacidade'
+      preLoaderRoute: typeof PoliticaDePrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/cases/$slug': {
-      id: '/cases/$slug'
-      path: '/cases/$slug'
-      fullPath: '/cases/$slug'
-      preLoaderRoute: typeof CasesSlugRouteImport
+    '/precos': {
+      id: '/precos'
+      path: '/precos'
+      fullPath: '/precos'
+      preLoaderRoute: typeof PrecosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog/$slug': {
-      id: '/blog/$slug'
-      path: '/blog/$slug'
-      fullPath: '/blog/$slug'
-      preLoaderRoute: typeof BlogSlugRouteImport
+    '/reels-corporativos': {
+      id: '/reels-corporativos'
+      path: '/reels-corporativos'
+      fullPath: '/reels-corporativos'
+      preLoaderRoute: typeof ReelsCorporativosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/autor/alexandre-machado': {
-      id: '/autor/alexandre-machado'
-      path: '/autor/alexandre-machado'
-      fullPath: '/autor/alexandre-machado'
-      preLoaderRoute: typeof AutorAlexandreMachadoRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-corporativo-sao-paulo': {
+      id: '/video-corporativo-sao-paulo'
+      path: '/video-corporativo-sao-paulo'
+      fullPath: '/video-corporativo-sao-paulo'
+      preLoaderRoute: typeof VideoCorporativoSaoPauloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-de-integracao': {
+      id: '/video-de-integracao'
+      path: '/video-de-integracao'
+      fullPath: '/video-de-integracao'
+      preLoaderRoute: typeof VideoDeIntegracaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-de-treinamento-corporativo': {
+      id: '/video-de-treinamento-corporativo'
+      path: '/video-de-treinamento-corporativo'
+      fullPath: '/video-de-treinamento-corporativo'
+      preLoaderRoute: typeof VideoDeTreinamentoCorporativoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-institucional-sao-paulo': {
+      id: '/video-institucional-sao-paulo'
+      path: '/video-institucional-sao-paulo'
+      fullPath: '/video-institucional-sao-paulo'
+      preLoaderRoute: typeof VideoInstitucionalSaoPauloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-para-clinicas': {
+      id: '/video-para-clinicas'
+      path: '/video-para-clinicas'
+      fullPath: '/video-para-clinicas'
+      preLoaderRoute: typeof VideoParaClinicasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-para-empresas': {
+      id: '/video-para-empresas'
+      path: '/video-para-empresas'
+      fullPath: '/video-para-empresas'
+      preLoaderRoute: typeof VideoParaEmpresasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-para-feira-de-negocios': {
+      id: '/video-para-feira-de-negocios'
+      path: '/video-para-feira-de-negocios'
+      fullPath: '/video-para-feira-de-negocios'
+      preLoaderRoute: typeof VideoParaFeiraDeNegociosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/video-para-industrias': {
+      id: '/video-para-industrias'
+      path: '/video-para-industrias'
+      fullPath: '/video-para-industrias'
+      preLoaderRoute: typeof VideoParaIndustriasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/seo': {
@@ -506,11 +471,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminSeoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/seo/resubmit-sitemap': {
-      id: '/api/public/seo/resubmit-sitemap'
-      path: '/api/public/seo/resubmit-sitemap'
-      fullPath: '/api/public/seo/resubmit-sitemap'
-      preLoaderRoute: typeof ApiPublicSeoResubmitSitemapRouteImport
+    '/autor/alexandre-machado': {
+      id: '/autor/alexandre-machado'
+      path: '/autor/alexandre-machado'
+      fullPath: '/autor/alexandre-machado'
+      preLoaderRoute: typeof AutorAlexandreMachadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cases/': {
+      id: '/cases/'
+      path: '/cases'
+      fullPath: '/cases/'
+      preLoaderRoute: typeof CasesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cases/$slug': {
+      id: '/cases/$slug'
+      path: '/cases/$slug'
+      fullPath: '/cases/$slug'
+      preLoaderRoute: typeof CasesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/seo/monthly-report': {
@@ -518,6 +511,13 @@ declare module '@tanstack/react-router' {
       path: '/api/public/seo/monthly-report'
       fullPath: '/api/public/seo/monthly-report'
       preLoaderRoute: typeof ApiPublicSeoMonthlyReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/seo/resubmit-sitemap': {
+      id: '/api/public/seo/resubmit-sitemap'
+      path: '/api/public/seo/resubmit-sitemap'
+      fullPath: '/api/public/seo/resubmit-sitemap'
+      preLoaderRoute: typeof ApiPublicSeoResubmitSitemapRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

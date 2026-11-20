@@ -6,7 +6,7 @@ import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 const SITE = "https://videoscorporativos.com.br";
 const URL = `${SITE}/filmagem-evento-corporativo-sao-paulo`;
-const TITLE = "Filmagem de Evento Corporativo SP: Preços e Prazos 2026";
+const TITLE = "Empresa de Vídeos para Eventos em SP: Filmagem e Aftermovie";
 const DESCRIPTION =
   "Filmagem de evento corporativo em São Paulo de R$ 4.000 a R$ 15.000: convenções, lançamentos, congressos e feiras. Aftermovie em 5 a 10 dias úteis.";
 const OG_IMAGE = "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg";
@@ -84,6 +84,7 @@ function Page() {
           <h1 className="mt-6 font-display text-4xl md:text-5xl font-semibold tracking-tight text-balance">
             Filmagem de Evento Corporativo em São Paulo
           </h1>
+          <p className="mt-4 text-sm uppercase tracking-[0.2em] text-brand">Empresa de vídeos para eventos · +30 anos</p>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
             Cobertura audiovisual profissional de convenções, lançamentos, feiras, congressos,
             palestras, premiações e confraternizações corporativas em São Paulo. Equipe multicam,

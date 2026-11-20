@@ -6,9 +6,9 @@ import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 
 const SITE = "https://videoscorporativos.com.br";
 const URL = `${SITE}/video-institucional-sao-paulo`;
-const TITLE = "Vídeo Institucional em São Paulo · Produtora com +30 anos";
+const TITLE = "Vídeo Institucional em São Paulo: Produtora, Preços e Cases";
 const DESCRIPTION =
-  "Produção de vídeo institucional em São Paulo: roteiro, captação em cinema digital, edição e entrega. Atende Paulista, Faria Lima, Berrini e todo SP.";
+  "Vídeo institucional em São Paulo a partir de R$ 3.000: roteiro, filmagem, edição e cases reais (Nitriflex, Fiorde, FlexFunds). Orçamento em 24h.";
 const OG_IMAGE = "https://i.ytimg.com/vi/aOiYST9L8ec/maxresdefault.jpg";
 
 const faqs = [
@@ -16,6 +16,8 @@ const faqs = [
   { q: "Atende empresas fora da capital paulista?", a: "Sim. Atendo Grande São Paulo (ABC Paulista, Alphaville, Barueri, Osasco, Santana de Parnaíba, Guarulhos), interior de SP e projetos em todo o Brasil." },
   { q: "Quanto tempo leva a produção?", a: "Um vídeo institucional padrão em São Paulo leva de 3 a 6 semanas somando briefing, roteiro, captação e finalização. Projetos urgentes podem ser negociados." },
   { q: "Vocês têm estúdio próprio em SP?", a: "Sim, com estrutura móvel para captação em qualquer região da cidade — Paulista, Faria Lima, Berrini, Vila Olímpia, Itaim, Alphaville e ABC." },
+  { q: "Qual a duração ideal de um vídeo institucional?", a: "Para site e propostas comerciais, de 1min30 a 3 minutos. Para redes sociais, cortes de 15 a 60 segundos a partir do mesmo material. Vídeos mais curtos têm taxa de visualização completa bem maior." },
+  { q: "O que preciso preparar antes da gravação?", a: "Objetivo do vídeo, público, mensagens principais e quem vai falar. Nós conduzimos o briefing, escrevemos o roteiro e orientamos os entrevistados para que todos fiquem à vontade diante da câmera." },
 ];
 
 const service = {
@@ -119,6 +121,49 @@ function Page() {
               <li>Edição, color grading, motion graphics e mixagem</li>
               <li>Entrega em versões web (16:9), Reels/Stories (9:16) e LinkedIn (1:1 e 4:5)</li>
               <li>Legendas em português (SEO/acessibilidade)</li>
+            </ul>
+          </Section>
+
+          <Section title="Cases de vídeo institucional">
+            <ul className="space-y-3 text-muted-foreground">
+              <li><strong className="text-foreground">Nitriflex</strong> — indústria química de polímeros: estrutura fabril, processos e propósito da marca.</li>
+              <li><strong className="text-foreground">Fiorde Logística</strong> — soluções logísticas integradas apresentadas para clientes e parceiros.</li>
+              <li><strong className="text-foreground">FlexFunds</strong> — fundos de investimento: vídeo para gerar confiança em um público financeiro.</li>
+              <li><strong className="text-foreground">ATIVA Log</strong> — vídeo institucional para apresentação comercial.</li>
+            </ul>
+            <Link to="/cases" search={{ segmento: "institucional" }} className="mt-6 inline-flex text-sm font-medium text-brand hover:underline">Assistir aos cases de vídeo institucional →</Link>
+          </Section>
+
+          <Section title="Quanto custa um vídeo institucional em São Paulo">
+            <div className="overflow-x-auto rounded-xl border border-border">
+              <table className="w-full text-sm">
+                <thead className="bg-surface/60 text-left"><tr><th className="p-3">Formato</th><th className="p-3">Faixa de investimento</th></tr></thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-t border-border"><td className="p-3">Essencial — 1 diária, 1 locação, até 2 min</td><td className="p-3">R$ 3.000 a R$ 8.000</td></tr>
+                  <tr className="border-t border-border"><td className="p-3">Completo — 2 diárias, entrevistas e drone</td><td className="p-3">R$ 8.000 a R$ 18.000</td></tr>
+                  <tr className="border-t border-border"><td className="p-3">Premium — várias locações, equipe ampliada</td><td className="p-3">R$ 18.000 a R$ 30.000+</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">Veja o detalhamento completo na <Link to="/precos" className="text-brand hover:underline">tabela de preços de vídeo institucional</Link>.</p>
+          </Section>
+
+          <Section title="Como funciona a produção">
+            <ol className="list-decimal pl-5 space-y-2 text-muted-foreground">
+              <li><strong className="text-foreground">Briefing</strong> — entendemos objetivo, público e mensagens (1 reunião).</li>
+              <li><strong className="text-foreground">Roteiro</strong> — texto e plano de gravação aprovados por você.</li>
+              <li><strong className="text-foreground">Filmagem</strong> — equipe na sua empresa, em qualquer região de SP.</li>
+              <li><strong className="text-foreground">Edição</strong> — montagem, cor, trilha e legendas, com rodada de ajustes.</li>
+              <li><strong className="text-foreground">Entrega</strong> — versões para site, LinkedIn, YouTube e Reels.</li>
+            </ol>
+          </Section>
+
+          <Section title="Outros serviços em São Paulo">
+            <ul className="flex flex-wrap gap-2 text-sm">
+              <li><Link to="/video-corporativo-sao-paulo" className="inline-flex rounded-full border border-border px-4 py-2 hover:border-brand">Vídeo corporativo</Link></li>
+              <li><Link to="/filmagem-evento-corporativo-sao-paulo" className="inline-flex rounded-full border border-border px-4 py-2 hover:border-brand">Filmagem de eventos</Link></li>
+              <li><Link to="/video-de-treinamento-corporativo" className="inline-flex rounded-full border border-border px-4 py-2 hover:border-brand">Vídeo de treinamento</Link></li>
+              <li><Link to="/depoimentos-em-video" className="inline-flex rounded-full border border-border px-4 py-2 hover:border-brand">Depoimentos em vídeo</Link></li>
             </ul>
           </Section>
 

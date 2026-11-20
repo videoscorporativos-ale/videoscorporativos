@@ -15,6 +15,7 @@ import { Differentials } from "@/components/site/Differentials";
 import { VideosCorporativosSP } from "@/components/site/VideosCorporativosSP";
 import { TiposDeVideo } from "@/components/site/TiposDeVideo";
 import { Segmentos } from "@/components/site/Segmentos";
+import { GOOGLE_RATING, googleReviews } from "@/content/google-reviews";
 import { portfolioItems, hiResThumbFor } from "@/components/site/Portfolio";
 
 const localBusinessSchema = {
@@ -88,34 +89,18 @@ const localBusinessSchema = {
   ],
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "5",
-    reviewCount: "137",
+    ratingValue: String(GOOGLE_RATING.value),
+    reviewCount: String(GOOGLE_RATING.count),
     bestRating: "5",
     worstRating: "1",
   },
-  review: [
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Jean Duarte" },
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
-      reviewBody:
-        "Profissional dedicado, que busca entender o seu momento para estruturar o trabalho e atender às suas expectativas. Recomendo sem dúvida.",
-    },
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Silvio Valente" },
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
-      reviewBody:
-        "Alexandre tem a rara combinação de experiência, competência e simpatia. Sem abdicar do rigor técnico, consegue fazer as fotos de forma leve.",
-    },
-    {
-      "@type": "Review",
-      author: { "@type": "Person", name: "Leandro Capolupo" },
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
-      reviewBody:
-        "Profissional ágil, competente e focado na qualidade. O processo foi leve e o resultado final ficou excelente.",
-    },
-  ],
+  review: googleReviews.slice(0, 10).map((r) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: r.author },
+    datePublished: r.date,
+    reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
+    reviewBody: r.text,
+  })),
   sameAs: [
     "https://alefotografo.com.br",
     "https://www.instagram.com/alefotografo",

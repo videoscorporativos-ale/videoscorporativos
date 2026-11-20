@@ -141,7 +141,7 @@ function AuthorPage() {
             <ul className="list-disc pl-6 space-y-1">
               <li>+30 anos de experiência profissional</li>
               <li>Centenas de empresas atendidas</li>
-              <li>Nota Excelente no Google com +137 avaliações</li>
+              <li>Nota 4,9 no Google com 145 avaliações</li>
               <li>Atendimento direto, estúdio próprio e estrutura móvel</li>
             </ul>
 

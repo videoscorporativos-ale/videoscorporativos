@@ -27,7 +27,7 @@ export function BlogCTA({ location = "blog_article_cta" }: { location?: string }
         </Link>
       </div>
       <p className="mt-5 text-xs text-muted-foreground">
-        Mais de 30 anos de experiência · Nota Excelente no Google (+137 avaliações).
+        Mais de 30 anos de experiência · Nota 4,9 no Google (145 avaliações).
       </p>
     </aside>
   );

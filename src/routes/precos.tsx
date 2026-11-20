@@ -276,7 +276,7 @@ function PrecosPage() {
 
           <Section title="O que dizem os clientes">
             <p>
-              Avaliações reais de clientes no Google, entre as mais de 137 recebidas.
+              Avaliações reais de clientes no Google, entre as 145 recebidas (nota 4,9).
             </p>
             <div className="grid gap-4 sm:grid-cols-3">
               {testimonials.map((t) => (
@@ -345,7 +345,7 @@ function PrecosPage() {
                 Produção de vídeo institucional, eventos corporativos e feiras de negócios.
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
-                São Paulo, atendimento em todo o Brasil · Nota Excelente no Google (+137 avaliações).
+                São Paulo, atendimento em todo o Brasil · Nota 4,9 no Google (145 avaliações).
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <WhatsAppLink

@@ -1,3 +1,4 @@
+import { clients } from "@/content/clients";
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { getAllPosts } from "@/content/posts";
@@ -31,6 +32,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/video-de-integracao", changefreq: "monthly", priority: "0.9" },
           { path: "/depoimentos-em-video", changefreq: "monthly", priority: "0.9" },
           { path: "/avaliacoes", changefreq: "monthly", priority: "0.8" },
+          { path: "/clientes", changefreq: "monthly", priority: "0.8" },
+          ...clients.map((c) => ({ path: `/clientes/${c.slug}`, changefreq: "monthly" as const, priority: "0.7" })),
           { path: "/video-para-empresas", changefreq: "monthly", priority: "0.9" },
           { path: "/cobertura-de-eventos-corporativos", changefreq: "monthly", priority: "0.9" },
           { path: "/reels-corporativos", changefreq: "monthly", priority: "0.8" },

@@ -260,6 +260,16 @@ function BlogPostPage() {
             <p className="mt-3 text-lg leading-relaxed text-foreground/90">{post.tldr}</p>
           </section>
 
+          {/(retrato|fotograf)/i.test(post.slug) && (
+            <aside className="mt-10 rounded-2xl border border-brand/40 bg-surface/60 p-6">
+              <p className="text-xs uppercase tracking-[0.2em] text-brand">Fotografia corporativa</p>
+              <p className="mt-2 text-foreground/90">
+                Este site é dedicado a vídeo. Para retratos, fotos de eventos e fotografia corporativa, acesse{" "}
+                <a href="https://alefotografo.com.br" className="text-brand underline" rel="noopener">alefotografo.com.br</a>.
+              </p>
+            </aside>
+          )}
+
           <div
             className="prose-blog mt-12"
             dangerouslySetInnerHTML={{ __html: expandInlineImages(post.bodyHtml) }}

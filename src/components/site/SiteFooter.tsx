@@ -33,6 +33,7 @@ export function SiteFooter() {
           <a href="/video-para-clinicas" className="hover:text-foreground">Vídeo para Clínicas</a>
           <a href="/video-para-industrias" className="hover:text-foreground">Vídeo para Indústrias</a>
           <Link to="/cases" className="hover:text-foreground">Cases</Link>
+          <Link to="/clientes" className="hover:text-foreground">Clientes</Link>
           <a href="/precos" className="hover:text-foreground">Preços</a>
           <a href="/blog" className="hover:text-foreground">Blog</a>
           <a href="/#contato" onClick={(e) => handleAnchorClick(e, "/#contato")} className="hover:text-foreground">Contato</a>

@@ -75,3 +75,5 @@ Sim. Eventos híbridos com streaming em YouTube, LinkedIn ou RTMP privado, multi
 
 O feed completo está em https://videoscorporativos.com.br/blog e o sitemap em https://videoscorporativos.com.br/sitemap.xml.
 - /avaliacoes — Página de avaliações reais do Google.
+
+- /clientes (14 client pages)
